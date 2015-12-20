@@ -32,7 +32,7 @@ if($parametr_get == "typy"){
 
     if($parametr_get == "formaty"){
         //SMAZÁNÍ PARAMETRU
-        if((isset($_GET["akce"]))&&($_GET["akce"]=="smazat")){
+        if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
             $Formaty->vymazat($_GET["id-parametru"]);
             header("Location: home.php?page=detail-parametru&kategorie=$parametr_get");
         }
@@ -44,7 +44,7 @@ if($parametr_get == "typy"){
     }
     if($parametr_get == "desky"){
         //SMAZÁNÍ PARAMETRU
-        if((isset($_GET["akce"]))&&($_GET["akce"]=="smazat")){
+        if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
             $Desky->vymazat($_GET["id-parametru"]);
             header("Location: home.php?page=detail-parametru&kategorie=$parametr_get");
         }
@@ -56,7 +56,7 @@ if($parametr_get == "typy"){
     }
     if($parametr_get == "materialy"){
         //SMAZÁNÍ PARAMETRU
-        if((isset($_GET["akce"]))&&($_GET["akce"]=="smazat")){
+        if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
             $Materialy->vymazat($_GET["id-parametru"]);
             header("Location: home.php?page=detail-parametru&kategorie=$parametr_get");
         }
@@ -68,7 +68,7 @@ if($parametr_get == "typy"){
     }
     if($parametr_get == "fotopapiry"){
         //SMAZÁNÍ PARAMETRU
-        if((isset($_GET["akce"]))&&($_GET["akce"]=="smazat")){
+        if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
             $Fotopapiry->vymazat($_GET["id-parametru"]);
             header("Location: home.php?page=detail-parametru&kategorie=$parametr_get");
         }
@@ -80,7 +80,7 @@ if($parametr_get == "typy"){
     }
     if($parametr_get == "typy"){
         //SMAZÁNÍ PARAMETRU
-        if((isset($_GET["akce"]))&&($_GET["akce"]=="smazat")){
+        if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
             $Typy->vymazat($_GET["id-parametru"]);
             header("Location: home.php?page=detail-parametru&kategorie=$parametr_get");
         }
@@ -124,7 +124,7 @@ if($parametr_get == "typy"){
                     <?php } ?>
                         <td>
                             <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=upravit&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-pencil"></i></a>
-                            <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=smazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
+                            <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=vymazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
                         </td>
                     </tr>
                 <?php } ?>
@@ -135,7 +135,7 @@ if($parametr_get == "typy"){
                     <td>Název pro systém</td>
                     <td>Cena v Kč</td>
                     <td>Popis položky - není povinný</td>
-                    <td>Upravit | Smazat</td>
+                    <td>Upravit | vymazat</td>
                 </tfoot>
             </table>
         </div>        

@@ -7,7 +7,7 @@ $pocet = 0;
 $id_objednavka = $_GET["id-objednavka"];
 foreach($vsechny_fotky as $fotka)
     $pocet++;
-if(isset($_GET["action"]) and $_GET["action"]=="smazat"){
+if(isset($_GET["action"]) and $_GET["action"]=="vymazat"){
     $Fotky->vymazat($_GET["id-fotka"]);
     header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
 }
@@ -144,7 +144,7 @@ if(isset($_POST["ulozit"])){
                             <th>Deska</th>
                             <th>Typ</th>
                             <th>Cena</th>
-                            <th>Smazat</th>
+                            <th>vymazat</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -158,7 +158,7 @@ if(isset($_POST["ulozit"])){
                                 <td><?php echo $fotka->nazev_typ; ?></td>
                                 <td><?php echo $fotka->cena_format + $fotka->cena_fotopapir + $fotka->cena_material + $fotka->cena_deska + $fotka->cena_typ; ?> Kč</td>
                                 <td>
-                                    <a href="?page=detail-objednavky&id-objednavka=<?php echo $id_objednavka; ?>&action=smazat&id-fotka=<?php echo $fotka->id_fotka;?>"><i class="fa fa-remove"></i></a>  
+                                    <a href="?page=detail-objednavky&id-objednavka=<?php echo $id_objednavka; ?>&action=vymazat&id-fotka=<?php echo $fotka->id_fotka;?>"><i class="fa fa-remove"></i></a>  
                                 </td>
                             </tr>
                         <?php } ?>

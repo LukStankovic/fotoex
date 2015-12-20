@@ -39,7 +39,7 @@
                                 <td><?php echo $uzivatel->zeme; ?></td>
                                 <td>
                                     <a href="?page=detail-uzivatele&id-uzivatele=<?php echo $uzivatel->id_uzivatel;?>"><i class="fa fa-eye"></i></a>
-                                    <a href="?page=uzivatele&action=smazat&id-uzivatele=<?php echo $uzivatel->id_uzivatel;?>"><i class="fa fa-remove"></i></a>
+                                    <a href="?page=uzivatele&action=vymazat&id-uzivatele=<?php echo $uzivatel->id_uzivatel;?>"><i class="fa fa-remove"></i></a>
                                 </td>
                             </tr>
                             <?php } ?>
