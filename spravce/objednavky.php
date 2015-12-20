@@ -9,6 +9,14 @@ foreach($vsechny_objednavky as $i => $objednavka){
         $pocet_obj++;
 $predchozi_id = $objednavka->id_objednavka;
 }
+if((isset($_GET["akce"]))&&($_GET["akce"]=="dokonceno")){
+    $Objednavky->dokonceno($_GET["id-objednavka"]);
+    header("Location: home.php?page=objednavky");
+}
+if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
+    $Objednavky->vymazat($_GET["id-objednavka"]);
+    header("Location: home.php?page=objednavky");
+}
 ?>       
 
     <div class="row">
@@ -62,8 +70,8 @@ $predchozi_id = $objednavka->id_objednavka;
                                 <td><?php echo sprintf("%.2f",$objednavka->celkem); ?> Kč</td>  
                                 <td>
                                     <a href="?page=detail-objednavky&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-eye"></i></a>
-                                    <a href="?page=detail-objednavky&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-check"></i></a>
-                                    <a href="?page=detail-objednavky&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-remove"></i></a>
+                                    <a href="?page=objednavky&akce=dokonceno&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-check"></i></a>
+                                    <a href="?page=objednavky&akce=vymazat&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-remove"></i></a>
                                     </td>  
                             </tr>
                             <?php    

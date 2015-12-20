@@ -89,7 +89,14 @@ class Objednavky{
         
         return $db->zpracovani($sql);*/
     }
-
+    public function dokonceno($id) {
+        $db = new Databaze();    
+        
+        $sql = "UPDATE objednavky SET stav = 'Dokončeno'
+                WHERE  id_objednavka = $id";
+    
+        return $db->zpracovani($sql);
+    }    
     public function upravit($id,$k_uprave) {
         $db = new Databaze();    
         
@@ -102,10 +109,10 @@ class Objednavky{
     }
     
     public function vymazat($id){
-    /*    $db = new Databaze();
-        $sql = "DELETE FROM kategorie
-                WHERE id_kategorie = $id";
-        return $db->zpracovani($sql); */
+       $db = new Databaze();
+        $sql = "DELETE FROM objednavky
+                WHERE id_objednavka = $id";
+        return $db->zpracovani($sql); 
     }
 
 }
