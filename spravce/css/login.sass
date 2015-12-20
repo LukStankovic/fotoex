@@ -1,0 +1,122 @@
+@import barvy
+
+body 
+    font-family: 'Open Sans', Helvetica, sans-serif
+    background: #f3f5f9 url(../img/bg-login.jpg) no-repeat center center fixed;
+    +prefixy(background-size,cover)
+    margin: 0px!important
+    padding: 0px!important
+    color: $modro_seda
+
+.login_blok 
+    background: #fff
+    width: 390px
+    height: 290px
+    position: fixed
+    font-family: 'Open Sans'
+    list-style: none
+    top: 50%
+    left: 50%
+    +prefixy(transform,translate(-50%, -50%))
+
+
+.blok_text
+    padding: 0 40px
+    position: relative
+
+    h1 
+        font-size: 45px
+        padding-bottom: 10px
+        padding-top: 10px
+        text-align: center
+
+    p
+        font-size: 12px
+        padding-bottom: 10px
+        line-height: 25px
+
+    
+
+form input[type=text], form input[type=password] 
+    width: 100%
+    height: 40px
+    margin-bottom: 10px
+    padding-left: 15px
+    background: #fff
+    border: none
+    border-bottom: 1px solid $modro_seda_2
+    color: $modro_seda
+    outline: none
+
+.button 
+    border: none
+    display: block
+    background: $modra
+    text-transform: uppercase
+    height: 80px
+    width: 100%
+    position: absolute
+    bottom: 0
+    color: #fff
+    text-align: center
+    cursor: pointer
+    +prefixy(transition,0.3s ease background)
+
+.button:hover 
+	background: $modra_7
+
+.button:active 
+	background: $modra_7
+
+
+::-webkit-input-placeholder
+	color: $modro_seda
+
+:-moz-placeholder 
+	color: $modro_seda
+
+::-moz-placeholder 
+	color: $modro_seda
+
+:-ms-input-placeholder 
+	color: $modro_seda
+
+.err 
+    color: $modro_seda
+    text-align: center
+    margin: 5px auto
+    display: block
+    min-height: 16px
+    font-style: italic
+    
+@media (max-width:500px)    
+    .login_blok
+        width: 100%
+        top: 145px
+    
+    .login_formular
+        background: $modra
+        width: 100%
+        height: 100vh
+        margin: 0px!important
+        position: relative
+         
+    .button
+        height: 50px
+        background: $modra_7
+    
+    .button:hover, .button:active
+        background: $modra_9
+    
+    .container
+        padding: 0
+
+    body
+        background: $modra
+
+    .blok_text h1 
+        font-size: 30px
+        padding-bottom: 10px
+        padding-top: 20px
+        text-align: center
+        margin-top: 0px

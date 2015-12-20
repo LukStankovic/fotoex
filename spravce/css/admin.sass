@@ -1,0 +1,399 @@
+@import barvy
+@import material-color
+
+body
+    font-family: "Open Sans"
+    
+.header
+    width: 100%
+    min-height: 90px
+    background: url(../img/header.jpg)
+    +prefixy(background-size,cover)
+    
+    .row
+        margin: 0
+        
+    .navigace
+        height: 90px
+        padding: 0
+        margin: 0
+        
+        li
+            float: left
+            list-style: none
+        
+        a
+            display: block
+            height: 95px
+            padding: 15px 30px 0px 30px
+            text-decoration: none
+            color: #fff
+            font-size: 16px
+            +prefixy(transition,.2s ease background)
+            
+        a:hover
+            background: $clr-blue-500
+        
+        .fa
+            font-size: 35px
+            display: block
+            text-align: center
+            margin-bottom: 5px
+            
+.main
+    margin-top: 20px
+
+.btn a
+    background: $clr-blue-500
+    color: #fff
+    padding: 10px
+    border-radius: 0
+    display: block
+    margin: 0
+.btn
+    padding: 0
+.btn a:hover
+    background: $clr-blue-300
+    color: #fff
+    text-decoration: none    
+
+.btn.novy a
+    padding: 20px
+    font-weight: 700
+//PRO <BUTTON>
+
+.ulozit.btn, button.btn
+    padding: 10px
+    border-radius: 0
+    margin: 0
+    
+//NÁSTĚNKA
+
+.panel-box
+    margin-top: 30px
+    display: table
+    table-layout: fixed
+    width: 100%
+    height: 100%
+    text-align: center
+    border: none
+    border-radius: 5px
+    font-family: 'Open Sans'
+
+.panel 
+    margin-bottom: 18p
+    background-color: white
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)
+
+    .stat-icon
+        font-size: 50px
+    .nadpis
+        font-size: 33px
+        margin: 0
+
+.panel-box .panel-left 
+    -moz-border-radius-topleft: 5px!important
+    -webkit-border-top-left-radius: 5px!important
+    border-top-left-radius: 5px!important
+    -moz-border-radius-topright: 5px!important
+    -webkit-border-top-right-radius: 5px!important
+    border-top-right-radius: 5px!important
+    float: none
+
+.panel-box .panel-right 
+    -moz-border-radius-bottomleft: 5px!important
+    -webkit-border-bottom-left-radius: 5px!important
+    border-bottom-left-radius: 5px!important
+    -moz-border-radius-bottomright: 5px!important
+    -webkit-border-bottom-right-radius: 5px!important
+    border-bottom-right-radius: 5px!important
+    background: #f8f8f8
+
+.panel-box .panel-item
+    padding: 30px 5px
+    vertical-align: top
+    border-radius: 0
+
+.bg-trzby 
+    background-color: $clr-light-green;
+    color: white
+
+.bg-objednavky 
+    background-color: $clr-light-blue;
+    color: white
+
+.bg-uzivatele 
+    background-color: $clr-red;
+    color: white
+
+.bg-clanky 
+    background-color: $clr-amber;
+    color: white
+
+
+//OBJEDNÁVKY
+.main table
+    width: 100%
+        
+    tr
+        text-align: center
+        vertical-align: middle
+        border-bottom: 1px solid #eaeaea
+    td, .table tbody tr td
+        height: 70px
+        vertical-align: middle
+        
+    tr:nth-child(even)
+        background: #fff
+    tr:nth-child(odd)
+        background: $clr-blue-50
+        
+    th
+        background: $clr-blue-500
+        color: #fff
+        border-bottom: 4px solid $clr-blue-700
+        text-align: center
+        height: 50px
+        
+    .fa
+        font-size: 23px
+        margin-right: 5px
+        
+    .fa-eye
+        color: $clr-blue-700
+    .fa-eye:hover
+        color: $clr-blue
+        
+    .fa-check
+        color: $clr-green
+    .fa-check:hover
+        color: $clr-green-900
+        
+    .fa-remove
+        color: $clr-red
+    .fa-remove:hover
+        color: $clr-red-900
+    
+    tr.dokonceno
+        background: $clr-green-100
+        color: #616161
+    tr.zruseno
+        background: $deep_orange_1
+        color: #616161
+        
+    tfoot
+        tr
+            background: #fff!important
+            border-top: 3px solid #1976D2
+            border-bottom: 0
+            color: #000
+            font-size: 15px
+            font-style: italic
+            
+//HLEDÁNÍ V TABULCE INPUT
+.filter-table input
+    border: 2px solid $clr-blue
+    padding: 5px
+.filter-table input:focus
+    outline: 0
+    border: 2px solid $clr-blue-900
+
+//DETAIL OBJEDNÁVKY
+.detail_panel
+    height: 80px
+    line-height: 80px
+    text-align: center
+    color: #fff
+    font-size: 20px
+    font-weight: 300
+    margin-bottom: 30px
+
+.detail_panel.datum
+    background: #40C4FF
+.detail_panel.pocet
+    background: #00B0FF
+.detail_panel.cena
+    background: #0091EA
+    
+.detail_panel.stav.zpracovavani
+    background: $clr-amber-300
+.detail_panel.stav.platba
+    background: $clr-amber-800
+.detail_panel.stav.zruseno
+    background: $clr-deep-orange-800
+.detail_panel.stav.tisk
+    background: $clr-deep-purple-a100
+.detail_panel.stav.expedovano
+    background: $clr-purple
+.detail_panel.stav.odber
+    background: $clr-light-green-300
+.detail_panel.stav.dokonceno
+    background: $clr-light-green
+
+    
+.detail_objednavky
+    h2
+        font-size: 18px
+        color: $clr-blue
+    ul
+        list-style: none
+        padding: 0
+        
+//PARAMETRY
+.ctverec.format 
+    a
+        width: 33.33%
+        height: 400px
+        float: left
+        background: $clr-light-green
+        color: #fff
+        font-weight: 300
+        text-align: center
+        line-height: 400px
+        font-size: 30px
+        display: block
+        +prefixy(transition,.2s ease all)
+    
+    a:hover
+        text-decoration: none
+        background: $clr-light-green-300
+        font-size: 35px
+    
+.obdelnik
+    a
+        width: 33.33%
+        height: 200px
+        float: left
+        color: #fff
+        font-weight: 300
+        text-align: center
+        line-height: 200px
+        font-size: 25px
+        display: block
+        +prefixy(transition,.2s ease all)
+    
+    a:hover
+        text-decoration: none
+        font-size: 30px
+
+
+.obdelnik.deska
+    a
+        background: $clr-indigo-700
+    a:hover
+        background: $clr-indigo-400
+.obdelnik.material
+    a
+        background: $clr-red-700
+    a:hover
+        background: $clr-red-400
+.obdelnik.fotopapir
+    a
+        background: $clr-brown-700
+    a:hover
+        background: $clr-brown-400
+.obdelnik.typ
+    a
+        background: $clr-cyan-700
+    a:hover
+        background: $clr-cyan-400
+    
+//DETAIL PARAMETRU
+.detail_parametru 
+    .tabulka
+        margin-top: 15px
+
+//BARVY TABULEK A TLAČÍTEK PRO DETAIL PARAMETRU
+.detail_parametru.formaty
+    table 
+        tbody
+            tr:nth-child(even)
+                background: #fff
+            tr:nth-child(odd)
+                background: $clr-light-green-50
+        thead
+            th
+                background: $clr-light-green
+                border-bottom: 4px solid $clr-light-green-700
+        tfoot
+            tr
+                border-top: 3px solid $clr-light-green-700
+    
+    .btn a
+        background: $clr-light-green
+
+.detail_parametru.desky
+    table 
+        tbody
+            tr:nth-child(even)
+                background: #fff
+            tr:nth-child(odd)
+                background: $clr-indigo-50
+        thead
+            th
+                background: $clr-indigo
+                border-bottom: 4px solid $clr-indigo-700
+        tfoot
+            tr
+                border-top: 3px solid $clr-indigo-700
+    
+    .btn a
+        background: $clr-indigo
+
+.detail_parametru.materialy
+    table 
+        tbody
+            tr:nth-child(even)
+                background: #fff
+            tr:nth-child(odd)
+                background: $clr-red-50
+        thead
+            th
+                background: $clr-red
+                border-bottom: 4px solid $clr-red-700
+        tfoot
+            tr
+                border-top: 3px solid $clr-red-700
+    
+    .btn a
+        background: $clr-red
+
+.detail_parametru.fotopapiry
+    table 
+        tbody
+            tr:nth-child(even)
+                background: #fff
+            tr:nth-child(odd)
+                background: $clr-brown-50
+        thead
+            th
+                background: $clr-brown
+                border-bottom: 4px solid $clr-brown-700
+        tfoot
+            tr
+                border-top: 3px solid $clr-brown-700
+    
+    .btn a
+        background: $clr-brown
+        
+.detail_parametru.typy
+    table 
+        tbody
+            tr:nth-child(even)
+                background: #fff
+            tr:nth-child(odd)
+                background: $clr-cyan-50
+        thead
+            th
+                background: $clr-cyan
+                border-bottom: 4px solid $clr-cyan-700
+        tfoot
+            tr
+                border-top: 3px solid $clr-cyan-700
+    
+    .btn a
+        background: $clr-cyan

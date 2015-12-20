@@ -1,0 +1,40 @@
+<?php
+
+class Materialy{
+
+    public static function vybraniDat($sql){
+        $db = new Databaze();
+        return $db->rozkouskovaniZaznamu($sql);
+    }
+     public static function vse(){
+        $sql = "SELECT id_material as id, nazev_material, alias_material, cena_material, popis_material
+                FROM materialy";
+        
+        return self::vybraniDat($sql);
+    }
+
+    public function vlozeni($nazev_m,$alias_m,$cena_m,$popis_m){
+        $db = new Databaze();
+        
+        //přípava dat
+        
+        $nazev = $db->pripravaProInput($nazev_m);
+        $alias = $db->pripravaProInput($alias_m);
+        $cena = $db->pripravaProInput($cena_m);
+        $popis = $db->pripravaProInput($popis_m);
+    
+        $sql = "INSERT INTO materialy (nazev_material, alias_material, cena_material, popis_material)
+                VALUES ('$nazev','$alias','$cena','$popis')";
+        
+        return $db->zpracovani($sql);
+    }
+    public function vymazat($id){
+       $db = new Databaze();
+        $sql = "DELETE FROM materialy
+                WHERE id_material = $id";
+        return $db->zpracovani($sql); 
+    }
+
+}
+
+?>

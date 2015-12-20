@@ -1,0 +1,153 @@
+/* BARVY */
+$limetkova: #CDDC39
+$limetkova_hover: #DCE775 
+$zluta: #FFEB3B
+$svetla_modro_seda: #B0BEC5
+$modro_seda: #263238
+
+body
+    color: $modro_seda
+    background: #f4f3f4
+    font-family: "Open Sans";
+
+a:hover
+    text-decoration: none    
+
+
+header
+    width: 100%
+    height: 220px
+    background: url("../img/cover.jpg") center
+
+h1
+    color: $limetkova
+
+nav
+    width: 100%
+    
+    .logo
+        position: absolute
+        left: 50%
+        margin: 0px 0 0 -90px
+    
+    .hlavni-navigace
+        color: #fff
+        width: 520px
+        height: 100px
+        margin: 0 auto
+
+        li
+            float: left
+            list-style: none
+            
+            a
+                display: block
+                height: 100px
+                padding: 35px 30px
+                color: #fff
+                font-size: 21px
+                text-transform: uppercase
+                transition: border 0.2s ease
+                border-top: 3px solid transparent 
+    
+            a:hover
+                border-top: 3px solid $limetkova
+    
+        li:nth-of-type(2)
+            margin-left: 200px
+
+
+header .vyvolat
+    width: 150px
+    text-align: center
+    margin: 0 auto
+    background: $limetkova
+    
+    a
+        color: #fff
+        text-transform: uppercase 
+        text-decoration: none
+        padding-top: 15px
+        padding-bottom: 15px
+        display: block
+        transition: background 0.2s ease
+    
+    a:hover
+        background: $limetkova_hover
+    
+main.uvod
+    .stranka
+        margin-top: -100px
+        background: #fff
+        min-height: 600px
+        padding: 0
+        box-shadow:0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2)
+        margin-bottom: 30px
+        position: relative
+        
+        p
+            line-height: 180%
+    
+    .uvod-banner
+        background: $limetkova
+        color: #fff
+        height: 100px
+        width: 100%
+        padding: 0px 10px
+        line-height: 100px
+        font-size: 18px
+    
+        p
+            margin: 0px
+            
+        .tlacitko
+            text-align: right
+        
+            .btn
+                color: #fff
+                border: 1px solid #fff
+                border-radius: 5px
+                line-height: 40px
+                transition: background 0.2s ease
+                text-transform: uppercase
+                
+            .btn:hover
+                background: $limetkova_hover
+main.nahrani
+    .stranka
+        margin-top: -40px
+        background: #fff
+        min-height: 600px
+        padding: 0
+        box-shadow:0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2)
+        margin-bottom: 30px
+
+    .kroky
+        background: $limetkova
+        color: #fff
+        height: 40px
+        width: 100%
+        
+                
+.obsah
+    padding: 15px
+            
+
+footer
+    min-height: 300px
+    width: 100%
+    background: $limetkova
+    
+@media screen and (max-width: 800px) 
+    nav .logo 
+        top: 90px
+    
+    nav .hlavni-navigace
+        width: 340px
+    
+    nav .hlavni-navigace li:nth-of-type(2)
+        margin-left: 0
+
+  
+
+  

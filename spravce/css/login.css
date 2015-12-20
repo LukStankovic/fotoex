@@ -1,0 +1,143 @@
+/* line 3, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+body {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  background: #f3f5f9 url(../img/bg-login.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0px !important;
+  padding: 0px !important;
+  color: #607D8B; }
+
+/* line 11, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+.login_blok {
+  background: #fff;
+  width: 390px;
+  height: 290px;
+  position: fixed;
+  font-family: 'Open Sans';
+  list-style: none;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+/* line 23, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+.blok_text {
+  padding: 0 40px;
+  position: relative; }
+  /* line 27, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  .blok_text h1 {
+    font-size: 45px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center; }
+  /* line 33, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  .blok_text p {
+    font-size: 12px;
+    padding-bottom: 10px;
+    line-height: 25px; }
+
+/* line 40, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+form input[type=text], form input[type=password] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #B0BEC5;
+  color: #607D8B;
+  outline: none; }
+
+/* line 51, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+.button {
+  border: none;
+  display: block;
+  background: #2196F3;
+  text-transform: uppercase;
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease background;
+  -ms-transition: 0.3s ease background;
+  -moz-transition: 0.3s ease background;
+  -o-transition: 0.3s ease background;
+  transition: 0.3s ease background; }
+
+/* line 65, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+.button:hover {
+  background: #1976D2; }
+
+/* line 68, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+.button:active {
+  background: #1976D2; }
+
+/* line 72, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+::-webkit-input-placeholder {
+  color: #607D8B; }
+
+/* line 75, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+:-moz-placeholder {
+  color: #607D8B; }
+
+/* line 78, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+::-moz-placeholder {
+  color: #607D8B; }
+
+/* line 81, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+:-ms-input-placeholder {
+  color: #607D8B; }
+
+/* line 84, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+.err {
+  color: #607D8B;
+  text-align: center;
+  margin: 5px auto;
+  display: block;
+  min-height: 16px;
+  font-style: italic; }
+
+@media (max-width: 500px) {
+  /* line 93, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  .login_blok {
+    width: 100%;
+    top: 145px; }
+  /* line 97, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  .login_formular {
+    background: #2196F3;
+    width: 100%;
+    height: 100vh;
+    margin: 0px !important;
+    position: relative; }
+  /* line 104, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  .button {
+    height: 50px;
+    background: #1976D2; }
+  /* line 108, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  .button:hover, .button:active {
+    background: #0D47A1; }
+  /* line 111, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  .container {
+    padding: 0; }
+  /* line 114, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  body {
+    background: #2196F3; }
+  /* line 117, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/login.sass */
+  .blok_text h1 {
+    font-size: 30px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 0px; } }
+
+/*# sourceMappingURL=login.css.map */
