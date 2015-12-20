@@ -7,7 +7,7 @@ class Materialy{
         return $db->rozkouskovaniZaznamu($sql);
     }
      public static function vse(){
-        $sql = "SELECT id_material as id, nazev_material, alias_material, cena_material, popis_material
+        $sql = "SELECT id_material as id, nazev_material as nazev, alias_material as alias, cena_material as cena, popis_material as popis
                 FROM materialy";
         
         return self::vybraniDat($sql);
@@ -26,6 +26,20 @@ class Materialy{
         $sql = "INSERT INTO materialy (nazev_material, alias_material, cena_material, popis_material)
                 VALUES ('$nazev','$alias','$cena','$popis')";
         
+        return $db->zpracovani($sql);
+    }
+    public function upravit($k_uprave) {
+        $db = new Databaze();    
+        
+        $nazev = $k_uprave["nazev"];
+        $alias = $k_uprave["alias"];
+        $cena = $k_uprave["cena"];
+        $popis = $k_uprave["popis"];
+        $id = $k_uprave["id"];
+        
+        $sql = "UPDATE materialy SET nazev_material = '$nazev', alias_material = '$alias', cena_material = '$cena', popis_material = '$popis'
+                WHERE  id_material = $id";
+    
         return $db->zpracovani($sql);
     }
     public function vymazat($id){

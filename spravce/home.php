@@ -41,7 +41,9 @@
                 include_once('detail_objednavky.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "detail-parametru"))
                 include_once('detail_parametru.php');
-                        
+            if((isset($_GET["page"])) and ($_GET["page"] == "upravit-parametr"))
+                include_once('upravit_parametr.php');
+                           
             ?>
         </div>
     </div>   

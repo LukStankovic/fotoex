@@ -7,7 +7,7 @@ class Fotopapiry{
         return $db->rozkouskovaniZaznamu($sql);
     }
      public static function vse(){
-        $sql = "SELECT id_fotopapir as id, nazev_fotopapir, alias_fotopapir, cena_fotopapir, popis_fotopapir
+        $sql = "SELECT id_fotopapir as id, nazev_fotopapir as nazev, alias_fotopapir as alias, cena_fotopapir as cena, popis_fotopapir as popis
                 FROM fotopapiry";
         
         return self::vybraniDat($sql);
@@ -27,7 +27,20 @@ class Fotopapiry{
         
         return $db->zpracovani($sql);
     }
+    public function upravit($k_uprave) {
+        $db = new Databaze();    
+        
+        $nazev = $k_uprave["nazev"];
+        $alias = $k_uprave["alias"];
+        $cena = $k_uprave["cena"];
+        $popis = $k_uprave["popis"];
+        $id = $k_uprave["id"];
+        
+        $sql = "UPDATE fotopapiry SET nazev_fotopapir = '$nazev', alias_fotopapir = '$alias', cena_fotopapir = '$cena', popis_fotopapir = '$popis'
+                WHERE  id_fotopapir = $id";
     
+        return $db->zpracovani($sql);
+    }
     public function vymazat($id){
        $db = new Databaze();
         $sql = "DELETE FROM fotopapiry

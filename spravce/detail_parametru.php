@@ -118,16 +118,17 @@ if($parametr_get == "typy"){
                 </thead>
                 <tbody>
                 <?php foreach($parametry as $parametr) { ?>
+                   <?php if(($parametr_get != "fotopapiry" || $parametr_get != "materialy") && $parametr->id != 0) { ?>
                     <tr>
                     <?php foreach($parametr as $parametr_radek){?>    
                         <td><?php echo $parametr_radek; ?></td>  
                     <?php } ?>
                         <td>
-                            <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=upravit&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-pencil"></i></a>
+                            <a href="?page=upravit-parametr&kategorie=<?php echo $parametr_get; ?>&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-pencil"></i></a>
                             <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=vymazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
                         </td>
                     </tr>
-                <?php } ?>
+                <?php } } ?>
                 </tbody>
                 <tfoot>
                     <td></td>

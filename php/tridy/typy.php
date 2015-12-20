@@ -7,7 +7,7 @@ class Typy{
         return $db->rozkouskovaniZaznamu($sql);
     }
      public static function vse(){
-        $sql = "SELECT id_typ as id, nazev_typ, alias_typ, cena_typ, popis_typ
+        $sql = "SELECT id_typ as id, nazev_typ as nazev, alias_typ as typ, cena_typ as cena, popis_typ as popis
                 FROM typy";
         
         return self::vybraniDat($sql);
@@ -27,7 +27,20 @@ class Typy{
         
         return $db->zpracovani($sql);
     }
+    public function upravit($k_uprave) {
+        $db = new Databaze();    
+        
+        $nazev = $k_uprave["nazev"];
+        $alias = $k_uprave["alias"];
+        $cena = $k_uprave["cena"];
+        $popis = $k_uprave["popis"];
+        $id = $k_uprave["id"];
+        
+        $sql = "UPDATE typy SET nazev_typ = '$nazev', alias_typ = '$alias', cena_typ = '$cena', popis_typ = '$popis'
+                WHERE  id_typ = $id";
     
+        return $db->zpracovani($sql);
+    }
     public function vymazat($id){
        $db = new Databaze();
         $sql = "DELETE FROM typy

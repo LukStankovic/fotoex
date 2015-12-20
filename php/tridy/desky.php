@@ -7,7 +7,7 @@ class Desky{
         return $db->rozkouskovaniZaznamu($sql);
     }
      public static function vse(){
-        $sql = "SELECT id_deska as id, nazev_deska, alias_deska, cena_deska, popis_deska
+        $sql = "SELECT id_deska as id, nazev_deska as nazev, alias_deska as alias, cena_deska as cena, popis_deska as popis
                 FROM desky";
         
         return self::vybraniDat($sql);
@@ -29,6 +29,21 @@ class Desky{
         
         return $db->zpracovani($sql);
     }
+    public function upravit($k_uprave) {
+        $db = new Databaze();    
+        
+        $nazev = $k_uprave["nazev"];
+        $alias = $k_uprave["alias"];
+        $cena = $k_uprave["cena"];
+        $popis = $k_uprave["popis"];
+        $id = $k_uprave["id"];
+        
+        $sql = "UPDATE desky SET nazev_deska = '$nazev', alias_deska = '$alias', cena_deska = '$cena', popis_deska = '$popis'
+                WHERE  id_deska = $id";
+    
+        return $db->zpracovani($sql);
+    }
+    
     public function vymazat($id){
        $db = new Databaze();
         $sql = "DELETE FROM desky
