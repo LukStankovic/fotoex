@@ -51,12 +51,13 @@ if($parametr_get == "typy"){
 ?>
 	<div id="main " class="<?php echo $parametr_get; ?> detail_parametru">
        <form method="post">
-        <h1 class="page-header">Upravit parametr</h1>   
-        
-            <?php 
+        <?php 
             foreach($parametry as $parametr) { 
                 if($parametr->id == $_GET["id-parametru"]){
-            ?>
+        ?>
+        <h1 class="page-header">Upravit "<?php echo $parametr->nazev;?>"</h1>   
+        
+
                 <input type="hidden" class="form-control" name="id" value="<?php echo $parametr->id; ?>">
                 
                 <div class="form-group">
