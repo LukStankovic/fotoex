@@ -89,6 +89,17 @@ class Objednavky{
         
         return $db->zpracovani($sql);*/
     }
+
+    public function upravit($id,$k_uprave) {
+        $db = new Databaze();    
+        
+        $stav = $k_uprave["stav"];
+        
+        $sql = "UPDATE objednavky SET stav = '$stav'
+                WHERE  id_objednavka = $id";
+    
+        return $db->zpracovani($sql);
+    }
     
     public function vymazat($id){
     /*    $db = new Databaze();
