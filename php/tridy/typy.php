@@ -7,7 +7,7 @@ class Typy{
         return $db->rozkouskovaniZaznamu($sql);
     }
      public static function vse(){
-        $sql = "SELECT id_typ as id, nazev_typ as nazev, alias_typ as typ, cena_typ as cena, popis_typ as popis
+        $sql = "SELECT id_typ as id, nazev_typ as nazev, alias_typ as alias, cena_typ as cena, popis_typ as popis
                 FROM typy";
         
         return self::vybraniDat($sql);
