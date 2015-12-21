@@ -50,7 +50,35 @@ class Uzivatele{
         $vysledek = self::vybraniDat($sql);
         return($vysledek[0]->pocet);
     }
+    public function vlozeni($data){
+        $db = new Databaze();
 
+        $options = [
+            'cost' => 10,
+            'salt' => uniqid(mt_rand(),true),
+        ];
+        //přípava dat
+        
+        $login = $db->pripravaProInput($data["login"]);
+        $heslo = $db->pripravaProInput(password_hash($data["heslo"], PASSWORD_BCRYPT, $options));
+        $salt = $options["salt"];
+        $jmeno = $db->pripravaProInput($data["jmeno"]);
+        $prijmeni = $db->pripravaProInput($data["prijmeni"]);
+        $email = $db->pripravaProInput($data["email"]);
+        $telefon = $db->pripravaProInput($data["telefon"]);
+        $prava = $db->pripravaProInput($data["prava"]);
+        $ulice = $db->pripravaProInput($data["ulice"]);
+        $mesto = $db->pripravaProInput($data["mesto"]);
+        $psc = $db->pripravaProInput($data["psc"]);
+        $zeme = $db->pripravaProInput($data["zeme"]);
+
+        $sql = "INSERT INTO uzivatele (login, heslo, salt, jmeno, prijmeni, email, telefon, prava, ulice, mesto, psc, zeme)
+                VALUES ('$login','$heslo','$salt','$jmeno','$prijmeni','$email','$telefon','$prava','$ulice','$mesto','$psc','$zeme')";
+        
+        return $db->zpracovani($sql);
+    }  
+    
+   
     public function prihlaseniUzivatele($jmeno,$heslo){
         $db = new Databaze();
     
