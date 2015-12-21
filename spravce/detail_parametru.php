@@ -178,7 +178,7 @@ if($parametr_get == "typy"){
             
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Zrušit</button>
+        <button type="button" class="btn btn-default zrusit" data-dismiss="modal">Zrušit</button>
        <!-- <button type="button" name="ulozit" class="btn btn-primary">Uložit</button>-->
        <input type="submit" name="ulozit" class="btn btn-primary ulozit" value="Uložit">
       </div>

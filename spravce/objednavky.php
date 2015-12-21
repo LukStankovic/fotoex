@@ -31,7 +31,7 @@ if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
 				<div class="col-md-12">
 					
                     <p>Počet objednávek: <?php echo $pocet_obj; ?></p>
-					<div class="tab-content">
+					<div class="tabulka">
                         <table class="objednavky">
                             <thead>
                                 <tr>

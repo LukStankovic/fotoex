@@ -79,7 +79,7 @@ if($parametr_get == "typy"){
             <?php } } ?>
         
         <div class="btn"><a href="?page=detail-parametru&kategorie=<?php echo $parametr_get;?>">← Zpět bez uložení</a></div>
-        <button type="submit" name="ulozit" class="btn pull-right">Uložit</div>
+        <button type="submit" name="ulozit" class="ulozit btn pull-right">Uložit</div>
         </form>
     </div>
 <script>

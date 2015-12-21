@@ -235,8 +235,8 @@ if(isset($_POST["fot_ulozit"])){
         </div>         
         <div class="btn"><a href="?page=objednavky">← Zpět na objednávky</a></div> 
         <div class="btn pull-right upravit"><a href="#">Upravit objednávku</a></div> 
-        <button class="btn pull-right upraveno"type="submit" name="ulozit">Uložit upravenou objednávku</button>
-        <div class="btn pull-right upraveno"><a href="#">Zrušit úpravy</a></div> 
+        <button class="btn pull-right upraveno ulozit" type="submit" name="ulozit">Uložit upravenou objednávku</button>
+        <div class="btn pull-right upraveno zrusit"><a href="#">Zrušit úpravy</a></div> 
     </form>
     </div>
 <script>
