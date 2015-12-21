@@ -48,7 +48,20 @@ class Fotky{
         
         return $db->zpracovani($sql);*/
     }
+    public function upravit($id,$k_uprave) {
+        $db = new Databaze();    
+        
+        $format = $k_uprave["format"][$id];
+        $deska = $k_uprave["deska"][$id];
+        $typ = $k_uprave["typ"][$id];
+        $material = $k_uprave["material"][$id];
+        $fotopapir = $k_uprave["fotopapir"][$id];
+
+        $sql = "UPDATE fotky SET id_format = '$format', id_deska = '$deska', id_typ = '$typ', id_material = '$material', id_fotopapir = '$fotopapir'
+                WHERE  id_fotka = $id";
     
+        return $db->zpracovani($sql);
+    }
     public function vymazat($id){
        $db = new Databaze();
         $sql = "DELETE FROM fotky
