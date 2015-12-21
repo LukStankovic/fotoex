@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-5">
                 <ul class="navigace pull-right">
-                    <li><a href="#"><i class="fa fa-gears"></i>Nastavení</a></li>
+                    <!--<li><a href="#"><i class="fa fa-gears"></i>Nastavení</a></li>-->
                     <li><a href="../index.php" target="_blank"><i class="fa fa-home"></i>Web</a></li>
                     <li><a href="index.php"><i class="fa fa-sign-out"></i>Odhlásit se</a></li>
                 </ul>
