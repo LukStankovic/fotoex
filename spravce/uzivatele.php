@@ -4,6 +4,10 @@
         $Uzivatele->vlozeni($_POST);
         header("Location: home.php?page=uzivatele");
     }
+    if(isset($_GET["akce"]) && $_GET["akce"] == "vymazat"){
+        $Uzivatele->vymazat($_GET["id-uzivatele"]);
+        header("Location: home.php?page=uzivatele");
+    }
 ?>
 
 
@@ -40,7 +44,7 @@
                     <td><?php echo $uzivatel->zeme; ?></td>
                     <td>
                         <a href="?page=detail-uzivatele&id-uzivatele=<?php echo $uzivatel->id_uzivatel;?>"><i class="fa fa-eye"></i></a>
-                        <a href="?page=uzivatele&action=vymazat&id-uzivatele=<?php echo $uzivatel->id_uzivatel;?>"><i class="fa fa-remove"></i></a>
+                        <a href="?page=uzivatele&akce=vymazat&id-uzivatele=<?php echo $uzivatel->id_uzivatel;?>"><i class="fa fa-remove"></i></a>
                     </td>
                 </tr>
                 <?php } ?>
@@ -110,7 +114,7 @@
         </div>           
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Zrušit</button>
+        <button type="button" class="btn btn-default zrusit" data-dismiss="modal">Zrušit</button>
        <!-- <button type="button" name="ulozit" class="btn btn-primary">Uložit</button>-->
        <input type="submit" name="ulozit" class="btn btn-primary ulozit" value="Uložit">
       </div>
@@ -120,3 +124,4 @@
   </div>
 </div>
 <!-- KONEC MODALU -->   
+

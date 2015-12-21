@@ -6,6 +6,7 @@ class Objednavky{
         $db = new Databaze();
         return $db->rozkouskovaniZaznamu($sql);
     }
+
      public static function vse(){
         $sql = "SELECT id_objednavka, datum, stav, 
                        login, jmeno, prijmeni, email, telefon, ulice, mesto, psc, zeme,
@@ -45,6 +46,31 @@ class Objednavky{
                     INNER JOIN typy using(id_typ)
                     INNER JOIN uzivatele using(id_uzivatel)
                 WHERE id_objednavka = $id
+                ";
+        return self::vybraniDat($sql);
+    }
+    public static function objednavkaOdUzivatele($id){
+        $sql = "SELECT id_objednavka, datum, stav, 
+                       id_uzivatel ,login, jmeno, prijmeni, email, telefon, ulice, mesto, psc, zeme,
+                       id_fotka, url, typ_souboru,
+                       nazev_format, alias_format, round(cena_format,2),
+                       nazev_deska, alias_deska, round(cena_deska,2),
+                       nazev_fotopapir, alias_fotopapir, round(cena_fotopapir,2),
+                       nazev_material, alias_material, round(cena_material,2),
+                       nazev_typ, alias_typ, round(cena_typ,2),
+                       round(sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ),2) AS 'celkem'
+
+                FROM objednavky 
+                    INNER JOIN fotky using(id_objednavka) 
+                    INNER JOIN desky using(id_deska)
+                    INNER JOIN formaty using(id_format)
+                    INNER JOIN fotopapiry using(id_fotopapir)
+                    INNER JOIN materialy using(id_material)
+                    INNER JOIN typy using(id_typ)
+                    INNER JOIN uzivatele using(id_uzivatel)
+                WHERE id_uzivatel = $id
+                GROUP BY id_objednavka                    
+                ORDER BY id_objednavka DESC
                 ";
         return self::vybraniDat($sql);
     }

@@ -31,6 +31,14 @@ class Uzivatele{
         $objekt_sul = self::vybraniDat($sql);
         return $objekt_sul[0]->salt;
     }
+    public static function detailUzivatele($id){
+        $sql = "SELECT * 
+                FROM uzivatele 
+                WHERE id_uzivatel = '$id'";
+        $objekt = self::vybraniDat($sql);
+        return $objekt[0];
+    }
+    
     public static function pocetUzivatelu(){
         $sql = "SELECT count(id_uzivatel) AS 'pocet_uzivatelu'
                 FROM uzivatele";
@@ -77,7 +85,30 @@ class Uzivatele{
         
         return $db->zpracovani($sql);
     }  
+    public function upravit($id,$data) {
+        $db = new Databaze();    
+        
+        $jmeno = $db->pripravaProInput($data["jmeno"]);
+        $prijmeni = $db->pripravaProInput($data["prijmeni"]);
+        $email = $db->pripravaProInput($data["email"]);
+        $telefon = $db->pripravaProInput($data["telefon"]);
+        $prava = $db->pripravaProInput($data["prava"]);
+        $ulice = $db->pripravaProInput($data["ulice"]);
+        $mesto = $db->pripravaProInput($data["mesto"]);
+        $psc = $db->pripravaProInput($data["psc"]);
+        $zeme = $db->pripravaProInput($data["zeme"]);
+        
+        $sql = "UPDATE uzivatele SET jmeno  = '$jmeno', prijmeni = '$prijmeni', email = '$email', telefon = '$telefon', prava = '$prava', ulice = '$ulice', mesto = '$mesto', psc = '$psc', zeme = '$zeme'
+                WHERE id_uzivatel = $id";
     
+        return $db->zpracovani($sql);
+    }
+    public function vymazat($id){
+       $db = new Databaze();
+        $sql = "DELETE FROM uzivatele
+                WHERE id_uzivatel = $id";
+        return $db->zpracovani($sql); 
+    }
    
     public function prihlaseniUzivatele($jmeno,$heslo){
         $db = new Databaze();
