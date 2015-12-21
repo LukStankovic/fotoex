@@ -43,62 +43,12 @@
                 include_once('detail_parametru.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "upravit-parametr"))
                 include_once('upravit_parametr.php');
+            if((isset($_GET["page"])) and ($_GET["page"] == "detail-uzivatele"))
+                include_once('detail_uzivatele.php');
                            
             ?>
         </div>
     </div>   
    
-   
-   
-    <!--
-    <div id="wrapper">
-    
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Navigace</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>        
-                </button>
-                <a class="navbar-brand" href="../index.php" target="_blank">Blog Lukáše Stankoviče</a>               
-            </div>
-            <ul class="navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a><i class="fa fa-user fa-fw"></i> Profil</a></li>
-                        <li><a><i class="fa fa-gear fa-fw"></i> Nastavení profilu</a></li>
-                        <li class="divider"></li>
-                        <li><a href="index.php"><i class="fa fa-sign-out fa-fw"></i> Odhlásit se</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="navbar-static-side" role="navigation">
-                <div class="sidebar-collapse">
-                    <ul id="side-menu">
-                        <li class="<?php if((isset($_GET["page"])) and ($_GET["page"] == "nastenka")) echo "active";?>"><a href="?page=nastenka"><div class="ikona-menu"><i class="fa fa-tachometer"></i></div><div class="popisy">Nástěnka</div></a></li>
-                        <li class="<?php if((isset($_GET["page"])) and ($_GET["page"] == "obsah")) echo "active";?>"><a href="?page=obsah"><div class="ikona-menu"><i class="fa fa-pencil"></i></div><div class="popisy">Objednávky</div></a></li>
-                        <li class="<?php if((isset($_GET["page"])) and ($_GET["page"] == "uzivatele")) echo "active";?>"><a href="?page=uzivatele"><div class="ikona-menu"><i class="fa fa-users"></i></div><div class="popisy">Uživatelé</div></a></li>    
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div id="page-wrapper">
-            <?php 
-                if((isset($_GET["page"])) and ($_GET["page"] == "nastenka"))
-                    include_once ('nastenka.php');
-                if((isset($_GET["page"])) and ($_GET["page"] == "obsah"))
-                    include_once ('obsah.php');
-                if((isset($_GET["page"])) and ($_GET["page"] == "uzivatele"))
-                    include_once ('uzivatele.php');
-                      
-            ?>
-        </div>
-    </div>
-->
 </body>
 </html>
