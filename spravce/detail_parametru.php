@@ -161,15 +161,15 @@ if($parametr_get == "typy"){
             
                 <div class="form-group">
                     <label for="nazev" class="control-label">Název: </label>
-                    <input type="text" class="form-control" name="nazev">
+                    <input type="text" class="form-control" name="nazev" required>
                 </div>
                 <div class="form-group">
                     <label for="alias" class="control-label">Alias: </label>
-                    <input type="text" class="form-control" name="alias">
+                    <input type="text" class="form-control" name="alias" required>
                 </div>
                 <div class="form-group">
                     <label for="nazev" class="control-label">Cena: </label>
-                    <input type="number" class="form-control" name="cena" min="0" value="0">
+                    <input type="number" class="form-control" name="cena" min="0" value="0" required>
                 </div>
                 <div class="form-group">
                     <label for="popis" class="control-label">Krátký popis:</label>
