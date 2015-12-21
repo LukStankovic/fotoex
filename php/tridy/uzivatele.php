@@ -4,6 +4,7 @@ class Uzivatele{
     private $id_uzivatel;
     private $login;
     private $heslo;
+    private $salt;
     private $jmeno;
     private $prijmeni;
     private $email;
@@ -23,6 +24,13 @@ class Uzivatele{
         
         return self::vybraniDat($sql);
     }
+    public static function vzitSalt($jmeno){
+        $sql = "SELECT salt 
+                FROM uzivatele 
+                WHERE login = '$jmeno'";
+        $objekt_sul = self::vybraniDat($sql);
+        return $objekt_sul[0]->salt;
+    }
     public static function pocetUzivatelu(){
         $sql = "SELECT count(id_uzivatel) AS 'pocet_uzivatelu'
                 FROM uzivatele";
@@ -30,7 +38,7 @@ class Uzivatele{
     }
     public static function dataPrihlaseni($jmeno,$heslo){
         $db = new Databaze();
-        $sql = "SELECT id_uzivatel, login, heslo
+        $sql = "SELECT id_uzivatel, login, heslo, salt
                 FROM uzivatele
                 WHERE login = '$jmeno' AND heslo = '$heslo'";
         
@@ -41,26 +49,6 @@ class Uzivatele{
                 FROM uzivatele";
         $vysledek = self::vybraniDat($sql);
         return($vysledek[0]->pocet);
-    }
-    public function vytvoreniUzivatele($login_u,$heslo_u,$jmeno_u,$prijmeni_u,$email_u,$fotka_u,$popis_u,$url_u,$pohlavi_u){
-        $db = new Databaze();
-        
-        //přípava dat
-        
-        $login = $db->pripravaProInput($login_u);
-        $heslo = $db->pripravaProInput(sha1($heslo_u));
-        $jmeno = $db->pripravaProInput($jmeno_u);
-        $prijmeni = $db->pripravaProInput($prijmeni_u);
-        $email = $db->pripravaProInput($email_u);
-        $url = $db->pripravaProInput($url_u);
-        $pohlavi = $db->pripravaProInput($pohlavi_u);
-        $fotka = $db->pripravaProInput($fotka_u);
-        $popis = $db->pripravaProInput($popis_u);
-            
-        $sql = "INSERT INTO uzivatele (login, heslo, jmeno, prijmeni, email, url_adresa, fotka, popis, pohlavi)
-                VALUES ('$login','$heslo','$jmeno','$prijmeni','$email','$url','$fotka','$popis','$pohlavi')";
-        
-        return $db->zpracovani($sql);
     }
 
     public function prihlaseniUzivatele($jmeno,$heslo){
@@ -91,7 +79,13 @@ class Uzivatele{
 		  exit();
 	   }
 	   //SQL
-        $vysledek = self::dataPrihlaseni($jmeno,sha1($heslo));
+        $salt = self::vzitSalt($jmeno);
+        $options = [
+            'cost' => 10,
+            'salt' => $salt,
+        ];    
+
+        $vysledek = self::dataPrihlaseni($jmeno,password_hash($heslo, PASSWORD_BCRYPT, $options));
         
         if($vysledek) {
 		  if($vysledek > 0) {
