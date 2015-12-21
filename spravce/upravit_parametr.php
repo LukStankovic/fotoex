@@ -62,15 +62,15 @@ if($parametr_get == "typy"){
                 
                 <div class="form-group">
                     <label for="nazev" class="control-label">Název: </label>
-                    <input type="text" class="form-control" name="nazev" value="<?php echo $parametr->nazev; ?>">
+                    <input type="text" class="form-control" name="nazev" value="<?php echo $parametr->nazev; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="alias" class="control-label">Alias: </label>
-                    <input type="text" class="form-control" name="alias" value="<?php echo $parametr->alias; ?>">
+                    <input type="text" class="form-control" name="alias" value="<?php echo $parametr->alias; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="nazev" class="control-label">Cena: </label>
-                    <input type="number" class="form-control" name="cena" min="0" value="<?php echo $parametr->cena; ?>">
+                    <input type="number" class="form-control" name="cena" min="0" value="<?php echo $parametr->cena; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="popis" class="control-label">Krátký popis:</label>
