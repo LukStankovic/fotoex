@@ -50,23 +50,41 @@ body
     border-radius: 0
     display: block
     margin: 0
+        
 .btn
     padding: 0
+    border: 0
+    margin: 0px 3px
+    
 .btn a:hover
     background: $clr-blue-300
     color: #fff
-    text-decoration: none    
+    text-decoration: none   
 
 .btn.novy a
     padding: 20px
     font-weight: 700
 //PRO <BUTTON>
 
-.ulozit.btn, button.btn
+button.btn, .ulozit.btn
     padding: 10px
     border-radius: 0
+    border: 0
     margin: 0
     
+button.ulozit.btn, .ulozit.btn
+    background: $clr-light-green
+    color: #fff
+    border: 0
+button.ulozit.btn:hover, .ulozit.btn:hover
+    background: $clr-light-green-400
+    
+.zrusit.btn, .btn.zrusit a
+    background: $clr-red
+    color: #fff
+.zrusit.btn:hover, .btn.zrusit a:hover
+    background: $clr-red-a200
+
 //NÁSTĚNKA
 
 .panel-box
