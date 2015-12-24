@@ -553,4 +553,9 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
 .upravit_clanek .cover:hover a.vymazat {
   display: block; }
 
+@media screen and (min-width: 992px) and (max-width: 1172px) {
+  /* line 472, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  .header .navigace a {
+    padding: 15px 10px 0px 10px; } }
+
 /*# sourceMappingURL=admin.css.map */

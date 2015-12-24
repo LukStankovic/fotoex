@@ -124,4 +124,7 @@
   </div>
 </div>
 <!-- KONEC MODALU -->   
-
+<script>
+    $('table').filterTable();
+    $('table').stacktable();
+</script>

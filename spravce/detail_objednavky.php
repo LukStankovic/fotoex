@@ -240,6 +240,7 @@ if(isset($_POST["fot_ulozit"])){
 <script>
 //FILTRACE TABULKY
 $("table").filterTable();
+$('table').stacktable();
 //ÚPRAVY OBJEDNÁVKY
 $(function(){
     //VÝCHOZÍ STAV

@@ -193,4 +193,5 @@ if($parametr_get == "typy"){
     </div>
 <script>
     $("table").filterTable();
+    $('table').stacktable();
 </script>

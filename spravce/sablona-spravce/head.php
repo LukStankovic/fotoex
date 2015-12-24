@@ -16,12 +16,14 @@
     <script src="js/plugins/morris/raphael-2.1.0.min.js"></script>
     <script src="js/plugins/morris/morris.js"></script>
     <script src="js/plugins/filtertable/jquery.filtertable.js"></script>
+    <script src="js/plugins/stacktable/stacktable.js"></script>
     
 
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
     <link href="css/plugins/timeline/timeline.css" rel="stylesheet">
+    <link href="css/plugins/stacktable/stacktable.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/admin.css" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>

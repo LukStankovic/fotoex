@@ -114,3 +114,6 @@ if(isset($_POST["ulozit"])){
         <button type="submit" name="ulozit" class="ulozit btn pull-right">Uložit úpravy uživatele</div>
         </form>
     </div>
+<script>
+    $('table').stacktable();
+</script>

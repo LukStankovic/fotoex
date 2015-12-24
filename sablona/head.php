@@ -27,6 +27,5 @@ include_once("php/config/konfigurace.php");
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-
 	</head>
     <body>

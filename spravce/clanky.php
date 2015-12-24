@@ -117,6 +117,7 @@ if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
     </div>
 <script>
     $("table").filterTable();
+    $('table').stacktable();
 </script>
 <script type="text/javascript" src="tinymce/tinymce.min.js"></script> 			
 <script type="text/javascript">
