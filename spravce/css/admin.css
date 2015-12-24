@@ -52,7 +52,7 @@ body {
   margin-top: 20px; }
 
 /* line 46, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
-.btn a {
+.btn a, .btn.upravit {
   background: #2196f3;
   color: #fff;
   padding: 10px;

@@ -60,7 +60,7 @@ class Clanky{
     public function vymazat($id){
         $db = new Databaze();
         $sql = "DELETE FROM clanky
-                WHERE id_clanku = $id";
+                WHERE id_clanek = $id";
         return $db->zpracovani($sql);
     }
 }

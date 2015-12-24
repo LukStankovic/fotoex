@@ -214,7 +214,7 @@ if(isset($_POST["fot_ulozit"])){
                                 <td>
                                     <span class="fot_upraveno"><button name="fot_ulozit" value="<?php echo $fotka->id_fotka; ?>" type="submit"><i class="fa fa-save"></i></button></span>
                                     <span class="fot_upraveno"><a href="#"><i class="fa fa-reply"></i></a></span>
-                                    <span class="fot_upravit"><a href="#"><i class="fa fa-edit"></i></a></span>
+                                    <span class="fot_upravit"><a href="#"><i class="fa fa-pencil"></i></a></span>
                                     <span class="fot_upravit"><a href="?page=detail-objednavky&id-objednavka=<?php echo $id_objednavka; ?>&action=vymazat&id-fotka=<?php echo $fotka->id_fotka;?>"><i class="fa fa-remove"></i></a></span>
                                 </td>
                             </tr>
@@ -232,7 +232,7 @@ if(isset($_POST["fot_ulozit"])){
             </div>
         </div>         
         <div class="btn"><a href="?page=objednavky">← Zpět na objednávky</a></div> 
-        <div class="btn pull-right upravit"><a href="#">Upravit objednávku</a></div> 
+        <div class="btn pull-right upravit"><i class="fa fa-pencil"></i> Upravit objednávku</div> 
         <button class="btn pull-right upraveno ulozit" type="submit" name="ulozit">Uložit upravenou objednávku</button>
         <div class="btn pull-right upraveno zrusit"><a href="#">Zrušit úpravy</a></div> 
     </form>
