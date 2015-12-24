@@ -5,12 +5,15 @@ if(isset($_POST["ulozit"])){
         mkdir("../clanky/".date("d_m_Y"),0777);
     
     $slozka = "../clanky/".date("d_m_Y")."/";
-    $url_fotka = $slozka.$_FILES["cover"]["name"];
+    $url_fotka = date("d_m_Y")."/".$_FILES["cover"]["name"];
     move_uploaded_file($_FILES["cover"]["tmp_name"],$url_fotka);
     $Clanky->vlozeni($_POST["nadpis"],$url_fotka,date("Y-m-d H:i:s"),$_POST["obsah"],$_SESSION["id_uzivatel"]); 
     header("Location: home.php?page=clanky");
 }
-
+if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
+    $Clanky->vymazat($_GET["id-clanek"]);
+    header("Location: home.php?page=clanky");
+}
 ?>
 	<div id="main " class="clanky">
         <h1 class="page-header">Články</h1>
@@ -31,13 +34,13 @@ if(isset($_POST["ulozit"])){
                     <?php foreach($clanky as $clanek){ ?>
                     <tr>
                         <td><?php echo $clanek->id_clanek;?></td> 
-                        <td><img src="<?php echo $clanek->cover;?>"></td> 
+                        <td><img src="../clanky/<?php echo $clanek->cover;?>"></td> 
                         <td><?php echo $clanek->nazev;?></td> 
                         <td><?php echo date("j. n. Y, H:i:s",strtotime($clanek->datum));?></td> 
                         <td><?php echo "$clanek->jmeno $clanek->prijmeni ($clanek->login)";?></td> 
                         <td>
-                            <a href="?page=detail-objednavky&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-eye"></i></a>
-                            <a href="?page=objednavky&akce=vymazat&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-remove"></i></a>
+                            <a href="?page=detail-clanku&id-clanek=<?php echo $clanek->id_clanek;?>"><i class="fa fa-pencil"></i></a>
+                            <a href="?page=clanky&akce=vymazat&id-clanek=<?php echo $clanek->id_clanek;?>"><i class="fa fa-remove"></i></a>
                         </td>        
                     </tr>
                     <?php } ?>
