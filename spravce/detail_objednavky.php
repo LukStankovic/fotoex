@@ -17,8 +17,6 @@ if(isset($_POST["ulozit"])){
     header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
 }
 if(isset($_POST["fot_ulozit"])){
-    echo "<pre>",print_r($_POST),"</pre>";
-
     foreach($vsechny_fotky as $fotka){
         if($_POST["fot_ulozit"] == $fotka->id_fotka){
             $Fotky->upravit($fotka->id_fotka,$_POST);

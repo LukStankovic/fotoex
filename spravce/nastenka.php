@@ -7,6 +7,7 @@ $pocet_formatu = $Fotky->pocet_formatu();
 $celkem_objednavek = $Objednavky->pocetObjednavek();
 $celkem_uzivatelu = $Uzivatele->pocet();
 $celkem_trzby = $Objednavky->trzby();
+$celkem_clanku = $Clanky->pocet();
         ?>
     <div class="row">
             <div class="col-md-12">
@@ -101,7 +102,7 @@ $('.uzivatele .nadpis').prop('number', 0).animateNumber({
     number: <?php echo $celkem_uzivatelu; ?>
 },1000);
 $('.clanky .nadpis').prop('number', 0).animateNumber({
-    number: 0
+    number: <?php echo $celkem_clanku; ?>
 },1000);
                         
 </script>

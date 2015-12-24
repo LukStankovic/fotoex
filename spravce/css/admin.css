@@ -530,4 +530,10 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
 .detail_parametru.typy .btn a {
   background: #00bcd4; }
 
+/* line 448, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+.clanky table img {
+  height: 80px;
+  max-width: 200px;
+  margin: 3px 0; }
+
 /*# sourceMappingURL=admin.css.map */

@@ -12,7 +12,7 @@
                     <li><a href="?page=nastenka"><i class="fa fa-newspaper-o"></i>Nástěnka</a></li>
                     <li><a href="?page=objednavky"><i class="fa fa-shopping-cart"></i>Objednávky</a></li>
                     <li><a href="?page=parametry"><i class="fa fa-tags"></i>Parametry</a></li>
-                    <li><a href="#"><i class="fa fa-pencil"></i>Články</a></li>
+                    <li><a href="?page=clanky"><i class="fa fa-pencil"></i>Články</a></li>
                     <li><a href="?page=uzivatele"><i class="fa fa-users"></i>Uživatelé</a></li>
                 </ul>  
             </div>
@@ -35,6 +35,8 @@
                 include_once ('objednavky.php'); 
             if((isset($_GET["page"])) and ($_GET["page"] == "parametry"))
                 include_once ('parametry.php');
+            if((isset($_GET["page"])) and ($_GET["page"] == "clanky"))
+                include_once('clanky.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "uzivatele"))
                 include_once('uzivatele.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "detail-objednavky"))
