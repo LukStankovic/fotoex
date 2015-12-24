@@ -14,7 +14,14 @@ class Clanky{
         
         return self::vybraniDat($sql);
     }
-
+    public static function detail($id){
+        $sql = "SELECT *
+                FROM clanky C INNER JOIN uzivatele U on C.id_uzivatel = U.id_uzivatel
+                WHERE id_clanek = $id";
+        
+        $vysledek = self::vybraniDat($sql);
+        return $vysledek[0];
+    }
     public static function pocet(){
         $sql = "SELECT count(id_clanek) as 'pocet_clanku'
                 FROM clanky";
@@ -39,19 +46,18 @@ class Clanky{
         
         return $db->zpracovani($sql);
     }
-    
-    public function editace($id,$nazev,$text,$kategorie){
+    public function upravit($nadpis_c,$cover_c,$obsah_c,$id_c){
         $db = new Databaze();
         
         //přípava dat
         
-        $nazev = $db->pripravaProInput($nazev);
-        $text_clanku = $db->pripravaProInput($text);
-        $id_kategorie = $db->pripravaProInput($kategorie);
-    
+        $nadpis = $db->pripravaProInput($nadpis_c);
+        $cover = $db->pripravaProInput($cover_c);
+        $obsah = $db->pripravaProInput($obsah_c);
+        $id = $db->pripravaProInput($id_c);
         $sql = "UPDATE clanky
-                SET nazev='$nazev',text_clanku='$text_clanku',id_kategorie='$id_kategorie'
-                WHERE id_clanku = 14";
+                SET nazev='$nadpis',cover = '$cover',obsah='$obsah'
+                WHERE id_clanek = $id";
         return $db->zpracovani($sql);
     }
 

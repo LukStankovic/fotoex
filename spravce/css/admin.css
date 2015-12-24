@@ -536,4 +536,21 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   max-width: 200px;
   margin: 3px 0; }
 
+/* line 454, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+.upravit_clanek .cover {
+  height: 130px;
+  max-width: 250px;
+  margin: 10px; }
+  /* line 459, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  .upravit_clanek .cover a.vymazat {
+    display: none;
+    text-align: center;
+    line-height: 130px;
+    font-size: 60px;
+    color: #f44336; }
+
+/* line 466, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+.upravit_clanek .cover:hover a.vymazat {
+  display: block; }
+
 /*# sourceMappingURL=admin.css.map */

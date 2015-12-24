@@ -37,6 +37,8 @@
                 include_once ('parametry.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "clanky"))
                 include_once('clanky.php');
+            if((isset($_GET["page"])) and ($_GET["page"] == "upravit-clanek"))
+                include_once('upravit_clanek.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "uzivatele"))
                 include_once('uzivatele.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "detail-objednavky"))
