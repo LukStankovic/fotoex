@@ -6,7 +6,7 @@
 <body>
     
     <div class="header">
-        <div class="row">
+        <div class="row navigace-hlavni">
             <div class="col-md-7">
                 <ul class="navigace">
                     <li><a href="?page=nastenka"><i class="fa fa-newspaper-o"></i>Nástěnka</a></li>
@@ -22,6 +22,23 @@
                     <li><a href="../index.php" target="_blank"><i class="fa fa-home"></i>Web</a></li>
                     <li><a href="index.php"><i class="fa fa-sign-out"></i>Odhlásit se</a></li>
                 </ul>
+            </div>
+        </div>
+        <div class="navigace-mobil">
+            <a class="mobilni-menu-tlacitko" role="button" data-toggle="collapse" href="#mobilni-menu" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-bars"></i></a>
+            <div class="collapse" id="mobilni-menu">
+                <ul class="navigace">
+                    <li><a href="?page=nastenka"><i class="fa fa-newspaper-o"></i>Nástěnka</a></li>
+                    <li><a href="?page=objednavky"><i class="fa fa-shopping-cart"></i>Objednávky</a></li>
+                    <li><a href="?page=parametry"><i class="fa fa-tags"></i>Parametry</a></li>
+                    <li><a href="?page=clanky"><i class="fa fa-pencil"></i>Články</a></li>
+                    <li><a href="?page=uzivatele"><i class="fa fa-users"></i>Uživatelé</a></li>
+                </ul>  
+                <ul class="navigace ostatni">
+                    <!--<li><a href="#"><i class="fa fa-gears"></i>Nastavení</a></li>-->
+                    <li><a href="../index.php" target="_blank"><i class="fa fa-home"></i>Web</a></li>
+                    <li><a href="index.php"><i class="fa fa-sign-out"></i>Odhlásit se</a></li>
+                </ul>                     
             </div>
         </div>
     </div>

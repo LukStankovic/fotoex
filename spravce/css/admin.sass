@@ -51,10 +51,12 @@ body
     display: block
     margin: 0
         
+.btn.upravit
+    margin-bottom: 10px
 .btn
     padding: 0
     border: 0
-    margin: 0px 3px
+    margin: 10px 3px
     
 .btn a:hover
     background: $clr-blue-300
@@ -472,3 +474,40 @@ button.ulozit.btn:hover, .ulozit.btn:hover
     .header .navigace a
         padding: 15px 10px 0px 10px
         
+@media screen and (max-width: 991px)
+    .header 
+        min-height: 70px
+    .header .mobilni-menu-tlacitko
+        display: block
+        width: 100px
+        height: 70px
+        padding-left: 30px 
+        color: #fff
+        font-size: 45px
+    .header .navigace-hlavni
+        display: none
+    .header .navigace-mobil
+        display: block
+        
+    .navigace-mobil ul li 
+        float: none!important
+    
+    .header .navigace
+        height: auto
+    
+    .header .navigace a
+        height: 50px
+        font-size: 14px
+        
+    .header .navigace .fa 
+        font-size: 20px
+        text-align: left
+        display: block
+        float: left
+        margin-right: 20px
+    
+    .header .navigace.ostatni
+        border-top: 1px dotted $clr-light-blue-300
+
+    .ctverec.format a,.obdelnik a, .ctverec.format a:hover, .obdelnik a:hover
+        font-size: 20px
