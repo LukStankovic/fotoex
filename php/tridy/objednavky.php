@@ -128,7 +128,26 @@ class Objednavky{
         
         $stav = $k_uprave["stav"];
         
-        $sql = "UPDATE objednavky SET stav = '$stav'
+        //DORUČOVACÍ ADRESA
+        $d_jmeno = $k_uprave["dor_jmeno"];
+        $d_prijmeni = $k_uprave["dor_prijmeni"];
+        $d_ulice =  $k_uprave["dor_ulice"];
+        $d_psc = $k_uprave["dor_psc"];
+        $d_mesto = $k_uprave["dor_mesto"];
+        $d_zeme = $k_uprave["dor_zeme"];
+        //FAKTURAČNÍ ADRESA
+        $f_jmeno = $k_uprave["fak_jmeno"];
+        $f_prijmeni = $k_uprave["fak_prijmeni"];
+        $f_ulice =  $k_uprave["fak_ulice"];
+        $f_psc = $k_uprave["fak_psc"];
+        $f_mesto = $k_uprave["fak_mesto"];
+        $f_zeme = $k_uprave["fak_zeme"];
+        
+        
+        
+        $sql = "UPDATE objednavky SET stav = '$stav', d_jmeno = '$d_jmeno', d_prijmeni = '$d_prijmeni', d_ulice = '$d_ulice', d_psc = '$d_psc', d_mesto = '$d_mesto', d_zeme = '$d_zeme', f_jmeno = '$f_jmeno', f_prijmeni = '$f_prijmeni', f_ulice = '$f_ulice', f_psc = '$f_psc', f_mesto = '$f_mesto', f_zeme = '$f_zeme'
+        
+        
                 WHERE  id_objednavka = $id";
     
         return $db->zpracovani($sql);
