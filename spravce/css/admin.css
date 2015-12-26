@@ -557,16 +557,23 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
 .upravit_clanek .cover:hover a.vymazat {
   display: block; }
 
+/* line 471, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+.navigace-mobil {
+  display: none; }
+
 @media screen and (min-width: 992px) and (max-width: 1172px) {
-  /* line 474, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 476, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace a {
     padding: 15px 10px 0px 10px; } }
 
 @media screen and (max-width: 991px) {
-  /* line 478, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 480, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  .navigace-mobil {
+    display: block; }
+  /* line 482, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header {
     min-height: 70px; }
-  /* line 480, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 484, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .mobilni-menu-tlacitko {
     display: block;
     width: 100px;
@@ -574,33 +581,33 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
     padding-left: 30px;
     color: #fff;
     font-size: 45px; }
-  /* line 487, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 491, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace-hlavni {
     display: none; }
-  /* line 489, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 493, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace-mobil {
     display: block; }
-  /* line 492, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 496, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .navigace-mobil ul li {
     float: none !important; }
-  /* line 495, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 499, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace {
     height: auto; }
-  /* line 498, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 502, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace a {
     height: 50px;
     font-size: 14px; }
-  /* line 502, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 506, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace .fa {
     font-size: 20px;
     text-align: left;
     display: block;
     float: left;
     margin-right: 20px; }
-  /* line 509, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 513, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace.ostatni {
     border-top: 1px dotted #4fc3f7; }
-  /* line 512, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 516, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .ctverec.format a, .obdelnik a, .ctverec.format a:hover, .obdelnik a:hover {
     font-size: 20px; } }
 
