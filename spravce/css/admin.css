@@ -62,7 +62,7 @@ body {
 
 /* line 54, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .btn.upravit {
-  margin-bottom: 10px; }
+  margin: 10px 3px; }
 
 /* line 56, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .btn {
