@@ -1,6 +1,5 @@
 <?php
     include_once ("sablona-spravce/head.php"); 
-
 ?>
 
 <body>
@@ -44,10 +43,9 @@
     </div>
     <div class="main">
         <div class="container">
-            <?php 
+            <?php
             if((isset($_GET["page"])) and ($_GET["page"] == "nastenka"))
-                include_once ('nastenka.php'); 
-            
+                include_once ('nastenka.php');             
             if((isset($_GET["page"])) and ($_GET["page"] == "objednavky"))
                 include_once ('objednavky.php'); 
             if((isset($_GET["page"])) and ($_GET["page"] == "parametry"))
@@ -65,8 +63,7 @@
             if((isset($_GET["page"])) and ($_GET["page"] == "upravit-parametr"))
                 include_once('upravit_parametr.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "detail-uzivatele"))
-                include_once('detail_uzivatele.php');
-                           
+                include_once('detail_uzivatele.php');  
             ?>
         </div>
     </div>   

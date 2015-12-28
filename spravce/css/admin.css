@@ -86,28 +86,29 @@ button.btn, .ulozit.btn {
   padding: 10px;
   border-radius: 0;
   border: 0;
-  margin: 0; }
+  margin: 0;
+  margin: 10px 3px; }
 
-/* line 77, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 78, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 button.ulozit.btn, .ulozit.btn {
   background: #8bc34a;
   color: #fff;
   border: 0; }
 
-/* line 81, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 82, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 button.ulozit.btn:hover, .ulozit.btn:hover {
   background: #9ccc65; }
 
-/* line 84, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 85, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .zrusit.btn, .btn.zrusit a {
   background: #f44336;
   color: #fff; }
 
-/* line 87, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 88, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .zrusit.btn:hover, .btn.zrusit a:hover {
   background: #ff5252; }
 
-/* line 92, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 93, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .panel-box {
   margin-top: 30px;
   display: table;
@@ -119,7 +120,7 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   border-radius: 5px;
   font-family: 'Open Sans'; }
 
-/* line 103, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 104, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .panel {
   margin-bottom: 18p;
   background-color: white;
@@ -128,15 +129,15 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   border-radius: 5px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
-  /* line 112, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 113, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .panel .stat-icon {
     font-size: 50px; }
-  /* line 114, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 115, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .panel .nadpis {
     font-size: 33px;
     margin: 0; }
 
-/* line 118, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 119, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .panel-box .panel-left {
   -moz-border-radius-topleft: 5px !important;
   -webkit-border-top-left-radius: 5px !important;
@@ -146,7 +147,7 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   border-top-right-radius: 5px !important;
   float: none; }
 
-/* line 127, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 128, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .panel-box .panel-right {
   -moz-border-radius-bottomleft: 5px !important;
   -webkit-border-bottom-left-radius: 5px !important;
@@ -156,106 +157,106 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   border-bottom-right-radius: 5px !important;
   background: #f8f8f8; }
 
-/* line 136, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 137, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .panel-box .panel-item {
   padding: 30px 5px;
   vertical-align: top;
   border-radius: 0; }
 
-/* line 141, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 142, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .bg-trzby {
   background-color: #8bc34a;
   color: white; }
 
-/* line 145, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 146, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .bg-objednavky {
   background-color: #03a9f4;
   color: white; }
 
-/* line 149, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 150, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .bg-uzivatele {
   background-color: #f44336;
   color: white; }
 
-/* line 153, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 154, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .bg-clanky {
   background-color: #ffc107;
   color: white; }
 
-/* line 159, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 160, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .main table {
   width: 100%; }
-  /* line 162, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 163, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table tr {
     text-align: center;
     vertical-align: middle;
     border-bottom: 1px solid #eaeaea; }
-  /* line 166, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 167, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table td, .main table .table tbody tr td {
     height: 70px;
     vertical-align: middle; }
-  /* line 170, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 171, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table tr:nth-child(even) {
     background: #fff; }
-  /* line 172, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 173, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table tr:nth-child(odd) {
     background: #e3f2fd; }
-  /* line 175, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 176, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table th {
     background: #2196f3;
     color: #fff;
     border-bottom: 4px solid #1976d2;
     text-align: center;
     height: 50px; }
-  /* line 182, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 183, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa {
     font-size: 23px;
     margin-right: 5px; }
-  /* line 186, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 187, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-eye {
     color: #1976d2; }
-  /* line 188, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 189, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-eye:hover {
     color: #2196f3; }
-  /* line 191, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 192, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-check {
     color: #4caf50; }
-  /* line 193, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 194, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-check:hover {
     color: #1b5e20; }
-  /* line 196, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 197, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-remove {
     color: #f44336; }
-  /* line 198, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 199, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-remove:hover {
     color: #b71c1c; }
-  /* line 201, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 202, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-save {
     color: #4caf50; }
-  /* line 203, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 204, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-save:hover {
     color: #1b5e20; }
-  /* line 206, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 207, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-reply {
     color: #ffc107; }
-  /* line 208, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 209, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-reply:hover {
     color: #ff6f00; }
-  /* line 211, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 212, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-edit {
     color: #2196f3; }
-  /* line 213, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 214, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table .fa-edit:hover {
     color: #0d47a1; }
-  /* line 216, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 217, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table tr.dokonceno {
     background: #c8e6c9;
     color: #616161; }
-  /* line 219, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 220, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table tr.zruseno {
     background: #FBE9E7;
     color: #616161; }
-  /* line 224, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 225, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .main table tfoot tr {
     background: #fff !important;
     border-top: 3px solid #1976D2;
@@ -264,17 +265,17 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
     font-size: 15px;
     font-style: italic; }
 
-/* line 233, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 234, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .filter-table input {
   border: 2px solid #2196f3;
   padding: 5px; }
 
-/* line 236, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 237, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .filter-table input:focus {
   outline: 0;
   border: 2px solid #0d47a1; }
 
-/* line 241, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 242, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel {
   height: 80px;
   line-height: 80px;
@@ -284,57 +285,57 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   font-weight: 300;
   margin-bottom: 30px; }
 
-/* line 250, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 251, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.datum {
   background: #40C4FF; }
 
-/* line 252, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 253, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.pocet {
   background: #00B0FF; }
 
-/* line 254, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 255, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.cena {
   background: #0091EA; }
 
-/* line 257, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 258, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.stav.zpracovavani {
   background: #ffd54f; }
 
-/* line 259, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 260, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.stav.platba {
   background: #ff8f00; }
 
-/* line 261, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 262, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.stav.zruseno {
   background: #d84315; }
 
-/* line 263, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 264, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.stav.tisk {
   background: #b388ff; }
 
-/* line 265, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 266, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.stav.expedovano {
   background: #9c27b0; }
 
-/* line 267, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 268, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.stav.odber {
   background: #aed581; }
 
-/* line 269, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 270, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_panel.stav.dokonceno {
   background: #8bc34a; }
 
-/* line 274, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 275, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_objednavky h2 {
   font-size: 18px;
   color: #2196f3; }
 
-/* line 277, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 278, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_objednavky ul {
   list-style: none;
   padding: 0; }
 
-/* line 283, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 284, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_objednavky .upravit_pole {
   background: transparent;
   border: 0;
@@ -343,11 +344,11 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   font-style: italic;
   font-weight: 500; }
 
-/* line 291, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 292, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_objednavky .upravit_pole.vedle {
   width: 40%; }
 
-/* line 297, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 298, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .ctverec.format a {
   width: 33.33%;
   height: 400px;
@@ -365,13 +366,13 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all; }
 
-/* line 310, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 311, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .ctverec.format a:hover {
   text-decoration: none;
   background: #aed581;
   font-size: 35px; }
 
-/* line 316, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 317, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik a {
   width: 33.33%;
   height: 200px;
@@ -388,164 +389,164 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all; }
 
-/* line 328, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 329, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik a:hover {
   text-decoration: none;
   font-size: 30px; }
 
-/* line 334, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 335, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik.deska a {
   background: #303f9f; }
 
-/* line 336, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 337, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik.deska a:hover {
   background: #5c6bc0; }
 
-/* line 339, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 340, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik.material a {
   background: #d32f2f; }
 
-/* line 341, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 342, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik.material a:hover {
   background: #ef5350; }
 
-/* line 344, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 345, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik.fotopapir a {
   background: #5d4037; }
 
-/* line 346, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 347, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik.fotopapir a:hover {
   background: #8d6e63; }
 
-/* line 349, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 350, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik.typ a {
   background: #0097a7; }
 
-/* line 351, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 352, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .obdelnik.typ a:hover {
   background: #26c6da; }
 
-/* line 355, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 356, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .tabulka {
   margin-top: 15px; }
 
-/* line 362, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 363, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.formaty table tbody tr:nth-child(even) {
   background: #fff; }
 
-/* line 364, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 365, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.formaty table tbody tr:nth-child(odd) {
   background: #f1f8e9; }
 
-/* line 367, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 368, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.formaty table thead th {
   background: #8bc34a;
   border-bottom: 4px solid #689f38; }
 
-/* line 371, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 372, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.formaty table tfoot tr {
   border-top: 3px solid #689f38; }
 
-/* line 374, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 375, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.formaty .btn a {
   background: #8bc34a; }
 
-/* line 380, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 381, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.desky table tbody tr:nth-child(even) {
   background: #fff; }
 
-/* line 382, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 383, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.desky table tbody tr:nth-child(odd) {
   background: #e8eaf6; }
 
-/* line 385, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 386, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.desky table thead th {
   background: #3f51b5;
   border-bottom: 4px solid #303f9f; }
 
-/* line 389, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 390, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.desky table tfoot tr {
   border-top: 3px solid #303f9f; }
 
-/* line 392, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 393, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.desky .btn a {
   background: #3f51b5; }
 
-/* line 398, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 399, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.materialy table tbody tr:nth-child(even) {
   background: #fff; }
 
-/* line 400, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 401, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.materialy table tbody tr:nth-child(odd) {
   background: #ffebee; }
 
-/* line 403, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 404, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.materialy table thead th {
   background: #f44336;
   border-bottom: 4px solid #d32f2f; }
 
-/* line 407, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 408, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.materialy table tfoot tr {
   border-top: 3px solid #d32f2f; }
 
-/* line 410, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 411, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.materialy .btn a {
   background: #f44336; }
 
-/* line 416, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 417, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.fotopapiry table tbody tr:nth-child(even) {
   background: #fff; }
 
-/* line 418, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 419, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.fotopapiry table tbody tr:nth-child(odd) {
   background: #efebe9; }
 
-/* line 421, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 422, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.fotopapiry table thead th {
   background: #795548;
   border-bottom: 4px solid #5d4037; }
 
-/* line 425, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 426, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.fotopapiry table tfoot tr {
   border-top: 3px solid #5d4037; }
 
-/* line 428, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 429, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.fotopapiry .btn a {
   background: #795548; }
 
-/* line 434, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 435, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.typy table tbody tr:nth-child(even) {
   background: #fff; }
 
-/* line 436, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 437, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.typy table tbody tr:nth-child(odd) {
   background: #e0f7fa; }
 
-/* line 439, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 440, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.typy table thead th {
   background: #00bcd4;
   border-bottom: 4px solid #0097a7; }
 
-/* line 443, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 444, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.typy table tfoot tr {
   border-top: 3px solid #0097a7; }
 
-/* line 446, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 447, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .detail_parametru.typy .btn a {
   background: #00bcd4; }
 
-/* line 450, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 451, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .clanky table img {
   height: 80px;
   max-width: 200px;
   margin: 3px 0; }
 
-/* line 456, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 457, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .upravit_clanek .cover {
   height: 130px;
   max-width: 250px;
   margin: 10px; }
-  /* line 461, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 462, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .upravit_clanek .cover a.vymazat {
     display: none;
     text-align: center;
@@ -553,27 +554,27 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
     font-size: 60px;
     color: #f44336; }
 
-/* line 468, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 469, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .upravit_clanek .cover:hover a.vymazat {
   display: block; }
 
-/* line 471, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+/* line 472, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
 .navigace-mobil {
   display: none; }
 
 @media screen and (min-width: 992px) and (max-width: 1172px) {
-  /* line 476, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 477, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace a {
     padding: 15px 10px 0px 10px; } }
 
 @media screen and (max-width: 991px) {
-  /* line 480, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 481, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .navigace-mobil {
     display: block; }
-  /* line 482, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 483, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header {
     min-height: 70px; }
-  /* line 484, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 485, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .mobilni-menu-tlacitko {
     display: block;
     width: 100px;
@@ -581,33 +582,33 @@ button.ulozit.btn:hover, .ulozit.btn:hover {
     padding-left: 30px;
     color: #fff;
     font-size: 45px; }
-  /* line 491, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 492, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace-hlavni {
     display: none; }
-  /* line 493, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 494, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace-mobil {
     display: block; }
-  /* line 496, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 497, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .navigace-mobil ul li {
     float: none !important; }
-  /* line 499, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 500, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace {
     height: auto; }
-  /* line 502, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 503, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace a {
     height: 50px;
     font-size: 14px; }
-  /* line 506, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 507, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace .fa {
     font-size: 20px;
     text-align: left;
     display: block;
     float: left;
     margin-right: 20px; }
-  /* line 513, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 514, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .header .navigace.ostatni {
     border-top: 1px dotted #4fc3f7; }
-  /* line 516, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
+  /* line 517, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
   .ctverec.format a, .obdelnik a, .ctverec.format a:hover, .obdelnik a:hover {
     font-size: 20px; } }
 

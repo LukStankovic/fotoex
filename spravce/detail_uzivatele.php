@@ -1,21 +1,3 @@
-<?php 
-$uzivatel = $Uzivatele->detailUzivatele($_GET["id-uzivatele"]);
-$objednavky = $Objednavky->objednavkaOdUzivatele($_GET["id-uzivatele"]);
-if((isset($_GET["akce"]))&&($_GET["akce"]=="dokonceno")){
-    $Objednavky->dokonceno($_GET["id-objednavka"]);
-    header("Location: home.php?page=detail-uzivatele&id-uzivatele=".$_GET["id-uzivatele"]);
-}
-if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
-    $Objednavky->vymazat($_GET["id-objednavka"]);
-    header("Location: home.php?page=detail-uzivatele&id-uzivatele=".$_GET["id-uzivatele"]);
-}
-if(isset($_POST["ulozit"])){
-    $Uzivatele->upravit($_GET["id-uzivatele"],$_POST);
-    header("Location: home.php?page=uzivatele");
-}
-?>
-
-
     <div id="main" class="uzivatele">
        <form method="post">
         <h1 class="page-header"><?php echo "$uzivatel->jmeno $uzivatel->prijmeni"; ?></h1>

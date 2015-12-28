@@ -1,24 +1,3 @@
-<?php
-$vsichni_uzivatele = $Uzivatele->vse();
-$vsechny_objednavky = $Objednavky->vse();
-$vsechny_fotky = $Fotky->vse();
-$pocet_obj = null;
-$predchozi_id = null;
-foreach($vsechny_objednavky as $i => $objednavka){
-    if($predchozi_id != $objednavka->id_objednavka)
-        $pocet_obj++;
-$predchozi_id = $objednavka->id_objednavka;
-}
-if((isset($_GET["akce"]))&&($_GET["akce"]=="dokonceno")){
-    $Objednavky->dokonceno($_GET["id-objednavka"]);
-    header("Location: home.php?page=objednavky");
-}
-if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
-    $Objednavky->vymazat($_GET["id-objednavka"]);
-    header("Location: home.php?page=objednavky");
-}
-?>       
-
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-header">Objednávky</h1>

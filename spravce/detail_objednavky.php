@@ -1,33 +1,6 @@
 <?php
-$vsichni_uzivatele = $Uzivatele->vse();
-$objednavka_pole = $Objednavky->detailObjednavky($_GET["id-objednavka"]);
-$objednavka = $objednavka_pole[0];
-$vsechny_fotky = $Fotky->detailFotek($_GET["id-objednavka"]);
-$pocet = 0;
-$id_objednavka = $_GET["id-objednavka"];
-foreach($vsechny_fotky as $fotka)
-    $pocet++;
-if(isset($_GET["action"]) and $_GET["action"]=="vymazat"){
-    $Fotky->vymazat($_GET["id-fotka"]);
-    header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
-}
 
-if(isset($_POST["ulozit"])){
-    $Objednavky->upravit($_GET["id-objednavka"],$_POST);
-    header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
-}
-if(isset($_POST["fot_ulozit"])){
-    foreach($vsechny_fotky as $fotka){
-        if($_POST["fot_ulozit"] == $fotka->id_fotka){
-            $Fotky->upravit($fotka->id_fotka,$_POST);
-            header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
-        }
-    }
-}
-?>       
-
-
-
+?>
 	<div id="main" class="detail_objednavky">
 	<form method="post">
 		<div class="row">

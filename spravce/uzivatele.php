@@ -1,16 +1,3 @@
-<?php 
-    $vsichni_uzivatele = $Uzivatele->vse();
-    if(isset($_POST["ulozit"])){
-        $Uzivatele->vlozeni($_POST);
-        header("Location: home.php?page=uzivatele");
-    }
-    if(isset($_GET["akce"]) && $_GET["akce"] == "vymazat"){
-        $Uzivatele->vymazat($_GET["id-uzivatele"]);
-        header("Location: home.php?page=uzivatele");
-    }
-?>
-
-
     <div id="main" class="uzivatele">
         <h1 class="page-header">Uživatelé</h1>
 
