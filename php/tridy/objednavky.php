@@ -34,7 +34,9 @@ class Objednavky{
     }
     public static function detailObjednavky($id){
             $sql = "SELECT id_objednavka, datum, stav, 
-                       login, jmeno, prijmeni, email, telefon, ulice, mesto, psc, zeme, 
+                       login, jmeno, prijmeni, email, telefon,
+                       d_jmeno, d_prijmeni, d_ulice, d_psc, d_mesto, d_zeme,
+                       f_jmeno, f_prijmeni, f_ulice, f_psc, f_mesto, f_zeme,
                        round(sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ),2) AS 'celkem'
 
                 FROM objednavky 

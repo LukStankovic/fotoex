@@ -1,6 +1,3 @@
-<?php
-
-?>
 	<div id="main" class="detail_objednavky">
 	<form method="post">
 		<div class="row">
@@ -52,24 +49,24 @@
             <h2>Doručovací adresa</h2>
                 <ul>
                     <li>
-                        <span class="obj"><?php echo "$objednavka->jmeno $objednavka->prijmeni"; ?></span>
-                        <input name="dor_jmeno" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->jmeno; ?>">
-                        <input name="dor_prijmeni" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->prijmeni; ?>">
+                        <span class="obj"><?php echo "$objednavka->d_jmeno $objednavka->d_prijmeni"; ?></span>
+                        <input name="dor_jmeno" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_jmeno; ?>">
+                        <input name="dor_prijmeni" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_prijmeni; ?>">
                     </li>
                     <li>
-                        <span class="obj"><?php echo $objednavka->ulice; ?></span>
-                        <input name="dor_ulice" class="upravit_pole" type="text" value="<?php echo $objednavka->ulice; ?>">
+                        <span class="obj"><?php echo $objednavka->d_ulice; ?></span>
+                        <input name="dor_ulice" class="upravit_pole" type="text" value="<?php echo $objednavka->d_ulice; ?>">
                     </li>
                     <li>
-                        <span class="obj"><?php echo $objednavka->psc." ".$objednavka->mesto; ?></span>
-                        <input name="dor_psc" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->psc; ?>">
-                        <input name="dor_mesto" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->mesto; ?>">
+                        <span class="obj"><?php echo $objednavka->d_psc." ".$objednavka->d_mesto; ?></span>
+                        <input name="dor_psc" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_psc; ?>">
+                        <input name="dor_mesto" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_mesto; ?>">
                     </li>
                     <li>
-                        <span class="obj"><?php echo $objednavka->zeme; ?></span>
+                        <span class="obj"><?php echo $objednavka->d_zeme; ?></span>
                         <select name="dor_zeme" class="upravit_pole">
-                            <option value="Česká republika">Česká republika</option>
-                            <option value="Slovenská republika">Slovenská republika</option>
+                            <option <?php if($objednavka->d_zeme == "Česká republika") echo "selected"; ?> value="Česká republika">Česká republika</option>
+                            <option <?php if($objednavka->d_zeme == "Slovenská republika") echo "selected"; ?> value="Slovenská republika">Slovenská republika</option>
                         </select>
                     </li>
                 </ul>
@@ -78,24 +75,24 @@
             <h2>Fakturační údaje</h2>
                 <ul>
                     <li>
-                        <span class="obj"><?php echo "$objednavka->jmeno $objednavka->prijmeni"; ?></span>
-                        <input name="fak_jmeno" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->jmeno; ?>">
-                        <input name="fak_prijmeni" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->prijmeni; ?>">
+                        <span class="obj"><?php echo "$objednavka->f_jmeno $objednavka->f_prijmeni"; ?></span>
+                        <input name="fak_jmeno" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_jmeno; ?>">
+                        <input name="fak_prijmeni" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_prijmeni; ?>">
                     </li>
                     <li>
-                        <span class="obj"><?php echo $objednavka->ulice; ?></span>
-                        <input name="fak_ulice" class="upravit_pole" type="text" value="<?php echo $objednavka->ulice; ?>">
+                        <span class="obj"><?php echo $objednavka->f_ulice; ?></span>
+                        <input name="fak_ulice" class="upravit_pole" type="text" value="<?php echo $objednavka->f_ulice; ?>">
                     </li>
                     <li>
-                        <span class="obj"><?php echo $objednavka->psc." ".$objednavka->mesto; ?></span>
-                        <input name="fak_psc" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->psc; ?>">
-                        <input name="fak_mesto" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->mesto; ?>">
+                        <span class="obj"><?php echo $objednavka->f_psc." ".$objednavka->f_mesto; ?></span>
+                        <input name="fak_psc" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_psc; ?>">
+                        <input name="fak_mesto" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_mesto; ?>">
                     </li>
                     <li>
-                        <span class="obj"><?php echo $objednavka->zeme; ?></span>
+                        <span class="obj"><?php echo $objednavka->f_zeme; ?></span>
                         <select name="fak_zeme" class="upravit_pole">
-                            <option value="Česká republika">Česká republika</option>
-                            <option value="Slovenská republika">Slovenská republika</option>
+                            <option <?php if($objednavka->f_zeme == "Česká republika") echo "selected"; ?> value="Česká republika">Česká republika</option>
+                            <option <?php if($objednavka->f_zeme == "Slovenská republika") echo "selected"; ?> value="Slovenská republika">Slovenská republika</option>
                         </select>
                     </li>
                 </ul>
@@ -105,8 +102,10 @@
                 <ul>
                     <li><?php echo "$objednavka->jmeno $objednavka->prijmeni"; ?></li>
                     <li>
-                        <span class="obj"><a href="mailto:<?php echo $objednavka->email; ?>"><?php echo $objednavka->email; ?></a></span>
-                        <input name="email" class="upravit_pole" type="text" value="<?php echo $objednavka->email; ?>">            
+                        <a href="tel:<?php echo $objednavka->telefon; ?>"><?php echo $objednavka->telefon; ?></a>
+                    </li>
+                    <li>
+                        <a href="mailto:<?php echo $objednavka->email; ?>"><?php echo $objednavka->email; ?></a>
                     </li>
                 </ul>
             </div>
