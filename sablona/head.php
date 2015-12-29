@@ -17,6 +17,7 @@ include_once("php/config/konfigurace.php");
         <!-- CSS adjustments for browsers with JavaScript disabled -->
         <noscript><link rel="stylesheet" href="css/multiuploader/jquery.fileupload-noscript.css"></noscript>
         <noscript><link rel="stylesheet" href="css/multiuploader/jquery.fileupload-ui-noscript.css"></noscript>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
  		<link rel="stylesheet" href="css/style.css">
  		
