@@ -17,14 +17,28 @@ $clanky = $Clanky->vse();
                     </div>       
                 </div>
                 <div class="obsah">
-                   <h1>Novinky ze světa fotografií</h1>
+                    <h1>Novinky ze světa fotografií</h1>
+                    <?php foreach($clanky as $clanek){ ?>
+                    <article>
+                         
+                        <div class="cover">
+                            <a href="#"><img src="clanky/<?php echo $clanek->cover; ?>"></a>
+                        </div>
+                        <div class="clanek">
+                            <h2><a href="#"><?php echo $clanek->nazev; ?></a></h2>
+                            <div class="info"><i class="fa fa-user"></i><?php echo $clanek->jmeno." ".$clanek->prijmeni; ?></div>
+                            <div class="info"><i class="fa fa-calendar"></i> <?php echo date( 'd. m. Y', strtotime($clanek->datum));?></div>
+                            <div class="text">
+                                <?php echo substr($clanek->obsah,0,400)."..."; ?>    
+                            </div>
+                            
+                        </div>
+                    </article>
+                    <?php } ?>                   
                    
-                   <?php  echo "<pre>",print_r($clanky),"</pre>";?>
-                   <?php foreach($clanky as $clanek){ ?>
+                   
+                   
 
-                       
-                       </article>
-                    <?php } ?>
                 </div> 
             </div>
 

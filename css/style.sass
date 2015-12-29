@@ -5,8 +5,11 @@ $zluta: #FFEB3B
 $svetla_modro_seda: #B0BEC5
 $modro_seda: #263238
 
+@import mixin
+@import material-color
+
 body
-    color: $modro_seda
+    color: $clr-blue-grey-700
     background: #f4f3f4
     font-family: "Open Sans";
 
@@ -19,8 +22,18 @@ header
     height: 220px
     background: url("../img/cover.jpg") center
 
+a
+    color: $clr-blue-grey
+
+a:hover
+    color: $clr-blue-grey-300
+
 h1
-    color: $limetkova
+    color: $clr-blue-grey
+    font-size: 30px
+h2
+    color: $clr-blue-grey
+    font-size: 23px
 
 nav
     width: 100%
@@ -51,7 +64,7 @@ nav
                 border-top: 3px solid transparent 
     
             a:hover
-                border-top: 3px solid $limetkova
+                border-top: 3px solid $clr-blue-grey-300
     
         li:nth-of-type(2)
             margin-left: 200px
@@ -61,7 +74,7 @@ header .vyvolat
     width: 150px
     text-align: center
     margin: 0 auto
-    background: $limetkova
+    background: $clr-blue-grey
     
     a
         color: #fff
@@ -73,7 +86,7 @@ header .vyvolat
         transition: background 0.2s ease
     
     a:hover
-        background: $limetkova_hover
+        background: $clr-blue-grey-300
     
 main.uvod
     .stranka
@@ -89,7 +102,7 @@ main.uvod
             line-height: 180%
     
     .uvod-banner
-        background: $limetkova
+        background: $clr-blue-grey
         color: #fff
         height: 100px
         width: 100%
@@ -112,7 +125,7 @@ main.uvod
                 text-transform: uppercase
                 
             .btn:hover
-                background: $limetkova_hover
+                background: $clr-blue-grey-300
 main.nahrani
     .stranka
         margin-top: -40px
@@ -123,7 +136,7 @@ main.nahrani
         margin-bottom: 30px
 
     .kroky
-        background: $limetkova
+        background: $clr-blue-grey
         color: #fff
         height: 40px
         width: 100%
@@ -136,8 +149,55 @@ main.nahrani
 footer
     min-height: 300px
     width: 100%
-    background: $limetkova
+    background: $clr-blue-grey
+
+//BLOG
+
+.cover 
+    a
+        width: 570px
+        height: 300px
+        display: block
+    img
+        width: 570px
+        height: 300px
+        
+        
+article:nth-child(even) .cover
+    float: left
+    margin-right: 15px
+
+article:nth-child(odd) .cover
+    float: right
+    margin-left: 15px
     
+.clanek
+    min-height: 300px
+    padding-top: 10px
+    
+article
+    display: block
+    min-height: 300px
+    margin: 0
+
+.info
+    float: left
+    font-size: 14px;
+    margin-top: 0px
+    margin-bototm: 10px
+    margin-right: 10px
+    display: inline-block
+
+.info:nth-child(2)
+    float: none
+    
+.info .fa
+    margin-right: 8px
+    
+.text
+    display: block
+    margin-top: 10px 
+
 @media screen and (max-width: 800px) 
     nav .logo 
         top: 90px
