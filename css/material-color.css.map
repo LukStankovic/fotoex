@@ -1,8 +1,8 @@
 {
   "version": 3,
-  "file": "barvy.css",
+  "file": "material-color.css",
   "sources": [
-    "barvy.sass"
+    "material-color.scss"
   ],
   "sourcesContent": [],
   "mappings": "",
