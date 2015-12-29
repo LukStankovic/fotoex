@@ -8,14 +8,16 @@ class Clanky{
     }
     
     public static function vse(){
-        $sql = "SELECT *
+        $sql = "SELECT id_clanek, nazev, cover, datum, obsah,
+                        U.id_uzivatel, jmeno, prijmeni, email
                 FROM clanky C INNER JOIN uzivatele U on C.id_uzivatel = U.id_uzivatel
                 ORDER BY datum DESC";
         
         return self::vybraniDat($sql);
     }
     public static function detail($id){
-        $sql = "SELECT *
+        $sql = "SELECT id_clanek, nazev, cover, datum, obsah,
+                        U.id_uzivatel, jmeno, prijmeni, email
                 FROM clanky C INNER JOIN uzivatele U on C.id_uzivatel = U.id_uzivatel
                 WHERE id_clanek = $id";
         
