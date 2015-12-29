@@ -48,7 +48,7 @@ class Uzivatele{
         $db = new Databaze();
         $sql = "SELECT id_uzivatel, login, heslo, salt
                 FROM uzivatele
-                WHERE login = '$jmeno' AND heslo = '$heslo'";
+                WHERE login = '$jmeno' AND heslo = '$heslo' AND prava = 2";
         
         return self::vybraniDat($sql);
     }
