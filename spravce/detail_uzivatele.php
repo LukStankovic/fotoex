@@ -1,10 +1,19 @@
     <div id="main" class="uzivatele">
        <form method="post">
         <h1 class="page-header"><?php echo "$uzivatel->jmeno $uzivatel->prijmeni"; ?></h1>
-        
         <div class="row">
             <div class="col-md-5">
-                
+                <div class="form-group">
+                    <label for="jmeno" class="control-label">Uživatelské jméno: </label>
+                    <input type="text" class="form-control" name="login" value="<?php echo $uzivatel->login; ?>" required>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="nove_h" class="control-label">Nové heslo: </label>
+                    <input type="password" class="form-control" name="nove_h" placeholder="Zadejte nové heslo">
+                    <button type="submit" name="zmenit_heslo" class="ulozit btn pull-right">Změnit heslo</button>
+                </div>
+                <hr style="margin-top: 65px">
                 <div class="form-group">
                     <label for="jmeno" class="control-label">Jméno: </label>
                     <input type="text" class="form-control" name="jmeno" value="<?php echo $uzivatel->jmeno; ?>" required>

@@ -329,6 +329,11 @@ if((isset($_GET["page"])) and ($_GET["page"] == "detail-uzivatele")){
         $Uzivatele->upravit($_GET["id-uzivatele"],$_POST);
         header("Location: home.php?page=uzivatele");
     }
+    //ZMĚNA HESLA
+    if(isset($_POST["zmenit_heslo"])){
+        $Uzivatele->zmenitHeslo($_GET["id-uzivatele"],$_POST["nove_h"]);
+        header("Location: home.php?page=detail-uzivatele&id-uzivatele=".$_GET["id-uzivatele"]);
+    }
 }
 
 ?>

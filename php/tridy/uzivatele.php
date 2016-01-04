@@ -109,7 +109,22 @@ class Uzivatele{
                 WHERE id_uzivatel = $id";
         return $db->zpracovani($sql); 
     }
-   
+    public function zmenitHeslo($id_u,$nove){
+        $db = new Databaze();
+        
+        //GENEROVÁNÍ NOVÉHO SALTU
+        $nove_options = [
+            'cost' => 10,
+            'salt' => uniqid(mt_rand(),true),
+        ];
+        $id = $db->pripravaProInput($id_u);
+        $n_heslo =  $db->pripravaProInput(password_hash($nove, PASSWORD_BCRYPT, $nove_options));
+        $salt = $nove_options["salt"];
+        
+        $sql = "UPDATE uzivatele SET heslo = '$n_heslo', salt = '$salt'
+                WHERE id_uzivatel = $id";
+        return $db->zpracovani($sql);
+    }
     public function prihlaseniUzivatele($jmeno,$heslo){
         $db = new Databaze();
     
