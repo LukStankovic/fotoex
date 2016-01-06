@@ -4,15 +4,39 @@ include_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
 include_once("sablona/hlavicka.php");
 $clanky = $Clanky->vse();
+$poc = 0;
 ?>
 
-<main class="uvod">              
+<main>              
     <div class="container stranka">
-        <h1>Lorem ipsum</h1>
+        <?php foreach($clanky as $clanek){ ?>
+        <div class="clanek clanek-<?php echo $clanek->id_clanek; ?> row">
+           
+            <div class="col-md-6 fotografie">
+                <div class="uvodni-img" style="background: url(clanky/<?php echo $clanek->cover; ?>)"><a href="detail-clanku.php?id=<?php echo $clanek->id_clanek; ?>"></a></div>
+            </div>
+            <div class="col-md-6 obsah-clanku">
+                <h1><a href="detail-clanku.php?id=<?php echo $clanek->id_clanek; ?>"><?php echo $clanek->nazev; ?></a></h1>
+                <div class="info">
+                    <span class="datum"><i class="fa fa-calendar"></i><?php echo date("j. n. Y H:i",strtotime($clanek->datum)); ?></span>
+                    <span class="autor"><i class="fa fa-user"></i><?php echo "$clanek->jmeno $clanek->prijmeni"; ?></span>
+                </div>
+                <?php echo substr($clanek->obsah,0,400)."..."; ?>
+                <div class="cist-dale"><a href="detail-clanku.php?id=<?php echo $clanek->id_clanek; ?>" class="btn">Číst dále</a></div>
+            </div>
+
+        </div>
+        <?php 
+        $poc++;
+        } 
+        ?>
     </div>
 </main>
-        
 <?php 
 //VLOZENI PATICKY
 include_once("sablona/paticka.php");
 ?>
+
+<script>
+    $("body").attr("id","home");
+</script>
