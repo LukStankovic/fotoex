@@ -7,6 +7,7 @@ include_once("php/config/konfigurace.php");
 	<head>
 		<meta charset="utf-8">
 		<title>FotoEx - Online fotolab pro Vaše fotografie</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,400italic,300italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
         <link rel="stylesheet" href="css/multiuploader/jquery.fileupload.css">
@@ -18,6 +19,7 @@ include_once("php/config/konfigurace.php");
  		<link rel="stylesheet" href="css/style.css">
  		
         <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 		<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
