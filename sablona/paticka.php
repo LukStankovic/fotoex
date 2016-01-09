@@ -4,7 +4,7 @@
                     <div class="col-md-3">
                         <div class="foot-navigace">
                             <ul>
-                                <li><a href="#">Vyvolat fotografie</a></li>
+                                <li><a href="nahrani.php">Vyvolat fotografie</a></li>
                                 <li><a href="#">O nás</a></li>
                                 <li><a href="#">Kontakty</a></li>
                             </ul>

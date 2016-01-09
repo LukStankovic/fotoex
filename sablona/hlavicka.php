@@ -2,7 +2,7 @@
                 <nav class="container">
                     <a class="logo pull-left" href="index.php"><img src="img/logo.png" alt="logo"></a>
                     <ul class="hlavni-navigace pull-right">
-                        <li><a href="#">Vyvolat fotografie</a></li>
+                        <li><a href="nahrani.php">Vyvolat fotografie</a></li>
                         <li><a href="#">O nás</a></li>
                         <li><a href="#">Kontakt</a></li>
                     </ul>
@@ -11,7 +11,7 @@
                     <a class="mobilni-nav-tlacitko" role="button" data-toggle="collapse" href="#mobilni-menu" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-bars"></i></a>
                     <div class="collapse" id="mobilni-menu">
                         <ul>
-                            <li><a href="#">Vyvolat fotografie</a></li>
+                            <li><a href="nahrani.php">Vyvolat fotografie</a></li>
                             <li><a href="#">O nás</a></li>
                             <li><a href="#">Kontakt</a></li>
                         </ul>
