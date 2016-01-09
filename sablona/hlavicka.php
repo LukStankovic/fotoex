@@ -20,6 +20,6 @@
                 </div>
             <div class="uvodni-text">
                 <span class="intro">Tiskárna fotografií nové generace</span>
-                <div class="vyvolat"><a href="#" class="btn">Vyvolat fotografie</a></div>
+                <div class="vyvolat"><a href="nahrani.php" class="btn">Vyvolat fotografie</a></div>
             </div>
         </header>    
