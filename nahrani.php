@@ -37,17 +37,16 @@ include_once("sablona/hlavicka.php");
                     <span>Vymazat vybrané</span>
                 </button>
                 <input type="checkbox" class="toggle">
-                <!-- The global file processing state -->
                 <span class="fileupload-process"></span>
             </div>
         </div>
-        <!-- The table listing the files available for upload/download -->
         <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
     </form>
     <br>
 
 </div>
-<!-- The blueimp Gallery widget -->
+
+
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
     <div class="slides"></div>
     <h3 class="title"></h3>
@@ -57,7 +56,6 @@ include_once("sablona/hlavicka.php");
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
 </div>
-<!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
@@ -69,27 +67,26 @@ include_once("sablona/hlavicka.php");
             <strong class="error text-danger"></strong>
         </td>
         <td>
-            <p class="size">Processing...</p>
+            <p class="size">Zpracovávání...</p>
             <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
         </td>
         <td>
             {% if (!i && !o.options.autoUpload) { %}
                 <button class="btn start" disabled>
                     <i class="glyphicon glyphicon-upload"></i>
-                    <span>Start</span>
+                    <span>Nahrát</span>
                 </button>
             {% } %}
             {% if (!i) { %}
                 <button class="btn cancel">
                     <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel</span>
+                    <span>Zrušit</span>
                 </button>
             {% } %}
         </td>
     </tr>
 {% } %}
 </script>
-<!-- The template to display files available for download -->
 <script id="template-download" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-download fade">
@@ -109,7 +106,7 @@ include_once("sablona/hlavicka.php");
                 {% } %}
             </p>
             {% if (file.error) { %}
-                <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+                <div><span class="label label-danger">Chyba</span> {%=file.error%}</div>
             {% } %}
         </td>
         <td>
@@ -119,13 +116,13 @@ include_once("sablona/hlavicka.php");
             {% if (file.deleteUrl) { %}
                 <button class="btn delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                     <i class="glyphicon glyphicon-trash"></i>
-                    <span>Delete</span>
+                    <span>Vymazat</span>
                 </button>
                 <input type="checkbox" name="delete" value="1" class="toggle">
             {% } else { %}
                 <button class="btn btn-warning cancel">
                     <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel</span>
+                    <span>Zrušit</span>
                 </button>
             {% } %}
         </td>
