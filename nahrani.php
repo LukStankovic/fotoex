@@ -80,7 +80,7 @@ include_once("sablona/hlavicka.php");
                 </button>
             {% } %}
             {% if (!i) { %}
-                <button class="btn btn-warning cancel">
+                <button class="btn cancel">
                     <i class="glyphicon glyphicon-ban-circle"></i>
                     <span>Cancel</span>
                 </button>
@@ -117,7 +117,7 @@ include_once("sablona/hlavicka.php");
         </td>
         <td>
             {% if (file.deleteUrl) { %}
-                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                <button class="btn delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                     <i class="glyphicon glyphicon-trash"></i>
                     <span>Delete</span>
                 </button>
