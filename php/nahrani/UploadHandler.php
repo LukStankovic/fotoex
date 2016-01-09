@@ -301,8 +301,8 @@ class UploadHandler
         }
         return false;
     }
-
-    protected function get_file_object($file_name) {
+    
+    protected function get_file_object($file_name) { /*
         if ($this->is_valid_file_object($file_name)) {
             $file = new \stdClass();
             $file->name = $file_name;
@@ -323,7 +323,7 @@ class UploadHandler
             $this->set_additional_file_properties($file);
             return $file;
         }
-        return null;
+        return null; */
     }
 
     protected function get_file_objects($iteration_method = 'get_file_object') {
