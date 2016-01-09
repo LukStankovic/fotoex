@@ -6,54 +6,39 @@ include_once("sablona/head.php");
 include_once("sablona/hlavicka.php");
 
 ?>  
-        <main class="nahrani">
-            <div class="container stranka">
-                <div class="kroky">
-                   ZDE BUDOU KROKY
-                   <!--
-                    <div class="krok jedna_upload aktivni"><a href="../../upload-fotografii"><span class="cislo">1</span> Upload fotografií</a></div>
-                    <div class="krok dva_upload aktivni"><a><span class="cislo">2</span> Nastavení parametrů tisku</a></div>
-                    <div class="krok dva_upload nepristupne"><a><span class="cislo">3</span> Košík</a></div>
-                    <div class="krok dva_upload nepristupne"><a><span class="cislo">4</span> Fakturační údaje</a></div>
-                    <div class="krok dva_upload nepristupne"><a><span class="cislo">5</span> Dokončení objednávky</a></div> -->
-                </div>
-                <div class="obsah">
+<main id="nahrani" class="container stranka">
+    <div class="kroky">
+        <ul>
+            <li class="aktivni"><a href="nahrani.php"><span>1.</span> Nahrání fotografií</a></li>
+            <li><span>2.</span> Nastavení parametrů</li>
+            <li><span>3.</span> Košík</li>
+            <li><span>4.</span> Doručovací údaje</li>
+            <li><span>5.</span> Dokončení objednávky</li>
+        </ul>
+    </div>
     <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
-        <!-- Redirect browsers with JavaScript disabled to the origin page -->
-        <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
-        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
         <div class="row fileupload-buttonbar">
-            <div class="col-lg-7">
-                <!-- The fileinput-button span is used to style the file input field as button -->
+            <div class="col-lg-12">
                 <span class="btn btn-success fileinput-button">
-                    <i class="glyphicon glyphicon-plus"></i>
-                    <span>Add files...</span>
+                    <i class="fa fa-plus-circle"></i>
+                    <span>Vybrat soubory</span>
                     <input type="file" name="files[]" multiple>
                 </span>
                 <button type="submit" class="btn btn-primary start">
-                    <i class="glyphicon glyphicon-upload"></i>
-                    <span>Start upload</span>
+                    <i class="fa fa-arrow-circle-up"></i>
+                    <span>Nahrát vše</span>
                 </button>
                 <button type="reset" class="btn btn-warning cancel">
-                    <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel upload</span>
+                    <i class="fa fa-ban"></i>
+                    <span>Zrušit nahrávání</span>
                 </button>
                 <button type="button" class="btn btn-danger delete">
-                    <i class="glyphicon glyphicon-trash"></i>
-                    <span>Delete</span>
+                    <i class="fa fa-trash"></i>
+                    <span>Vymazat vybrané</span>
                 </button>
                 <input type="checkbox" class="toggle">
                 <!-- The global file processing state -->
                 <span class="fileupload-process"></span>
-            </div>
-            <!-- The global progress state -->
-            <div class="col-lg-5 fileupload-progress fade">
-                <!-- The global progress bar -->
-                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-                </div>
-                <!-- The extended global progress state -->
-                <div class="progress-extended">&nbsp;</div>
             </div>
         </div>
         <!-- The table listing the files available for upload/download -->
@@ -147,8 +132,6 @@ include_once("sablona/hlavicka.php");
     </tr>
 {% } %}
 </script>
-                </div> 
-            </div>
 
         </main>
          <!-- MULTIUPLOADER -->
