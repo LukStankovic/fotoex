@@ -19,20 +19,20 @@ include_once("sablona/hlavicka.php");
     <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
         <div class="row fileupload-buttonbar">
             <div class="col-lg-12">
-                <span class="btn btn-success fileinput-button">
+                <span class="btn fileinput-button">
                     <i class="fa fa-plus-circle"></i>
                     <span>Vybrat soubory</span>
                     <input type="file" name="files[]" multiple>
                 </span>
-                <button type="submit" class="btn btn-primary start">
+                <button type="submit" class="btn start">
                     <i class="fa fa-arrow-circle-up"></i>
                     <span>Nahrát vše</span>
                 </button>
-                <button type="reset" class="btn btn-warning cancel">
+                <button type="reset" class="btn cancel">
                     <i class="fa fa-ban"></i>
                     <span>Zrušit nahrávání</span>
                 </button>
-                <button type="button" class="btn btn-danger delete">
+                <button type="button" class="btn delete">
                     <i class="fa fa-trash"></i>
                     <span>Vymazat vybrané</span>
                 </button>
@@ -74,7 +74,7 @@ include_once("sablona/hlavicka.php");
         </td>
         <td>
             {% if (!i && !o.options.autoUpload) { %}
-                <button class="btn btn-primary start" disabled>
+                <button class="btn start" disabled>
                     <i class="glyphicon glyphicon-upload"></i>
                     <span>Start</span>
                 </button>

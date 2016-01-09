@@ -27,12 +27,14 @@ h2
     color: $hneda
     font-size: 23px
 
-.btn
+.btn, button.btn
     border: 2px solid $hneda
     color: $hneda
     font-weight: 300
     margin-top: 10px
     +prefixy(transition,.2s ease all)
+    background-color: transparent
+    
 .btn:hover
         background: $hneda
         color: #fff
@@ -203,9 +205,16 @@ main#nahrani
                 font-weight: bold
     
         li.aktivni
-            padding: 0    
+            padding: 0
             
+#nahrani
+    .fileupload-buttonbar .btn
+        line-height: 50px
+        width: 24.3%
+        font-size: 17px
         
+        .fa
+            font-size: 25px    
                 
 //PATIČKA
 
@@ -229,7 +238,8 @@ footer
             color:#fff
             border-bottom: 2px dotted #fff
 
-
+//RESPONZIVITA
+        
 @media screen and (max-width: 991px)
     .clanek:nth-child(even)
         h1, p, .info
