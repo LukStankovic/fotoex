@@ -71,7 +71,7 @@
             // Error and info messages:
             messages: {
                 maxNumberOfFiles: 'Maximum number of files exceeded',
-                acceptFileTypes: 'File type not allowed',
+                acceptFileTypes: 'Nepodoprovaný formát, lze nahrát pouze .jpg, .png, .gif, .tiff',
                 maxFileSize: 'File is too large',
                 minFileSize: 'File is too small'
             }
