@@ -162,7 +162,51 @@ main
         padding-bottom: 20px
     .obsah
         margin-top: 20px
+ 
+// FOTOGRAFIE
+
+main#nahrani
+    margin-top: 10px
+
+.kroky
+    width: 100%
+    min-height: 40px
+    background: $hneda
+    color: #fff
+    
+    ul
+        padding: 0
         
+        li
+            list-style: none
+            float: left
+            display: block
+            line-height: 40px
+            padding: 0 10px
+            margin-right: 5px
+            cursor: default
+            +prefixy(transition, .2s background)
+            &:hover
+                background: $hneda-tmavsi  
+            
+            a
+                background: $hneda-tmavsi
+                color: #fff
+                line-height: 40px
+                display: block
+                padding: 0 10px
+                +prefixy(transition, .2s background)
+                &:hover
+                    background: $hneda-tmava
+    
+            span
+                font-weight: bold
+    
+        li.aktivni
+            padding: 0    
+            
+        
+                
 //PATIČKA
 
 footer
@@ -190,6 +234,8 @@ footer
     .clanek:nth-child(even)
         h1, p, .info
             padding-left: 15px
+    .kroky
+        display: none
 @media screen and (max-width: 730px)
     header
         .intro
@@ -239,48 +285,3 @@ footer
             
     header
         min-height: 80px
-
-// FOTOGRAFIE
-
-main#nahrani
-    margin-top: 10px
-
-.kroky
-    width: 100%
-    min-height: 40px
-    background: $hneda
-    color: #fff
-    
-    ul
-        padding: 0
-        
-        li
-            list-style: none
-            float: left
-            display: block
-            line-height: 40px
-            padding: 0 10px
-            margin-right: 5px
-            cursor: default
-            +prefixy(transition, .2s background)
-            &:hover
-                background: $hneda-tmavsi  
-            
-            a
-                background: $hneda-tmavsi
-                color: #fff
-                line-height: 40px
-                display: block
-                padding: 0 10px
-                +prefixy(transition, .2s background)
-                &:hover
-                    background: $hneda-tmava
-    
-            span
-                font-weight: bold
-    
-        li.aktivni
-            padding: 0    
-            
-        
-                
