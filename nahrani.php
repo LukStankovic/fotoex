@@ -41,11 +41,11 @@ include_once("sablona/hlavicka.php");
             </div>
         </div>
         <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-        <input type="button" class="btn pull-right">Pokračovat k nastavení parametrů</button>
+        <button type="submit" class="btn pull-right">Pokračovat k nastavení parametrů</button>
     </form>
     <br>
 
-</div>
+</main>
 
 
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
@@ -130,8 +130,6 @@ include_once("sablona/hlavicka.php");
     </tr>
 {% } %}
 </script>
-
-        </main>
          <!-- MULTIUPLOADER -->
         <script src="js/multiuploader/vendor/jquery.ui.widget.js"></script>
         <!-- The Templates plugin is included to render the upload/download listings -->

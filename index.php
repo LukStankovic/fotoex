@@ -29,11 +29,12 @@ $poc++;
 } 
 ?>
 </main>
+<script>
+    $("body").attr("id","home");
+</script>
+
 <?php 
 //VLOZENI PATICKY
 include_once("sablona/paticka.php");
 ?>
 
-<script>
-    $("body").attr("id","home");
-</script>
