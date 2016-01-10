@@ -16,6 +16,25 @@ include_once("sablona/hlavicka.php");
             <li><span>5.</span> Dokončení objednávky</li>
         </ul>
     </div>
+    <div class="napoveda row">
+        <div class="formaty col-md-6">
+            <h2>Podpora formátů</h2>
+            <p>V našem systému jsou podporovány pouze fotografické formáty. Nelze nahrát komprimované soubory jako jsou .zip, .rar.</p>
+            <h3>Seznam podporovaných formátů:</h3>
+            
+            <ul>
+                <li>.jpg/.jpeg</li>
+                <li>.png</li>
+                <li>.gif</li>
+                <li>.tiff</li>
+            </ul>
+            
+            <p><em>Velikost souboru není omezena.</em></p>
+        </div>
+        <div class="banner col-md-6">
+            
+        </div>
+    </div>
     <form id="fileupload" action="parametry.php" method="POST" enctype="multipart/form-data">
         <div class="row fileupload-buttonbar">
             <div class="col-lg-12">
