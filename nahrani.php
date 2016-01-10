@@ -16,7 +16,7 @@ include_once("sablona/hlavicka.php");
             <li><span>5.</span> Dokončení objednávky</li>
         </ul>
     </div>
-    <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+    <form id="fileupload" action="parametry.php" method="POST" enctype="multipart/form-data">
         <div class="row fileupload-buttonbar">
             <div class="col-lg-12">
                 <span class="btn fileinput-button">
@@ -41,6 +41,7 @@ include_once("sablona/hlavicka.php");
             </div>
         </div>
         <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+        <input type="button" class="btn pull-right">Pokračovat k nastavení parametrů</button>
     </form>
     <br>
 
@@ -70,7 +71,7 @@ include_once("sablona/hlavicka.php");
             <p class="size">Zpracovávání...</p>
             <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
         </td>
-        <td>
+        <td style="text-align:right">
             {% if (!i && !o.options.autoUpload) { %}
                 <button class="btn start" disabled>
                     <i class="glyphicon glyphicon-upload"></i>
@@ -112,7 +113,7 @@ include_once("sablona/hlavicka.php");
         <td>
             <span class="size">{%=o.formatFileSize(file.size)%}</span>
         </td>
-        <td>
+        <td style="text-align:right">
             {% if (file.deleteUrl) { %}
                 <button class="btn delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                     <i class="glyphicon glyphicon-trash"></i>
