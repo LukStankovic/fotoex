@@ -81,6 +81,8 @@ include_once("sablona/hlavicka.php");
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
 </div>
+
+</script>
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
@@ -110,6 +112,7 @@ include_once("sablona/hlavicka.php");
             {% } %}
         </td>
     </tr>
+
 {% } %}
 </script>
 <script id="template-download" type="text/x-tmpl">
@@ -126,6 +129,9 @@ include_once("sablona/hlavicka.php");
             <p class="name">
                 {% if (file.url) { %}
                     <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                    <input type="hidden" name="fotka[]" value="{%=file.url%}">
+                    <input type="hidden" name="miniatura_fotka[]" value="{%=file.thumbnailUrl%}">
+                
                 {% } else { %}
                     <span>{%=file.name%}</span>
                 {% } %}
@@ -154,6 +160,7 @@ include_once("sablona/hlavicka.php");
     </tr>
 {% } %}
 </script>
+
 <!-- MULTIUPLOADER -->
 <script src="js/multiuploader/vendor/jquery.ui.widget.js"></script>
 <script src="http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>

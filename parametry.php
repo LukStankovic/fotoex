@@ -4,11 +4,32 @@
 include_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
 include_once("sablona/hlavicka.php");
+session_start();
+global $id_foto;
+for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){    
+    //ID
+    $_SESSION["fotky"][$id_foto]["id"] = $id_foto;
+    //URL
+    $_SESSION["fotky"][$id_foto]["url"] = $_POST["fotka"][$id_foto];
+    $_SESSION["fotky"][$id_foto]["mini_url"] = $_POST["miniatura_fotka"][$id_foto];
+    //ROZMĚRY
+    list($sirka, $vyska) = getimagesize($_SESSION["fotky"][$id_foto]["url"]);
+    $_SESSION["fotky"][$id_foto]["sirka"] = $sirka;
+    $_SESSION["fotky"][$id_foto]["vyska"] = $vyska;
+    //INFO
+    $info_o_soboru = pathinfo($_SESSION["fotky"][$id_foto]["url"]);
+    $nazev = strtr($info_o_soboru["filename"], $diakritika);
+    $_SESSION["fotky"][$id_foto]["nazev"] = $nazev;
+    $_SESSION["fotky"][$id_foto]["format"] = $info_o_soboru["extension"];
+    //PŘEKOPÍROVÁNÍ DO PROMĚNNÉ FOTKY
+    $fotky = $_SESSION["fotky"];
+}
 
 ?>  
 <main id="nahrani" class="container stranka">
-    <pre><?php print_r($_POST); ?></pre>
-    <pre><?php print_r($_FILES); ?></pre>
+    <?php foreach($fotky as $fotka) {?>
+        <pre><?php print_r($fotka);?></pre>
+    <?php }?>
 </main>    
 <?php 
 //VLOZENI PATICKY
