@@ -6,6 +6,7 @@ include_once("sablona/head.php");
 include_once("sablona/hlavicka.php");
 
 ?>  
+
 <main id="nahrani" class="container stranka">
     <div class="kroky">
         <ul>
@@ -31,7 +32,7 @@ include_once("sablona/hlavicka.php");
             
             <p><em>Velikost souboru není omezena.</em></p>
         </div>
-        <div class="banner col-md-6">
+        <div class="postup col-md-6">
             <h2>Nápověda</h2>
             <p>Vytvořit objednávku je velmi jednoduché. Nepotřebujete k tomu žádný program do vašeho počítače jako u konkurence. 
             Stačí pouze níže nahrát fotografie do vašeho prohlížeče.</p>
@@ -67,7 +68,7 @@ include_once("sablona/hlavicka.php");
         <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
         <button type="submit" class="btn pull-right pokracovat">Pokračovat k nastavení parametrů</button>
     </form>
-
+    <img src="img/fotky-upload.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
 </main>
 
 
@@ -153,40 +154,23 @@ include_once("sablona/hlavicka.php");
     </tr>
 {% } %}
 </script>
-         <!-- MULTIUPLOADER -->
-        <script src="js/multiuploader/vendor/jquery.ui.widget.js"></script>
-        <!-- The Templates plugin is included to render the upload/download listings -->
-        <script src="http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
-        <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-        <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-        <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-        <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-        <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <!-- blueimp Gallery script -->
-        <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-        <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-        <script src="js/multiuploader/jquery.iframe-transport.js"></script>
-        <!-- The basic File Upload plugin -->
-        <script src="js/multiuploader/jquery.fileupload.js"></script>
-        <!-- The File Upload processing plugin -->
-        <script src="js/multiuploader/jquery.fileupload-process.js"></script>
-        <!-- The File Upload image preview & resize plugin -->
-        <script src="js/multiuploader/jquery.fileupload-image.js"></script>
-        <!-- The File Upload audio preview plugin -->
-        <script src="js/multiuploader/jquery.fileupload-audio.js"></script>
-        <!-- The File Upload video preview plugin -->
-        <script src="js/multiuploader/jquery.fileupload-video.js"></script>
-        <!-- The File Upload validation plugin -->
-        <script src="js/multiuploader/jquery.fileupload-validate.js"></script>
-        <!-- The File Upload user interface plugin -->
-        <script src="js/multiuploader/jquery.fileupload-ui.js"></script>
-        <!-- The main application script -->
-        <script src="js/multiuploader/main.js"></script>
-        <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
-        <!--[if (gte IE 8)&(lt IE 10)]>
-        <script src="js/cors/jquery.xdr-transport.js"></script>
-        <![endif]-->       
+<!-- MULTIUPLOADER -->
+<script src="js/multiuploader/vendor/jquery.ui.widget.js"></script>
+<script src="http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="js/multiuploader/jquery.iframe-transport.js"></script>
+<script src="js/multiuploader/jquery.fileupload.js"></script>
+<script src="js/multiuploader/jquery.fileupload-process.js"></script>
+<script src="js/multiuploader/jquery.fileupload-image.js"></script>
+<script src="js/multiuploader/jquery.fileupload-validate.js"></script>
+<script src="js/multiuploader/jquery.fileupload-ui.js"></script>
+<script src="js/multiuploader/main.js"></script>
+<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
+<!--[if (gte IE 8)&(lt IE 10)]>
+<script src="js/cors/jquery.xdr-transport.js"></script>
+<![endif]-->       
 <?php 
 //VLOZENI PATICKY
 include_once("sablona/paticka.php");

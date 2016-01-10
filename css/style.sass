@@ -237,7 +237,7 @@ main#nahrani
             width: 49%
             font-weight: 300
                 
-        .banner
+        .postup
             min-height: 260px
             background: $hneda
             margin-left: 5px
@@ -255,6 +255,7 @@ main#nahrani
             font-size: 17px
             font-weight: 500
         
+            
 .pokracovat.btn
     margin-right: 18px
     
@@ -283,13 +284,20 @@ footer
             border-bottom: 2px dotted #fff
 
 //RESPONZIVITA
-        
+@media screen and (min-width: 992px) and (max-width: 1199px)
+    #nahrani .napoveda .postup
+        margin-left: 0
+    
 @media screen and (max-width: 991px)
     .clanek:nth-child(even)
         h1, p, .info
             padding-left: 15px
     .kroky, .napoveda
         display: none
+    #nahrani
+        .fileupload-buttonbar .btn
+            font-size: 15px
+            
 @media screen and (max-width: 730px)
     header
         .intro
@@ -339,3 +347,9 @@ footer
             
     header
         min-height: 80px
+
+@media screen and (max-width: 670px)
+    #nahrani
+        .fileupload-buttonbar .btn
+            font-size: 15px
+            min-width: 160px
