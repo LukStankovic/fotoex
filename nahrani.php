@@ -32,7 +32,12 @@ include_once("sablona/hlavicka.php");
             <p><em>Velikost souboru není omezena.</em></p>
         </div>
         <div class="banner col-md-6">
-            
+            <h2>Nápověda</h2>
+            <p>Vytvořit objednávku je velmi jednoduché. Nepotřebujete k tomu žádný program do vašeho počítače jako u konkurence. 
+            Stačí pouze níže nahrát fotografie do vašeho prohlížeče.</p>
+            <p>Na dalším kroku nastavíte požadované rozměry a parametry fotografie</p>
+            <h3>Nevíte jak dále?</h3>
+            <p>Nevíte si rady jak si objednat fotografie, napište nám na náš e-mail <a href="mailto:info@fotoex.cz">inf@fotoex.cz</a> a my vám s radostí poradíme.</p>
         </div>
     </div>
     <form id="fileupload" action="parametry.php" method="POST" enctype="multipart/form-data">
