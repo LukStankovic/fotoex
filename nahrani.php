@@ -23,14 +23,14 @@ include_once("sablona/hlavicka.php");
             <p>V našem systému jsou podporovány pouze fotografické formáty. Nelze nahrát komprimované soubory jako jsou .zip, .rar.</p>
             <h3>Seznam podporovaných formátů:</h3>
             
-            <ul>
-                <li>.jpg/.jpeg</li>
-                <li>.png</li>
-                <li>.gif</li>
-                <li>.tiff</li>
-            </ul>
+            <div class="row">
+                <div class="col-md-3"><img src="img/jpg.png" alt="tiff-format" class="img-responsive ikona"></div>
+                <div class="col-md-3"><img src="img/png.png" alt="tiff-format" class="img-responsive ikona"></div>
+                <div class="col-md-3"><img src="img/gif.png" alt="tiff-format" class="img-responsive ikona"></div>
+                <div class="col-md-3"><img src="img/tiff.png" alt="tiff-format" class="img-responsive ikona"></div>
+            </div>
             
-            <p><em>Velikost souboru není omezena.</em></p>
+            <p><em>Velikost souboru není nijak omezena.</em></p>
         </div>
         <div class="postup col-md-6">
             <h2>Nápověda</h2>
