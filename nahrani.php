@@ -41,9 +41,8 @@ include_once("sablona/hlavicka.php");
             </div>
         </div>
         <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-        <button type="submit" class="btn pull-right">Pokračovat k nastavení parametrů</button>
+        <button type="submit" class="btn pull-right pokracovat">Pokračovat k nastavení parametrů</button>
     </form>
-    <br>
 
 </main>
 
@@ -74,13 +73,13 @@ include_once("sablona/hlavicka.php");
         <td style="text-align:right">
             {% if (!i && !o.options.autoUpload) { %}
                 <button class="btn start" disabled>
-                    <i class="glyphicon glyphicon-upload"></i>
+                    <i class="fa fa-arrow-circle-up"></i>
                     <span>Nahrát</span>
                 </button>
             {% } %}
             {% if (!i) { %}
                 <button class="btn cancel">
-                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <i class="fa fa-ban"></i>
                     <span>Zrušit</span>
                 </button>
             {% } %}
@@ -116,13 +115,13 @@ include_once("sablona/hlavicka.php");
         <td style="text-align:right">
             {% if (file.deleteUrl) { %}
                 <button class="btn delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-                    <i class="glyphicon glyphicon-trash"></i>
+                    <i class="fa fa-trash"></i>
                     <span>Vymazat</span>
                 </button>
                 <input type="checkbox" name="delete" value="1" class="toggle">
             {% } else { %}
-                <button class="btn btn-warning cancel">
-                    <i class="glyphicon glyphicon-ban-circle"></i>
+                <button class="btn cancel">
+                    <i class="fa fa-ban"></i>
                     <span>Zrušit</span>
                 </button>
             {% } %}
