@@ -124,6 +124,7 @@
                             <th>Deska</th>
                             <th>Typ</th>
                             <th>Cena</th>
+                            <th>Počet</th>
                             <th>Akce</th>
                         </tr>
                     </thead>
@@ -182,7 +183,11 @@
                                         <?php } ?>
                                     </select>
                                 </td>
-                                <td><?php echo $fotka->cena_format + $fotka->cena_fotopapir + $fotka->cena_material + $fotka->cena_deska + $fotka->cena_typ; ?> Kč</td>
+                                <td><?php echo ($fotka->cena_format + $fotka->cena_fotopapir + $fotka->cena_material + $fotka->cena_deska + $fotka->cena_typ)*$fotka->pocet; ?> Kč</td>
+                                <td>
+                                <span class="fot"><?php echo $fotka->pocet;?></span>
+                                <input name="pocet[<?php echo $fotka->id_fotka; ?>]" class="fot_upravit_pole" value="<?php echo $fotka->pocet;?>">
+                                </td>
                                 <td>
                                     <span class="fot_upraveno"><button name="fot_ulozit" value="<?php echo $fotka->id_fotka; ?>" type="submit"><i class="fa fa-save"></i></button></span>
                                     <span class="fot_upraveno"><a href="#"><i class="fa fa-reply"></i></a></span>
@@ -195,7 +200,7 @@
                     </tbody> 
                     <tfoot>
                         <tr>
-                            <td style="text-align: right;" colspan="6"><strong>Cena celkem:</strong></td>
+                            <td style="text-align: right;" colspan="7"><strong>Cena celkem:</strong></td>
                             <td><strong><?php echo $objednavka->celkem;?> Kč</strong></td>
                             <td></td>
                         </tr>

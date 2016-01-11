@@ -7,7 +7,7 @@ class Fotky{
         return $db->rozkouskovaniZaznamu($sql);
     }
      public static function vse(){
-        $sql = "SELECT id_fotka, url, typ_souboru, id_objednavka, id_format, id_deska, id_typ, id_material, id_fotopapir
+        $sql = "SELECT id_fotka, url, typ_souboru, id_objednavka, id_format, id_deska, id_typ, id_material, id_fotopapir, pocet
                 FROM fotky";
         
         return self::vybraniDat($sql);
@@ -56,8 +56,9 @@ class Fotky{
         $typ = $k_uprave["typ"][$id];
         $material = $k_uprave["material"][$id];
         $fotopapir = $k_uprave["fotopapir"][$id];
+        $pocet = $k_uprave["pocet"][$id];
 
-        $sql = "UPDATE fotky SET id_format = '$format', id_deska = '$deska', id_typ = '$typ', id_material = '$material', id_fotopapir = '$fotopapir'
+        $sql = "UPDATE fotky SET id_format = '$format', id_deska = '$deska', id_typ = '$typ', id_material = '$material', id_fotopapir = '$fotopapir', pocet = '$pocet'
                 WHERE  id_fotka = $id";
     
         return $db->zpracovani($sql);
