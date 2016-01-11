@@ -4,8 +4,9 @@
 include_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
 include_once("sablona/hlavicka.php");
-
-?>  
+session_start();
+$_SESSION["fotky"] = null;
+?>
 
 <main id="nahrani" class="container stranka">
     <div class="kroky">
@@ -70,7 +71,6 @@ include_once("sablona/hlavicka.php");
     </form>
     <img src="img/fotky-upload.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
 </main>
-
 
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
     <div class="slides"></div>
@@ -162,10 +162,12 @@ include_once("sablona/hlavicka.php");
 </script>
 
 <!-- MULTIUPLOADER -->
+
+
+
 <script src="js/multiuploader/vendor/jquery.ui.widget.js"></script>
 <script src="http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
 <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/multiuploader/jquery.iframe-transport.js"></script>
 <script src="js/multiuploader/jquery.fileupload.js"></script>

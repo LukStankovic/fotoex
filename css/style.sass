@@ -289,14 +289,26 @@ footer
 //PARAMETRY
 #parametry
     .fotka
-        min-height: 100px
+        min-height: 150px
         &:nth-child(even)
             background: $hneda-radek
         &:nth-child(odd)
             background: transparent
+        
+        .miniatura
+            line-height: 150px
             
+        .row
+            margin-left: 0
+            margin-right: 0
+        .miniatura
+            text-align: center
         img
-            min-height: 100px 
+            height: 110px
+            max-width: 170px
+    
+        .parametr
+            height: 30px
 //RESPONZIVITA
 @media screen and (min-width: 992px) and (max-width: 1199px)
     #nahrani .napoveda .postup
