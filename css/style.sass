@@ -5,6 +5,7 @@ $hneda-g: 101
 $hneda-b: 89
 $hneda-tmavsi: #6f544a
 $hneda-tmava: #372a25
+$hneda-radek: #e8deda
 body
     color: $hneda-tmava
     background: #f4f3f4
@@ -285,6 +286,17 @@ footer
             color:#fff
             border-bottom: 2px dotted #fff
 
+//PARAMETRY
+#parametry
+    .fotka
+        min-height: 100px
+        &:nth-child(even)
+            background: $hneda-radek
+        &:nth-child(odd)
+            background: transparent
+            
+        img
+            min-height: 100px 
 //RESPONZIVITA
 @media screen and (min-width: 992px) and (max-width: 1199px)
     #nahrani .napoveda .postup

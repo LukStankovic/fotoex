@@ -26,7 +26,19 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
 }
 
 ?>  
-<main id="nahrani" class="container stranka">
+<main id="parametry" class="container stranka">
+    <div class="fotky">
+        <?php foreach($fotky as $fotka) {?>
+        <div class="fotka fotka-<?php echo $fotka["id"]; ?>">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="<?php echo $fotka["mini_url"]; ?>">
+                </div>
+            </div>
+        </div>
+        <?php }?>
+    </div>
+       
     <?php foreach($fotky as $fotka) {?>
         <pre><?php print_r($fotka);?></pre>
     <?php }?>
