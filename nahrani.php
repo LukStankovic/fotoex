@@ -46,7 +46,7 @@ include_once("sablona/hlavicka.php");
             <div class="col-lg-12">
                 <span class="btn fileinput-button">
                     <i class="fa fa-plus-circle"></i>
-                    <span>Vybrat soubory</span>
+                    <span>Vybrat fotografie</span>
                     <input type="file" name="files[]" multiple>
                 </span>
                 <button type="submit" class="btn start">
