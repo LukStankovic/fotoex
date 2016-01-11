@@ -2,13 +2,13 @@
     session_start();	
 	unset($_SESSION['id_uzivatel']);
 	unset($_SESSION['login']);
-    include_once ("sablona-spravce/head-login.php"); 
+    include_once ("sablona/head.php"); 
 ?>
 
-  <div class="container">
+  <div class="container" id="login">
         <div class="login_blok">
            <form name="login_formular" method="post">
-                <div id="login" class="blok_text">
+                <div class="blok_text">
                 <h1>Přihlášení</h1>
                     <ul class="err">
                 <?php
@@ -35,7 +35,7 @@
     <?php 
 
     if(isset($_POST["prihlasit"]))
-            Uzivatele::prihlaseniUzivatele($_POST["login"],$_POST["heslo"]);
+            $Uzivatele->prihlaseniBeznehoUzivatele($_POST["login"],$_POST["heslo"]);
 
     ?>
 </body>

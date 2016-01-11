@@ -1,4 +1,22 @@
+        <?php if(isset($_POST["odhlasit"])){
+                unset($_SESSION["id_uzivatel"]);
+                unset($_SESSION["login"]);
+                header("location: index.php");
+                }            
+        ?>
         <header>
+        <div class="login-block">
+           <div class="container">
+            <ul class="pull-right">
+               <?php if(!isset($_SESSION["id_uzivatel"])){?>
+                <li><a href="login.php">Přihlásit se</a></li>
+                <li><a href="#">Registrovat se</a></li>
+                <?php } else { ?>
+                <li><form method="POST"><button type="submit" name="odhlasit">Odhlásit se</button></form></li>
+                <?php }?>
+            </ul>
+            </div>
+        </div>
                 <nav class="container">
                     <a class="logo pull-left" href="index.php"><img src="img/logo.png" alt="logo"></a>
                     <ul class="hlavni-navigace pull-right">

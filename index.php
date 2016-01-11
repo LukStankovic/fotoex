@@ -1,4 +1,5 @@
 <?php 
+session_start();
 //VLOZENI <HEAD> VČETNĚ KONFIGURACE
 include_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
@@ -29,6 +30,9 @@ $poc++;
 } 
 ?>
 </main>
+<pre>
+    <?php print_r($_SESSION); ?>
+</pre>
 <script>
     $("body").attr("id","home");
 </script>
