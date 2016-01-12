@@ -39,7 +39,27 @@ h2
 .btn:hover
         background: $hneda
         color: #fff
-    
+
+.login-block
+    width: 100%
+    height: 30px
+    text-align: right
+    ul 
+        margin: 0
+        li
+            float: left
+            list-style: none
+            a,button
+                background: transparent
+                border: 0
+                display: block
+                line-height: 30px
+                padding: 0 5px
+                color: #fff
+                +prefixy(transition,.2s ease background)
+                &:hover
+                    background: rgba(255,255,255,0.2)
+
 #home header
     width: 100%
     min-height: 500px
@@ -258,6 +278,20 @@ main#nahrani
             font-size: 17px
             font-weight: 500
         
+    .prihlasit
+        font-weight: bold
+        color: #fff
+        padding: 15px
+        background: $hneda
+        margin: 10px 0px
+        
+        .btn
+            background: #fff
+            color: $hneda-tmava
+            display: block
+            padding: 5px
+            font-size: 12px
+            margin-top: -5px
             
 .pokracovat.btn
     margin-right: 18px
@@ -309,6 +343,127 @@ footer
     
         .parametr
             height: 30px
+
+//LOGIN
+#login
+    .login_blok 
+        background: #fff
+        width: 390px
+        height: 310px
+        position: fixed
+        font-family: 'Open Sans'
+        list-style: none
+        top: 50%
+        left: 50%
+        +prefixy(transform,translate(-50%, -50%))
+            
+        li
+            list-style: none
+    
+    
+    .blok_text
+        padding: 0 40px
+        position: relative
+    
+        h1 
+            font-size: 45px
+            padding-bottom: 10px
+            padding-top: 10px
+            text-align: center
+    
+        p
+            font-size: 12px
+            padding-bottom: 10px
+            line-height: 25px
+    
+        
+    
+    form input[type=text], form input[type=password] 
+        width: 100%
+        height: 40px
+        margin-bottom: 10px
+        padding-left: 15px
+        background: #fff
+        border: none
+        border-bottom: 1px solid $hneda-tmavsi
+        color: $hneda-tmava
+        outline: none
+    
+    .button 
+        border: none
+        display: block
+        background: $hneda
+        text-transform: uppercase
+        height: 80px
+        width: 100%
+        position: absolute
+        bottom: 0
+        color: #fff
+        text-align: center
+        cursor: pointer
+        +prefixy(transition,0.3s ease background)
+        outline: 0
+        margin-top: 20px
+    
+    .button:hover 
+    	background: $hneda-tmavsi
+    
+    .button:active 
+    	background: $hneda-tmavsi
+    
+    
+    ::-webkit-input-placeholder
+    	color: $hneda
+    
+    :-moz-placeholder 
+    	color: $hneda
+    
+    ::-moz-placeholder 
+    	color: $hneda
+    
+    :-ms-input-placeholder 
+    	color: $hneda
+    
+    .err 
+        color: $hneda
+        text-align: center
+        margin: 5px auto
+        display: block
+        min-height: 16px
+        font-style: italic
+        
+@media (max-width:500px)    
+    #login
+        .login_blok
+            width: 100%
+            top: 145px
+        
+        .login_formular
+            background: $hneda
+            width: 100%
+            height: 100vh
+            margin: 0px!important
+            position: relative
+             
+        .button
+            height: 50px
+            background: $hneda
+            
+        
+        .button:hover, .button:active
+            background: $hneda-tmavsi
+        
+        .container
+            padding: 0
+    
+        .blok_text h1 
+            font-size: 30px
+            padding-bottom: 10px
+            padding-top: 20px
+            text-align: center
+            margin-top: 0px
+
+
 //RESPONZIVITA
 @media screen and (min-width: 992px) and (max-width: 1199px)
     #nahrani .napoveda .postup
@@ -366,7 +521,7 @@ footer
         font-size: 50px
         color: #fff
         right: 10px
-        top: 5px
+        top: 35px
         position: absolute
     
     .mobilni-nav-tlacitko:hover

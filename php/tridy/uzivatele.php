@@ -230,7 +230,7 @@ class Uzivatele{
             'salt' => $salt,
         ];    
 
-        $vysledek = self::dataPrihlaseni($jmeno,password_hash($heslo, PASSWORD_BCRYPT, $options));
+        $vysledek = self::dataBeznyPrihlaseni($jmeno,password_hash($heslo, PASSWORD_BCRYPT, $options));
         
         if($vysledek) {
 		  if($vysledek > 0) {

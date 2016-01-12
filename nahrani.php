@@ -4,7 +4,6 @@
 include_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
 include_once("sablona/hlavicka.php");
-session_start();
 $_SESSION["fotky"] = null;
 ?>
 
@@ -18,6 +17,13 @@ $_SESSION["fotky"] = null;
             <li><span>5.</span> Dokončení objednávky</li>
         </ul>
     </div>
+    <?php if(!isset($_SESSION["id_uzivatel"])) { ?>
+    <div class="prihlasit">
+        <i class="fa fa-user"></i> Pokud máte účet, přihlaste se prosím. Můžete se také registrovat.
+        <a class="btn pull-right" href="registrace.php">Registrovat se</a>
+        <a class="btn pull-right" href="login.php">Přihlášení</a>
+    </div>
+    <?php } ?>
     <div class="napoveda row">
         <div class="formaty col-md-6">
             <h2>Podpora formátů</h2>

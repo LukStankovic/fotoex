@@ -10,7 +10,6 @@ $typy = $Typy->vse();
 $materialy = $Materialy->vse();
 $fotopapiry = $Fotopapiry->vse();
 
-session_start();
 $_SESSION["fotky"] = null;
 global $id_foto;
 for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){    

@@ -1,8 +1,7 @@
 <?php
-    session_start();	
+    include_once ("sablona/head.php"); 
 	unset($_SESSION['id_uzivatel']);
 	unset($_SESSION['login']);
-    include_once ("sablona/head.php"); 
 ?>
 
   <div class="container" id="login">

@@ -1,5 +1,4 @@
 <?php 
-session_start();
 //VLOZENI <HEAD> VČETNĚ KONFIGURACE
 include_once("sablona/head.php");
 //VLOZENI headeru, loga a menu

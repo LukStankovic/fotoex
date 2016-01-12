@@ -1,6 +1,7 @@
 <?php 
 //VLOŽENÍ KONFIGURACE
 include_once("php/config/konfigurace.php");
+session_start();
 ?>
 <!doctype html>
 <html lang="cs">

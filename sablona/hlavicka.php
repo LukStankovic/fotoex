@@ -1,8 +1,9 @@
-        <?php if(isset($_POST["odhlasit"])){
-                unset($_SESSION["id_uzivatel"]);
-                unset($_SESSION["login"]);
-                header("location: index.php");
-                }            
+        <?php 
+        if(isset($_POST["odhlasit"])){
+            unset($_SESSION["id_uzivatel"]);
+            unset($_SESSION["login"]);
+            header("location: index.php");
+        } 
         ?>
         <header>
         <div class="login-block">
