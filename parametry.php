@@ -23,10 +23,12 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
     $_SESSION["fotky"][$id_foto]["sirka"] = $sirka;
     $_SESSION["fotky"][$id_foto]["vyska"] = $vyska;
     //INFO
+    //velikosti souborů
     $info_o_soboru = pathinfo($_SESSION["fotky"][$id_foto]["url"]);
-    $nazev = strtr($info_o_soboru["filename"], $diakritika);
-    $_SESSION["fotky"][$id_foto]["nazev"] = $nazev;
+    $_SESSION["fotky"][$id_foto]["nazev"] = $info_o_soboru["filename"];
     $_SESSION["fotky"][$id_foto]["format"] = $info_o_soboru["extension"];
+    $_SESSION["fotky"][$id_foto]["velikost"] = 
+        filesize("php/nahrani/tmp-nahrane/".$info_o_soboru["filename"].".".$info_o_soboru["extension"]);
     //PŘEKOPÍROVÁNÍ DO PROMĚNNÉ FOTKY
     $fotky = $_SESSION["fotky"];
 }
@@ -43,6 +45,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
         </ul>
     </div>
     <div class="fotky">
+       <form method="POST" action="kosik.php">
         <?php foreach($fotky as $fotka) {?>
         <div class="fotka fotka-<?php echo $fotka["id"]; ?>">
             <div class="row">
@@ -106,10 +109,10 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
             </div>
         </div>
         <?php }?>
+        <button type="submit" class="btn pull-right pokracovat">Pokračovat do košíku</button>
+        </form>
     </div>
-    <?php foreach($fotky as $fotka) {?>
-        <pre><?php print_r($fotka);?></pre>
-    <?php }?>
+    <pre><?php print_r($_SESSION);?></pre>
 </main>    
 <?php 
 //VLOZENI PATICKY

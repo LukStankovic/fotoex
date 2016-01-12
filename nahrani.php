@@ -4,7 +4,6 @@
 include_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
 include_once("sablona/hlavicka.php");
-$_SESSION["fotky"] = null;
 ?>
 
 <main id="nahrani" class="container stranka">
@@ -72,7 +71,66 @@ $_SESSION["fotky"] = null;
                 <span class="fileupload-process"></span>
             </div>
         </div>
-        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+        <table role="presentation" class="table table-striped">
+            <tbody class="files">
+            
+            <?php
+            //POKUD EXISTUJÍ FOTOGRAFIE V SESSION    
+                
+             //VELIKOSTI SOUBORŮ
+                function jednotky($byty) {
+                    $sz = 'BKMGTP';
+                    $factor = floor((strlen($byty) - 1) / 3);
+                    return sprintf("%.2f", $byty / pow(1024, $factor)) ." ". @$sz[$factor];
+                }   
+               
+            if(isset($_SESSION["fotky"])){
+            //ZRUŠENÍ DISABLED U TLAČÍTKA - protože existují fotografie
+            ?>
+                <script>
+                    $(document).ready(function() {
+                        jQuery(".pokracovat").removeClass("disabled");
+                    });
+                </script>
+            <?php 
+                foreach($_SESSION["fotky"] as $fotka){
+            ?>
+                    <tr class="template-download">
+                          <td>
+                            <span class="preview">
+                               
+                                <img src="<?php echo $fotka["url"]; ?>" style="max-width:100px; max-heihgt:100px">
+
+                            </span>
+                        </td>
+                        <td>
+                            <p class="name">
+                                <?php echo $fotka["nazev"].".".$fotka["format"];?>
+                            </p>
+                            <input type="hidden" name="fotka[]" value="<?php echo $fotka["url"]; ?>">
+                            <input type="hidden" name="miniatura_fotka[]" value="<?php echo $fotka["mini_url"]; ?>">
+                        </td>
+                        <td>
+                            <?php echo jednotky($fotka["velikost"])."B"; ?>
+                        </td>
+                        <td>
+                            <button class="btn delete" data-type="DELETE" data-url="<?php echo $domena;?>/php/nahrani/index.php?file=<?php echo $fotka["nazev"].".".$fotka["format"];?>"
+                                <i class="fa fa-trash"></i>
+                                <span>Vymazat</span>
+                            </button>
+                            <input type="checkbox" name="delete" value="1" class="toggle">
+            
+                        </td>
+                    </tr>
+                       
+
+            <?php
+            }
+        }
+         ?>   
+            
+            </tbody>
+        </table>
         <button type="submit" class="btn pull-right pokracovat">Pokračovat k nastavení parametrů</button>
     </form>
     <img src="img/fotky-upload.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
