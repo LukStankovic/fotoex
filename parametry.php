@@ -57,6 +57,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                         <div class="col-md-4">
                             <div class="parametr format">
                             <select name="format[<?php echo $id_foto;?>]">
+                                <option value="">Formát</option>
                                 <?php foreach($formaty as $format){ ?>
                                 <option value="<?php echo $format->id; ?>"><?php echo $format->nazev; ?></option>
                                 <?php } ?>
@@ -64,15 +65,21 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             </div>
                             <div class="parametr material">
                             <select name="material[<?php echo $id_foto;?>]">
-                                <?php foreach($materialy as $material){ ?>
+                                <option value="">Materiál</option>
+                                <?php foreach($materialy as $material){?>
+                                <?php if($material->nazev != "NULL"){ ?>
                                 <option value="<?php echo $material->id; ?>"><?php echo $material->nazev; ?></option>
-                                <?php } ?>
+                                <?php }?>
+                                <?php }?>
                             </select>
                             </div>
                             <div class="parametr fotopapir">
                             <select name="fotopapir[<?php echo $id_foto;?>]">
+                                <option value="">Fotopapír</option>
                                 <?php foreach($fotopapiry as $fotopapir){ ?>
+                                <?php if($fotopapir->nazev != "NULL"){ ?>
                                 <option value="<?php echo $fotopapir->id; ?>"><?php echo $fotopapir->nazev; ?></option>
+                                <?php } ?>
                                 <?php } ?>
                             </select>
                             </div>
@@ -80,6 +87,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                         <div class="col-md-4">
                             <div class="parametr deska">
                             <select name="deska[<?php echo $id_foto;?>]">
+                                <option value="">Deska</option>
                                 <?php foreach($desky as $deska){ ?>
                                 <option value="<?php echo $deska->id; ?>"><?php echo $deska->nazev; ?></option>
                                 <?php } ?>
@@ -87,6 +95,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             </div>
                             <div class="parametr typ">
                             <select name="typ[<?php echo $id_foto;?>]">
+                                <option value="">Typ</option>
                                 <?php foreach($typy as $typ){ ?>
                                 <option value="<?php echo $typ->id; ?>"><?php echo $typ->nazev; ?></option>
                                 <?php } ?>
@@ -95,7 +104,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                         </div>
                         <div class="col-md-4">
                             <div class="parametr pocet">
-                                počet
+                                <input placeholder="Počet" value="1" type="number" min="1">
                             </div>
                             <div class="parametr kvalita">
                                 kvalita
@@ -114,6 +123,33 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
     </div>
     <pre><?php print_r($_SESSION);?></pre>
 </main>    
+<script>
+//ZOBRAZOVÁNÍ A SKRÝVÁNÍ INPUTŮ
+$(document).ready(function(){
+<?php foreach($fotky as $fotka){?>
+    $(".fotka-<?php echo $fotka["id"];?> .material").show();
+    $(".fotka-<?php echo $fotka["id"];?> .fotopapir").hide();
+    
+    
+    $(".fotka-<?php echo $fotka["id"];?> .format select").change(function(){
+        var vybrane = $(".fotka-<?php echo $fotka["id"];?> .format select option:selected").text();
+        var vybrane_pol = vybrane.split("x");
+        var sirka = parseFloat(vybrane_pol[0]);
+        var vyska = parseFloat(vybrane_pol[1]);
+        
+        if((sirka >= 20) || (sirka >= 20)){
+            $(".fotka-<?php echo $fotka["id"];?> .material").hide();
+            $(".fotka-<?php echo $fotka["id"];?> .fotopapir").show();
+        }
+        else{
+            $(".fotka-<?php echo $fotka["id"];?> .fotopapir").hide();
+            $(".fotka-<?php echo $fotka["id"];?> .material").show();
+        }
+    });
+      
+<?php } ?>
+});
+</script>
 <?php 
 //VLOZENI PATICKY
 include_once("sablona/paticka.php");
