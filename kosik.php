@@ -1,9 +1,9 @@
 <?php 
 
 //VLOZENI <HEAD>
-include_once("sablona/head.php");
+require_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
-include_once("sablona/hlavicka.php");
+require_once("sablona/hlavicka.php");
 $formaty = $Formaty->vse();
 $desky = $Desky->vse();
 $typy = $Typy->vse();
@@ -51,5 +51,5 @@ if(isset($_POST)){
 
 <?php 
 //VLOZENI PATICKY
-include_once("sablona/paticka.php");
+require_once("sablona/paticka.php");
 ?>

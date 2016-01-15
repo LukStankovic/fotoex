@@ -1,9 +1,9 @@
 <?php 
 
 //VLOZENI <HEAD>
-include_once("sablona/head.php");
+require_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
-include_once("sablona/hlavicka.php");
+require_once("sablona/hlavicka.php");
 ?>
 
 <main id="nahrani" class="container stranka">
@@ -246,5 +246,5 @@ include_once("sablona/hlavicka.php");
 <![endif]-->       
 <?php 
 //VLOZENI PATICKY
-include_once("sablona/paticka.php");
+require_once("sablona/paticka.php");
 ?>

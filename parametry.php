@@ -1,30 +1,37 @@
 <?php 
 
 //VLOZENI <HEAD>
-include_once("sablona/head.php");
+require_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
-include_once("sablona/hlavicka.php");
+require_once("sablona/hlavicka.php");
 $formaty = $Formaty->vse();
 $desky = $Desky->vse();
 $typy = $Typy->vse();
 $materialy = $Materialy->vse();
 $fotopapiry = $Fotopapiry->vse();
 
-$_SESSION["fotky"] = null;
-global $id_foto;
+unset($_SESSION["fotky"]);
+
 for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){    
-    //ID
-    $_SESSION["fotky"][$id_foto]["id"] = $id_foto;
+    $id_pred = $id_foto;
+    //POKUD JE V KOŠÍKU
+    /*
+    if(isset($_SESSION["kosik"])){
+        $id_foto = $id_foto + (array_pop(array_keys($_SESSION["kosik"])))+1;
+    }
+    */
+    //ID 
+    $_SESSION["fotky"][$id_foto]["id"] = $id_pred;
     //URL
-    $_SESSION["fotky"][$id_foto]["url"] = $_POST["fotka"][$id_foto];
-    $_SESSION["fotky"][$id_foto]["mini_url"] = $_POST["miniatura_fotka"][$id_foto];
+    $_SESSION["fotky"][$id_foto]["url"] = $_POST["fotka"][$id_pred];
+    $_SESSION["fotky"][$id_foto]["mini_url"] = $_POST["miniatura_fotka"][$id_pred];
     //ROZMĚRY
-    list($sirka, $vyska) = getimagesize($_SESSION["fotky"][$id_foto]["url"]);
+    list($sirka, $vyska) = getimagesize($_SESSION["fotky"][$id_pred]["url"]);
     $_SESSION["fotky"][$id_foto]["sirka"] = $sirka;
     $_SESSION["fotky"][$id_foto]["vyska"] = $vyska;
     //INFO
     //velikosti souborů
-    $info_o_soboru = pathinfo($_SESSION["fotky"][$id_foto]["url"]);
+    $info_o_soboru = pathinfo($_SESSION["fotky"][$id_pred]["url"]);
     $_SESSION["fotky"][$id_foto]["nazev"] = $info_o_soboru["filename"];
     $_SESSION["fotky"][$id_foto]["format"] = $info_o_soboru["extension"];
     $_SESSION["fotky"][$id_foto]["velikost"] = 
@@ -51,12 +58,13 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
             <div class="row">
                 <div class="col-md-2 miniatura">
                     <img src="<?php echo $fotka["mini_url"]; ?>">
+                    <input type="hidden" value="<?php echo $fotka["url"]; ?>" name="foto_url[]">
                 </div>
                 <div class="col-md-8 parametry-inputy">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="parametr format">
-                            <select name="format[<?php echo $id_foto;?>]">
+                            <select name="format[]">
                                 <option value="">Formát</option>
                                 <?php foreach($formaty as $format){ ?>
                                 <option value="<?php echo $format->id; ?>"><?php echo $format->nazev; ?></option>
@@ -64,7 +72,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             </select>
                             </div>
                             <div class="parametr material">
-                            <select name="material[<?php echo $id_foto;?>]">
+                            <select name="material[]">
                                 <option value="">Materiál</option>
                                 <?php foreach($materialy as $material){?>
                                 <?php if($material->nazev != "NULL"){ ?>
@@ -74,7 +82,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             </select>
                             </div>
                             <div class="parametr fotopapir">
-                            <select name="fotopapir[<?php echo $id_foto;?>]">
+                            <select name="fotopapir[]">
                                 <option value="">Fotopapír</option>
                                 <?php foreach($fotopapiry as $fotopapir){ ?>
                                 <?php if($fotopapir->nazev != "NULL"){ ?>
@@ -86,7 +94,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                         </div>
                         <div class="col-md-4">
                             <div class="parametr deska">
-                            <select name="deska[<?php echo $id_foto;?>]">
+                            <select name="deska[]">
                                 <option value="">Deska</option>
                                 <?php foreach($desky as $deska){ ?>
                                 <option value="<?php echo $deska->id; ?>"><?php echo $deska->nazev; ?></option>
@@ -94,7 +102,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             </select>
                             </div>
                             <div class="parametr typ">
-                            <select name="typ[<?php echo $id_foto;?>]">
+                            <select name="typ[]">
                                 <option value="">Typ</option>
                                 <?php foreach($typy as $typ){ ?>
                                 <option value="<?php echo $typ->id; ?>"><?php echo $typ->nazev; ?></option>
@@ -104,7 +112,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                         </div>
                         <div class="col-md-4">
                             <div class="parametr pocet">
-                                <input placeholder="Počet" value="1" type="number" min="1">
+                                <input placeholder="Počet" value="1" type="number" min="1" name="pocet[]">
                             </div>
                             <div class="parametr kvalita">
                                 kvalita
@@ -152,5 +160,5 @@ $(document).ready(function(){
 </script>
 <?php 
 //VLOZENI PATICKY
-include_once("sablona/paticka.php");
+require_once("sablona/paticka.php");
 ?>

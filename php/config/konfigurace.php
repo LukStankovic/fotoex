@@ -1,16 +1,16 @@
 <?php
-include_once ("php/tridy/databaze.php");
-include_once ("php/tridy/clanky.php");
-include_once ("php/tridy/objednavky.php");
-include_once ("php/tridy/fotky.php");
-include_once ("php/tridy/uzivatele.php");
+require_once ("php/tridy/databaze.php");
+require_once ("php/tridy/clanky.php");
+require_once ("php/tridy/objednavky.php");
+require_once ("php/tridy/fotky.php");
+require_once ("php/tridy/uzivatele.php");
 
 //PARAMETRY
-include_once ("php/tridy/formaty.php");
-include_once ("php/tridy/desky.php");
-include_once ("php/tridy/fotopapiry.php");
-include_once ("php/tridy/materialy.php");
-include_once ("php/tridy/typy.php");
+require_once ("php/tridy/formaty.php");
+require_once ("php/tridy/desky.php");
+require_once ("php/tridy/fotopapiry.php");
+require_once ("php/tridy/materialy.php");
+require_once ("php/tridy/typy.php");
 
 
 $Clanky = new Clanky();

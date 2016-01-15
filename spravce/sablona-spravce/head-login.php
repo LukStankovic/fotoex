@@ -1,4 +1,4 @@
-<?php  include_once ("konfigurace.php"); ?>
+<?php  require_once ("konfigurace.php"); ?>
 <!DOCTYPE HTML>
 <html>
 <head>

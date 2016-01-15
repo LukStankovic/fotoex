@@ -1,6 +1,6 @@
 <?php 
 //VLOŽENÍ KONFIGURACE
-include_once("php/config/konfigurace.php");
+require_once("php/config/konfigurace.php");
 session_start();
 $domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
 ?>

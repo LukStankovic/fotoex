@@ -1,5 +1,5 @@
 <?php
-    include_once ("sablona-spravce/head.php"); 
+    require_once ("sablona-spravce/head.php"); 
 ?>
 
 <body>
@@ -45,25 +45,25 @@
         <div class="container">
             <?php
             if((isset($_GET["page"])) and ($_GET["page"] == "nastenka"))
-                include_once ('nastenka.php');             
+                require_once ('nastenka.php');             
             if((isset($_GET["page"])) and ($_GET["page"] == "objednavky"))
-                include_once ('objednavky.php'); 
+                require_once ('objednavky.php'); 
             if((isset($_GET["page"])) and ($_GET["page"] == "parametry"))
-                include_once ('parametry.php');
+                require_once ('parametry.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "clanky"))
-                include_once('clanky.php');
+                require_once('clanky.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "upravit-clanek"))
-                include_once('upravit_clanek.php');
+                require_once('upravit_clanek.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "uzivatele"))
-                include_once('uzivatele.php');
+                require_once('uzivatele.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "detail-objednavky"))
-                include_once('detail_objednavky.php');
+                require_once('detail_objednavky.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "detail-parametru"))
-                include_once('detail_parametru.php');
+                require_once('detail_parametru.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "upravit-parametr"))
-                include_once('upravit_parametr.php');
+                require_once('upravit_parametr.php');
             if((isset($_GET["page"])) and ($_GET["page"] == "detail-uzivatele"))
-                include_once('detail_uzivatele.php');  
+                require_once('detail_uzivatele.php');  
             ?>
         </div>
     </div>   

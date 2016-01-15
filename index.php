@@ -1,8 +1,8 @@
 <?php 
 //VLOZENI <HEAD> VČETNĚ KONFIGURACE
-include_once("sablona/head.php");
+require_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
-include_once("sablona/hlavicka.php");
+require_once("sablona/hlavicka.php");
 $clanky = $Clanky->vse();
 $poc = 0;
 ?>
@@ -38,6 +38,6 @@ $poc++;
 
 <?php 
 //VLOZENI PATICKY
-include_once("sablona/paticka.php");
+require_once("sablona/paticka.php");
 ?>
 

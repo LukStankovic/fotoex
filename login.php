@@ -1,5 +1,5 @@
 <?php
-    include_once ("sablona/head.php"); 
+    require_once ("sablona/head.php"); 
 	unset($_SESSION['id_uzivatel']);
 	unset($_SESSION['login']);
 ?>

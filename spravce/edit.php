@@ -1,5 +1,5 @@
 <?php
-    include_once ("sablona-spravce/head.php"); 
+    require_once ("sablona-spravce/head.php"); 
     $vsechny_clanky = $Clanky->dataZeVsechClanku();
     $vsechny_kategorie = $Kategorie->dataVsechKategorii();
 

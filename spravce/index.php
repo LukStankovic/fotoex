@@ -2,7 +2,7 @@
     session_start();	
 	unset($_SESSION['id_uzivatel']);
 	unset($_SESSION['login']);
-    include_once ("sablona-spravce/head-login.php"); 
+    require_once ("sablona-spravce/head-login.php"); 
 ?>
 
   <div class="container">

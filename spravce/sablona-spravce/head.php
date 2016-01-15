@@ -1,7 +1,7 @@
 <?php  
-    include_once ("autorizace.php");
-    include_once ("konfigurace.php"); 
-    include_once ("headers.php");
+    require_once ("autorizace.php");
+    require_once ("konfigurace.php"); 
+    require_once ("headers.php");
 ?>
 
 <!DOCTYPE HTML>
