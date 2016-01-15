@@ -30,6 +30,7 @@ if(isset($_POST)){
         $_SESSION["kosik"][$id_foto]["deska"] = $_POST["deska"][$id_foto];
         $_SESSION["kosik"][$id_foto]["typ"] = $_POST["typ"][$id_foto];
         $_SESSION["kosik"][$id_foto]["pocet"] = $_POST["pocet"][$id_foto];
+        $_SESSION["kosik"][$id_foto]["cena_fotka"] = $_POST["cena_fotka"][$id_foto];
     }
 }
 
