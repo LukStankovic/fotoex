@@ -34,6 +34,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
     $info_o_soboru = pathinfo($_SESSION["fotky"][$id_pred]["url"]);
     $_SESSION["fotky"][$id_foto]["nazev"] = $info_o_soboru["filename"];
     $_SESSION["fotky"][$id_foto]["format"] = $info_o_soboru["extension"];
+    chmod("php/nahrani/tmp-nahrane", 0777);
     $_SESSION["fotky"][$id_foto]["velikost"] = 
         filesize("php/nahrani/tmp-nahrane/".$info_o_soboru["filename"].".".$info_o_soboru["extension"]);
     //PŘEKOPÍROVÁNÍ DO PROMĚNNÉ FOTKY
