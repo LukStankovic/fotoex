@@ -67,7 +67,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             <select name="format[]">
                                 <option value="">Formát</option>
                                 <?php foreach($formaty as $format){ ?>
-                                <option value="<?php echo $format->id; ?>"><?php echo $format->nazev; ?></option>
+                                <option data-price="<?php echo $format->cena; ?>" value="<?php echo $format->id; ?>"><?php echo $format->nazev; ?></option>
                                 <?php } ?>
                             </select>
                             </div>
@@ -76,7 +76,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                                 <option value="">Materiál</option>
                                 <?php foreach($materialy as $material){?>
                                 <?php if($material->nazev != "NULL"){ ?>
-                                <option value="<?php echo $material->id; ?>"><?php echo $material->nazev; ?></option>
+                                <option data-price="<?php echo $material->cena; ?>" value="<?php echo $material->id; ?>"><?php echo $material->nazev; ?></option>
                                 <?php }?>
                                 <?php }?>
                             </select>
@@ -86,7 +86,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                                 <option value="">Fotopapír</option>
                                 <?php foreach($fotopapiry as $fotopapir){ ?>
                                 <?php if($fotopapir->nazev != "NULL"){ ?>
-                                <option value="<?php echo $fotopapir->id; ?>"><?php echo $fotopapir->nazev; ?></option>
+                                <option data-price="<?php echo $fotopapir->cena; ?>" value="<?php echo $fotopapir->id; ?>"><?php echo $fotopapir->nazev; ?></option>
                                 <?php } ?>
                                 <?php } ?>
                             </select>
@@ -97,7 +97,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             <select name="deska[]">
                                 <option value="">Deska</option>
                                 <?php foreach($desky as $deska){ ?>
-                                <option value="<?php echo $deska->id; ?>"><?php echo $deska->nazev; ?></option>
+                                <option data-price="<?php echo $deska->cena; ?>" value="<?php echo $deska->id; ?>"><?php echo $deska->nazev; ?></option>
                                 <?php } ?>
                             </select>
                             </div>
@@ -105,7 +105,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             <select name="typ[]">
                                 <option value="">Typ</option>
                                 <?php foreach($typy as $typ){ ?>
-                                <option value="<?php echo $typ->id; ?>"><?php echo $typ->nazev; ?></option>
+                                <option data-price="<?php echo $typ->cena; ?>" value="<?php echo $typ->id; ?>"><?php echo $typ->nazev; ?></option>
                                 <?php } ?>
                             </select>
                             </div>
@@ -121,7 +121,8 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                     </div>
                 </div>
                 <div class="col-md-2 cena">
-                    cena
+                    <span>0.00 Kč</span>
+                    <input type="hidden" name="cena_fotka[]" value="0.00">
                 </div>
             </div>
         </div>
@@ -132,13 +133,46 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
     <pre><?php print_r($_SESSION);?></pre>
 </main>    
 <script>
-//ZOBRAZOVÁNÍ A SKRÝVÁNÍ INPUTŮ
 $(document).ready(function(){
+//CENY
+<?php foreach($fotky as $fotka){?>
+    
+    
+    var nova_cena = 0.00, zakladni_cena = 0.00, cena_bez_mnozstvi;
+    //PŘI ZMĚNĚ SELECTU
+    jQuery(".fotka-<?php echo $fotka["id"];?> select").change(function() {
+
+        nova_cena = zakladni_cena;    
+        
+        jQuery(".fotka-<?php echo $fotka["id"];?> select option:selected").each(function() {
+            if( jQuery(this).data('price') == null ){
+                nova_cena = nova_cena;
+            }
+            else if (!(jQuery(this).data('price'))){
+                nova_cena = nova_cena;
+            }
+            else{
+                nova_cena += jQuery(this).data('price');
+                cena_bez_mnozstvi = nova_cena;
+                nova_cena = cena_bez_mnozstvi * jQuery(".fotka-<?php echo $fotka["id"];?> .pocet input").val();
+            }
+        });
+        jQuery(".fotka-<?php echo $fotka["id"];?> .cena span").html(nova_cena.toFixed(2) + " Kč");
+        jQuery(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena.toFixed(2));
+    });
+    
+    jQuery(".fotka-<?php echo $fotka["id"];?> .pocet input").change(function() {
+        nova_cena = cena_bez_mnozstvi * jQuery(this).val();
+        jQuery(".fotka-<?php echo $fotka["id"];?> .cena span").html(nova_cena.toFixed(2) + " Kč");
+        jQuery(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena.toFixed(2));
+    });
+    
+    
+<?php }?>
+//ZOBRAZOVÁNÍ A SKRÝVÁNÍ INPUTŮ
 <?php foreach($fotky as $fotka){?>
     $(".fotka-<?php echo $fotka["id"];?> .material").show();
     $(".fotka-<?php echo $fotka["id"];?> .fotopapir").hide();
-    
-    
     $(".fotka-<?php echo $fotka["id"];?> .format select").change(function(){
         var vybrane = $(".fotka-<?php echo $fotka["id"];?> .format select option:selected").text();
         var vybrane_pol = vybrane.split("x");
