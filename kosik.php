@@ -24,7 +24,11 @@ if(isset($_POST)){
                 $_SESSION["kosik"][$id_foto]["format_nazev"] = $format->nazev;
         
         
-        if($_SESSION["kosik"][$id_foto]["material"] != null){
+        if(($_POST["material"][$id_foto] == null) || ($_SESSION["kosik"][$id_foto]["material"] == "NULL")){
+            $_SESSION["kosik"][$id_foto]["material"] = 0;
+            $_SESSION["kosik"][$id_foto]["material_nazev"] = "―";
+        }
+        else{
             //ID MATERIÁLU
             $_SESSION["kosik"][$id_foto]["material"] = $_POST["material"][$id_foto];
             //NÁZEV MATERIÁLU
@@ -32,23 +36,19 @@ if(isset($_POST)){
                 if($material->id == $_POST["material"][$id_foto])
                     $_SESSION["kosik"][$id_foto]["material_nazev"] = $material->nazev;
         }
-        else{
-            $_SESSION["kosik"][$id_foto]["material"] = "NULL";
-            $_SESSION["kosik"][$id_foto]["material_nazev"] = "---";
+        
+        
+        if(($_POST["fotopapir"][$id_foto] == null) || ($_SESSION["kosik"][$id_foto]["fotopapir"] == "NULL")){
+            $_SESSION["kosik"][$id_foto]["fotopapir"] = 0;
+            $_SESSION["kosik"][$id_foto]["fotopapir_nazev"] = "―";
         }
-        
-        
-        if($_SESSION["kosik"][$id_foto]["fotopapir"] != null){
+        else{
             //ID FOTOPAPÍRU
             $_SESSION["kosik"][$id_foto]["fotopapir"] = $_POST["fotopapir"][$id_foto];
             //NÁZEV FOTOPAPÍRU
             foreach($fotopapiry as $fotopapir)
                 if($fotopapir->id == $_POST["fotopapir"][$id_foto])
                     $_SESSION["kosik"][$id_foto]["fotopapir_nazev"] = $fotopapir->nazev;
-        }
-        else{
-            $_SESSION["kosik"][$id_foto]["fotopapir"] = "NULL";
-            $_SESSION["kosik"][$id_foto]["fotopapir_nazev"] = "---";
         }
         //ID DESKA
         $_SESSION["kosik"][$id_foto]["deska"] = $_POST["deska"][$id_foto];
@@ -115,10 +115,14 @@ if(isset($_POST)){
                 <td></td>
                 <td></td>
                 <td></td>
-                <td colspan="3" class="celkem">Celková cena: <span></span> Kč</td>
+                <td></td>
+                <td class="celkem">Celková cena:</td>
+                <td class="celkem"><span></span> Kč</td>
+                <td></td>
             </tr>
         </tfoot>
     </table>
+    <a class="pokracovat btn pull-right" href="udaje.php">Pokračovat v objednávce</a>
     <pre><?php print_r($_SESSION);?></pre>
     <pre><?php print_r($_POST);?></pre>
 </main>    
