@@ -437,45 +437,45 @@ footer {
     line-height: 150px; }
 
 /* line 360, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-#kosik .kroky {
+#kosik .kroky, #udaje .kroky {
   margin-bottom: 30px; }
 
 /* line 362, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-#kosik table {
+#kosik table, #udaje table {
   width: 100%;
   text-align: center;
   vertical-align: middle;
   margin-bottom: 30px; }
   /* line 367, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-  #kosik table thead {
+  #kosik table thead, #udaje table thead {
     color: #856559;
     border-bottom: 2px solid #856559; }
     /* line 370, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-    #kosik table thead th {
+    #kosik table thead th, #udaje table thead th {
       text-align: center;
       padding: 10px 0; }
   /* line 376, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-  #kosik table tbody td img {
+  #kosik table tbody td img, #udaje table tbody td img {
     max-height: 100px;
     max-width: 220px;
     padding: 5px 0; }
   /* line 380, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-  #kosik table tbody td.cena {
+  #kosik table tbody td.cena, #udaje table tbody td.cena {
     font-weight: bold; }
   /* line 382, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-  #kosik table tbody tr:nth-child(even) {
+  #kosik table tbody tr:nth-child(even), #udaje table tbody tr:nth-child(even) {
     background: #e8deda; }
   /* line 384, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-  #kosik table tbody tr:nth-child(odd) {
+  #kosik table tbody tr:nth-child(odd), #udaje table tbody tr:nth-child(odd) {
     background: transparent; }
   /* line 387, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-  #kosik table tbody tr:last-child {
+  #kosik table tbody tr:last-child, #udaje table tbody tr:last-child {
     border-bottom: 2px solid #856559; }
   /* line 390, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-  #kosik table tfoot td {
+  #kosik table tfoot td, #udaje table tfoot td {
     padding: 10px 0; }
   /* line 392, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
-  #kosik table tfoot .celkem {
+  #kosik table tfoot .celkem, #udaje table tfoot .celkem {
     font-weight: bold; }
 
 /* line 397, /Applications/XAMPP/xamppfiles/htdocs/fotoex/css/style.sass */
