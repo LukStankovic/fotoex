@@ -353,6 +353,45 @@ footer
             
         .cena
             line-height: 150px
+
+//KOŠÍK
+
+#kosik
+    .kroky
+        margin-bottom: 30px
+    table
+        width: 100%
+        text-align: center
+        vertical-align: middle
+        margin-bottom: 30px
+        thead
+            color: $hneda
+            border-bottom: 2px solid $hneda
+            th
+                text-align: center
+                padding: 10px 0
+                
+        tbody
+            td
+                img
+                    max-height: 100px
+                    max-width: 220px
+                    padding: 5px 0
+                &.cena
+                    font-weight: bold
+            tr:nth-child(even)
+                background: $hneda-radek
+            tr:nth-child(odd)
+                background: transparent
+                
+            tr:last-child
+                border-bottom: 2px solid $hneda
+        tfoot
+            td
+                padding: 10px 0
+            .celkem
+                font-weight: bold
+                
 //LOGIN
 #login
     .login_blok 
