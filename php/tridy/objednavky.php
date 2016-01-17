@@ -10,6 +10,10 @@ class Objednavky{
      public static function vse(){
         $sql = "SELECT id_objednavka, datum, stav, 
                        login, jmeno, prijmeni, email, telefon, ulice, mesto, psc, zeme,
+                       login, jmeno, prijmeni, email, telefon,
+                       d_jmeno, d_prijmeni, d_ulice, d_psc, d_mesto, d_zeme,
+                       f_jmeno, f_prijmeni, f_ulice, f_psc, f_mesto, f_zeme,
+                       u_telefon, u_email,
                        id_fotka, url, typ_souboru,
                        nazev_format, alias_format, round(cena_format,2),
                        nazev_deska, alias_deska, round(cena_deska,2),
@@ -38,6 +42,7 @@ class Objednavky{
                        login, jmeno, prijmeni, email, telefon,
                        d_jmeno, d_prijmeni, d_ulice, d_psc, d_mesto, d_zeme,
                        f_jmeno, f_prijmeni, f_ulice, f_psc, f_mesto, f_zeme,
+                       u_telefon, u_email,
                        pocet,
                        round((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ))*pocet,2) AS 'celkem'
 

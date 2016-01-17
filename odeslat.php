@@ -14,7 +14,6 @@ $id_obj = "";
 list($usec, $sec) = explode(" ", microtime());
 $id_obj = (((float)$usec + (float)$sec)*10000);
 
-echo $id_obj;
 if(isset($_POST["odeslat"])){
     
     
@@ -62,7 +61,16 @@ if(isset($_POST["odeslat"])){
     
     
     foreach($_SESSION["kosik"] as $jedna_fotka){
-        $data_fot["url"] = $jedna_fotka["url"];
+        
+        //KOPÍROVÁNÍ DO SLOŽKY FOTKY
+        mkdir("objednavky/".$id_obj, 0777);
+        $co = "php/nahrani/tmp-nahrane/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
+        $kam = "objednavky/".$id_obj."/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
+        copy($co,$kam);
+            
+        unset($co);
+        
+        $data_fot["url"] = $domena."/objednavky/".$id_obj."/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
         $data_fot["typ_souboru"] = $jedna_fotka["typ_s"];
         $data_fot["format"] = $jedna_fotka["format"];
         $data_fot["material"] = $jedna_fotka["material"];
@@ -75,6 +83,7 @@ if(isset($_POST["odeslat"])){
         $Fotky->vlozeni($id_obj,$data_fot);
     }
     
+
 }
 
 ?>  
@@ -162,5 +171,7 @@ $(document).ready(function(){
 </script>
 <?php 
 //VLOZENI PATICKY
+unset($_SESSION["kosik"]);
+unset($_SESSION["fotky"]);
 require_once("sablona/paticka.php");
 ?>

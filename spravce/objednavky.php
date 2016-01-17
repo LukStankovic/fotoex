@@ -34,13 +34,13 @@
                                 if($objednavka->stav == "Zrušeno") echo "zruseno";
                                 ?>">
                                 <td><?php echo $objednavka->id_objednavka;?></td>
-                                <td><?php echo $objednavka->jmeno;?></td>   
-                                <td><?php echo $objednavka->prijmeni;?></td>
+                                <td><?php echo $objednavka->f_jmeno;?></td>   
+                                <td><?php echo $objednavka->f_prijmeni;?></td>
                                 <td>
-                                    <?php echo $objednavka->ulice;?>,
-                                    <?php echo $objednavka->mesto;?>,<br>
-                                    <?php echo $objednavka->psc;?>,
-                                    <?php echo $objednavka->zeme;?>
+                                    <?php echo $objednavka->f_ulice;?>,
+                                    <?php echo $objednavka->f_mesto;?>,<br>
+                                    <?php echo $objednavka->f_psc;?>,
+                                    <?php echo $objednavka->f_zeme;?>
                                 </td>   
                                 <td><?php echo date("j. n. Y, H:i:s",strtotime($objednavka->datum));?></td>       
                                 

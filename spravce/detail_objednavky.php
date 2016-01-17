@@ -100,12 +100,18 @@
            <div class="col-md-4">
             <h2>O zákazníkovi</h2>
                 <ul>
-                    <li><?php echo "$objednavka->jmeno $objednavka->prijmeni"; ?></li>
-                    <li>
-                        <a href="tel:<?php echo $objednavka->telefon; ?>"><?php echo $objednavka->telefon; ?></a>
+                    <li><?php 
+                        if($objednavka->jmeno != "neregistrovaný")
+                            echo "$objednavka->jmeno $objednavka->prijmeni"; 
+                        else
+                            echo "Neregistrovaný zákazník";
+                        ?>
                     </li>
                     <li>
-                        <a href="mailto:<?php echo $objednavka->email; ?>"><?php echo $objednavka->email; ?></a>
+                        <a href="tel:<?php echo $objednavka->u_telefon; ?>"><?php echo $objednavka->u_telefon; ?></a>
+                    </li>
+                    <li>
+                        <a href="mailto:<?php echo $objednavka->u_email; ?>"><?php echo $objednavka->u_email; ?></a>
                     </li>
                 </ul>
             </div>
