@@ -133,7 +133,7 @@ $(document).ready(function(){
     <?php foreach($_SESSION["kosik"] as $fotka){ ?>
     celkem = celkem + parseFloat($("tbody .fotka-<?php echo $fotka["id"]; ?> td.cena span").text());
     <?php }?>
-    $("tfoot td.celkem span").html(celkem);
+    $("tfoot td.celkem span").html(celkem.toFixed(2));
 });
 </script>
 <?php 

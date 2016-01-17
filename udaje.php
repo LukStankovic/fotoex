@@ -22,7 +22,9 @@ $fotopapiry = $Fotopapiry->vse();
             <li><span>5.</span> Dokončení objednávky</li>
         </ul>
     </div>
+    <form method="POST" action="odeslat.php">
     <div class="udaje-blok">
+        
         <div class="row">
             <div class="fakturacni col-md-6">
                 <h2>Fakturační údaje</h2>
@@ -97,7 +99,8 @@ $fotopapiry = $Fotopapiry->vse();
             </tr>
         </tfoot>
     </table>
-    <a class="pokracovat btn pull-right" href="udaje.php">Pokračovat v objednávce</a>
+    <button type="submit" class="pokracovat btn pull-right">Odeslat objednávku</button>
+    </form>
     <img src="img/fotka-udaje.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
 </main>    
 <script>
@@ -106,7 +109,7 @@ $(document).ready(function(){
     <?php foreach($_SESSION["kosik"] as $fotka){ ?>
     celkem = celkem + parseFloat($("tbody .fotka-<?php echo $fotka["id"]; ?> td.cena span").text());
     <?php }?>
-    $("tfoot td.celkem span").html(celkem);
+    $("tfoot td.celkem span").html(celkem.toFixed(2));
 });
 </script>
 <?php 
