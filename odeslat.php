@@ -63,13 +63,13 @@ if(isset($_POST["odeslat"])){
     foreach($_SESSION["kosik"] as $jedna_fotka){
         
         //KOPÍROVÁNÍ DO SLOŽKY FOTKY
-        mkdir("objednavky/".$id_obj, 0777);
+        if (!file_exists("objednavky/".$id_obj))
+            mkdir("objednavky/".$id_obj, 0777);
+        
         $co = "php/nahrani/tmp-nahrane/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
         $kam = "objednavky/".$id_obj."/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
         copy($co,$kam);
-            
-        unset($co);
-        
+
         $data_fot["url"] = $domena."/objednavky/".$id_obj."/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
         $data_fot["typ_souboru"] = $jedna_fotka["typ_s"];
         $data_fot["format"] = $jedna_fotka["format"];
@@ -90,11 +90,11 @@ if(isset($_POST["odeslat"])){
 <main id="udaje" class="container stranka">
     <div class="kroky">
         <ul>
-            <li class="aktivni"><a href="nahrani.php"><span>1.</span> Nahrání fotografií</a></li>
-            <li class="aktivni"><a href="parametry.php"><span>2.</span> Nastavení parametrů</a></li>
-            <li class="aktivni"><a href="kosik.php"><span>3.</span> Košík</a></li>
+            <li class="aktivni"><a href="#"><span>1.</span> Nahrání fotografií</a></li>
+            <li class="aktivni"><a href="#"><span>2.</span> Nastavení parametrů</a></li>
+            <li class="aktivni"><a href="#"><span>3.</span> Košík</a></li>
             <li class="aktivni"><a href="#"><span>4.</span> Doručovací údaje</a></li>
-            <li><span>5.</span> Dokončení objednávky</li>
+            <li class="aktivni"><a href="#"><span>5.</span> Dokončení objednávky</a></li>
         </ul>
     </div>
     <form method="POST" action="odeslat.php">
@@ -171,6 +171,9 @@ $(document).ready(function(){
 </script>
 <?php 
 //VLOZENI PATICKY
+foreach($_SESSION["kosik"] as $jedna_fotka){
+    unlink("php/nahrani/tmp-nahrane/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
+}
 unset($_SESSION["kosik"]);
 unset($_SESSION["fotky"]);
 require_once("sablona/paticka.php");
