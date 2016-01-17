@@ -28,40 +28,28 @@ $fotopapiry = $Fotopapiry->vse();
                 <h2>Fakturační údaje</h2>
                 
                 <div class="form-group">
-                    <label for="jmeno_fak" class="control-label">Křestní jméno: </label>
-                    <input type="text" class="form-control" name="jmeno_fak" required>    
+                    <input type="text" class="form-control vedle leva" name="fak_jmeno" placeholder="Jméno" required>    
+                    
+                    <input type="text" class="form-control vedle" name="fak_prijmeni" placeholder="Příjmení" required>    
                 </div>
                 <div class="form-group">
-                    <label for="jmeno_fak" class="control-label">Příjmení: </label>
-                    <input type="text" class="form-control" name="jmeno_fak" required>    
-                </div>
-                <div class="form-group">
-                    <label for="jmeno_fak" class="control-label">Ulice: </label>
-                    <input type="text" class="form-control" name="jmeno_fak" required>    
-                </div>
-                <div class="form-group">
-                    <label for="jmeno_fak" class="control-label">Město: </label>
-                    <input type="text" class="form-control" name="jmeno_fak" required>    
-                </div>
-                <div class="form-group">
-                    <label for="jmeno_fak" class="control-label">PSČ: </label>
-                    <input type="text" class="form-control" name="jmeno_fak" required>    
-                </div>
+                    <input type="text" class="form-control vedle leva" name="fak_ulice" placeholder="Ulice" required>    
 
+                    <input type="text" class="form-control vedle" name="fak_mesto" placeholder="Město" required>    
+                </div>
                 <div class="form-group">
-                    <select name="dor_zeme" class="upravit_pole">
+                    <input type="text" class="form-control vedle leva" name="fak_psc" placeholder="PSČ" required>    
+
+                    <select name="fak_zeme" class="upravit_pole">
                         <option value="Česká republika">Česká republika</option>
                         <option value="Slovenská republika">Slovenská republika</option>
                     </select>
                 </div>
                 <hr>
+                <h2>Údaje o zákazníkovi</h2>
                 <div class="form-group">
-                    <label for="jmeno_fak" class="control-label">E-mail: </label>
-                    <input type="text" class="form-control" name="jmeno_fak" required>    
-                </div>
-                <div class="form-group">
-                    <label for="jmeno_fak" class="control-label">Telefon: </label>
-                    <input type="text" class="form-control" name="jmeno_fak" required>    
+                    <input type="text" class="form-control vedle leva" name="uz_email" placeholder="E-mail" required>    
+                    <input type="text" class="form-control vedle" name="uz_telefon" placeholder="Telefon" required>    
                 </div>
             </div>
             <div class="dorucovaci col-md-6">
