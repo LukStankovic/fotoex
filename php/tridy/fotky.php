@@ -34,19 +34,26 @@ class Fotky{
                 ";
         return self::vybraniDat($sql);
     }
-    public function vlozeni($nazev,$ikona,$popis){
-      /*  $db = new Databaze();
+    public function vlozeni($id_o,$k_uprave){
+        $db = new Databaze();
         
-        //přípava dat
-        
-        $nazev_kategorie = $db->pripravaProInput($nazev);
-        $ikona_kategorie = $db->pripravaProInput($ikona);
-        $popis_kategorie = $db->pripravaProInput($popis);
+        $url = $db->pripravaProInput($k_uprave["url"]);
+        $typ_s = $db->pripravaProInput($k_uprave["typ_souboru"]);
+        $id_o = $db->pripravaProInput($id_o);
+        $format = $db->pripravaProInput( $k_uprave["format"]);
+        $deska = $db->pripravaProInput($k_uprave["deska"]);
+        $typ = $db->pripravaProInput($k_uprave["typ"]);
+        $material = $db->pripravaProInput($k_uprave["material"]);
+        //FAKTURAČNÍ ADRESA
+        $fotopapir = $db->pripravaProInput($k_uprave["fotopapir"]);
+        $pocet = $db->pripravaProInput($k_uprave["pocet"]);
+
     
-        $sql = "INSERT INTO kategorie (nazev_kategorie, ikona_kategorie, popis_kategorie)
-                VALUES ('$nazev_kategorie','$ikona_kategorie','$popis_kategorie')";
         
-        return $db->zpracovani($sql);*/
+        $sql = "INSERT INTO fotky
+                VALUES ('','$url','$typ','$id_o','$format','$deska','$typ_s','$material','$fotopapir','$pocet')";
+        
+        return $db->zpracovani($sql);
     }
     public function upravit($id,$k_uprave) {
         $db = new Databaze();    

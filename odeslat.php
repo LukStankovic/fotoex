@@ -10,6 +10,72 @@ $typy = $Typy->vse();
 $materialy = $Materialy->vse();
 $fotopapiry = $Fotopapiry->vse();
 
+$id_obj = "";
+list($usec, $sec) = explode(" ", microtime());
+$id_obj = (((float)$usec + (float)$sec)*10000);
+
+echo $id_obj;
+if(isset($_POST["odeslat"])){
+    
+    
+    if($_POST["dor_jmeno"])
+        $data_obj["dor_jmeno"] = $_POST["dor_jmeno"];
+    else
+        $data_obj["dor_jmeno"] = $_POST["fak_jmeno"];
+    
+    if($_POST["dor_prijmeni"])
+        $data_obj["dor_prijmeni"] = $_POST["dor_prijmeni"];
+    else
+        $data_obj["dor_prijmeni"] = $_POST["fak_prijmeni"];
+    if($_POST["dor_ulice"])
+        $data_obj["dor_ulice"] = $_POST["dor_ulice"];
+    else
+        $data_obj["dor_ulice"] = $_POST["fak_ulice"];
+    if($_POST["dor_mesto"])
+        $data_obj["dor_mesto"] = $_POST["dor_mesto"];
+    else
+        $data_obj["dor_mesto"] = $_POST["fak_mesto"];
+    if($_POST["dor_psc"])
+        $data_obj["dor_psc"] = $_POST["dor_psc"];
+    else
+        $data_obj["dor_psc"] = $_POST["fak_psc"];
+    if($_POST["dor_zeme"])
+        $data_obj["dor_zeme"] = $_POST["dor_zeme"];
+    else
+        $data_obj["dor_zeme"] = $_POST["fak_zeme"];
+        
+    $data_obj["fak_jmeno"] = $_POST["fak_jmeno"];
+    $data_obj["fak_prijmeni"] = $_POST["fak_prijmeni"];
+    $data_obj["fak_ulice"] = $_POST["fak_ulice"];
+    $data_obj["fak_mesto"] = $_POST["fak_mesto"];
+    $data_obj["fak_psc"] = $_POST["fak_psc"];
+    $data_obj["fak_zeme"] = $_POST["fak_zeme"];
+    
+    $data_obj["uz_email"] = $_POST["uz_email"];
+    $data_obj["uz_telefon"] = $_POST["uz_telefon"];
+    
+    if(isset($_SESSION["id_uzivatel"]))
+        $Objednavky->vlozeni($id_obj,"Zpracovávání",$_SESSION["id_uzivatel"],$data_obj);
+    else
+        $Objednavky->vlozeni($id_obj,"Zpracovávání",0,$data_obj);
+    
+    
+    
+    foreach($_SESSION["kosik"] as $jedna_fotka){
+        $data_fot["url"] = $jedna_fotka["url"];
+        $data_fot["typ_souboru"] = $jedna_fotka["typ_s"];
+        $data_fot["format"] = $jedna_fotka["format"];
+        $data_fot["material"] = $jedna_fotka["material"];
+        $data_fot["fotopapir"] = $jedna_fotka["fotopapir"];
+        $data_fot["deska"] = $jedna_fotka["deska"];
+        $data_fot["typ"] = $jedna_fotka["typ"];
+        $data_fot["pocet"] = $jedna_fotka["pocet"];
+        $data_fot["cena"] = $jedna_fotka["cena"];
+        
+        $Fotky->vlozeni($id_obj,$data_fot);
+    }
+    
+}
 
 ?>  
 <main id="udaje" class="container stranka">
@@ -29,52 +95,14 @@ $fotopapiry = $Fotopapiry->vse();
             <div class="fakturacni col-md-6">
                 <h2>Fakturační údaje</h2>
                 
-                <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="fak_jmeno" placeholder="Jméno" required>    
-                    
-                    <input type="text" class="form-control vedle" name="fak_prijmeni" placeholder="Příjmení" required>    
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="fak_ulice" placeholder="Ulice" required>    
 
-                    <input type="text" class="form-control vedle" name="fak_mesto" placeholder="Město" required>    
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="fak_psc" placeholder="PSČ" required>    
-
-                    <select name="fak_zeme" class="upravit_pole">
-                        <option value="Česká republika">Česká republika</option>
-                        <option value="Slovenská republika">Slovenská republika</option>
-                    </select>
-                </div>
                 <hr>
                 <h2>Údaje o zákazníkovi</h2>
-                <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="uz_email" placeholder="E-mail" required>    
-                    <input type="text" class="form-control vedle" name="uz_telefon" placeholder="Telefon" required>    
-                </div>
+                
             </div>
             <div class="dorucovaci col-md-6">
                 <h2>Doručovací údaje</h2>
-                
-                <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_jmeno" placeholder="Jméno">    
-                    
-                    <input type="text" class="form-control vedle" name="dor_prijmeni" placeholder="Příjmení">    
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_ulice" placeholder="Ulice">    
-
-                    <input type="text" class="form-control vedle" name="dor_mesto" placeholder="Město">    
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_psc" placeholder="PSČ">    
-
-                    <select name="dor_zeme" class="upravit_pole">
-                        <option value="Česká republika">Česká republika</option>
-                        <option value="Slovenská republika">Slovenská republika</option>
-                    </select>
-                </div>
+                 
             </div>
         </div>
     </div>
@@ -118,10 +146,10 @@ $fotopapiry = $Fotopapiry->vse();
             </tr>
         </tfoot>
     </table>
-    <button type="submit" name="odeslat" class="pokracovat btn pull-right">Odeslat objednávku</button>
     </form>
     <img src="img/fotka-udaje.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
 </main>    
+<pre><?php print_r($_POST); ?></pre>
 <pre><?php print_r($_SESSION); ?></pre>
 <script>
 $(document).ready(function(){

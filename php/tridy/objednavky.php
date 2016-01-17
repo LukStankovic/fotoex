@@ -106,19 +106,38 @@ class Objednavky{
         $vysledek = self::vybraniDat($sql);
         return($vysledek[0]->celkem);
     }
-    public function vlozeni($nazev,$ikona,$popis){
-      /*  $db = new Databaze();
+    public function vlozeni($id_o,$stav,$id_u,$k_uprave){
+        $db = new Databaze();
         
         //přípava dat
+        $id_ob = $db->pripravaProInput($id_o);
+        $id_uz = $db->pripravaProInput($id_u);
+        $stav_ob = $db->pripravaProInput($stav);
+        //DORUČOVACÍ ADRESA
+        $d_jmeno = $db->pripravaProInput($k_uprave["dor_jmeno"]);
+        $d_prijmeni = $db->pripravaProInput($k_uprave["dor_prijmeni"]);
+        $d_ulice = $db->pripravaProInput( $k_uprave["dor_ulice"]);
+        $d_psc = $db->pripravaProInput($k_uprave["dor_psc"]);
+        $d_mesto = $db->pripravaProInput($k_uprave["dor_mesto"]);
+        $d_zeme = $db->pripravaProInput($k_uprave["dor_zeme"]);
+        //FAKTURAČNÍ ADRESA
+        $f_jmeno = $db->pripravaProInput($k_uprave["fak_jmeno"]);
+        $f_prijmeni = $db->pripravaProInput($k_uprave["fak_prijmeni"]);
+        $f_ulice = $db->pripravaProInput( $k_uprave["fak_ulice"]);
+        $f_psc = $db->pripravaProInput($k_uprave["fak_psc"]);
+        $f_mesto = $db->pripravaProInput($k_uprave["fak_mesto"]);
+        $f_zeme = $db->pripravaProInput($k_uprave["fak_zeme"]);
+
+        $uz_email = $db->pripravaProInput($k_uprave["uz_email"]);
+        $uz_telefon = $db->pripravaProInput($k_uprave["uz_telefon"]);
         
-        $nazev_kategorie = $db->pripravaProInput($nazev);
-        $ikona_kategorie = $db->pripravaProInput($ikona);
-        $popis_kategorie = $db->pripravaProInput($popis);
-    
-        $sql = "INSERT INTO kategorie (nazev_kategorie, ikona_kategorie, popis_kategorie)
-                VALUES ('$nazev_kategorie','$ikona_kategorie','$popis_kategorie')";
+        $datum = date("Y-m-d H:i:s");
         
-        return $db->zpracovani($sql);*/
+        $sql = "INSERT INTO objednavky
+                VALUES ('$id_ob','$datum','$stav_ob','$id_uz','$d_jmeno','$d_prijmeni','$d_ulice','$d_psc','$d_mesto','$d_zeme',
+                '$f_jmeno','$f_prijmeni','$f_ulice','$f_psc','$f_mesto','$f_zeme','$uz_telefon','$uz_email')";
+        
+        return $db->zpracovani($sql);
     }
     public function dokonceno($id) {
         $db = new Databaze();    
