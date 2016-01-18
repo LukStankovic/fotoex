@@ -87,7 +87,7 @@ if(isset($_POST["odeslat"])){
 }
 
 ?>  
-<main id="udaje" class="container stranka">
+<main id="odeslat" class="container stranka">
     <div class="kroky">
         <ul>
             <li class="aktivni"><a href="#"><span>1.</span> Nahrání fotografií</a></li>
@@ -99,12 +99,11 @@ if(isset($_POST["odeslat"])){
     </div>
     <form method="POST" action="odeslat.php">
     <div class="udaje-blok">
-        
+        <p class="dekujeme">Děkujeme za vaši objednávku. Během chvíle vám bude odeslán e-mail.</p>
         <div class="row">
             <div class="fakturacni col-md-6">
                 <h2>Fakturační údaje</h2>
-                
-
+                    
                 <hr>
                 <h2>Údaje o zákazníkovi</h2>
                 
