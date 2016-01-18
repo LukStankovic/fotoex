@@ -63,6 +63,9 @@ if(isset($_POST["odeslat"])){
     foreach($_SESSION["kosik"] as $jedna_fotka){
         
         //KOPÍROVÁNÍ DO SLOŽKY FOTKY
+        if (!file_exists("objednavky"))
+            mkdir("objednavky", 0777);
+        
         if (!file_exists("objednavky/".$id_obj))
             mkdir("objednavky/".$id_obj, 0777);
         
