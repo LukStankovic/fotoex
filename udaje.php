@@ -51,7 +51,7 @@ if(isset($_SESSION["id_uzivatel"]))
                 </div>
                 <hr>
                 <h2>Údaje o zákazníkovi</h2>
-                <p class="help">Nevyplněné údaje budou stejné jako fakturační údaje.</p>
+                
                 <div class="form-group">
                     <input type="text" class="form-control vedle leva" name="uz_email" value="<?php if(isset($prihlaseny)) echo $prihlaseny->email; ?>" placeholder="E-mail" required>    
                     <input type="text" class="form-control vedle" name="uz_telefon" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
@@ -78,6 +78,7 @@ if(isset($_SESSION["id_uzivatel"]))
                         <option value="Slovenská republika">Slovenská republika</option>
                     </select>
                 </div>
+                <p><em>Nevyplněné údaje budou stejné jako fakturační údaje.</em></p>
             </div>
         </div>
     </div>

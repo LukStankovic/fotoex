@@ -173,6 +173,7 @@ $(document).ready(function(){
 //VLOZENI PATICKY
 foreach($_SESSION["kosik"] as $jedna_fotka){
     unlink("php/nahrani/tmp-nahrane/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
+    unlink("php/nahrani/tmp-nahrane/thumbnail/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
 }
 unset($_SESSION["kosik"]);
 unset($_SESSION["fotky"]);
