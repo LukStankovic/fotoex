@@ -16,9 +16,9 @@ if(isset($_SESSION["id_uzivatel"]))
 <main id="udaje" class="container stranka">
     <div class="kroky">
         <ul>
-            <li class="aktivni"><a href="nahrani.php"><span>1.</span> Nahrání fotografií</a></li>
-            <li class="aktivni"><a href="parametry.php"><span>2.</span> Nastavení parametrů</a></li>
-            <li class="aktivni"><a href="kosik.php"><span>3.</span> Košík</a></li>
+            <li class="aktivni"><a href="#"><span>1.</span> Nahrání fotografií</a></li>
+            <li class="aktivni"><a href="#"><span>2.</span> Nastavení parametrů</a></li>
+            <li class="aktivni"><a href="#"><span>3.</span> Košík</a></li>
             <li class="aktivni"><a href="#"><span>4.</span> Doručovací údaje</a></li>
             <li><span>5.</span> Dokončení objednávky</li>
         </ul>
@@ -126,7 +126,6 @@ if(isset($_SESSION["id_uzivatel"]))
     </form>
     <img src="img/fotka-udaje.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
 </main>    
-<pre><?php print_r($_SESSION); ?></pre>
 <script>
 $(document).ready(function(){
     var celkem = 0.00;
