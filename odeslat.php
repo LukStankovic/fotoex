@@ -57,9 +57,9 @@ if(isset($_POST["odeslat"])){
     $data_obj["doruceni"] = $_POST["doruceni"];
     
     if($_POST["doruceni"] == "Kurýr")
-        $data_obj["doruceni_cena"] == "100";
+        $data_obj["doruceni_cena"] = 100;
     if($_POST["doruceni"] == "Česká pošta")
-        $data_obj["doruceni_cena"] == "50";
+        $data_obj["doruceni_cena"] = 50;
     
     if(isset($_SESSION["id_uzivatel"]))
         $Objednavky->vlozeni($id_obj,"Zpracovávání",$_SESSION["id_uzivatel"],$data_obj);
@@ -181,10 +181,11 @@ $(document).ready(function(){
 </script>
 <?php 
 //VLOZENI PATICKY
+/*
 foreach($_SESSION["kosik"] as $jedna_fotka){
     unlink("php/nahrani/tmp-nahrane/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
     unlink("php/nahrani/tmp-nahrane/thumbnail/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
-}
+}*/
 unset($_SESSION["kosik"]);
 unset($_SESSION["fotky"]);
 require_once("sablona/paticka.php");

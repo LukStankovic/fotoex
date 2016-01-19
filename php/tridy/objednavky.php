@@ -141,13 +141,11 @@ class Objednavky{
         
         $platba = $db->pripravaProInput($k_uprave["platba"]);
         $doruceni = $db->pripravaProInput($k_uprave["doruceni"]);
-        $doruceni_cena = $db->pripravaProInput( $k_uprave["doruceni_cena"]);
+        $doruceni_cena = $db->pripravaProInput($k_uprave["doruceni_cena"]);
         
         
         $sql = "INSERT INTO objednavky
-                VALUES ('$id_ob','$datum','$stav_ob','$platba','$doruceni','$doruceni_cena',
-                '$id_uz','$d_jmeno','$d_prijmeni','$d_ulice','$d_psc','$d_mesto','$d_zeme',
-                '$f_jmeno','$f_prijmeni','$f_ulice','$f_psc','$f_mesto','$f_zeme','$uz_telefon','$uz_email')";
+                VALUES ('$id_ob','$datum','$stav_ob','$platba','$doruceni','$doruceni_cena','$id_uz','$d_jmeno','$d_prijmeni','$d_ulice','$d_psc','$d_mesto','$d_zeme','$f_jmeno','$f_prijmeni','$f_ulice','$f_psc','$f_mesto','$f_zeme','$uz_telefon','$uz_email')";
         
         return $db->zpracovani($sql);
     }
