@@ -49,12 +49,13 @@ if(isset($_SESSION["id_uzivatel"]))
                         <option <?php if(isset($prihlaseny)) if($prihlaseny->zeme == "Slovenská republika") echo "selected"; ?> value="Slovenská republika">Slovenská republika</option>
                     </select>
                 </div>
-                <hr>
-                <h2>Údaje o zákazníkovi</h2>
-                
-                <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="uz_email" value="<?php if(isset($prihlaseny)) echo $prihlaseny->email; ?>" placeholder="E-mail" required>    
-                    <input type="text" class="form-control vedle" name="uz_telefon" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
+                <div class="o_zakaznikovi">
+                    <h2>Údaje o zákazníkovi</h2>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control vedle leva" name="uz_email" value="<?php if(isset($prihlaseny)) echo $prihlaseny->email; ?>" placeholder="E-mail" required>    
+                        <input type="text" class="form-control vedle" name="uz_telefon" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
+                    </div>
                 </div>
             </div>
             <div class="dorucovaci col-md-6">
@@ -79,6 +80,29 @@ if(isset($_SESSION["id_uzivatel"]))
                     </select>
                 </div>
                 <p><em>Nevyplněné údaje budou stejné jako fakturační údaje.</em></p>
+            </div>
+        </div>
+        <div class="platba_doruceni">
+            <div class="row">
+                <div class="col-md-6 platba">
+                    <h2>Platba</h2>
+                    <div class="radio">
+                        <label><input type="radio" name="platba" value="Převodem na účet">Převodem na účet</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="platba" value="Hotově při doručení" checked>Hotově při doručení</label>
+                    </div>
+                </div>
+                <div class="col-md-6 doruceni">
+                    <h2>Doručení</h2>
+                    <div class="radio">
+                        <label><input type="radio" name="doruceni" value="Česká pošta" checked>Česká pošta (50 Kč)</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="doruceni" value="Kurýr">Kurýr (100 Kč)</label>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
@@ -138,4 +162,4 @@ $(document).ready(function(){
 <?php 
 //VLOZENI PATICKY
 require_once("sablona/paticka.php");
-?>
+?>                  

@@ -53,6 +53,14 @@ if(isset($_POST["odeslat"])){
     $data_obj["uz_email"] = $_POST["uz_email"];
     $data_obj["uz_telefon"] = $_POST["uz_telefon"];
     
+    $data_obj["platba"] = $_POST["platba"];
+    $data_obj["doruceni"] = $_POST["doruceni"];
+    
+    if($_POST["doruceni"] == "Kurýr")
+        $data_obj["doruceni_cena"] == "100";
+    if($_POST["doruceni"] == "Česká pošta")
+        $data_obj["doruceni_cena"] == "50";
+    
     if(isset($_SESSION["id_uzivatel"]))
         $Objednavky->vlozeni($id_obj,"Zpracovávání",$_SESSION["id_uzivatel"],$data_obj);
     else
