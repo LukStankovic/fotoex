@@ -218,17 +218,20 @@ button.ulozit.btn:hover, .ulozit.btn:hover
         background: $clr-green-100
         color: #616161
     tr.zruseno
-        background: $deep_orange_1
+        background: $clr-deep-orange-100
         color: #616161
         
     tfoot
         tr
             background: #fff!important
-            border-top: 3px solid #1976D2
             border-bottom: 0
             color: #000
             font-size: 15px
             font-style: italic
+        tr:last-child
+            border-top: 1px dotted #1976D2
+        tr:first-child
+            border-top: 3px solid #1976D2
             
 //HLEDÁNÍ V TABULCE INPUT
 .filter-table input

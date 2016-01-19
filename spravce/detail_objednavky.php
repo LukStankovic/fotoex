@@ -128,6 +128,7 @@
             <div class="col-md-4">
                 <h2>ID objednávky</h2>
                 <?php echo $objednavka->id_objednavka; ?>
+                <p><strong>Složka na ftp:</strong> /objednavky/<?php echo $objednavka->id_objednavka; ?>/</p>
             </div>
         </div>
         <div class="row">
@@ -218,6 +219,11 @@
                         </form>
                     </tbody> 
                     <tfoot>
+                       <tr>
+                            <td style="text-align: right;" colspan="7"><strong>Cena za dopravu:</strong></td>
+                            <td><strong><?php echo $objednavka->doprava_cena;?> Kč</strong></td>
+                            <td></td>
+                        </tr>
                         <tr>
                             <td style="text-align: right;" colspan="7"><strong>Cena celkem:</strong></td>
                             <td><strong><?php echo $objednavka->celkem;?> Kč</strong></td>
