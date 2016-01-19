@@ -8,7 +8,7 @@ class Objednavky{
     }
 
      public static function vse(){
-        $sql = "SELECT id_objednavka, datum, stav, 
+        $sql = "SELECT id_objednavka, datum, stav, platba, doprava, doprava_cena,
                        login, jmeno, prijmeni, email, telefon, ulice, mesto, psc, zeme,
                        login, jmeno, prijmeni, email, telefon,
                        d_jmeno, d_prijmeni, d_ulice, d_psc, d_mesto, d_zeme,
@@ -21,7 +21,7 @@ class Objednavky{
                        nazev_material, alias_material, round(cena_material,2),
                        nazev_typ, alias_typ, round(cena_typ,2),
                        pocet,
-                       round((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ))*pocet,2) AS 'celkem'
+                       round((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ) + doprava_cena)*pocet,2) AS 'celkem'
 
                 FROM objednavky 
                     INNER JOIN fotky using(id_objednavka) 
@@ -38,13 +38,13 @@ class Objednavky{
         return self::vybraniDat($sql);
     }
     public static function detailObjednavky($id){
-            $sql = "SELECT id_objednavka, datum, stav, 
+            $sql = "SELECT id_objednavka, datum, stav, platba, doprava, doprava_cena,
                        login, jmeno, prijmeni, email, telefon,
                        d_jmeno, d_prijmeni, d_ulice, d_psc, d_mesto, d_zeme,
                        f_jmeno, f_prijmeni, f_ulice, f_psc, f_mesto, f_zeme,
                        u_telefon, u_email,
                        pocet,
-                       round((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ))*pocet,2) AS 'celkem'
+                       round((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ) + doprava_cena)*pocet,2) AS 'celkem'
 
                 FROM objednavky 
                     INNER JOIN fotky using(id_objednavka) 

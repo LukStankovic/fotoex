@@ -115,10 +115,23 @@
                     </li>
                 </ul>
             </div>
-        </div>   
-
+        </div> 
         <div class="row">
-            <div class="col-md-12">   
+            <div class="col-md-4">
+                <h2>Platba</h2>
+                <?php echo $objednavka->platba; ?>
+            </div>
+            <div class="col-md-4">
+                <h2>Doprava</h2>
+                <?php echo "$objednavka->doprava ($objednavka->doprava_cena Kč)"; ?>
+            </div>
+            <div class="col-md-4">
+                <h2>ID objednávky</h2>
+                <?php echo $objednavka->id_objednavka; ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <h2>Fotografie</h2>
                 <table>
                     <thead>
