@@ -391,7 +391,11 @@ footer
                 padding: 10px 0
             .celkem
                 font-weight: bold
-                
+            
+            tr:last-child
+                border-top: 1px dotted $hneda
+            tr:first-child
+                border-top: 3px solid $hneda
 //ÚDAJE
 
 .udaje-blok
@@ -421,7 +425,11 @@ footer
     .dekujeme
         font-size: 25px
         color: #8BC34A
-        
+    .udaje-blok
+        ul
+            padding: 0
+        li
+            list-style: none
 //LOGIN
 #login
     .login_blok 

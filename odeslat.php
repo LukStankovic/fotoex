@@ -57,14 +57,22 @@ if(isset($_POST["odeslat"])){
     $data_obj["doruceni"] = $_POST["doruceni"];
     
     if($_POST["doruceni"] == "Kurýr")
-        $data_obj["doruceni_cena"] = 100;
+        $data_obj["doruceni_cena"] = 70;
     if($_POST["doruceni"] == "Česká pošta")
-        $data_obj["doruceni_cena"] = 50;
+        $data_obj["doruceni_cena"] = 30;
     
-    if(isset($_SESSION["id_uzivatel"]))
-        $Objednavky->vlozeni($id_obj,"Zpracovávání",$_SESSION["id_uzivatel"],$data_obj);
-    else
-        $Objednavky->vlozeni($id_obj,"Zpracovávání",0,$data_obj);
+    if(isset($_SESSION["id_uzivatel"])){
+        if($data_obj["platba"] == "Převodem na účet")
+            $Objednavky->vlozeni($id_obj,"Čeká se na platbu",$_SESSION["id_uzivatel"],$data_obj);
+        else
+            $Objednavky->vlozeni($id_obj,"Zpracovávání",$_SESSION["id_uzivatel"],$data_obj);
+    }
+    else{
+        if($data_obj["platba"] == "Převodem na účet")
+            $Objednavky->vlozeni($id_obj,"Čeká se na platbu",null,$data_obj);
+        else
+            $Objednavky->vlozeni($id_obj,"Zpracovávání",null,$data_obj);
+    }
     
     
     
@@ -114,14 +122,35 @@ if(isset($_POST["odeslat"])){
         <div class="row">
             <div class="fakturacni col-md-6">
                 <h2>Fakturační údaje</h2>
-                    
+                <ul>
+                    <li><?php echo $data_obj["fak_jmeno"]." ".$data_obj["fak_prijmeni"];?></li>
+                    <li><?php echo $data_obj["fak_ulice"].", ".$data_obj["fak_mesto"];?></li>
+                    <li><?php echo $data_obj["fak_psc"]; ?></li>
+                    <li><?php echo $data_obj["fak_zeme"]; ?></li>
+                </ul>
                 <hr>
                 <h2>Údaje o zákazníkovi</h2>
-                
+                <ul>
+                    <li><a href="mailto:<?php echo $data_obj["uz_email"]; ?>"><?php echo $data_obj["uz_email"]; ?></a></li>
+                    <li><?php echo $data_obj["uz_telefon"]; ?></li>
+                </ul>
             </div>
             <div class="dorucovaci col-md-6">
                 <h2>Doručovací údaje</h2>
-                 
+                <ul>
+                    <li><?php echo $data_obj["dor_jmeno"]." ".$data_obj["dor_prijmeni"];?></li>
+                    <li><?php echo $data_obj["dor_ulice"].", ".$data_obj["dor_mesto"];?></li>
+                    <li><?php echo $data_obj["dor_psc"]; ?></li>
+                    <li><?php echo $data_obj["dor_zeme"]; ?></li>
+                </ul>
+                <hr>
+                <h2>Platba a doprava</h2>
+                <ul>
+                    <li><strong>Platba:</strong> <?php echo $data_obj["platba"]; ?>
+                    <?php if($data_obj["platba"] == "Převodem na účet") echo "- peníze pošlete na účet: xxxxxxxx/xxxx"; ?>
+                    </li>
+                    <li><strong>Doprava:</strong> <?php echo $data_obj["doruceni"]." (".$data_obj["doruceni_cena"]." Kč)"; ?></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -154,15 +183,14 @@ if(isset($_POST["odeslat"])){
             <?php }?>
         </tbody>
         <tfoot>
+        <tfoot>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td colspan="2" class="celkem">Celková cena: <span></span> Kč</td>
+                <td style="text-align: right;" colspan="8" class="doprava">Cena za dopravu: <?php echo number_format((float)$data_obj["doruceni_cena"], 2, '.', '');?> Kč</td>
             </tr>
+            <tr>
+                <td style="text-align: right;" colspan="8" class="celkem">Celková cena: <span></span> Kč</td>
+            </tr>
+        </tfoot>
         </tfoot>
     </table>
     </form>
@@ -176,6 +204,7 @@ $(document).ready(function(){
     <?php foreach($_SESSION["kosik"] as $fotka){ ?>
     celkem = celkem + parseFloat($("tbody .fotka-<?php echo $fotka["id"]; ?> td.cena span").text());
     <?php }?>
+    celkem = celkem + <?php echo (float)$data_obj["doruceni_cena"];?>;
     $("tfoot td.celkem span").html(celkem.toFixed(2));
 });
 </script>

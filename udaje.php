@@ -96,10 +96,10 @@ if(isset($_SESSION["id_uzivatel"]))
                 <div class="col-md-6 doruceni">
                     <h2>Doručení</h2>
                     <div class="radio">
-                        <label><input type="radio" name="doruceni" value="Česká pošta" checked>Česká pošta (50 Kč)</label>
+                        <label><input type="radio" name="doruceni" data-price="30.00" value="Česká pošta" checked>Česká pošta (30 Kč) - 3 dny</label>
                     </div>
                     <div class="radio">
-                        <label><input type="radio" name="doruceni" value="Kurýr">Kurýr (100 Kč)</label>
+                        <label><input type="radio" name="doruceni" data-price="70.00" value="Kurýr">Kurýr (70 Kč) - do 2 dnů</label>
                     </div>
                 </div>
                 </div>
@@ -136,13 +136,10 @@ if(isset($_SESSION["id_uzivatel"]))
         </tbody>
         <tfoot>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td colspan="2" class="celkem">Celková cena: <span></span> Kč</td>
+                <td style="text-align: right;" colspan="8" class="doprava">Cena za dopravu: <span></span> Kč</td>
+            </tr>
+            <tr>
+                <td style="text-align: right;" colspan="8" class="celkem">Celková cena: <span></span> Kč</td>
             </tr>
         </tfoot>
     </table>
@@ -153,10 +150,23 @@ if(isset($_SESSION["id_uzivatel"]))
 <script>
 $(document).ready(function(){
     var celkem = 0.00;
+    var doprava = 0.00;
     <?php foreach($_SESSION["kosik"] as $fotka){ ?>
     celkem = celkem + parseFloat($("tbody .fotka-<?php echo $fotka["id"]; ?> td.cena span").text());
     <?php }?>
+    
+    doprava = parseFloat($(".doruceni input:checked").data("price"));
+    celkem = celkem + doprava;
+    $("tfoot td.doprava span").html(doprava.toFixed(2));
     $("tfoot td.celkem span").html(celkem.toFixed(2));
+    
+    $(".doruceni input").change(function(){
+        doprava = parseFloat($(".doruceni input:checked").data("price"));
+        celkem = celkem + doprava;
+        $("tfoot td.doprava span").html(doprava.toFixed(2));
+        $("tfoot td.celkem span").html(celkem.toFixed(2));
+    });
+    
 });
 </script>
 <?php 
