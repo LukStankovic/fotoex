@@ -83,8 +83,8 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             </select>
                             </div>
                             <div class="parametr fotopapir">
-                            <select data-price="0" name="fotopapir[]">
-                                <option value="">Fotopapír</option>
+                            <select name="fotopapir[]">
+                                <option data-price="0" value="">Fotopapír</option>
                                 <?php foreach($fotopapiry as $fotopapir){ ?>
                                 <?php if($fotopapir->nazev != "NULL"){ ?>
                                 <option data-price="<?php echo $fotopapir->cena; ?>" value="<?php echo $fotopapir->id; ?>"><?php echo $fotopapir->nazev; ?></option>
@@ -95,16 +95,16 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                         </div>
                         <div class="col-md-4">
                             <div class="parametr deska">
-                            <select data-price="0" name="deska[]">
-                                <option value="">Deska</option>
+                            <select name="deska[]">
+                                <option data-price="0" value="">Deska</option>
                                 <?php foreach($desky as $deska){ ?>
                                 <option data-price="<?php echo $deska->cena; ?>" value="<?php echo $deska->id; ?>"><?php echo $deska->nazev; ?></option>
                                 <?php } ?>
                             </select>
                             </div>
                             <div class="parametr typ">
-                            <select data-price="0" name="typ[]">
-                                <option value="">Typ</option>
+                            <select name="typ[]">
+                                <option data-price="0" value="">Typ</option>
                                 <?php foreach($typy as $typ){ ?>
                                 <option data-price="<?php echo $typ->cena; ?>" value="<?php echo $typ->id; ?>"><?php echo $typ->nazev; ?></option>
                                 <?php } ?>
@@ -194,6 +194,10 @@ $(document).ready(function(){
       
 <?php } ?>
 });
+</script>
+<script src="js/chosen.jquery.min.js"></script>
+<script>
+$(".fotka select").chosen({disable_search_threshold: 10});
 </script>
 <?php 
 //VLOZENI PATICKY
