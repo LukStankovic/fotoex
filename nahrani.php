@@ -133,7 +133,7 @@ require_once("sablona/hlavicka.php");
         </table>
         <button type="submit" class="btn pull-right pokracovat">Pokračovat k nastavení parametrů</button>
     </form>
-    <img src="img/fotky-upload.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
+    <img src="img/fotka-upload.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
 </main>
 
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">

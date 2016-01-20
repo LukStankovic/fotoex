@@ -131,6 +131,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
         <button type="submit" class="btn pull-right pokracovat">Pokračovat do košíku</button>
         </form>
     </div>
+    <img src="img/fotka-parametry.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
     <pre><?php print_r($_SESSION);?></pre>
 </main>    
 <script>
