@@ -138,6 +138,8 @@ class Objednavky{
         
         $datum = date("Y-m-d H:i:s");
         
+        if($id_uz == -1)
+            $id_uz = "";
         
         $platba = $db->pripravaProInput($k_uprave["platba"]);
         $doruceni = $db->pripravaProInput($k_uprave["doruceni"]);

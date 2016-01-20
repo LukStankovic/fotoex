@@ -8,11 +8,11 @@
         <div class="row navigace-hlavni">
             <div class="col-md-7">
                 <ul class="navigace">
-                    <li><a href="?page=nastenka"><i class="fa fa-newspaper-o"></i>Nástěnka</a></li>
-                    <li><a href="?page=objednavky"><i class="fa fa-shopping-cart"></i>Objednávky</a></li>
-                    <li><a href="?page=parametry"><i class="fa fa-tags"></i>Parametry</a></li>
-                    <li><a href="?page=clanky"><i class="fa fa-pencil"></i>Články</a></li>
-                    <li><a href="?page=uzivatele"><i class="fa fa-users"></i>Uživatelé</a></li>
+                    <li><a <?php if((isset($_GET["page"])) and ($_GET["page"] == "nastenka")) echo 'class="active"'; ?> href="?page=nastenka"><i class="fa fa-newspaper-o"></i>Nástěnka</a></li>
+                    <li><a <?php if((isset($_GET["page"])) and ($_GET["page"] == "objednavky")) echo 'class="active"'; ?> href="?page=objednavky"><i class="fa fa-shopping-cart"></i>Objednávky</a></li>
+                    <li><a <?php if((isset($_GET["page"])) and ($_GET["page"] == "parametry")) echo 'class="active"'; ?> href="?page=parametry"><i class="fa fa-tags"></i>Parametry</a></li>
+                    <li><a <?php if((isset($_GET["page"])) and ($_GET["page"] == "clanky")) echo 'class="active"'; ?> href="?page=clanky"><i class="fa fa-pencil"></i>Články</a></li>
+                    <li><a <?php if((isset($_GET["page"])) and ($_GET["page"] == "uzivatele")) echo 'class="active"'; ?> href="?page=uzivatele"><i class="fa fa-users"></i>Uživatelé</a></li>
                 </ul>  
             </div>
             <div class="col-md-5">

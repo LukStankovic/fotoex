@@ -38,7 +38,7 @@ body {
       -o-transition: 0.2s ease background;
       transition: 0.2s ease background; }
     /* line 34, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
-    .header .navigace a:hover {
+    .header .navigace a:hover, .header .navigace a.active {
       background: #2196f3; }
     /* line 37, /Applications/XAMPP/xamppfiles/htdocs/fotoex/spravce/css/admin.sass */
     .header .navigace .fa {

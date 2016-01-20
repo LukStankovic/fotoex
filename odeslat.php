@@ -69,9 +69,9 @@ if(isset($_POST["odeslat"])){
     }
     else{
         if($data_obj["platba"] == "Převodem na účet")
-            $Objednavky->vlozeni($id_obj,"Čeká se na platbu",null,$data_obj);
+            $Objednavky->vlozeni($id_obj,"Čeká se na platbu",-1,$data_obj);
         else
-            $Objednavky->vlozeni($id_obj,"Zpracovávání",null,$data_obj);
+            $Objednavky->vlozeni($id_obj,"Zpracovávání",-1,$data_obj);
     }
     
     
