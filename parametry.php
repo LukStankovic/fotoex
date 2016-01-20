@@ -66,14 +66,14 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                         <div class="col-md-4">
                             <div class="parametr format">
                             <select name="format[]">
-                                <option value="">Formát</option>
+                                <option data-price="0" value="">Formát</option>
                                 <?php foreach($formaty as $format){ ?>
                                 <option data-price="<?php echo $format->cena; ?>" value="<?php echo $format->id; ?>"><?php echo $format->nazev; ?></option>
                                 <?php } ?>
                             </select>
                             </div>
                             <div class="parametr material">
-                            <select name="material[]">
+                            <select data-price="0" name="material[]">
                                 <option value="">Materiál</option>
                                 <?php foreach($materialy as $material){?>
                                 <?php if($material->nazev != "NULL"){ ?>
@@ -83,7 +83,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             </select>
                             </div>
                             <div class="parametr fotopapir">
-                            <select name="fotopapir[]">
+                            <select data-price="0" name="fotopapir[]">
                                 <option value="">Fotopapír</option>
                                 <?php foreach($fotopapiry as $fotopapir){ ?>
                                 <?php if($fotopapir->nazev != "NULL"){ ?>
@@ -95,7 +95,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                         </div>
                         <div class="col-md-4">
                             <div class="parametr deska">
-                            <select name="deska[]">
+                            <select data-price="0" name="deska[]">
                                 <option value="">Deska</option>
                                 <?php foreach($desky as $deska){ ?>
                                 <option data-price="<?php echo $deska->cena; ?>" value="<?php echo $deska->id; ?>"><?php echo $deska->nazev; ?></option>
@@ -103,7 +103,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                             </select>
                             </div>
                             <div class="parametr typ">
-                            <select name="typ[]">
+                            <select data-price="0" name="typ[]">
                                 <option value="">Typ</option>
                                 <?php foreach($typy as $typ){ ?>
                                 <option data-price="<?php echo $typ->cena; ?>" value="<?php echo $typ->id; ?>"><?php echo $typ->nazev; ?></option>
@@ -128,6 +128,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
             </div>
         </div>
         <?php }?>
+        <div class="celkem">Celková cena: <span>0.00</span> Kč</div>
         <button type="submit" class="btn pull-right pokracovat">Pokračovat do košíku</button>
         </form>
     </div>
