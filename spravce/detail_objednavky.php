@@ -126,9 +126,10 @@
                 <?php echo "$objednavka->doprava ($objednavka->doprava_cena Kč)"; ?>
             </div>
             <div class="col-md-4">
-                <h2>ID objednávky</h2>
+                <h2>Infromace o objednávce</h2>
                 <?php echo $objednavka->id_objednavka; ?>
                 <p><strong>Složka na ftp:</strong> /objednavky/<?php echo $objednavka->id_objednavka; ?>/</p>
+                <a class="btn stahnout" href="<?php echo "$domena/objednavky/$objednavka->id_objednavka/fotografie_$objednavka->id_objednavka.zip"; ?>"><i class="fa fa-download"></i> Stáhnout všechny fotografie v .zip</a>
             </div>
         </div>
         <div class="row">

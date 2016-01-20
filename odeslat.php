@@ -102,7 +102,8 @@ if(isset($_POST["odeslat"])){
         $Fotky->vlozeni($id_obj,$data_fot);
     }
     
-
+    $zazipovani = new PharData(dirname(__FILE__)."/objednavky/$id_obj/fotografie_$id_obj.zip");
+    $zazipovani->buildFromDirectory(dirname(__FILE__)."/objednavky/$id_obj");
 }
 
 ?>  
