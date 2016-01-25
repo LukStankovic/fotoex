@@ -128,7 +128,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
             </div>
         </div>
         <?php }?>
-        <div class="celkem">Celková cena: <span>0.00</span> Kč</div>
+        <div class="celkem">Cena za všechny fotografie: <span>0.00</span> Kč</div>
         <button type="submit" class="btn pull-right pokracovat">Pokračovat do košíku</button>
         </form>
     </div>
@@ -170,8 +170,33 @@ $(document).ready(function(){
         jQuery(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena.toFixed(2));
     });
     
-    
 <?php }?>
+
+//CELKOVÁ CENA
+var celkem = 0.00;
+var cena_zmenene;    
+var cena_jednotlive;
+<?php $celkovy_pocet = count($fotky); ?>
+<?php foreach($fotky as $fotka){?>
+
+    jQuery(".fotka-<?php echo $fotka["id"];?> .cena span").bind("DOMSubtreeModified",function(){    
+        celkem = 0.00;
+        cena_zmenene = parseFloat(jQuery(".fotka-<?php echo $fotka["id"];?> .cena span").text());
+            celkem = cena_zmenene;
+        <?php for($k=0;$k<$celkovy_pocet;$k++) { 
+                if ($k != $i){
+        ?>
+            
+            cena_jednotlive = parseFloat(jQuery(".fotka-<?php echo $k;?> .cena span").text());
+            celkem = celkem + cena_jednotlive;
+        <?php }
+            } 
+        ?> 
+        jQuery(".celkem span").html(celkem.toFixed(2));
+    });
+
+<?php } ?>    
+    
 //ZOBRAZOVÁNÍ A SKRÝVÁNÍ INPUTŮ
 <?php foreach($fotky as $fotka){?>
     $(".fotka-<?php echo $fotka["id"];?> .material").show();
