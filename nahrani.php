@@ -44,7 +44,7 @@ require_once("sablona/hlavicka.php");
             Stačí pouze níže nahrát fotografie do vašeho prohlížeče.</p>
             <p>Na dalším kroku nastavíte požadované rozměry a parametry fotografie</p>
             <h3>Nevíte jak dále?</h3>
-            <p>Nevíte si rady jak si objednat fotografie, napište nám na náš e-mail <a href="mailto:info@fotoex.cz">inf@fotoex.cz</a> a my vám s radostí poradíme.</p>
+            <p>Nevíte si rady jak si objednat fotografie, napište nám na náš e-mail <a href="mailto:info@fotoex.cz">info@fotoex.cz</a> a my vám s radostí poradíme.</p>
         </div>
     </div>
     <form id="fileupload" action="parametry.php" method="POST" enctype="multipart/form-data">
