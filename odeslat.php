@@ -75,8 +75,7 @@ if(isset($_POST["odeslat"])){
     }
     
     
-    
-    foreach($_SESSION["kosik"] as $jedna_fotka){
+    foreach($_SESSION["kosik"] as $i => $jedna_fotka){
         
         //KOPÍROVÁNÍ DO SLOŽKY FOTKY
         if (!file_exists("objednavky"))
@@ -90,6 +89,7 @@ if(isset($_POST["odeslat"])){
         copy($co,$kam);
 
         $data_fot["url"] = $domena."/objednavky/".$id_obj."/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
+        $url[$i] = $data_fot["url"];
         $data_fot["typ_souboru"] = $jedna_fotka["typ_s"];
         $data_fot["format"] = $jedna_fotka["format"];
         $data_fot["material"] = $jedna_fotka["material"];
@@ -170,9 +170,9 @@ if(isset($_POST["odeslat"])){
             </tr>
         </thead>
         <tbody>
-            <?php foreach($_SESSION["kosik"] as $fotka){ ?>
+            <?php foreach($_SESSION["kosik"] as $i => $fotka){ ?>
                 <tr class="fotka fotka-<?php echo $fotka["id"]; ?>">
-                    <td><img src="<?php echo $fotka["url"];?>" height="80"></td>
+                    <td><img src="<?php echo $url[$i]; ?>" height="80"></td>
                     <td><?php echo $fotka["format_nazev"];?></td>
                     <td><?php echo $fotka["material_nazev"];?></td>
                     <td><?php echo $fotka["fotopapir_nazev"];?></td>
@@ -211,11 +211,11 @@ $(document).ready(function(){
 </script>
 <?php 
 //VLOZENI PATICKY
-/*
+
 foreach($_SESSION["kosik"] as $jedna_fotka){
     unlink("php/nahrani/tmp-nahrane/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
     unlink("php/nahrani/tmp-nahrane/thumbnail/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
-}*/
+}
 unset($_SESSION["kosik"]);
 unset($_SESSION["fotky"]);
 require_once("sablona/paticka.php");
