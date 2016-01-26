@@ -13,17 +13,22 @@
         }
 
         if ($response != null && $response->success) {
-            echo "Úspěšné";
+            if($_POST["heslo"] == $_POST["heslo_znova"]){
+                $Uzivatele->vlozeni($_POST);
+            }
+            else{
+                $chyba = "Hesla musí být stejná";
+            }
         }
         else{
-            $chyba = "Nemohli jste být registrovaní, protože jste nevyplnili všechny údaje.";
+            $chyba = "Nemohli jste být registrovaní.";
         }
     }
 ?>
 
 <div class="container" id="registrace"> 
     <div class="registrace_blok">
-        <form name="registrace_formular" method="post">    
+        <form name="registrace_formular" id="formular" method="post">    
             <div class="hlavicka">
                 <h1>Registrace</h1>
             </div>
@@ -34,42 +39,112 @@
             ?>
             <div class="inputy">
                 <div class="form-group">
-                    <input type="text" class="form-control cele" name="dor_jmeno" maxlength="50" placeholder="Přihlašovací jméno">    
+                    <input type="text" class="login form-control cele" name="login" maxlength="50" placeholder="Přihlašovací jméno *">    
                 </div>
                 <div class="form-group">                
-                    <input type="password" class="form-control cele" name="dor_prijmeni" maxlength="60" placeholder="Heslo">    
+                    <input type="password" class="heslo form-control vedle leva" name="heslo" maxlength="60" placeholder="Heslo *">
+                    <input type="password" class="heslo_znova form-control vedle" name="heslo_znova" maxlength="60" placeholder="Heslo znova *">    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_jmeno" maxlength="50" placeholder="E-mail">    
+                    <input type="text" class="email form-control vedle leva" name="email" maxlength="50" placeholder="E-mail *">    
                     
-                    <input type="text" class="form-control vedle" name="dor_prijmeni" maxlength="13" placeholder="Telefon">    
+                    <input type="text" class="telefon form-control vedle" name="telefon" maxlength="13" placeholder="Telefon *">    
                 </div>
                 <hr>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_jmeno" maxlength="50" placeholder="Jméno">    
-                    
-                    <input type="text" class="form-control vedle" name="dor_prijmeni" maxlength="50" placeholder="Příjmení">    
+                    <input type="text" class="jmeno form-control vedle leva" name="jmeno" maxlength="50" placeholder="Jméno *">    
+                    <input type="text" class="prijmeni form-control vedle" name="prijmeni" maxlength="50" placeholder="Příjmení *">    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_ulice" maxlength="50" placeholder="Ulice"> 
-                    <input type="text" class="form-control vedle" name="dor_mesto" maxlength="30" placeholder="Město">    
+                    <input type="text" class="ulice form-control vedle leva" name="ulice" maxlength="50" placeholder="Ulice *"> 
+                    <input type="text" class="mesto form-control vedle" name="mesto" maxlength="30" placeholder="Město *">    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_psc" maxlength="5" placeholder="PSČ"> 
-                    <select name="dor_zeme" class="upravit_pole">
+                    <input type="text" class="psc form-control vedle leva" name="psc" maxlength="5" placeholder="PSČ *"> 
+                    <select name="zeme" class="upravit_pole">
                         <option value="Česká republika">Česká republika</option>
                         <option value="Slovenská republika">Slovenská republika</option>
                     </select>
                 </div>
-            </div>
-            <div class="g-recaptcha captcha" data-sitekey="6LfRXxYTAAAAAPXgCErqkzUUtxBS3y9lmcIQA6Ox"></div>
-            <button name="registrovat" class="button" type="submit">Registrovat</button> 
+                <div class="g-recaptcha captcha" data-sitekey="6LfRXxYTAAAAAPXgCErqkzUUtxBS3y9lmcIQA6Ox"></div>
+                <button name="registrovat" class="registrovat btn" type="submit" disabled="disabled">Registrovat</button>
+            </div> 
         </form>
     </div>
 </div>
 
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src='https://www.google.com/recaptcha/api.js?hl=cs'></script>
+<script>
+$(function(){
+    $("input").each(function(){
+        $(this).change(function(){
+            if($(this).val() == ""){
+                $(this).css("border","2px solid #ea6153");
+            }
+            else{
+                                
+                if($(this).hasClass("heslo")){
+                    $(".heslo_znova").css("border","2px solid #ea6153");
+                    $(".heslo").css("border","2px solid #2ecc71");
+                }
 
+                else{
+                    if($(this).hasClass("heslo_znova")){
+                        if($(this).val() == $(".heslo").val()){
+                            $(this).css("border","2px solid #2ecc71");
+                        }
+                        else{
+                            $(this).css("border","2px solid #ea6153");
+                        }
+                    }
+                    else{
+                        $(this).css("border","2px solid #2ecc71");
+                    }
+                }
+            }
+        });
+    });
+    
+    $('input').change(function(e) {
+        if ($('input').map(function(idx, elem) {
+                if ($(elem).val() === "") return $(elem);
+            }).size() > 0){
+            
+            console.log("nič");
+            $('.registrovat').prop("disabled", true);
+        }
+        else{ //KDYŽ JE VŠE VYPLNĚNO
+            if($(this).hasClass("heslo_znova")){
+                if($(this).val() == $(".heslo").val()){
+                    $('.registrovat').prop("disabled", false);
+                   console.log("ok");
+                }
+                else{
+                    console.log("niet");
+                    $('.registrovat').prop("disabled", true);
+                }
+            }
+            else if($(this).hasClass("heslo")){
+                if($(this).val() == $(".heslo_znova").val()){
+                    $('.registrovat').prop("disabled", false);
+                   console.log("ok");
+                }
+                else{
+                    console.log("niet");
+                    $('.registrovat').prop("disabled", true);
+                }
+            }
+            else{
+                $('.registrovat').prop("disabled", false);
+                console.log("ok");
+            }
+            
+        }
+    });
+    
+    
+});
+</script>
 </body>
 </html>
