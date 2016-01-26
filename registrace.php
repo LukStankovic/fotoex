@@ -2,33 +2,11 @@
     require_once ("sablona/head.php");
     require_once "php/recaptcha.php";
 
-    $secret = "";
-    $response = null;
- 
-    $reCaptcha = new ReCaptcha($secret);
-    
-    if(isset($_POST["registrovat"])){
-        if ($_POST["g-recaptcha-response"]) {
-            $response = $reCaptcha->verifyResponse($_SERVER["REMOTE_ADDR"],$_POST["g-recaptcha-response"]);    
-        }
-
-        if ($response != null && $response->success) {
-            if($_POST["heslo"] == $_POST["heslo_znova"]){
-                $Uzivatele->vlozeni($_POST);
-            }
-            else{
-                $chyba = "Hesla musí být stejná";
-            }
-        }
-        else{
-            $chyba = "Nemohli jste být registrovaní.";
-        }
-    }
 ?>
 
 <div class="container" id="registrace"> 
     <div class="registrace_blok">
-        <form name="registrace_formular" id="formular" method="post">    
+        <form name="registrace_formular" id="formular" method="post" action="reg_ok.php">    
             <div class="hlavicka">
                 <h1>Registrace</h1>
             </div>
@@ -67,6 +45,7 @@
                     </select>
                 </div>
                 <div class="g-recaptcha captcha" data-sitekey="6LfRXxYTAAAAAPXgCErqkzUUtxBS3y9lmcIQA6Ox"></div>
+                <a href="javascript: window.history.back()" class="btn"><i class="fa fa-arrow-left"></i> Zpět</a>
                 <button name="registrovat" class="registrovat btn" type="submit" disabled="disabled">Registrovat</button>
             </div> 
         </form>
