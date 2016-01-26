@@ -1,4 +1,4 @@
-       <?php
+<?php
 $vsichni_uzivatele = $Uzivatele->vse();
 $vsechny_objednavky = $Objednavky->vse();
 $objednavky_s_pocty = $Objednavky->pocetZaDen();
@@ -8,7 +8,7 @@ $celkem_objednavek = $Objednavky->pocetObjednavek();
 $celkem_uzivatelu = $Uzivatele->pocet();
 $celkem_trzby = $Objednavky->trzby();
 $celkem_clanku = $Clanky->pocet();
-        ?>
+?>
     <div class="row">
             <div class="col-md-12">
                 <h1 class="page-header">Nástěnka</h1>

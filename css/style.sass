@@ -599,7 +599,41 @@ footer
             padding-top: 20px
             text-align: center
             margin-top: 0px
+//REGISTRACE
 
+.registrace_blok
+    max-width: 450px
+    text-align: center
+    margin: 40px auto
+    padding: 0px
+    background: #fff
+    
+    .hlavicka
+        background: $hneda
+        padding: 10px
+        h1
+            color: #fff
+            margin: 0
+    .inputy
+        padding: 15px
+    
+    .form-group
+        .vedle
+            width: 49%
+        .vedle.leva
+            float: left
+            margin-right: 5px
+        .cele
+            width: 99%
+    .captcha
+        max-width: 300px
+        margin: 30px auto
+        display: block
+
+    input:focus
+        -webkit-box-shadow: 0 0 10x 0px #856559
+        box-shadow: 0 0 10px 0px #856559
+        border: 1px solid $hneda
 
 //RESPONZIVITA
 @media screen and (min-width: 992px) and (max-width: 1199px)
