@@ -82,7 +82,12 @@ class Uzivatele{
         $prijmeni = $db->pripravaProInput($data["prijmeni"]);
         $email = $db->pripravaProInput($data["email"]);
         $telefon = $db->pripravaProInput($data["telefon"]);
-        $prava = $db->pripravaProInput($data["prava"]);
+        
+        if(isset($data["g-recaptcha-response"]))
+            $prava = $db->pripravaProInput(1);
+        else
+            $prava = $db->pripravaProInput($data["prava"]);
+           
         $ulice = $db->pripravaProInput($data["ulice"]);
         $mesto = $db->pripravaProInput($data["mesto"]);
         $psc = $db->pripravaProInput($data["psc"]);
