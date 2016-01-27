@@ -129,7 +129,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
         </div>
         <?php }?>
         <div class="celkem">Cena za všechny fotografie: <span>0.00</span> Kč</div>
-        <button type="submit" class="btn pull-right pokracovat">Pokračovat do košíku</button>
+        <button type="submit" class="btn pull-right pokracovat" >Pokračovat do košíku</button>
         </form>
     </div>
     <img src="img/fotka-parametry.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
@@ -220,6 +220,50 @@ var cena_jednotlive;
 <?php } ?>
 });
 </script>
+
+
+<script>
+$(function(){
+    $("select").each(function(){
+        $(this).change(function(){
+            var element = $(this,".chosen-container");
+            console.log($(this).val());
+            if($(this).val() == ""){
+                $(this).next().css("border","2px solid #ea6153");
+            }
+            else{ //vybere se něco
+                $(this).next().css("border","2px solid #2ecc71");
+            }
+
+        });
+    });
+    $("select").change(function(){
+        if ($('select:checked').length == $('select').length) {
+            console.log("ok");
+        }
+        else{
+            console.log("nič");
+        }
+    });
+
+    /*
+    $("select").each(function(){
+        $(this).change(function() {
+            if ($('select').val == ""){
+                console.log("nič");
+                $('.pokracovat').prop("disabled", true);
+            }
+            else{ //KDYŽ JE VŠE VYPLNĚNO
+                $('.pokracovat').prop("disabled", false);
+                console.log("ok");            
+            }
+        });
+    }); */
+    
+});
+</script>
+
+
 <script src="js/chosen.jquery.min.js"></script>
 <script>
 $(".fotka select").chosen({disable_search_threshold: 10});
