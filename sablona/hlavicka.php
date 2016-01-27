@@ -13,7 +13,7 @@
                 <li><a href="login.php">Přihlásit se</a></li>
                 <li><a href="registrace.php">Registrovat se</a></li>
                 <?php } else { ?>
-                <li><a href="#">Přihlášený: <?php echo $_SESSION["login"]; ?></a></li>
+                <li><a href="nastaveni_profilu.php">Přihlášený: <?php echo $_SESSION["login"]; ?></a></li>
                 <li><form method="POST"><button type="submit" name="odhlasit">Odhlásit se</button></form></li>
                 <?php }?>
             </ul>

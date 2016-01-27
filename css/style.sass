@@ -635,7 +635,45 @@ footer
         -webkit-box-shadow: 0 0 10x 0px #856559
         box-shadow: 0 0 10px 0px #856559
         border: 1px solid $hneda
+    
+//NASTAVENÍ PROFILU
 
+#nastaveni_profilu
+    .neni_prihlasen
+        margin: 30px auto
+        text-align: center
+        p
+            color: $hneda
+            font-weight: 700
+            font-size: 18px
+            
+    .prihlasen
+        margin: 30px auto
+        max-width: 500px
+        h1
+            text-align: center
+    
+    .form-group
+        .vedle
+            width: 49%
+        .vedle.leva
+            float: left
+            margin-right: 5px
+        .cele
+            width: 99%
+        select
+            width: 49%
+        
+    button
+        display: block
+        margin: 30px 0
+        width: 100%
+        
+    input:focus
+        -webkit-box-shadow: 0 0 10x 0px #856559
+        box-shadow: 0 0 10px 0px #856559
+        border: 1px solid $hneda
+    
 //RESPONZIVITA
 @media screen and (min-width: 992px) and (max-width: 1199px)
     #nahrani .napoveda .postup
