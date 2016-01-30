@@ -42,8 +42,8 @@ $prvni = "<html>
             
             <h2 style='color:#856559;font-weight:100;'>Vaše osobní údaje</h2>
             <ul style='list-style:none;padding-left:5px'>
-                <li><a style='color: #856559' href='mailto:lukasstankovic@gmail.com'>lukasstankovic@gmail.com</a></li>
-                <li>2323232</li>
+                <li><a style='color: #856559' href='".$_POST["uz_email"]."'>".$_POST["uz_email"]."</a></li>
+                <li>".$_POST["uz_telefon"]."</li>
             </ul>
         </div>
         <div style='float: right; width: 50%'>
