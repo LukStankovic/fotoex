@@ -4,6 +4,7 @@
 require_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
 require_once("sablona/hlavicka.php");
+
 $formaty = $Formaty->vse();
 $desky = $Desky->vse();
 $typy = $Typy->vse();
@@ -97,15 +98,19 @@ if(isset($_POST["odeslat"])){
         $data_fot["deska"] = $jedna_fotka["deska"];
         $data_fot["typ"] = $jedna_fotka["typ"];
         $data_fot["pocet"] = $jedna_fotka["pocet"];
-        $data_fot["cena"] = $jedna_fotka["cena"];
+        $data_fot["cena"] = $jedna_fotka["cena_fotka"];
+        
+        $celkem_cena = $celkem_cena + $jedna_fotka["cena_fotka"];
         
         $Fotky->vlozeni($id_obj,$data_fot);
     }
     
+    $celkem_cena = $celkem_cena + $data_obj["doruceni_cena"];
+    
     $zazipovani = new PharData(dirname(__FILE__)."/objednavky/$id_obj/fotografie_$id_obj.zip");
     $zazipovani->buildFromDirectory(dirname(__FILE__)."/objednavky/$id_obj");
 }
-
+require_once("emaily/nova_objednavka-uzivatel.php");
 ?>  
 <main id="odeslat" class="container stranka">
     <div class="kroky">
