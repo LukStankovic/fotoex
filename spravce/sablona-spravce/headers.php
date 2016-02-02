@@ -3,26 +3,26 @@
 /********************
   OBJEDNÁVKY
 *********************/
-
-$vsichni_uzivatele = $Uzivatele->vse();
-$vsechny_objednavky = $Objednavky->vse();
-$vsechny_fotky = $Fotky->vse();
-$pocet_obj = null;
-$predchozi_id = null;
-foreach($vsechny_objednavky as $i => $objednavka){
-    if($predchozi_id != $objednavka->id_objednavka)
-        $pocet_obj++;
-$predchozi_id = $objednavka->id_objednavka;
+if((isset($_GET["page"])) and ($_GET["page"] == "objednavky")){
+    $vsichni_uzivatele = $Uzivatele->vse();
+    $vsechny_objednavky = $Objednavky->vse();
+    $vsechny_fotky = $Fotky->vse();
+    $pocet_obj = null;
+    $predchozi_id = null;
+    foreach($vsechny_objednavky as $i => $objednavka){
+        if($predchozi_id != $objednavka->id_objednavka)
+            $pocet_obj++;
+        $predchozi_id = $objednavka->id_objednavka;
+    }
+    if((isset($_GET["akce"]))&&($_GET["akce"]=="dokonceno")){
+        $Objednavky->dokonceno($_GET["id-objednavka"]);
+        header("Location: home.php?page=objednavky");
+    }
+    if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
+        $Objednavky->vymazat($_GET["id-objednavka"]);
+        header("Location: home.php?page=objednavky");
+    }
 }
-if((isset($_GET["akce"]))&&($_GET["akce"]=="dokonceno")){
-    $Objednavky->dokonceno($_GET["id-objednavka"]);
-    header("Location: home.php?page=objednavky");
-}
-if((isset($_GET["akce"]))&&($_GET["akce"]=="vymazat")){
-    $Objednavky->vymazat($_GET["id-objednavka"]);
-    header("Location: home.php?page=objednavky");
-}
-
 /********************
   OBJEDNÁVKA - DETAIL
 *********************/
@@ -304,7 +304,7 @@ if((isset($_GET["page"])) and ($_GET["page"] == "uzivatele")){
         $Uzivatele->vlozeni($_POST);
         header("Location: home.php?page=uzivatele");
     }
-    if(isset($_GET["akce"]) && $_GET["akce"] == "vymazat"){
+    if(isset($_GET["akce"]) && ($_GET["akce"] == "vymazat")){
         $Uzivatele->vymazat($_GET["id-uzivatele"]);
         header("Location: home.php?page=uzivatele");
     }

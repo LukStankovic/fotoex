@@ -116,6 +116,7 @@ class Uzivatele{
         $psc = $db->pripravaProInput($data["psc"]);
         $zeme = $db->pripravaProInput($data["zeme"]);
         
+        
         if(isset($data["ulozit_udaje"])){
             $sql = "UPDATE uzivatele SET jmeno  = '$jmeno', prijmeni = '$prijmeni', email = '$email', telefon = '$telefon', ulice = '$ulice', mesto = '$mesto', psc = '$psc', zeme = '$zeme'
                 WHERE id_uzivatel = $id";
@@ -127,12 +128,14 @@ class Uzivatele{
         
         return $db->zpracovani($sql);
     }
+
     public function vymazat($id){
        $db = new Databaze();
         $sql = "DELETE FROM uzivatele
                 WHERE id_uzivatel = $id";
         return $db->zpracovani($sql); 
     }
+    
     public function zmenitHeslo($id_u,$nove){
         $db = new Databaze();
         
