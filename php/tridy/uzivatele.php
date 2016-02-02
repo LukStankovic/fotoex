@@ -105,15 +105,26 @@ class Uzivatele{
         $prijmeni = $db->pripravaProInput($data["prijmeni"]);
         $email = $db->pripravaProInput($data["email"]);
         $telefon = $db->pripravaProInput($data["telefon"]);
-        $prava = $db->pripravaProInput($data["prava"]);
+        
+        if(isset($data["ulozit_udaje"]))
+            $prava = "";
+        else
+            $prava = $db->pripravaProInput($data["prava"]);
+        
         $ulice = $db->pripravaProInput($data["ulice"]);
         $mesto = $db->pripravaProInput($data["mesto"]);
         $psc = $db->pripravaProInput($data["psc"]);
         $zeme = $db->pripravaProInput($data["zeme"]);
         
-        $sql = "UPDATE uzivatele SET jmeno  = '$jmeno', prijmeni = '$prijmeni', email = '$email', telefon = '$telefon', prava = '$prava', ulice = '$ulice', mesto = '$mesto', psc = '$psc', zeme = '$zeme'
+        if(isset($data["ulozit_udaje"])){
+            $sql = "UPDATE uzivatele SET jmeno  = '$jmeno', prijmeni = '$prijmeni', email = '$email', telefon = '$telefon', ulice = '$ulice', mesto = '$mesto', psc = '$psc', zeme = '$zeme'
                 WHERE id_uzivatel = $id";
-    
+        }
+        else{
+            $sql = "UPDATE uzivatele SET jmeno  = '$jmeno', prijmeni = '$prijmeni', email = '$email', telefon = '$telefon', prava = '$prava', ulice = '$ulice', mesto = '$mesto', psc = '$psc', zeme = '$zeme'
+                WHERE id_uzivatel = $id";
+        }
+        
         return $db->zpracovani($sql);
     }
     public function vymazat($id){
