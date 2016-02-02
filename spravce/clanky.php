@@ -20,7 +20,7 @@
                         <td><img src="../clanky/<?php echo $clanek->cover;?>"></td> 
                         <td><?php echo $clanek->nazev;?></td> 
                         <td><?php echo date("j. n. Y, H:i:s",strtotime($clanek->datum));?></td> 
-                        <td><?php echo "$clanek->jmeno $clanek->prijmeni ($clanek->login)";?></td> 
+                        <td><?php echo "$clanek->jmeno $clanek->prijmeni";?></td> 
                         <td>
                             <a href="?page=upravit-clanek&id-clanek=<?php echo $clanek->id_clanek;?>"><i class="fa fa-pencil"></i></a>
                             <a href="?page=clanky&akce=vymazat&id-clanek=<?php echo $clanek->id_clanek;?>"><i class="fa fa-remove"></i></a>
