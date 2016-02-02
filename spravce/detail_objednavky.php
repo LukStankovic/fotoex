@@ -101,10 +101,8 @@
             <h2>O zákazníkovi</h2>
                 <ul>
                     <li><?php 
-                        if($objednavka->jmeno != "neregistrovaný")
+
                             echo "$objednavka->jmeno $objednavka->prijmeni"; 
-                        else
-                            echo "Neregistrovaný zákazník";
                         ?>
                     </li>
                     <li>
