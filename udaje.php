@@ -42,7 +42,7 @@ if(isset($_SESSION["id_uzivatel"]))
                     <input type="text" class="form-control vedle" name="fak_mesto" value="<?php if(isset($prihlaseny)) echo $prihlaseny->mesto; ?>" placeholder="Město" required>    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="fak_psc" value="<?php if(isset($prihlaseny)) echo $prihlaseny->psc; ?>" placeholder="PSČ" required>    
+                    <input type="text" class="form-control vedle leva" name="fak_psc" maxlength="5" value="<?php if(isset($prihlaseny)) echo $prihlaseny->psc; ?>" placeholder="PSČ" required>    
 
                     <select name="fak_zeme" class="upravit_pole">
                         <option <?php if(isset($prihlaseny)) if($prihlaseny->zeme == "Česká republika") echo "selected"; ?> value="Česká republika">Česká republika</option>
@@ -54,7 +54,7 @@ if(isset($_SESSION["id_uzivatel"]))
                     
                     <div class="form-group">
                         <input type="text" class="form-control vedle leva" name="uz_email" value="<?php if(isset($prihlaseny)) echo $prihlaseny->email; ?>" placeholder="E-mail" required>    
-                        <input type="text" class="form-control vedle" name="uz_telefon" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
+                        <input type="text" class="form-control vedle" name="uz_telefon" maxlength="14" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ if(isset($_SESSION["id_uzivatel"]))
                     <input type="text" class="form-control vedle" name="dor_mesto" placeholder="Město">    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_psc" placeholder="PSČ">    
+                    <input type="text" class="form-control vedle leva" name="dor_psc" maxlength="5" placeholder="PSČ">    
 
                     <select name="dor_zeme" class="upravit_pole">
                         <option value="Česká republika">Česká republika</option>
