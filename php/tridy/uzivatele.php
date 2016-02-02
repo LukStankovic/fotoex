@@ -1,25 +1,13 @@
 <?php
 
 class Uzivatele{
-    private $id_uzivatel;
-    private $login;
-    private $heslo;
-    private $salt;
-    private $jmeno;
-    private $prijmeni;
-    private $email;
-    private $prava;
-    private $ulice;
-    private $mesto;
-    private $psc;
-    private $stat;
-
+    
     public static function vybraniDat($sql){
         $db = new Databaze();
         return $db->rozkouskovaniZaznamu($sql);
     }
      public static function vse(){
-        $sql = "SELECT *
+        $sql = "SELECT id_uzivatel, login, jmeno, prijmeni, email, telefon, prava, ulice, mesto, psc, zeme
                 FROM uzivatele";
         
         return self::vybraniDat($sql);
@@ -32,7 +20,7 @@ class Uzivatele{
         return $objekt_sul[0]->salt;
     }
     public static function detailUzivatele($id){
-        $sql = "SELECT * 
+        $sql = "SELECT id_uzivatel, login, jmeno, prijmeni, email, telefon, prava, ulice, mesto, psc, zeme
                 FROM uzivatele 
                 WHERE id_uzivatel = '$id'";
         $objekt = self::vybraniDat($sql);
