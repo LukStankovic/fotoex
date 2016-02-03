@@ -1,5 +1,5 @@
 <?php 
-
+ob_start();
 //VLOZENI <HEAD>
 require_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
@@ -109,8 +109,9 @@ if(isset($_POST["odeslat"])){
     
     $zazipovani = new PharData(dirname(__FILE__)."/objednavky/$id_obj/fotografie_$id_obj.zip");
     $zazipovani->buildFromDirectory(dirname(__FILE__)."/objednavky/$id_obj");
+ 
+    require_once("emaily/nova_objednavka-uzivatel.php");
 }
-require_once("emaily/nova_objednavka-uzivatel.php");
 ?>  
 <main id="odeslat" class="container stranka">
     <div class="kroky">
@@ -224,4 +225,5 @@ foreach($_SESSION["kosik"] as $jedna_fotka){
 unset($_SESSION["kosik"]);
 unset($_SESSION["fotky"]);
 require_once("sablona/paticka.php");
+ob_end_flush();
 ?>
