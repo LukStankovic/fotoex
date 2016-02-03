@@ -34,10 +34,10 @@ $prvni = "<html>
         <div style='float: left; width: 49%'>
             <h2 style='color:#856559;font-weight:100;'>Fakturační údaje</h2>
             <ul style='list-style:none;padding-left:5px'>
-                <li>Lukáš Stanokovič</li>
-                <li>Proskovická 12, Ostrava</li>
-                <li>724 00</li>
-                <li>Česká republika</li>
+                <li>".$data_obj["fak_jmeno"]." ".$data_obj["fak_prijmeni"]."</li>
+                <li>".$data_obj["fak_ulice"].", ".$data_obj["fak_mesto"]."</li>
+                <li>".$data_obj["fak_psc"]."</li>
+                <li>".$data_obj["fak_zeme"]."</li>
             </ul>
             
             <h2 style='color:#856559;font-weight:100;'>Vaše osobní údaje</h2>
@@ -49,18 +49,18 @@ $prvni = "<html>
         <div style='float: right; width: 50%'>
             <h2 style='color:#856559;font-weight:100;'>Doručovací údaje</h2>
             <ul style='list-style:none;padding-left:5px'>
-                <li>Lukáš Stanokovič</li>
-                <li>Proskovická 12, Ostrava</li>
-                <li>724 00</li>
-                <li>Česká republika</li>
+                <li>".$data_obj["fak_jmeno"]." ".$data_obj["fak_prijmeni"]."</li>
+                <li>".$data_obj["fak_ulice"].", ".$data_obj["fak_mesto"]."</li>
+                <li>".$data_obj["fak_psc"]."</li>
+                <li>".$data_obj["fak_zeme"]."</li>
             </ul>
             
             <h2 style='color:#856559;font-weight:100;'>Platba a doprava</h2>
             <ul style='list-style:none;padding-left:5px'>
-                <li><strong>Platba:</strong> Kartou - peníze pošlete na účet: xxxxxxxx/xxxx</li>
-                <li><strong>Doprava:</strong> Česká pošta (30Kč)</li>
+                <li><strong>Platba:</strong> ".$data_obj["platba"]."</li>
+                <li><strong>Doprava:</strong>".$data_obj["doruceni"]." (".$data_obj["doruceni_cena"]." Kč)</li>
             </ul>
-        
+            <p style='font-style:italic; color:#f00'>Při platbě převodem peníze pošlete na účet xxxxxxxxx/xxxx</p>
         </div>
     </div>
 
