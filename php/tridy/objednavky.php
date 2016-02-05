@@ -21,7 +21,7 @@ class Objednavky{
                        nazev_material, alias_material, round(cena_material,2),
                        nazev_typ, alias_typ, round(cena_typ,2),
                        pocet,
-                       round((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ) + doprava_cena)*pocet,2) AS 'celkem'
+                       round(((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ))*pocet)+doprava_cena,2) AS 'celkem'
 
                 FROM objednavky 
                     INNER JOIN fotky using(id_objednavka) 
@@ -44,7 +44,7 @@ class Objednavky{
                        f_jmeno, f_prijmeni, f_ulice, f_psc, f_mesto, f_zeme,
                        u_telefon, u_email,
                        pocet,
-                       round((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ) + doprava_cena)*pocet,2) AS 'celkem'
+                       round(((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ))*pocet)+doprava_cena,2) AS 'celkem'
 
                 FROM objednavky 
                     INNER JOIN fotky using(id_objednavka) 
