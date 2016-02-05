@@ -1,5 +1,5 @@
 	<div id="main" class="detail_objednavky">
-	<form method="post">
+    <form method="post">
 		<div class="row">
             <div class="col-md-3 detail_panel datum">
                 <?php 
@@ -238,6 +238,8 @@
         <div class="btn pull-right upraveno zrusit"><a href="#">Zrušit úpravy</a></div> 
     </form>
     </div>
+<pre><?php print_r($objednavka); ?></pre>
+<pre><?php print_r($vsechny_fotky); ?></pre>
 <script>
 //FILTRACE TABULKY
 $("table").filterTable();
