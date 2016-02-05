@@ -55,7 +55,7 @@
         </div>    
         <div class="form-group">
             <label for="heslo" class="control-label">Heslo: </label>
-            <input type="text" class="form-control" name="heslo" required>
+            <input type="password" class="form-control" name="heslo" required>
         </div>
         <div class="form-group">
             <label for="jmeno" class="control-label">Jméno: </label>
@@ -90,7 +90,7 @@
         </div>
         <div class="form-group">
             <label for="psc" class="control-label">PSČ: </label>
-            <input type="text" class="form-control" name="psc" required>
+            <input type="text" maxlength="5" class="form-control" name="psc" required>
         </div>  
         <div class="form-group">
             <label for="zeme" class="control-label">Země: </label>
