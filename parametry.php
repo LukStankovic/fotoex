@@ -116,7 +116,7 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
                                 <input placeholder="Počet" value="1" type="number" min="1" name="pocet[]">
                             </div>
                             <div class="parametr kvalita">
-                                kvalita
+                                <div class="vybrat"><i class="fa fa-info-circle"></i> Vyberte formát</div>
                             </div>
                         </div>
                     </div>
@@ -221,6 +221,53 @@ var cena_jednotlive;
 });
 </script>
 
+<script>
+$(function(){
+<?php foreach($fotky as $id_f => $fotka){ ?>
+    
+    var sirka_fotky_<?php echo $id_f; ?> = <?php echo $fotka["sirka"]; ?>;
+    var vysledek_<?php echo $id_f; ?> = "";
+    
+    $(".fotka-<?php echo $id_f;?> .format select").change(function(){
+        var vybrane = $(".fotka-<?php echo $id_f;?> .format select :selected").text();
+        
+        if(vybrane != "Formát"){
+            
+            var sirka_format_<?php echo $id_f; ?> = "";
+            
+            if(vybrane == "A2")
+                sirka_format_<?php echo $id_f; ?> = 21;
+            else if(vybrane == "A3")
+                sirka_format_<?php echo $id_f; ?> = 29.7;
+            else if(vybrane == "A2")
+                sirka_format_<?php echo $id_f; ?> = 42;
+            else{
+                var vybrane = vybrane.split("x");    
+                sirka_format_<?php echo $id_f; ?> = parseFloat(vybrane[0]);
+            }
+            
+            var dpi = 2.54*sirka_fotky_<?php echo $id_f;?>/sirka_format_<?php echo $id_f; ?>; 
+                        
+            if(dpi <= 100)
+                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='spatna'><i class='fa fa-times-circle'> Špatná kvalita</div>");
+            if(dpi > 100 && dpi < 250)
+                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='prumerna'><i class='fa fa-exclamation-circle'> Průměrná kvalita</div>");
+            if(dpi >= 250)
+                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='vyborna'><i class='fa fa-check-circle'> Výborná kvalita</div>");
+        }
+        else
+            $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='vybrat'><i class='fa fa-info-circle'></i> Vyberte formát</div>");
+        
+        
+    });
+    
+    
+    
+    //ZJIŠTĚNÍ FORMÁTU
+    
+<?php } ?>
+});
+</script>
 
 <script>
 $(function(){
@@ -245,25 +292,9 @@ $(function(){
             console.log("nič");
         }
     });
-
-    /*
-    $("select").each(function(){
-        $(this).change(function() {
-            if ($('select').val == ""){
-                console.log("nič");
-                $('.pokracovat').prop("disabled", true);
-            }
-            else{ //KDYŽ JE VŠE VYPLNĚNO
-                $('.pokracovat').prop("disabled", false);
-                console.log("ok");            
-            }
-        });
-    }); */
     
 });
 </script>
-
-
 <script src="js/chosen.jquery.min.js"></script>
 <script>
 $(".fotka select").chosen({disable_search_threshold: 10});
