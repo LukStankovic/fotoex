@@ -235,7 +235,7 @@ $(function(){
             
             var sirka_format_<?php echo $id_f; ?> = "";
             
-            if(vybrane == "A2")
+            if(vybrane == "A4")
                 sirka_format_<?php echo $id_f; ?> = 21;
             else if(vybrane == "A3")
                 sirka_format_<?php echo $id_f; ?> = 29.7;
