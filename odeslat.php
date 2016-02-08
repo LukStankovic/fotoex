@@ -87,9 +87,13 @@ if(isset($_POST["odeslat"])){
         
         $co = "php/nahrani/tmp-nahrane/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
         $kam = "objednavky/".$id_obj."/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
+            
         copy($co,$kam);
-
-        $data_fot["url"] = $domena."/objednavky/".$id_obj."/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"];
+        
+        $bez_diakritky = $Fotky->vymazatDiakritiku($jedna_fotka["nazev_s"]);
+        rename("objednavky/".$id_obj."/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"],"objednavky/".$id_obj."/".$bez_diakritky.".".$jedna_fotka["typ_s"]);
+        
+        $data_fot["url"] = $domena."/objednavky/".$id_obj."/".$bez_diakritky.".".$jedna_fotka["typ_s"];
         $url[$i] = $data_fot["url"];
         $data_fot["typ_souboru"] = $jedna_fotka["typ_s"];
         $data_fot["format"] = $jedna_fotka["format"];

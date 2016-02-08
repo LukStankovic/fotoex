@@ -4,6 +4,7 @@
 require_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
 require_once("sablona/hlavicka.php");
+
 ?>
 
 <main id="nahrani" class="container stranka">
