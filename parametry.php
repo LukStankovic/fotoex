@@ -207,6 +207,13 @@ var cena_jednotlive;
         var sirka = parseFloat(vybrane_pol[0]);
         var vyska = parseFloat(vybrane_pol[1]);
         
+        if(vybrane == "A4")
+            sirka = 21;
+        else if(vybrane == "A3")
+            sirka = 29.7;
+        else if(vybrane == "A2")
+            sirka = 42;
+        
         if((sirka >= 20) || (sirka >= 20)){
             $(".fotka-<?php echo $fotka["id"];?> .material").hide();
             $(".fotka-<?php echo $fotka["id"];?> .fotopapir").show();
