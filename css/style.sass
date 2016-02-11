@@ -9,9 +9,9 @@ $hneda-radek: #e8deda
 body
     color: $hneda-tmava
     background: #f4f3f4
-    font-family: "Open Sans";
+    font-family: "Open Sans"
     letter-spacing: 1px
-    
+
 a
     color: $hneda-tmavsi
 
@@ -35,7 +35,7 @@ h2
     margin-top: 10px
     +prefixy(transition,.2s ease all)
     background-color: transparent
-    
+
 .btn:hover
         background: $hneda
         color: #fff
@@ -44,7 +44,7 @@ h2
     width: 100%
     height: 30px
     text-align: right
-    ul 
+    ul
         margin: 0
         li
             float: left
@@ -63,7 +63,7 @@ h2
 #home header
     width: 100%
     min-height: 500px
-    
+
     .uvodni-text
         color: #fff
         font-weight: 300
@@ -72,7 +72,7 @@ h2
         position: relative
         margin-top: 80px
         display: block
-        
+
     .vyvolat .btn
         color: #fff
         border: 2px solid #fff
@@ -84,17 +84,17 @@ h2
         letter-spacing: 3px
         text-transform: uppercase
         +prefixy(transition,.2s ease background)
-    
+
     .vyvolat .btn:hover
             background: rgba(255,255,255,0.3)
-   
+
 header
     min-height: 80px
     background: url("../img/cover.jpg") center
-    
+
     .uvodni-text
         display: none
-    
+
 nav
     width: 100%
     height: 80px
@@ -106,7 +106,7 @@ nav
     li
         list-style: none
         float: left
-        
+
         a
             color: #fff
             display: block
@@ -117,7 +117,7 @@ nav
             text-transform: uppercase
             letter-spacing: 2px
             border-bottom: 2px solid transparent
-            
+
         a:hover
             border-bottom: 2px solid #fff
             color: #fff
@@ -136,7 +136,7 @@ main
     .col-md-6
         padding: 0
     h1, p
-        padding: 15px 
+        padding: 15px
     p
         line-height: 180%
     .info
@@ -145,23 +145,23 @@ main
             margin-right: 8px
         .fa
             margin-right: 5px
-            
-            
+
+
     .uvodni-img
         background-position: center
         +prefixy(background-size,cover)
         width: 100%
         height: 400px
-        
+
         a
             width: 100%
             height: 400px
             display: block
-    
+
     .cist-dale
         float: right;
         margin-right: 15px
-        
+
 .clanek:nth-child(odd)
     .fotografie
         float: left
@@ -185,7 +185,7 @@ main
         padding-bottom: 20px
     .obsah
         margin-top: 20px
- 
+
 // FOTOGRAFIE
 
 main#nahrani
@@ -196,10 +196,10 @@ main#nahrani
     min-height: 40px
     background: $hneda
     color: #fff
-    
+
     ul
         padding: 0
-        
+
         li
             list-style: none
             float: left
@@ -210,8 +210,8 @@ main#nahrani
             cursor: default
             +prefixy(transition, .2s background)
             &:hover
-                background: $hneda-tmavsi  
-            
+                background: $hneda-tmavsi
+
             a
                 background: $hneda-tmavsi
                 color: #fff
@@ -221,13 +221,13 @@ main#nahrani
                 +prefixy(transition, .2s background)
                 &:hover
                     background: $hneda-tmava
-    
+
             span
                 font-weight: bold
-    
+
         li.aktivni
             padding: 0
-            
+
 #nahrani
     .fileupload-buttonbar .btn
         line-height: 30px
@@ -243,14 +243,14 @@ main#nahrani
                 margin-right: 10px
     .btn
         border-radius: 0
-        
+
     .napoveda
         margin-top: 10px
         color: #fff
         &.row
             margin-left: 0px
             margin-right: 0px
-            
+
         .formaty
             min-height: 260px
             background: $hneda
@@ -259,12 +259,12 @@ main#nahrani
             font-weight: 300
             .ikona
                 max-height: 90px
-                
+
         .postup
             min-height: 260px
             background: $hneda
             margin-left: 5px
-            
+
             a
                 color: #fff
                 text-decoration: underline
@@ -277,14 +277,14 @@ main#nahrani
         h3
             font-size: 17px
             font-weight: 500
-        
+
     .prihlasit
         font-weight: bold
         color: #fff
         padding: 15px
         background: $hneda
         margin: 10px 0px
-        
+
         .btn
             background: #fff
             color: $hneda-tmava
@@ -292,10 +292,10 @@ main#nahrani
             padding: 5px
             font-size: 12px
             margin-top: -5px
-            
+
 .pokracovat.btn
     margin-right: 18px
-    
+
 .progress-bar-hneda
     background-color: $hneda!important
 //PATIČKA
@@ -304,8 +304,8 @@ footer
     height: 200px
     background: $hneda
     padding-top: 50px
-    
-    .foot-navigace 
+
+    .foot-navigace
         ul
             padding: 0
         li
@@ -322,20 +322,20 @@ footer
 
 //PARAMETRY
 #parametry
-    
+
     .fotky
-        margin: 20px 0px 50px 0px    
-    
+        margin: 20px 0px 50px 0px
+
     .fotka
         min-height: 150px
         &:nth-child(even)
             background: $hneda-radek
         &:nth-child(odd)
             background: transparent
-        
+
         .miniatura
             line-height: 150px
-            
+
         .row
             margin-left: 0
             margin-right: 0
@@ -344,47 +344,47 @@ footer
         img
             height: 110px
             max-width: 170px
-    
+
         .parametr
             height: 35px
             margin-bottom: 10px
-            
+
             &.pocet input
                 height: 35px
                 border: 0
                 -webkit-appearance: none
                 text-align: center
                 &:hover
-                   -webkit-appearance: none 
+                   -webkit-appearance: none
                 &:focus
                     outline: 0
-            
+
         .parametry-inputy
             padding-top: 35px
-            
+
         .cena
             line-height: 150px
-            
-            
+
+
         .chosen-search
             display: none
-            
+
         .chosen-container, .chosen-container.chosen-container-single.chosen-container-single-nosearch
             width: 100%!important
             border: 2px solid transparent
-            
+
             .chosen-single, .chosen-drop
                 border-radius: 0
                 background: #fff!important
                 border: 0!important
-            
+
         .chosen-container-single .chosen-single
             height: 35px!important
             line-height: 35px!important
-            
+
         .chosen-container-single .chosen-single div
             top: 5px
-        
+
         .chosen-results
             margin: 0
             padding: 0
@@ -396,13 +396,13 @@ footer
                 padding: 0px 15px
                 list-style: none
                 line-height: 30px
-        
+
         .kvalita
             div
                 max-width: 179px
                 text-align: center
                 line-height: 35px
-                
+
             .spatna
                 background: #d14233
                 color: #fff
@@ -412,8 +412,8 @@ footer
             .vyborna
                 color: #fff
                 background: #2ecc71
-                
-        
+
+
     .celkem
         height: 40px
         margin: 10px 18px
@@ -421,8 +421,8 @@ footer
         font-weight: 700
         font-size: 17px
         color: $hneda
-    
-    
+
+
 //KOŠÍK
 
 #kosik, #udaje, #odeslat
@@ -439,7 +439,7 @@ footer
             th
                 text-align: center
                 padding: 10px 0
-                
+
         tbody
             td
                 img
@@ -452,7 +452,7 @@ footer
                 background: $hneda-radek
             tr:nth-child(odd)
                 background: transparent
-                
+
             tr:last-child
                 border-bottom: 2px solid $hneda
         tfoot
@@ -460,7 +460,7 @@ footer
                 padding: 10px 0
             .celkem
                 font-weight: bold
-            
+
             tr:last-child
                 border-top: 1px dotted $hneda
             tr:first-child
@@ -480,10 +480,10 @@ footer
         box-shadow: 0 0 10px 0px #856559
         border: 1px solid $hneda
 
-#udaje 
+#udaje
     .platba_doruceni
         border-top: 1px dotted $hneda
-        
+
     .o_zakaznikovi
         border-top: 1px dotted $hneda
         margin-top: 30px
@@ -501,7 +501,7 @@ footer
             list-style: none
 //LOGIN
 #login
-    .login_blok 
+    .login_blok
         background: #fff
         width: 390px
         height: 310px
@@ -511,29 +511,29 @@ footer
         top: 50%
         left: 50%
         +prefixy(transform,translate(-50%, -50%))
-            
+
         li
             list-style: none
-    
-    
+
+
     .blok_text
         padding: 0 40px
         position: relative
-    
-        h1 
+
+        h1
             font-size: 45px
             padding-bottom: 10px
             padding-top: 10px
             text-align: center
-    
+
         p
             font-size: 12px
             padding-bottom: 10px
             line-height: 25px
-    
-        
-    
-    form input[type=text], form input[type=password] 
+
+
+
+    form input[type=text], form input[type=password]
         width: 100%
         height: 40px
         margin-bottom: 10px
@@ -543,8 +543,8 @@ footer
         border-bottom: 1px solid $hneda-tmavsi
         color: $hneda-tmava
         outline: none
-    
-    .button 
+
+    .button
         border: none
         display: block
         background: $hneda
@@ -559,59 +559,59 @@ footer
         +prefixy(transition,0.3s ease background)
         outline: 0
         margin-top: 20px
-    
-    .button:hover 
+
+    .button:hover
     	background: $hneda-tmavsi
-    
-    .button:active 
+
+    .button:active
     	background: $hneda-tmavsi
-    
-    
+
+
     ::-webkit-input-placeholder
     	color: $hneda
-    
-    :-moz-placeholder 
+
+    :-moz-placeholder
     	color: $hneda
-    
-    ::-moz-placeholder 
+
+    ::-moz-placeholder
     	color: $hneda
-    
-    :-ms-input-placeholder 
+
+    :-ms-input-placeholder
     	color: $hneda
-    
-    .err 
+
+    .err
         color: $hneda
         text-align: center
         margin: 5px auto
         display: block
         min-height: 16px
         font-style: italic
-        
-@media (max-width:500px)    
+
+@media (max-width:500px)
     #login
         .login_blok
             width: 100%
             top: 145px
-        
+
         .login_formular
             background: $hneda
             width: 100%
             height: 100vh
             margin: 0px!important
             position: relative
-             
+
         .button
             height: 50px
             background: $hneda
-            
-        
+
+
         .button:hover, .button:active
             background: $hneda-tmavsi
-        
+
         .container
             padding: 0
-    
-        .blok_text h1 
+
+        .blok_text h1
             font-size: 30px
             padding-bottom: 10px
             padding-top: 20px
@@ -625,7 +625,7 @@ footer
     margin: 40px auto
     padding: 0px
     background: #fff
-    
+
     .hlavicka
         background: $hneda
         padding: 10px
@@ -634,7 +634,7 @@ footer
             margin: 0
     .inputy
         padding: 15px
-    
+
     .form-group
         .vedle
             width: 49%
@@ -652,7 +652,7 @@ footer
         -webkit-box-shadow: 0 0 10x 0px #856559
         box-shadow: 0 0 10px 0px #856559
         border: 1px solid $hneda
-    
+
 //NASTAVENÍ PROFILU
 
 #nastaveni_profilu
@@ -663,13 +663,13 @@ footer
             color: $hneda
             font-weight: 700
             font-size: 18px
-            
+
     .prihlasen
         margin: 30px auto
         max-width: 500px
         h1
             text-align: center
-    
+
     .form-group
         .vedle
             width: 49%
@@ -680,29 +680,29 @@ footer
             width: 99%
         select
             width: 49%
-        
+
     button
         display: block
         margin: 30px 0
         width: 100%
-        
+
     input:focus
         -webkit-box-shadow: 0 0 10x 0px #856559
         box-shadow: 0 0 10px 0px #856559
         border: 1px solid $hneda
-    
+
 //RESPONZIVITA
 @media screen and (min-width: 992px) and (max-width: 1199px)
     #nahrani .napoveda .postup
         margin-left: 0
-        
+
     .udaje-blok .form-group .vedle.leva
         float: left
         margin-right: 8px
-        
+
     .udaje-blok .form-group .vedle
         width: 49%
-    
+
 @media screen and (max-width: 991px)
     .clanek:nth-child(even)
         h1, p, .info
@@ -712,7 +712,7 @@ footer
     #nahrani
         .fileupload-buttonbar .btn
             font-size: 15px
-            
+
 @media screen and (max-width: 730px)
     #home header
         min-height: 100px
@@ -725,16 +725,16 @@ footer
                 margin-bottom: 20px
         .uvodni-text
             margin: 0
-        
+
     .mobilni-navigace
         display: block
-        
+
         li
             list-style: none
             float: none
             text-align: center
             width: 100%
-            
+
             a
                 width: 100%
                 display: block
@@ -743,12 +743,12 @@ footer
                 font-size: 22px
                 font-weight: 300
                 border-bottom: 1px dotted #fff
-                
+
         li:last-child a
                 border-bottom: 0px
         ul
             padding: 0
-            
+
     .hlavni-navigace
         display: none
     .mobilni-nav-tlacitko
@@ -757,10 +757,10 @@ footer
         right: 10px
         top: 35px
         position: absolute
-    
+
     .mobilni-nav-tlacitko:hover
         color: #fff
-            
+
     header
         min-height: 80px
 
@@ -769,12 +769,12 @@ footer
         .fileupload-buttonbar .btn
             font-size: 15px
             min-width: 160px
-            
+
 @media screen and (max-width: 528px)
     .udaje-blok .form-group .vedle
         width: 100%
         margin-bottom: 15px
-        
+
     .vedle.leva
         float: none
         margin-right: 0px

@@ -1,7 +1,7 @@
 <?php
     require_once ("sablona/head.php");
     require_once "php/recaptcha.php";
-    $secret = "";
+    $secret = "6LfRXxYTAAAAAOergRPPIZl0dkr1gcXiOMg55KXm";
     $response = null;
  
     $reCaptcha = new ReCaptcha($secret);

@@ -194,7 +194,7 @@ require_once("sablona/hlavicka.php");
             <p class="name">
                 {% if (file.url) { %}
                     <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-                    <input type="hidden" name="fotka[]" value="{%=file.url%}">
+                    <input type="hidden" name="fotka[]" value="{%=file.name%}">
                     <input type="hidden" name="miniatura_fotka[]" value="{%=file.thumbnailUrl%}">
                 
                 {% } else { %}
