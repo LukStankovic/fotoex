@@ -44,14 +44,13 @@ class Fotky{
         $deska = $db->pripravaProInput($k_uprave["deska"]);
         $typ = $db->pripravaProInput($k_uprave["typ"]);
         $material = $db->pripravaProInput($k_uprave["material"]);
-        //FAKTURAČNÍ ADRESA
         $fotopapir = $db->pripravaProInput($k_uprave["fotopapir"]);
         $pocet = $db->pripravaProInput($k_uprave["pocet"]);
 
     
         
         $sql = "INSERT INTO fotky
-                VALUES ('','$url','$typ','$id_o','$format','$deska','$typ_s','$material','$fotopapir','$pocet')";
+                VALUES ('','$url','$typ_s','$id_o','$format','$deska','$typ','$material','$fotopapir','$pocet')";
         
         return $db->zpracovani($sql);
     }
