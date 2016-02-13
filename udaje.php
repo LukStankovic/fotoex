@@ -148,6 +148,7 @@ $Kosik = $_SESSION["kosik"];
     <button type="submit" name="odeslat" class="pokracovat btn pull-right">Odeslat objednávku</button>
     </form>
     <img src="img/fotka-udaje.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
+    
 </main>    
 <script>
 $(document).ready(function(){

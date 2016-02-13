@@ -40,7 +40,7 @@ class Kosik{
             
             //MATERIÁL
             
-            if(($_POST["material"][$id_foto] == null) || ($_SESSION["kosik"][$id_foto]["material"] == "NULL")){
+            if(($_POST["material"][$id_foto] == null) || ($this->fotky[$id_foto]["material"] == "NULL")){
                 $this->fotky[$id_foto]["material"] = 0;
                 $this->fotky[$id_foto]["material_nazev"] = "―";
             }
@@ -55,7 +55,7 @@ class Kosik{
             
             //FOTOPAPÍR
         
-            if(($_POST["fotopapir"][$id_foto] == null) || ($_SESSION["kosik"][$id_foto]["fotopapir"] == "NULL")){
+            if(($_POST["fotopapir"][$id_foto] == null) || ($this->fotky[$id_foto]["fotopapir"] == "NULL")){
                 $this->fotky[$id_foto]["fotopapir"] = 0;
                 $this->fotky[$id_foto]["fotopapir_nazev"] = "―";
             }
@@ -97,6 +97,26 @@ class Kosik{
                 $this->fotky[$id_foto]["typ"],
                 $this->fotky[$id_foto]["pocet"]
             );
+            
+            
+            //INFORMACE O FOTCE
+            
+            //URL
+            $this->fotky[$id_foto]["informace"]["url"] = $_SESSION["fotky"][$id_foto]["url"];
+            $this->fotky[$id_foto]["informace"]["mini_url"] = $_SESSION["fotky"][$id_foto]["mini_url"];
+            //ROZMĚRY
+            list($sirka, $vyska) = getimagesize($this->fotky[$id_foto]["informace"]["url"]);
+            $this->fotky[$id_foto]["informace"]["sirka"] = $sirka;
+            $this->fotky[$id_foto]["informace"]["vyska"] = $vyska;
+            //INFO
+            //velikosti souborů
+            $info_o_soboru = pathinfo($this->fotky[$id_foto]["informace"]["url"]);
+            $this->fotky[$id_foto]["informace"]["nazev"] = $info_o_soboru["filename"];
+            $this->fotky[$id_foto]["informace"]["typ_s"] = $info_o_soboru["extension"];
+            chmod("php/nahrani/tmp-nahrane", 0777);
+            $this->fotky[$id_foto]["informace"]["velikost"] = filesize("php/nahrani/tmp-nahrane/".$info_o_soboru["filename"].".".$info_o_soboru["extension"]);
+            
+            
             $this->pocet_fotek++;
         }
         $this->cena_bez_dopravy = self::cenaZaFotky();
@@ -151,6 +171,8 @@ class Kosik{
             $this->doprava["cena"] = 70.00;
         if($_POST["doruceni"] == "Česká pošta")
             $this->doprava["cena"] = 30.00;
+        
+        $this->cena_celkem = $this->cena_bez_dopravy + $this->doprava["cena"];
     }
     
     public function cenaZaFotky(){
