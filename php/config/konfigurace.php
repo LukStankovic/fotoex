@@ -4,6 +4,7 @@ require_once ("php/tridy/clanky.php");
 require_once ("php/tridy/objednavky.php");
 require_once ("php/tridy/fotky.php");
 require_once ("php/tridy/uzivatele.php");
+require_once ("php/tridy/kosik.php");
 
 //PARAMETRY
 require_once ("php/tridy/formaty.php");
@@ -17,6 +18,8 @@ $Clanky = new Clanky();
 $Objednavky = new Objednavky();
 $Uzivatele = new Uzivatele();
 $Fotky = new Fotky();
+
+$Kosik = new Kosik();
 
 //PARAMETRY
 $Formaty = new Formaty();
