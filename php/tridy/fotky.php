@@ -33,7 +33,7 @@ class Fotky{
             //ID
             $s[$id_foto]["id"] = $id_foto;
             //URL
-            $s[$id_foto]["url"] = $post["fotka"][$id_foto];
+            $s[$id_foto]["url"] = "php/nahrani/tmp-nahrane/".$post["fotka"][$id_foto];
             $s[$id_foto]["mini_url"] = $post["miniatura_fotka"][$id_foto];
             //ROZMĚRY
             list($sirka, $vyska) = getimagesize($s[$id_foto]["url"]);
@@ -91,7 +91,6 @@ class Fotky{
         $pocet = $db->pripravaProInput($fot["pocet"]);
         $cena = $db->pripravaProInput($fot["cena"]);
     
-        
         $sql = "INSERT INTO fotky
                 VALUES ('','$url','$typ_s','$id_o','$format','$deska','$typ','$material','$fotopapir','$pocet','$cena')";
         
