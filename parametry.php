@@ -118,33 +118,41 @@ $(document).ready(function(){
 <?php foreach($fotky as $fotka){?>
     
     
-    var nova_cena = 0.00, zakladni_cena = 0.00, cena_bez_mnozstvi;
+    var nova_cena_<?php echo $fotka["id"]; ?> = 0.00, zakladni_cena_<?php echo $fotka["id"]; ?>  = 0.00, cena_bez_mnozstvi_<?php echo $fotka["id"]; ?>;
     //PŘI ZMĚNĚ SELECTU
+    
+    
     $(".fotka-<?php echo $fotka["id"];?> select").change(function() {
 
-        nova_cena = zakladni_cena;    
+        nova_cena_<?php echo $fotka["id"]; ?> = zakladni_cena_<?php echo $fotka["id"]; ?>;    
         
         $(".fotka-<?php echo $fotka["id"];?> select option:selected").each(function() {
             if( $(this).data('price') == null ){
-                nova_cena = nova_cena;
+                nova_cena_<?php echo $fotka["id"]; ?> = nova_cena_<?php echo $fotka["id"]; ?>;
             }
             else if (!($(this).data('price'))){
-                nova_cena = nova_cena;
+                nova_cena_<?php echo $fotka["id"]; ?> = nova_cena_<?php echo $fotka["id"]; ?>;
             }
-            else{
-                nova_cena += $(this).data('price');
-                cena_bez_mnozstvi = nova_cena;
-                nova_cena = cena_bez_mnozstvi * $(".fotka-<?php echo $fotka["id"];?> .pocet input").val();
+            else{ 
+                nova_cena_<?php echo $fotka["id"]; ?> += $(this).data('price');
+                cena_bez_mnozstvi_<?php echo $fotka["id"]; ?> = nova_cena_<?php echo $fotka["id"]; ?>;
+                nova_cena_<?php echo $fotka["id"]; ?> *= $(".fotka-<?php echo $fotka["id"];?> .pocet input").val();
             }
+            
+
+            
         });
-        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(nova_cena.toFixed(2) + " Kč");
-        $(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena.toFixed(2));
+        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(nova_cena_<?php echo $fotka["id"]; ?>.toFixed(2) + " Kč");
+        $(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena_<?php echo $fotka["id"]; ?>.toFixed(2));
+        
     });
-    
+
     $(".fotka-<?php echo $fotka["id"];?> .pocet input").change(function() {
-        nova_cena = cena_bez_mnozstvi * $(this).val();
-        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(nova_cena.toFixed(2) + " Kč");
-        $(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena.toFixed(2));
+        
+    
+        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(nova_cena_<?php echo $fotka["id"]; ?>.toFixed(2) + " Kč");
+        $(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena_<?php echo $fotka["id"]; ?>.toFixed(2));
+
     });
     
 <?php }?>
