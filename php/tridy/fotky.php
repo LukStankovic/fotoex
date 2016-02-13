@@ -27,6 +27,31 @@ class Fotky{
         
         return self::vybraniDat($sql);
     }
+    
+    public function parametry_fotky($post,$pocet){
+        for($id_foto = 0;$id_foto<$pocet; $id_foto++){    
+            //ID
+            $s[$id_foto]["id"] = $id_foto;
+            //URL
+            $s[$id_foto]["url"] = $post["fotka"][$id_foto];
+            $s[$id_foto]["mini_url"] = $post["miniatura_fotka"][$id_foto];
+            //ROZMĚRY
+            list($sirka, $vyska) = getimagesize($s[$id_foto]["url"]);
+            $s[$id_foto]["sirka"] = $sirka;
+            $s[$id_foto]["vyska"] = $vyska;
+            //INFO
+            //velikosti souborů
+            $info_o_soboru = pathinfo($s[$id_foto]["url"]);
+            $s[$id_foto]["nazev"] = $info_o_soboru["filename"];
+            $s[$id_foto]["typ_s"] = $info_o_soboru["extension"];
+            chmod("php/nahrani/tmp-nahrane", 0777);
+            $s[$id_foto]["velikost"] = 
+                filesize("php/nahrani/tmp-nahrane/".$info_o_soboru["filename"].".".$info_o_soboru["extension"]);
+        }
+        return $s;
+    }
+    
+    
     public static function pocet_formatu(){
         $sql = "SELECT id_format,nazev_format, count(id_format) as pocet                  
                 FROM fotky INNER JOIN formaty using(id_format)

@@ -111,6 +111,11 @@ class Objednavky{
         $vysledek = self::vybraniDat($sql);
         return($vysledek[0]->celkem);
     }
+    
+    public function celkova_cena($fotky){
+        
+    }
+    
     public function vlozeni($id_o,$stav,$id_u,$k_uprave){
         $db = new Databaze();
         

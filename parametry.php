@@ -12,34 +12,8 @@ $fotopapiry = $Fotopapiry->vse();
 
 unset($_SESSION["fotky"]);
 
-for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){    
-    $id_pred = $id_foto;
-    //POKUD JE V KOŠÍKU
-    /*
-    if(isset($_SESSION["kosik"])){
-        $id_foto = $id_foto + (array_pop(array_keys($_SESSION["kosik"])))+1;
-    }
-    */
-    //ID 
-    $_SESSION["fotky"][$id_foto]["id"] = $id_pred;
-    //URL
-    $_SESSION["fotky"][$id_foto]["url"] = $_POST["fotka"][$id_pred];
-    $_SESSION["fotky"][$id_foto]["mini_url"] = $_POST["miniatura_fotka"][$id_pred];
-    //ROZMĚRY
-    list($sirka, $vyska) = getimagesize($_SESSION["fotky"][$id_pred]["url"]);
-    $_SESSION["fotky"][$id_foto]["sirka"] = $sirka;
-    $_SESSION["fotky"][$id_foto]["vyska"] = $vyska;
-    //INFO
-    //velikosti souborů
-    $info_o_soboru = pathinfo($_SESSION["fotky"][$id_pred]["url"]);
-    $_SESSION["fotky"][$id_foto]["nazev"] = $info_o_soboru["filename"];
-    $_SESSION["fotky"][$id_foto]["typ_s"] = $info_o_soboru["extension"];
-    chmod("php/nahrani/tmp-nahrane", 0777);
-    $_SESSION["fotky"][$id_foto]["velikost"] = 
-        filesize("php/nahrani/tmp-nahrane/".$info_o_soboru["filename"].".".$info_o_soboru["extension"]);
-    //PŘEKOPÍROVÁNÍ DO PROMĚNNÉ FOTKY
-    $fotky = $_SESSION["fotky"];
-}
+$fotky = $Fotky->parametry_fotky( $_POST , count($_POST["fotka"]) );
+$_SESSION = $fotky;
 
 ?>  
 <main id="parametry" class="container stranka">
@@ -134,6 +108,8 @@ for($id_foto = 0;$id_foto<count($_POST["fotka"]); $id_foto++){
     </div>
     <img src="img/fotka-parametry.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
     <pre><?php print_r($_SESSION);?></pre>
+    <pre><?php print_r($_POST);?></pre>
+
 </main>    
 <script>
 $(document).ready(function(){
