@@ -54,7 +54,7 @@ if(isset($_POST["odeslat"])){
         
         $Kosik->zmenaURL($i,$nove_url);
         
-        $Fotky->vlozeni($id_obj,$fotka);
+        $Fotky->vlozeni($id_obj,$fotka,$nove_url);
         
     }
     
@@ -62,7 +62,7 @@ if(isset($_POST["odeslat"])){
     $zazipovani = new PharData(dirname(__FILE__)."/objednavky/$id_obj/fotografie_$id_obj.zip");
     $zazipovani->buildFromDirectory(dirname(__FILE__)."/objednavky/$id_obj");
  
-    //require_once("emaily/nova_objednavka-uzivatel.php");
+    require_once("emaily/nova_objednavka-uzivatel.php");
 }
 ?>  
 <main id="odeslat" class="container stranka">

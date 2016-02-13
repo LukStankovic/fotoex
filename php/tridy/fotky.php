@@ -77,10 +77,10 @@ class Fotky{
         return ( ($format_cena+$material_cena+$fotopapir_cena+$deska_cena+$typ_cena)*$pocet );
     }
     
-    public function vlozeni($id_o,$fot){
+    public function vlozeni($id_o,$fot,$n_url){
         $db = new Databaze();
         
-        $url = $db->pripravaProInput($fot["url"]);
+        $url = $db->pripravaProInput($n_url);
         $typ_s = $db->pripravaProInput($fot["informace"]["typ_s"]);
         $id_o = $db->pripravaProInput($id_o);
         $format = $db->pripravaProInput( $fot["format"]);

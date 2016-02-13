@@ -34,31 +34,31 @@ $prvni = "<html>
         <div style='float: left; width: 49%'>
             <h2 style='color:#856559;font-weight:100;'>Fakturační údaje</h2>
             <ul style='list-style:none;padding-left:5px'>
-                <li>".$data_obj["fak_jmeno"]." ".$data_obj["fak_prijmeni"]."</li>
-                <li>".$data_obj["fak_ulice"].", ".$data_obj["fak_mesto"]."</li>
-                <li>".$data_obj["fak_psc"]."</li>
-                <li>".$data_obj["fak_zeme"]."</li>
+                <li>".$Kosik->udaje["fakturacni"]["jmeno"]." ".$Kosik->udaje["fakturacni"]["prijmeni"]."</li>
+                <li>".$Kosik->udaje["fakturacni"]["ulice"].", ".$Kosik->udaje["fakturacni"]["mesto"]."</li>
+                <li>".$Kosik->udaje["fakturacni"]["psc"]."</li>
+                <li>".$Kosik->udaje["fakturacni"]["zeme"]."</li>
             </ul>
             
             <h2 style='color:#856559;font-weight:100;'>Vaše osobní údaje</h2>
             <ul style='list-style:none;padding-left:5px'>
-                <li><a style='color: #856559' href='".$_POST["uz_email"]."'>".$_POST["uz_email"]."</a></li>
-                <li>".$_POST["uz_telefon"]."</li>
+                <li><a style='color: #856559' href='".$Kosik->udaje["uzivatelske"]["email"]."'>".$Kosik->udaje["uzivatelske"]["email"]."</a></li>
+                <li>".$Kosik->udaje["uzivatelske"]["telefon"]."</li>
             </ul>
         </div>
         <div style='float: right; width: 50%'>
             <h2 style='color:#856559;font-weight:100;'>Doručovací údaje</h2>
             <ul style='list-style:none;padding-left:5px'>
-                <li>".$data_obj["fak_jmeno"]." ".$data_obj["fak_prijmeni"]."</li>
-                <li>".$data_obj["fak_ulice"].", ".$data_obj["fak_mesto"]."</li>
-                <li>".$data_obj["fak_psc"]."</li>
-                <li>".$data_obj["fak_zeme"]."</li>
+                <li>".$Kosik->udaje["dorucovaci"]["jmeno"]." ".$Kosik->udaje["dorucovaci"]["prijmeni"]."</li>
+                <li>".$Kosik->udaje["dorucovaci"]["ulice"].", ".$Kosik->udaje["dorucovaci"]["mesto"]."</li>
+                <li>".$Kosik->udaje["dorucovaci"]["psc"]."</li>
+                <li>".$Kosik->udaje["dorucovaci"]["zeme"]."</li>
             </ul>
             
             <h2 style='color:#856559;font-weight:100;'>Platba a doprava</h2>
             <ul style='list-style:none;padding-left:5px'>
-                <li><strong>Platba:</strong> ".$data_obj["platba"]."</li>
-                <li><strong>Doprava:</strong>".$data_obj["doruceni"]." (".$data_obj["doruceni_cena"]." Kč)</li>
+                <li><strong>Platba:</strong> ".$Kosik->platba."</li>
+                <li><strong>Doprava:</strong>".$Kosik->doprava["typ"]." (".$Kosik->doprava["cena"]." Kč)</li>
             </ul>
             <p style='font-style:italic; color:#f00'>Při platbě převodem peníze pošlete na účet xxxxxxxxx/xxxx</p>
         </div>
@@ -80,18 +80,18 @@ $prvni = "<html>
         <tbody>
         ";
 
-foreach($_SESSION["kosik"] as $i => $fotka){
+foreach($Kosik->fotky as $i => $fotka){
     if($i%2 == 0){ 
     $trf[$i] = 
             "<tr style='background:#fff'>
-                <td><img src='$url[$i]' height='80' style='padding:5px'></td>
+                <td><img src='".$fotka["url"]."' height='80' style='padding:5px'></td>
                 <td>".$fotka["format_nazev"]."</td>
                 <td>".$fotka["material_nazev"]."</td>
                 <td>".$fotka["fotopapir_nazev"]."</td>
                 <td>".$fotka["deska_nazev"]."</td>
                 <td>".$fotka["typ_nazev"]."</td>
                 <td>".$fotka["pocet"]."</td>
-                <td><strong><span>".$fotka["cena_fotka"]."</span> Kč</strong></td>
+                <td><strong><span>".number_format($fotka["cena"], 2, ',', '')."</span> Kč</strong></td>
             </tr>
             ";
     }
@@ -104,7 +104,7 @@ foreach($_SESSION["kosik"] as $i => $fotka){
                 <td>".$fotka["deska_nazev"]."</td>
                 <td>".$fotka["typ_nazev"]."</td>
                 <td>".$fotka["pocet"]."×</td>
-                <td><strong><span>".$fotka["cena_fotka"]."</span> Kč</strong></td>
+                <td><strong><span>".number_format($fotka["cena"], 2, ',', '')."</span> Kč</strong></td>
             </tr>
             ";        
     }
@@ -114,10 +114,10 @@ $paticka ="
         </tbody>
         <tfoot>
             <tr>
-                <td style='text-align: right; color:#856559;border-top: 3px solid #856559; line-height:30px;' colspan='8'>Cena za dopravu: ".$data_obj["doruceni_cena"]." Kč</td>
+                <td style='text-align: right; color:#856559;border-top: 3px solid #856559; line-height:30px;' colspan='8'>Cena za dopravu: ".number_format((float)$Kosik->doprava["cena"], 2, ',', '')." Kč</td>
             </tr>
             <tr>
-                <td style='border-top: 1px dotted #856559; text-align: right; color: #856559; font-size:140%;line-height:40px;' colspan='8'>Celková cena: <span>$celkem_cena</span> Kč</td>
+                <td style='border-top: 1px dotted #856559; text-align: right; color: #856559; font-size:140%;line-height:40px;' colspan='8'>Celková cena: <span>".number_format($Kosik->cena_celkem,2, ',', '')."</span> Kč</td>
             </tr>
         </tfoot>
     </table>
