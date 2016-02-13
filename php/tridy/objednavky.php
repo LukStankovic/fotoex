@@ -111,12 +111,8 @@ class Objednavky{
         $vysledek = self::vybraniDat($sql);
         return($vysledek[0]->celkem);
     }
-    
-    public function celkova_cena($fotky){
-        
-    }
-    
-    public function vlozeni($id_o,$stav,$id_u,$k_uprave){
+
+    public function vlozeni($id_o,$stav,$id_u,$k_uprave,$celkova_cena,$pl,$doprava){
         $db = new Databaze();
         
         //přípava dat
@@ -124,35 +120,36 @@ class Objednavky{
         $id_uz = $db->pripravaProInput($id_u);
         $stav_ob = $db->pripravaProInput($stav);
         //DORUČOVACÍ ADRESA
-        $d_jmeno = $db->pripravaProInput($k_uprave["dor_jmeno"]);
-        $d_prijmeni = $db->pripravaProInput($k_uprave["dor_prijmeni"]);
-        $d_ulice = $db->pripravaProInput( $k_uprave["dor_ulice"]);
-        $d_psc = $db->pripravaProInput($k_uprave["dor_psc"]);
-        $d_mesto = $db->pripravaProInput($k_uprave["dor_mesto"]);
-        $d_zeme = $db->pripravaProInput($k_uprave["dor_zeme"]);
+        $d_jmeno = $db->pripravaProInput($k_uprave["dorucovaci"]["jmeno"]);
+        $d_prijmeni = $db->pripravaProInput($k_uprave["dorucovaci"]["prijmeni"]);
+        $d_ulice = $db->pripravaProInput( $k_uprave["dorucovaci"]["ulice"]);
+        $d_psc = $db->pripravaProInput($k_uprave["dorucovaci"]["psc"]);
+        $d_mesto = $db->pripravaProInput($k_uprave["dorucovaci"]["mesto"]);
+        $d_zeme = $db->pripravaProInput($k_uprave["dorucovaci"]["zeme"]);
         //FAKTURAČNÍ ADRESA
-        $f_jmeno = $db->pripravaProInput($k_uprave["fak_jmeno"]);
-        $f_prijmeni = $db->pripravaProInput($k_uprave["fak_prijmeni"]);
-        $f_ulice = $db->pripravaProInput( $k_uprave["fak_ulice"]);
-        $f_psc = $db->pripravaProInput($k_uprave["fak_psc"]);
-        $f_mesto = $db->pripravaProInput($k_uprave["fak_mesto"]);
-        $f_zeme = $db->pripravaProInput($k_uprave["fak_zeme"]);
+        $f_jmeno = $db->pripravaProInput($k_uprave["fakturacni"]["jmeno"]);
+        $f_prijmeni = $db->pripravaProInput($k_uprave["fakturacni"]["prijmeni"]);
+        $f_ulice = $db->pripravaProInput( $k_uprave["fakturacni"]["ulice"]);
+        $f_psc = $db->pripravaProInput($k_uprave["fakturacni"]["psc"]);
+        $f_mesto = $db->pripravaProInput($k_uprave["fakturacni"]["mesto"]);
+        $f_zeme = $db->pripravaProInput($k_uprave["fakturacni"]["zeme"]);
 
-        $uz_email = $db->pripravaProInput($k_uprave["uz_email"]);
-        $uz_telefon = $db->pripravaProInput($k_uprave["uz_telefon"]);
+        $uz_email = $db->pripravaProInput($k_uprave["uzivatelske"]["email"]);
+        $uz_telefon = $db->pripravaProInput($k_uprave["uzivatelske"]["telefon"]);
         
         $datum = date("Y-m-d H:i:s");
         
         if($id_uz == -1)
             $id_uz = 0;
         
-        $platba = $db->pripravaProInput($k_uprave["platba"]);
-        $doruceni = $db->pripravaProInput($k_uprave["doruceni"]);
-        $doruceni_cena = $db->pripravaProInput($k_uprave["doruceni_cena"]);
+        $platba = $db->pripravaProInput($pl);
+        $doruceni = $db->pripravaProInput($doprava["typ"]);
+        $doruceni_cena = $db->pripravaProInput($doprava["cena"]);
         
+        $celkem = $db->pripravaProInput($celkova_cena);
         
         $sql = "INSERT INTO objednavky
-                VALUES ('$id_ob','$datum','$stav_ob','$platba','$doruceni','$doruceni_cena','$id_uz','$d_jmeno','$d_prijmeni','$d_ulice','$d_psc','$d_mesto','$d_zeme','$f_jmeno','$f_prijmeni','$f_ulice','$f_psc','$f_mesto','$f_zeme','$uz_telefon','$uz_email')";
+                VALUES ('$id_ob','$datum','$stav_ob','$platba','$doruceni','$doruceni_cena','$id_uz','$d_jmeno','$d_prijmeni','$d_ulice','$d_psc','$d_mesto','$d_zeme','$f_jmeno','$f_prijmeni','$f_ulice','$f_psc','$f_mesto','$f_zeme','$uz_telefon','$uz_email','$celkem')";
         
         return $db->zpracovani($sql);
     }
