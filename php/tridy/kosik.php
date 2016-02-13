@@ -1,13 +1,15 @@
 <?php 
 class Kosik{
     public $fotky = array();
-    public $doprava;
+    public $doprava = array();
     public $platba;
     public $pocet_fotek;
     public $cena_bez_dopravy;
     public $cena_celkem;
     
-    public $udaje = array();
+    public $dorucovaci_udaje = array();
+    public $fakturacni_udaje = array();
+    public $uzivatelske_udaje = array();
     
     public function vlozit(){
         $Formaty = new Formaty();
@@ -99,6 +101,56 @@ class Kosik{
         }
         $this->cena_bez_dopravy = self::cenaZaFotky();
         
+    }
+    
+    public function vlozitUdaje(){
+        if($_POST["dor_jmeno"])
+            $this->dorucovaci_udaje["jmeno"] = $_POST["dor_jmeno"];
+        else
+            $this->dorucovaci_udaje["jmeno"] = $_POST["fak_jmeno"];
+        
+        if($_POST["dor_prijmeni"])
+            $this->dorucovaci_udaje["prijmeni"] = $_POST["dor_prijmeni"];
+        else
+            $this->dorucovaci_udaje["prijmeni"] = $_POST["fak_prijmeni"];
+        
+        if($_POST["dor_ulice"])
+            $this->dorucovaci_udaje["ulice"] = $_POST["dor_ulice"];
+        else
+            $this->dorucovaci_udaje["ulice"] = $_POST["fak_ulice"];
+        
+        if($_POST["dor_mesto"])
+            $this->dorucovaci_udaje["mesto"] = $_POST["dor_mesto"];
+        else
+            $this->dorucovaci_udaje["mesto"] = $_POST["fak_mesto"];
+        
+        if($_POST["dor_psc"])
+            $this->dorucovaci_udaje["psc"] = $_POST["dor_psc"];
+        else
+            $this->dorucovaci_udaje["psc"] = $_POST["fak_psc"];
+        
+        if($_POST["dor_zeme"])
+            $this->dorucovaci_udaje["zeme"] = $_POST["dor_zeme"];
+        else
+            $this->dorucovaci_udaje["zeme"] = $_POST["fak_zeme"];
+            
+        $this->fakturacni_udaje["jmeno"] = $_POST["fak_jmeno"];
+        $this->fakturacni_udaje["prijmeni"] = $_POST["fak_prijmeni"];
+        $this->fakturacni_udaje["ulice"] = $_POST["fak_ulice"];
+        $this->fakturacni_udaje["mesto"] = $_POST["fak_mesto"];
+        $this->fakturacni_udaje["psc"] = $_POST["fak_psc"];
+        $this->fakturacni_udaje["zeme"] = $_POST["fak_zeme"];
+        
+        $this->uzivatelske_udaje["email"] = $_POST["uz_email"];
+        $this->uzivatelske_udaje["telefon"] = $_POST["uz_telefon"];
+        
+        $this->platba = $_POST["platba"];
+        $this->doprava["typ"] = $_POST["doruceni"];
+        
+        if($_POST["doruceni"] == "Kurýr")
+            $this->doprava["cena"] = 70.00;
+        if($_POST["doruceni"] == "Česká pošta")
+            $this->doprava["cena"] = 30.00;
     }
     
     public function cenaZaFotky(){
