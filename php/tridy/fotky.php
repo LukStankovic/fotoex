@@ -34,6 +34,24 @@ class Fotky{
                 ";
         return self::vybraniDat($sql);
     }
+    
+    
+    public function cena($format,$material,$fotopapir,$deska,$typ,$pocet){
+        $Formaty = new Formaty();
+        $Desky = new Desky();
+        $Fotopapiry = new Fotopapiry();
+        $Materialy = new Materialy();
+        $Typy = new Typy();
+        
+        $format_cena = $Formaty->cena($format);
+        $deska_cena = $Desky->cena($deska);
+        $fotopapir_cena = $Fotopapiry->cena($fotopapir);
+        $material_cena = $Materialy->cena($material);
+        $typ_cena = $Typy->cena($typ);
+    
+        return ( ($format_cena+$material_cena+$fotopapir_cena+$deska_cena+$typ_cena)*$pocet );
+    }
+    
     public function vlozeni($id_o,$k_uprave){
         $db = new Databaze();
         

@@ -12,7 +12,14 @@ class Desky{
         
         return self::vybraniDat($sql);
     }
-    
+    public static function cena($parametr){
+        $sql = "SELECT cena_deska as cena
+                FROM desky
+                WHERE id_deska = $parametr";
+        
+        $vysledek = self::vybraniDat($sql);
+        return $vysledek[0]->cena;
+    }
 
     public function vlozeni($nazev_d,$alias_d,$cena_d,$popis_d){
         $db = new Databaze();

@@ -64,7 +64,18 @@ if(isset($_POST)){
                 $_SESSION["kosik"][$id_foto]["typ_nazev"] = $typ->nazev;
         
         $_SESSION["kosik"][$id_foto]["pocet"] = $_POST["pocet"][$id_foto];
-        $_SESSION["kosik"][$id_foto]["cena_fotka"] = $_POST["cena_fotka"][$id_foto];
+        
+
+        $_SESSION["kosik"][$id_foto]["cena_fotka"] = $Fotky->cena(
+            $_SESSION["kosik"][$id_foto]["format"],
+            $_SESSION["kosik"][$id_foto]["material"],
+            $_SESSION["kosik"][$id_foto]["fotopapir"],
+            $_SESSION["kosik"][$id_foto]["deska"],
+            $_SESSION["kosik"][$id_foto]["typ"],
+            $_SESSION["kosik"][$id_foto]["pocet"]
+        );
+
+        
         $_SESSION["kosik"][$id_foto]["nazev_s"] = $_SESSION["fotky"][$id_foto]["nazev"];
         $_SESSION["kosik"][$id_foto]["typ_s"] = $_SESSION["fotky"][$id_foto]["typ_s"];
     }

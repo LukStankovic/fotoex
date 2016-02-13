@@ -6,13 +6,22 @@ class Formaty{
         $db = new Databaze();
         return $db->rozkouskovaniZaznamu($sql);
     }
-     public static function vse(){
+    public static function vse(){
         $sql = "SELECT id_format as id, nazev_format as nazev, alias_format as alias, cena_format as cena, popis_format as popis
                 FROM formaty";
         
         return self::vybraniDat($sql);
     }
-
+    
+    public static function cena($parametr){
+        $sql = "SELECT cena_format as cena
+                FROM formaty
+                WHERE id_format = $parametr";
+        
+        $vysledek = self::vybraniDat($sql);
+        return $vysledek[0]->cena;
+    }
+    
     public function vlozeni($nazev_f,$alias_f,$cena_f,$popis_f){
         $db = new Databaze();
         

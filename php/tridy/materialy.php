@@ -12,7 +12,14 @@ class Materialy{
         
         return self::vybraniDat($sql);
     }
-
+    public static function cena($parametr){
+        $sql = "SELECT cena_material as cena
+                FROM materialy
+                WHERE id_material = $parametr";
+        
+        $vysledek = self::vybraniDat($sql);
+        return $vysledek[0]->cena;
+    }
     public function vlozeni($nazev_m,$alias_m,$cena_m,$popis_m){
         $db = new Databaze();
         

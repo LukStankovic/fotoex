@@ -12,6 +12,14 @@ class Fotopapiry{
         
         return self::vybraniDat($sql);
     }
+    public static function cena($parametr){
+        $sql = "SELECT cena_fotopapir as cena
+                FROM fotopapiry
+                WHERE id_fotopapir = $parametr";
+        
+        $vysledek = self::vybraniDat($sql);
+        return $vysledek[0]->cena;
+    }
     public function vlozeni($nazev_f,$alias_f,$cena_f,$popis_f){
         $db = new Databaze();
         

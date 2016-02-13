@@ -12,6 +12,14 @@ class Typy{
         
         return self::vybraniDat($sql);
     }
+    public static function cena($parametr){
+        $sql = "SELECT cena_typ as cena
+                FROM typy
+                WHERE id_typ = $parametr";
+        
+        $vysledek = self::vybraniDat($sql);
+        return $vysledek[0]->cena;
+    }
     public function vlozeni($nazev_t,$alias_t,$cena_t,$popis_t){
         $db = new Databaze();
         

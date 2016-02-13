@@ -9,9 +9,9 @@ class Databaze{
     
     public function __construct(){
         $this->server = "localhost";
-        $this->login_jmeno = "root";
+        $this->login_jmeno = "";
         $this->heslo = "";
-        $this->nazev_databaze = "fotoex";
+        $this->nazev_databaze = "";
     }
   
     public function pripojeniKDatabazi(){
