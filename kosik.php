@@ -11,74 +11,7 @@ $materialy = $Materialy->vse();
 $fotopapiry = $Fotopapiry->vse();
 
 if(isset($_POST)){
-    foreach($_SESSION["fotky"] as $fotka){
-        $id_foto = $fotka["id"];
-        $_SESSION["kosik"][$id_foto]["id"] = $id_foto;
-        $_SESSION["kosik"][$id_foto]["url"] = $_POST["foto_url"][$id_foto];
-        
-        //ID FORMÁTU DO KOŠÍKU
-        $_SESSION["kosik"][$id_foto]["format"] = $_POST["format"][$id_foto];
-        //PODLE ID ZJISTIT NÁZEV PRO UŽIVATELE
-        foreach($formaty as $format)
-            if($format->id == $_POST["format"][$id_foto])
-                $_SESSION["kosik"][$id_foto]["format_nazev"] = $format->nazev;
-        
-        
-        if(($_POST["material"][$id_foto] == null) || ($_SESSION["kosik"][$id_foto]["material"] == "NULL")){
-            $_SESSION["kosik"][$id_foto]["material"] = 0;
-            $_SESSION["kosik"][$id_foto]["material_nazev"] = "―";
-        }
-        else{
-            //ID MATERIÁLU
-            $_SESSION["kosik"][$id_foto]["material"] = $_POST["material"][$id_foto];
-            //NÁZEV MATERIÁLU
-            foreach($materialy as $material)
-                if($material->id == $_POST["material"][$id_foto])
-                    $_SESSION["kosik"][$id_foto]["material_nazev"] = $material->nazev;
-        }
-        
-        
-        if(($_POST["fotopapir"][$id_foto] == null) || ($_SESSION["kosik"][$id_foto]["fotopapir"] == "NULL")){
-            $_SESSION["kosik"][$id_foto]["fotopapir"] = 0;
-            $_SESSION["kosik"][$id_foto]["fotopapir_nazev"] = "―";
-        }
-        else{
-            //ID FOTOPAPÍRU
-            $_SESSION["kosik"][$id_foto]["fotopapir"] = $_POST["fotopapir"][$id_foto];
-            //NÁZEV FOTOPAPÍRU
-            foreach($fotopapiry as $fotopapir)
-                if($fotopapir->id == $_POST["fotopapir"][$id_foto])
-                    $_SESSION["kosik"][$id_foto]["fotopapir_nazev"] = $fotopapir->nazev;
-        }
-        //ID DESKA
-        $_SESSION["kosik"][$id_foto]["deska"] = $_POST["deska"][$id_foto];
-        //NÁZEV DESKA
-        foreach($desky as $deska)
-            if($deska->id == $_POST["deska"][$id_foto])
-                $_SESSION["kosik"][$id_foto]["deska_nazev"] = $deska->nazev;
-        //ID TYP
-        $_SESSION["kosik"][$id_foto]["typ"] = $_POST["typ"][$id_foto];
-        //NÁZEV TYP
-        foreach($typy as $typ)
-            if($typ->id == $_POST["typ"][$id_foto])
-                $_SESSION["kosik"][$id_foto]["typ_nazev"] = $typ->nazev;
-        
-        $_SESSION["kosik"][$id_foto]["pocet"] = $_POST["pocet"][$id_foto];
-        
-
-        $_SESSION["kosik"][$id_foto]["cena_fotka"] = $Fotky->cena(
-            $_SESSION["kosik"][$id_foto]["format"],
-            $_SESSION["kosik"][$id_foto]["material"],
-            $_SESSION["kosik"][$id_foto]["fotopapir"],
-            $_SESSION["kosik"][$id_foto]["deska"],
-            $_SESSION["kosik"][$id_foto]["typ"],
-            $_SESSION["kosik"][$id_foto]["pocet"]
-        );
-
-        
-        $_SESSION["kosik"][$id_foto]["nazev_s"] = $_SESSION["fotky"][$id_foto]["nazev"];
-        $_SESSION["kosik"][$id_foto]["typ_s"] = $_SESSION["fotky"][$id_foto]["typ_s"];
-    }
+    $Kosik->vlozit();
 }
 
 ?>  
@@ -107,7 +40,7 @@ if(isset($_POST)){
             </tr>
         </thead>
         <tbody>
-            <?php foreach($_SESSION["kosik"] as $fotka){ ?>
+            <?php foreach($Kosik->fotky as $fotka){ ?>
                 <tr class="fotka fotka-<?php echo $fotka["id"]; ?>">
                     <td><img src="<?php echo $fotka["url"];?>" height="80"></td>
                     <td><?php echo $fotka["format_nazev"];?></td>
@@ -116,7 +49,7 @@ if(isset($_POST)){
                     <td><?php echo $fotka["deska_nazev"];?></td>
                     <td><?php echo $fotka["typ_nazev"];?></td>
                     <td><?php echo $fotka["pocet"];?>×</td>
-                    <td class="cena"><strong><span><?php echo $fotka["cena_fotka"];?></span> Kč</strong></td>
+                    <td class="cena"><strong><span><?php echo $fotka["cena"];?></span> Kč</strong></td>
                     <td><i class="fa fa-remove"></i></td>
                 </tr>
             <?php }?>
@@ -130,7 +63,7 @@ if(isset($_POST)){
                 <td></td>
                 <td></td>
                 <td class="celkem">Celková cena:</td>
-                <td class="celkem"><span></span> Kč</td>
+                <td class="celkem"><span><?php echo $Kosik->cena_bez_dopravy; ?></span> Kč</td>
                 <td></td>
             </tr>
         </tfoot>
@@ -138,15 +71,7 @@ if(isset($_POST)){
     <a class="pokracovat btn pull-right" href="udaje.php">Pokračovat v objednávce</a>
     <img src="img/fotka-kosik.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
 </main>    
-<script>
-$(document).ready(function(){
-    var celkem = 0.00;
-    <?php foreach($_SESSION["kosik"] as $fotka){ ?>
-    celkem = celkem + parseFloat($("tbody .fotka-<?php echo $fotka["id"]; ?> td.cena span").text());
-    <?php }?>
-    $("tfoot td.celkem span").html(celkem.toFixed(2));
-});
-</script>
+
 <?php 
 //VLOZENI PATICKY
 require_once("sablona/paticka.php");
