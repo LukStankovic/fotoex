@@ -164,15 +164,13 @@ if(isset($_POST["odeslat"])){
 //VLOZENI PATICKY
 
 
-/*
-
-foreach($_SESSION["kosik"] as $jedna_fotka){
-    unlink("php/nahrani/tmp-nahrane/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
-    unlink("php/nahrani/tmp-nahrane/thumbnail/".$jedna_fotka["nazev_s"].".".$jedna_fotka["typ_s"]);
+foreach($Kosik->fotky as $jedna_fotka){
+    unlink("php/nahrani/tmp-nahrane/".$jedna_fotka["informace"]["nazev"].".".$jedna_fotka["informace"]["typ_s"]);
+    unlink("php/nahrani/tmp-nahrane/thumbnail/".$jedna_fotka["informace"]["nazev"].".".$jedna_fotka["informace"]["typ_s"]);
 }
 unset($_SESSION["kosik"]);
 unset($_SESSION["fotky"]);
-*/
+unset($Fotky->fotky);
 
 require_once("sablona/paticka.php");
 ob_end_flush();

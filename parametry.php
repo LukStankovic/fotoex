@@ -13,7 +13,7 @@ $fotopapiry = $Fotopapiry->vse();
 unset($_SESSION["fotky"]);
 
 $fotky = $Fotky->parametry_fotky( $_POST , count($_POST["fotka"]) );
-$_SESSION = $fotky;
+$_SESSION["fotky"] = $fotky;
 
 ?>  
 <main id="parametry" class="container stranka">
@@ -107,6 +107,7 @@ $_SESSION = $fotky;
         </form>
     </div>
     <img src="img/fotka-parametry.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
+    <pre><?php print_r($Kosik); ?></pre>
     <pre><?php print_r($_SESSION);?></pre>
     <pre><?php print_r($_POST);?></pre>
 
