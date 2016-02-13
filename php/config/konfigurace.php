@@ -19,7 +19,8 @@ $Objednavky = new Objednavky();
 $Uzivatele = new Uzivatele();
 $Fotky = new Fotky();
 
-$Kosik = new Kosik();
+if(!isset($Kosik))
+    $Kosik = new Kosik();
 
 //PARAMETRY
 $Formaty = new Formaty();

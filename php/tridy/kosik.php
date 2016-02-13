@@ -7,6 +7,8 @@ class Kosik{
     public $cena_bez_dopravy;
     public $cena_celkem;
     
+    public $udaje = array();
+    
     public function vlozit(){
         $Formaty = new Formaty();
         $Desky = new Desky();

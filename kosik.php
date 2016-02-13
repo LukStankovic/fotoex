@@ -12,8 +12,8 @@ $fotopapiry = $Fotopapiry->vse();
 
 if(isset($_POST)){
     $Kosik->vlozit();
+    $_SESSION["kosik"] = $Kosik;
 }
-
 ?>  
 <main id="kosik" class="container stranka">
     <div class="kroky">

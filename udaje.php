@@ -9,9 +9,11 @@ $desky = $Desky->vse();
 $typy = $Typy->vse();
 $materialy = $Materialy->vse();
 $fotopapiry = $Fotopapiry->vse();
+
 if(isset($_SESSION["id_uzivatel"]))
     $prihlaseny = $Uzivatele->detailUzivatele($_SESSION["id_uzivatel"]);
 
+$Kosik = $_SESSION["kosik"];
 ?>  
 <main id="udaje" class="container stranka">
     <div class="kroky">
@@ -121,7 +123,7 @@ if(isset($_SESSION["id_uzivatel"]))
             </tr>
         </thead>
         <tbody>
-            <?php foreach($_SESSION["kosik"] as $fotka){ ?>
+            <?php foreach($Kosik->fotky as $fotka){ ?>
                 <tr class="fotka fotka-<?php echo $fotka["id"]; ?>">
                     <td><img src="<?php echo $fotka["url"];?>" height="80"></td>
                     <td><?php echo $fotka["format_nazev"];?></td>
@@ -130,7 +132,7 @@ if(isset($_SESSION["id_uzivatel"]))
                     <td><?php echo $fotka["deska_nazev"];?></td>
                     <td><?php echo $fotka["typ_nazev"];?></td>
                     <td><?php echo $fotka["pocet"];?>×</td>
-                    <td class="cena"><strong><span><?php echo $fotka["cena_fotka"];?></span> Kč</strong></td>
+                    <td class="cena"><strong><span><?php echo number_format($fotka["cena"],2);?></span> Kč</strong></td>
                 </tr>
             <?php }?>
         </tbody>
@@ -151,18 +153,16 @@ if(isset($_SESSION["id_uzivatel"]))
 $(document).ready(function(){
     var celkem = 0.00;
     var doprava = 0.00;
-    <?php foreach($_SESSION["kosik"] as $fotka){ ?>
-    celkem = celkem + parseFloat($("tbody .fotka-<?php echo $fotka["id"]; ?> td.cena span").text());
-    <?php }?>
+    var cena_bez_dopravy = <?php echo $Kosik->cena_bez_dopravy; ?>
     
     doprava = parseFloat($(".doruceni input:checked").data("price"));
-    celkem = celkem + doprava;
+    celkem = cena_bez_dopravy + doprava;
     $("tfoot td.doprava span").html(doprava.toFixed(2));
     $("tfoot td.celkem span").html(celkem.toFixed(2));
     
     $(".doruceni input").change(function(){
         doprava = parseFloat($(".doruceni input:checked").data("price"));
-        celkem = celkem + doprava;
+        celkem = cena_bez_dopravy + doprava;
         $("tfoot td.doprava span").html(doprava.toFixed(2));
         $("tfoot td.celkem span").html(celkem.toFixed(2));
     });
