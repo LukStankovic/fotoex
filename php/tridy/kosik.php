@@ -180,6 +180,11 @@ class Kosik{
         return $celkem;
     }
     
+    public function zmenaURL($id,$zmena){
+        $this->fotky[$id]["url"] = $zmena;
+        $this->fotky[$id]["informace"]["url"] = $zmena;
+        $this->fotky[$id]["informace"]["mini_url"] = "";
+    }
 
     
 }

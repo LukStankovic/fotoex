@@ -21,59 +21,48 @@ if(isset($_POST["odeslat"])){
     $Kosik->vlozitUdaje();
     
     if(isset($_SESSION["id_uzivatel"])){
-        if($data_obj["platba"] == "Převodem na účet")
+        if($Kosik->platba == "Převodem na účet")
             $Objednavky->vlozeni($id_obj,"Čeká se na platbu",$_SESSION["id_uzivatel"],$Kosik->udaje,$Kosik->cena_celkem,$Kosik->platba,$Kosik->doprava);
         else
             $Objednavky->vlozeni($id_obj,"Zpracovávání",$_SESSION["id_uzivatel"],$Kosik->udaje,$Kosik->cena_celkem,$Kosik->platba,$Kosik->doprava);
     }
     else{
-        if($data_obj["platba"] == "Převodem na účet")
+        if($Kosik->platba == "Převodem na účet")
             $Objednavky->vlozeni($id_obj,"Čeká se na platbu",-1,$Kosik->udaje,$Kosik->cena_celkem,$Kosik->platba,$Kosik->doprava);
         else
             $Objednavky->vlozeni($id_obj,"Zpracovávání",-1,$Kosik->udaje,$Kosik->cena_celkem,$Kosik->platba,$Kosik->doprava);
     }
     
-    foreach($Kosik->fotky as $i => $jedna_fotka){
-        
-        //KOPÍROVÁNÍ DO SLOŽKY FOTKY
-        
+    foreach($Kosik->fotky as $i => $fotka){        
         if (!file_exists("objednavky"))
             mkdir("objednavky", 0777);
-        
         if (!file_exists("objednavky/".$id_obj))
             mkdir("objednavky/".$id_obj, 0777);
-        
-        
-        $co = "php/nahrani/tmp-nahrane/".$jedna_fotka["informace"]["nazev"].".".$jedna_fotka["informace"]["typ_s"];
-        $kam = "objednavky/".$id_obj."/".$jedna_fotka["informace"]["nazev"].".".$jedna_fotka["informace"]["typ_s"];
             
+        $co = "php/nahrani/tmp-nahrane/".$fotka["informace"]["nazev"].".".$fotka["informace"]["typ_s"];
+        $kam = "objednavky/".$id_obj."/".$fotka["informace"]["nazev"].".".$fotka["informace"]["typ_s"];
+
         copy($co,$kam);
         
-        $bez_diakritky = $Fotky->vymazatDiakritiku($jedna_fotka["informace"]["nazev"]);
-        rename("objednavky/".$id_obj."/".$jedna_fotka["informace"]["nazev"].".".$jedna_fotka["informace"]["typ_s"],
-               "objednavky/".$id_obj."/".$bez_diakritky.".".$jedna_fotka["informace"]["typ_s"]);
+        $bez_diakritky = $Fotky->vymazatDiakritiku($fotka["informace"]["nazev"]);
         
-        $data_fot["url"] = $domena."/objednavky/".$id_obj."/".$bez_diakritky.".".$jedna_fotka["informace"]["typ_s"];
-        $url[$i] = $data_fot["url"];
-        $data_fot["typ_souboru"] = $jedna_fotka["typ_s"];
-        $data_fot["format"] = $jedna_fotka["format"];
-        $data_fot["material"] = $jedna_fotka["material"];
-        $data_fot["fotopapir"] = $jedna_fotka["fotopapir"];
-        $data_fot["deska"] = $jedna_fotka["deska"];
-        $data_fot["typ"] = $jedna_fotka["typ"];
-        $data_fot["pocet"] = $jedna_fotka["pocet"];
-        $data_fot["cena"] = $jedna_fotka["cena_fotka"];
+        rename("objednavky/".$id_obj."/".$fotka["informace"]["nazev"].".".$fotka["informace"]["typ_s"],
+               "objednavky/".$id_obj."/".$bez_diakritky.".".$fotka["informace"]["typ_s"]);
         
-        $celkem_cena = $celkem_cena + $jedna_fotka["cena_fotka"];
+        $nove_url = $domena."/objednavky/".$id_obj."/".$bez_diakritky.".".$fotka["informace"]["typ_s"];
+
         
-       // $Fotky->vlozeni($id_obj,$data_fot);
+        $Kosik->zmenaURL($i,$nove_url);
+        
+        $Fotky->vlozeni($id_obj,$fotka);
+        
     }
     
     
     $zazipovani = new PharData(dirname(__FILE__)."/objednavky/$id_obj/fotografie_$id_obj.zip");
     $zazipovani->buildFromDirectory(dirname(__FILE__)."/objednavky/$id_obj");
  
-    require_once("emaily/nova_objednavka-uzivatel.php");
+    //require_once("emaily/nova_objednavka-uzivatel.php");
 }
 ?>  
 <main id="odeslat" class="container stranka">
@@ -141,7 +130,7 @@ if(isset($_POST["odeslat"])){
         <tbody>
             <?php foreach($Kosik->fotky as $i => $fotka){ ?>
                 <tr class="fotka fotka-<?php echo $fotka["id"]; ?>">
-                    <td><img src="<?php echo $url[$i]; ?>" height="80"></td>
+                    <td><img src="<?php echo $fotka["url"]; ?>" height="80"></td>
                     <td><?php echo $fotka["format_nazev"];?></td>
                     <td><?php echo $fotka["material_nazev"];?></td>
                     <td><?php echo $fotka["fotopapir_nazev"];?></td>

@@ -77,23 +77,23 @@ class Fotky{
         return ( ($format_cena+$material_cena+$fotopapir_cena+$deska_cena+$typ_cena)*$pocet );
     }
     
-    public function vlozeni($id_o,$k_uprave){
+    public function vlozeni($id_o,$fot){
         $db = new Databaze();
         
-        $url = $db->pripravaProInput($k_uprave["url"]);
-        $typ_s = $db->pripravaProInput($k_uprave["typ_souboru"]);
+        $url = $db->pripravaProInput($fot["url"]);
+        $typ_s = $db->pripravaProInput($fot["informace"]["typ_s"]);
         $id_o = $db->pripravaProInput($id_o);
-        $format = $db->pripravaProInput( $k_uprave["format"]);
-        $deska = $db->pripravaProInput($k_uprave["deska"]);
-        $typ = $db->pripravaProInput($k_uprave["typ"]);
-        $material = $db->pripravaProInput($k_uprave["material"]);
-        $fotopapir = $db->pripravaProInput($k_uprave["fotopapir"]);
-        $pocet = $db->pripravaProInput($k_uprave["pocet"]);
-
+        $format = $db->pripravaProInput( $fot["format"]);
+        $deska = $db->pripravaProInput($fot["deska"]);
+        $typ = $db->pripravaProInput($fot["typ"]);
+        $material = $db->pripravaProInput($fot["material"]);
+        $fotopapir = $db->pripravaProInput($fot["fotopapir"]);
+        $pocet = $db->pripravaProInput($fot["pocet"]);
+        $cena = $db->pripravaProInput($fot["cena"]);
     
         
         $sql = "INSERT INTO fotky
-                VALUES ('','$url','$typ_s','$id_o','$format','$deska','$typ','$material','$fotopapir','$pocet')";
+                VALUES ('','$url','$typ_s','$id_o','$format','$deska','$typ','$material','$fotopapir','$pocet','$cena')";
         
         return $db->zpracovani($sql);
     }
