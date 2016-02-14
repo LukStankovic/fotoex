@@ -90,7 +90,7 @@ foreach($Kosik->fotky as $i => $fotka){
                 <td>".$fotka["fotopapir_nazev"]."</td>
                 <td>".$fotka["deska_nazev"]."</td>
                 <td>".$fotka["typ_nazev"]."</td>
-                <td>".$fotka["pocet"]."</td>
+                <td>".$fotka["pocet"]."×</td>
                 <td><strong><span>".number_format($fotka["cena"], 2, ',', '')."</span> Kč</strong></td>
             </tr>
             ";
