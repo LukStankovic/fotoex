@@ -49,7 +49,7 @@ if(isset($_POST)){
                     <td><?php echo $fotka["deska_nazev"];?></td>
                     <td><?php echo $fotka["typ_nazev"];?></td>
                     <td><?php echo $fotka["pocet"];?>×</td>
-                    <td class="cena"><strong><span><?php echo $fotka["cena"];?></span> Kč</strong></td>
+                    <td class="cena"><strong><span><?php echo number_format($fotka["cena"], 2, ',', ''); ?></span> Kč</strong></td>
                     <td><i class="fa fa-remove"></i></td>
                 </tr>
             <?php }?>
@@ -63,7 +63,7 @@ if(isset($_POST)){
                 <td></td>
                 <td></td>
                 <td class="celkem">Celková cena:</td>
-                <td class="celkem"><span><?php echo $Kosik->cena_bez_dopravy; ?></span> Kč</td>
+                <td class="celkem"><span><?php echo number_format($Kosik->cena_bez_dopravy, 2, ',', ''); ?></span> Kč</td>
                 <td></td>
             </tr>
         </tfoot>

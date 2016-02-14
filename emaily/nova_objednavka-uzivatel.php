@@ -97,7 +97,7 @@ foreach($Kosik->fotky as $i => $fotka){
     }
     else{
         $trf[$i] = "<tr style='background:#e8deda'>
-                <td><img src='$url[$i]' height='80' style='padding:5px'></td>
+                <td><img src='".$fotka["url"]."' height='80' style='padding:5px'></td>
                 <td>".$fotka["format_nazev"]."</td>
                 <td>".$fotka["material_nazev"]."</td>
                 <td>".$fotka["fotopapir_nazev"]."</td>

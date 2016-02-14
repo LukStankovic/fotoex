@@ -132,7 +132,7 @@ $Kosik = $_SESSION["kosik"];
                     <td><?php echo $fotka["deska_nazev"];?></td>
                     <td><?php echo $fotka["typ_nazev"];?></td>
                     <td><?php echo $fotka["pocet"];?>×</td>
-                    <td class="cena"><strong><span><?php echo number_format($fotka["cena"],2);?></span> Kč</strong></td>
+                    <td class="cena"><strong><span><?php echo number_format($fotka["cena"], 2, ',', '');?></span> Kč</strong></td>
                 </tr>
             <?php }?>
         </tbody>
