@@ -96,7 +96,7 @@ $_SESSION["fotky"] = $fotky;
                     </div>
                 </div>
                 <div class="col-md-2 cena">
-                    <span>0,00 Kč</span>
+                    <span>0,00</span> Kč
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@ $(document).ready(function(){
         
         celkem = cena_bez_mnozstvi * pocet;
          
-        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2).replace('.', ',') + " Kč");
+        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2).replace('.', ','));
     });
     //PŘI ZMĚNĚ POČTU
     $(".fotka-<?php echo $fotka["id"];?> .pocet input").change(function() {
@@ -145,7 +145,7 @@ $(document).ready(function(){
 
         celkem = cena_bez_mnozstvi * pocet;
          
-        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2).replace('.', ',') + " Kč");
+        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2).replace('.', ','));
     });
     
 
@@ -157,7 +157,7 @@ $(document).ready(function(){
     $(".cena span").bind("DOMSubtreeModified",function(){    
         var celkem = 0.00;
         $(".cena span").each(function() {
-            var cena = parseFloat($(this).text());
+            var cena = parseFloat(($(this).text()).replace(',', '.'));
             celkem += cena;
         });
         $(".celkem span").html(celkem.toFixed(2).replace('.', ','));
