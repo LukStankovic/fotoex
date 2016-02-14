@@ -19,7 +19,7 @@ require_once("sablona/hlavicka.php");
     </div>
     <?php if(!isset($_SESSION["id_uzivatel"])) { ?>
     <div class="prihlasit">
-        <i class="fa fa-user"></i> Pokud máte účet, přihlaste se prosím. Můžete se také registrovat.
+        <span><i class="fa fa-user"></i>Pokud máte účet, přihlaste se prosím. Můžete se také registrovat.</span>
         <a class="btn pull-right" href="registrace.php">Registrovat se</a>
         <a class="btn pull-right" href="login.php">Přihlášení</a>
     </div>
