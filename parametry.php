@@ -96,12 +96,12 @@ $_SESSION["fotky"] = $fotky;
                     </div>
                 </div>
                 <div class="col-md-2 cena">
-                    <span>0.00 Kč</span>
+                    <span>0,00 Kč</span>
                 </div>
             </div>
         </div>
         <?php }?>
-        <div class="celkem">Cena za všechny fotografie: <span>0.00</span> Kč</div>
+        <div class="celkem">Cena za všechny fotografie: <span>0,00</span> Kč</div>
         <button type="submit" class="btn pull-right pokracovat" >Pokračovat do košíku</button>
         </form>
     </div>
@@ -131,7 +131,7 @@ $(document).ready(function(){
         
         celkem = cena_bez_mnozstvi * pocet;
          
-        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2) + " Kč");
+        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2).replace('.', ',') + " Kč");
     });
     //PŘI ZMĚNĚ POČTU
     $(".fotka-<?php echo $fotka["id"];?> .pocet input").change(function() {
@@ -145,36 +145,24 @@ $(document).ready(function(){
 
         celkem = cena_bez_mnozstvi * pocet;
          
-        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2) + " Kč");
+        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2).replace('.', ',') + " Kč");
     });
     
 
 <?php }?>
 
 //CELKOVÁ CENA
-var celkem = 0.00;
-var cena_zmenene;    
-var cena_jednotlive;
-<?php $celkovy_pocet = count($fotky); ?>
-<?php foreach($fotky as $fotka){?>
 
-    $(".fotka-<?php echo $fotka["id"];?> .cena span").bind("DOMSubtreeModified",function(){    
-        celkem = 0.00;
-        cena_zmenene = parseFloat($(".fotka-<?php echo $fotka["id"];?> .cena span").text());
-            celkem = cena_zmenene;
-        <?php for($k=0;$k<$celkovy_pocet;$k++) { 
-                if ($k != $i){
-        ?>
-            
-            cena_jednotlive = parseFloat($(".fotka-<?php echo $k;?> .cena span").text());
-            celkem = celkem + cena_jednotlive;
-        <?php }
-            } 
-        ?> 
-        $(".celkem span").html(celkem.toFixed(2));
+
+    $(".cena span").bind("DOMSubtreeModified",function(){    
+        var celkem = 0.00;
+        $(".cena span").each(function() {
+            var cena = parseFloat($(this).text());
+            celkem += cena;
+        });
+        $(".celkem span").html(celkem.toFixed(2).replace('.', ','));
     });
-
-<?php } ?>    
+  
     
 //ZOBRAZOVÁNÍ A SKRÝVÁNÍ INPUTŮ
 <?php foreach($fotky as $fotka){?>
