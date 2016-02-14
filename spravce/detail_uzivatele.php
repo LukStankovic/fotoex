@@ -83,7 +83,7 @@
                                 <td><?php echo date("j. n. Y, H:i:s",strtotime($objednavka->datum));?></td>       
                                 
                                 <td><?php echo $objednavka->stav;?></td>
-                                <td><?php echo sprintf("%.2f",$objednavka->celkem); ?> Kč</td>  
+                                <td><?php echo number_format($objednavka->celkem, 2, ',', ''); ?> Kč</td>  
                                 <td>
                                     <a href="?page=detail-objednavky&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-eye"></i></a>
                                     <a href="?page=detail-uzivatele&detail-uzivatele&id-uzivatele=<?php echo $uzivatel->id_uzivatel; ?>&id-objednavka=<?php echo $objednavka->id_objednavka;?>&akce=dokonceno"><i class="fa fa-check"></i></a>

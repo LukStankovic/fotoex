@@ -24,8 +24,12 @@
                 <?php foreach($parametry as $parametr) { ?>
                    <?php if(($parametr_get != "fotopapiry" || $parametr_get != "materialy") && $parametr->id != 0) { ?>
                     <tr>
-                    <?php foreach($parametr as $parametr_radek){?>    
+                    <?php foreach($parametr as $i => $parametr_radek){?>  
+                        <?php if($i!="cena"){ ?>  
                         <td><?php echo $parametr_radek; ?></td>  
+                        <?php } else { ?>
+                        <td><?php echo number_format($parametr_radek, 2, ',', '')." Kč"; ?></td>  
+                        <?php }?>
                     <?php } ?>
                         <td>
                             <a href="?page=upravit-parametr&kategorie=<?php echo $parametr_get; ?>&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-pencil"></i></a>
@@ -45,7 +49,6 @@
             </table>
         </div>        
         <div class="btn"><a href="home.php?page=parametry">← Zpět na parametry</a></div> 
-
 
 <!-- Modal -->
 <div class="modal fade" id="modalniOkno" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

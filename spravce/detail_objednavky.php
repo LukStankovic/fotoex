@@ -11,7 +11,7 @@
                 <?php echo $pocet; ?> fotografie
             </div>
             <div class="col-md-3 detail_panel cena">
-                <?php echo $objednavka->celkem; ?> Kč
+                <?php echo number_format($objednavka->celkem, 2, ',', ''); ?> Kč
             </div>
 
             <div class="col-md-3 detail_panel stav 
@@ -202,7 +202,7 @@
                                         <?php } ?>
                                     </select>
                                 </td>
-                                <td><?php echo ($fotka->cena_format + $fotka->cena_fotopapir + $fotka->cena_material + $fotka->cena_deska + $fotka->cena_typ)*$fotka->pocet; ?> Kč</td>
+                                <td><?php echo number_format($fotka->cena, 2, ',', ''); ?> Kč</td>
                                 <td>
                                 <span class="fot"><?php echo $fotka->pocet;?></span>
                                 <input name="pocet[<?php echo $fotka->id_fotka; ?>]" class="fot_upravit_pole" value="<?php echo $fotka->pocet;?>">
@@ -220,12 +220,12 @@
                     <tfoot>
                        <tr>
                             <td style="text-align: right;" colspan="7"><strong>Cena za dopravu:</strong></td>
-                            <td><strong><?php echo $objednavka->doprava_cena;?> Kč</strong></td>
+                            <td><strong><?php echo number_format($objednavka->doprava_cena, 2, ',', '');?> Kč</strong></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td style="text-align: right;" colspan="7"><strong>Cena celkem:</strong></td>
-                            <td><strong><?php echo $objednavka->celkem;?> Kč</strong></td>
+                            <td><strong><?php echo number_format($objednavka->celkem, 2, ',', '');?> Kč</strong></td>
                             <td></td>
                         </tr>
                     </tfoot>

@@ -20,8 +20,7 @@ class Objednavky{
                        nazev_fotopapir, alias_fotopapir, round(cena_fotopapir,2),
                        nazev_material, alias_material, round(cena_material,2),
                        nazev_typ, alias_typ, round(cena_typ,2),
-                       pocet,
-                       round(((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ))*pocet)+doprava_cena,2) AS 'celkem'
+                       pocet, cena_celkem as celkem
 
                 FROM objednavky 
                     INNER JOIN fotky using(id_objednavka) 
@@ -43,8 +42,7 @@ class Objednavky{
                        d_jmeno, d_prijmeni, d_ulice, d_psc, d_mesto, d_zeme,
                        f_jmeno, f_prijmeni, f_ulice, f_psc, f_mesto, f_zeme,
                        u_telefon, u_email,
-                       pocet,
-                       round(((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ))*pocet)+doprava_cena,2) AS 'celkem'
+                       pocet, cena_celkem as celkem
 
                 FROM objednavky 
                     INNER JOIN fotky using(id_objednavka) 
@@ -67,8 +65,7 @@ class Objednavky{
                        nazev_fotopapir, alias_fotopapir, round(cena_fotopapir,2),
                        nazev_material, alias_material, round(cena_material,2),
                        nazev_typ, alias_typ, round(cena_typ,2),
-                       pocet,
-                       round((sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ))*pocet,2) AS 'celkem'
+                       pocet, cena_celkem as celkem
 
                 FROM objednavky 
                     INNER JOIN fotky using(id_objednavka) 
@@ -93,18 +90,13 @@ class Objednavky{
         return self::vybraniDat($sql);
     }
     public static function trzby(){
-        $sql = "SELECT round(sum(cena_format) + sum(cena_deska) + sum(cena_fotopapir) + sum(cena_material) + sum(cena_typ),2) AS 'celkem'
+        $sql = "SELECT sum(cena_celkem) as 'celkem'
                 FROM objednavky 
-                    INNER JOIN fotky using(id_objednavka) 
-                    INNER JOIN desky using(id_deska)
-                    INNER JOIN formaty using(id_format)
-                    INNER JOIN fotopapiry using(id_fotopapir)
-                    INNER JOIN materialy using(id_material)
-                    INNER JOIN typy using(id_typ)
                 ";
         $vysledek = self::vybraniDat($sql);
         return($vysledek[0]->celkem);
     }
+    
     public static function pocetObjednavek(){
         $sql = "SELECT count(id_objednavka) AS 'celkem'
                 FROM objednavky";
@@ -157,7 +149,7 @@ class Objednavky{
         $db = new Databaze();    
         
         $sql = "UPDATE objednavky SET stav = 'Dokončeno'
-                WHERE  id_objednavka = $id";
+                WHERE id_objednavka = $id";
     
         return $db->zpracovani($sql);
     }    

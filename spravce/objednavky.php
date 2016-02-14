@@ -46,7 +46,7 @@
                                 
                                 
                                 <td><?php echo $objednavka->stav;?></td>
-                                <td><?php echo sprintf("%.2f",$objednavka->celkem); ?> Kč</td>  
+                                <td><?php echo number_format($objednavka->celkem, 2, ',', ''); ?> Kč</td>  
                                 <td>
                                     <a href="?page=detail-objednavky&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-eye"></i></a>
                                     <a href="?page=objednavky&akce=dokonceno&id-objednavka=<?php echo $objednavka->id_objednavka;?>"><i class="fa fa-check"></i></a>

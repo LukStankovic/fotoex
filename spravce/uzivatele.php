@@ -19,6 +19,7 @@
                     <th>Akce</th>
                 </tr>
                 <?php foreach($vsichni_uzivatele as $uzivatel){ ?>
+                <?php if($uzivatel->id_uzivatel != 0){ ?>
                 <tr>
                     <td><?php echo $uzivatel->id_uzivatel; ?></td>
                     <td><?php echo $uzivatel->login; ?></td>
@@ -34,6 +35,7 @@
                         <a href="?page=uzivatele&akce=vymazat&id-uzivatele=<?php echo $uzivatel->id_uzivatel;?>"><i class="fa fa-remove"></i></a>
                     </td>
                 </tr>
+                <?php } ?>
                 <?php } ?>
 	    </table>
 	</div>
