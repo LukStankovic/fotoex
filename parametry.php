@@ -47,8 +47,8 @@ $_SESSION["fotky"] = $fotky;
                             </select>
                             </div>
                             <div class="parametr material">
-                            <select data-price="0" name="material[]">
-                                <option value="">Materiál</option>
+                            <select name="material[]">
+                                <option data-price="0" value="">Materiál</option>
                                 <?php foreach($materialy as $material){?>
                                 <?php if($material->nazev != "NULL"){ ?>
                                 <option data-price="<?php echo $material->cena; ?>" value="<?php echo $material->id; ?>"><?php echo $material->nazev; ?></option>
@@ -97,7 +97,6 @@ $_SESSION["fotky"] = $fotky;
                 </div>
                 <div class="col-md-2 cena">
                     <span>0.00 Kč</span>
-                    <input type="hidden" name="cena_fotka[]" value="0.00">
                 </div>
             </div>
         </div>
@@ -117,44 +116,39 @@ $(document).ready(function(){
 //CENY
 <?php foreach($fotky as $fotka){?>
     
-    
-    var nova_cena_<?php echo $fotka["id"]; ?> = 0.00, zakladni_cena_<?php echo $fotka["id"]; ?>  = 0.00, cena_bez_mnozstvi_<?php echo $fotka["id"]; ?>;
+
+   
     //PŘI ZMĚNĚ SELECTU
     
-    
     $(".fotka-<?php echo $fotka["id"];?> select").change(function() {
-
-        nova_cena_<?php echo $fotka["id"]; ?> = zakladni_cena_<?php echo $fotka["id"]; ?>;    
-        
+        var cena_bez_mnozstvi = 0.00, celkem = 0.00;
+        var pocet = 0;
         $(".fotka-<?php echo $fotka["id"];?> select option:selected").each(function() {
-            if( $(this).data('price') == null ){
-                nova_cena_<?php echo $fotka["id"]; ?> = nova_cena_<?php echo $fotka["id"]; ?>;
-            }
-            else if (!($(this).data('price'))){
-                nova_cena_<?php echo $fotka["id"]; ?> = nova_cena_<?php echo $fotka["id"]; ?>;
-            }
-            else{ 
-                nova_cena_<?php echo $fotka["id"]; ?> += $(this).data('price');
-                cena_bez_mnozstvi_<?php echo $fotka["id"]; ?> = nova_cena_<?php echo $fotka["id"]; ?>;
-                nova_cena_<?php echo $fotka["id"]; ?> *= $(".fotka-<?php echo $fotka["id"];?> .pocet input").val();
-            }
-            
-
-            
+            var cena = $(this).data('price');
+             cena_bez_mnozstvi += cena;
         });
-        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(nova_cena_<?php echo $fotka["id"]; ?>.toFixed(2) + " Kč");
-        $(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena_<?php echo $fotka["id"]; ?>.toFixed(2));
+        pocet = $(".fotka-<?php echo $fotka["id"];?> .pocet input").val();
         
+        celkem = cena_bez_mnozstvi * pocet;
+         
+        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2) + " Kč");
     });
-
+    //PŘI ZMĚNĚ POČTU
     $(".fotka-<?php echo $fotka["id"];?> .pocet input").change(function() {
-        
-    
-        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(nova_cena_<?php echo $fotka["id"]; ?>.toFixed(2) + " Kč");
-        $(".fotka-<?php echo $fotka["id"];?> .cena input").val(nova_cena_<?php echo $fotka["id"]; ?>.toFixed(2));
+        var cena_bez_mnozstvi = 0.00, celkem = 0.00;
+        var pocet = 0;
+        $(".fotka-<?php echo $fotka["id"];?> select option:selected").each(function() {
+            var cena = $(this).data('price');
+             cena_bez_mnozstvi += cena;
+        });
+        pocet = $(".fotka-<?php echo $fotka["id"];?> .pocet input").val();
 
+        celkem = cena_bez_mnozstvi * pocet;
+         
+        $(".fotka-<?php echo $fotka["id"];?> .cena span").html(celkem.toFixed(2) + " Kč");
     });
     
+
 <?php }?>
 
 //CELKOVÁ CENA
@@ -200,13 +194,20 @@ var cena_jednotlive;
             sirka = 42;
         
         if((sirka >= 20) || (sirka >= 20)){
+            $(".fotka-<?php echo $fotka["id"];?> .material select").val("");
+            $(".fotka-<?php echo $fotka["id"];?> .material select").trigger("chosen:updated");
+            $(".fotka-<?php echo $fotka["id"];?> .material select").next().css("border","2px solid transparent");
             $(".fotka-<?php echo $fotka["id"];?> .material").hide();
             $(".fotka-<?php echo $fotka["id"];?> .fotopapir").show();
         }
         else{
+            $(".fotka-<?php echo $fotka["id"];?> .fotopapir select").val("");
+            $(".fotka-<?php echo $fotka["id"];?> .fotopapir select").trigger("chosen:updated");
+            $(".fotka-<?php echo $fotka["id"];?> .fotopapir select").next().css("border","2px solid transparent");
             $(".fotka-<?php echo $fotka["id"];?> .fotopapir").hide();
             $(".fotka-<?php echo $fotka["id"];?> .material").show();
         }
+        
     });
       
 <?php } ?>
