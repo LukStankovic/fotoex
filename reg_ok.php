@@ -27,11 +27,9 @@
 
 <div class="container" id="registrace"> 
     <div class="registrace_blok">
-        <form name="registrace_formular" id="formular" method="post" action="reg_ok.php">    
             <div class="hlavicka">
                 <h1>Děkujeme!</h1>
             </div>
-            
             
             <div class="inputy">
                  
@@ -46,7 +44,6 @@
                 <a href="login.php" class="btn"><i class="fa fa-sign-in"></i> Přihlásit se</a>
                 <a href="index.php" class="btn"><i class="fa fa-home"></i> Zpět domů</a>
             </div> 
-        </form>
     </div>
 </div>
 
