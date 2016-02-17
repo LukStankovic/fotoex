@@ -20,6 +20,16 @@ class Typy{
         $vysledek = self::vybraniDat($sql);
         return $vysledek[0]->cena;
     }
+    public static function kontrola($id){
+        $sql = "SELECT id_typ
+                FROM fotky
+                WHERE id_typ = '$id'";
+        $vysledek = self::vybraniDat($sql);
+        if(empty($vysledek))
+            return 1;
+        else
+            return 0;
+    }
     public function vlozeni($nazev_t,$alias_t,$cena_t,$popis_t){
         $db = new Databaze();
         

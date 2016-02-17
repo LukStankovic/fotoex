@@ -20,6 +20,16 @@ class Materialy{
         $vysledek = self::vybraniDat($sql);
         return $vysledek[0]->cena;
     }
+    public static function kontrola($id){
+        $sql = "SELECT id_material
+                FROM fotky
+                WHERE id_material = '$id'";
+        $vysledek = self::vybraniDat($sql);
+        if(empty($vysledek))
+            return 1;
+        else
+            return 0;
+    }
     public function vlozeni($nazev_m,$alias_m,$cena_m,$popis_m){
         $db = new Databaze();
         

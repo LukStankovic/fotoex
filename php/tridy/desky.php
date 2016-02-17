@@ -20,7 +20,16 @@ class Desky{
         $vysledek = self::vybraniDat($sql);
         return $vysledek[0]->cena;
     }
-
+    public static function kontrola($id){
+        $sql = "SELECT id_deska
+                FROM fotky
+                WHERE id_deska = '$id'";
+        $vysledek = self::vybraniDat($sql);
+        if(empty($vysledek))
+            return 1;
+        else
+            return 0;
+    }
     public function vlozeni($nazev_d,$alias_d,$cena_d,$popis_d){
         $db = new Databaze();
         

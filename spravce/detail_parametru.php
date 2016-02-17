@@ -18,7 +18,8 @@
                     <th>Alias</th>
                     <th>Cena</th>
                     <th>Popis</th>
-                    <th>Akce</th>
+                    <th>Upravit</th>
+                    <th>Vymazat</th>
                 </thead>
                 <tbody>
                 <?php foreach($parametry as $parametr) { ?>
@@ -33,7 +34,34 @@
                     <?php } ?>
                         <td>
                             <a href="?page=upravit-parametr&kategorie=<?php echo $parametr_get; ?>&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-pencil"></i></a>
-                            <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=vymazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
+                        </td>
+                        <td>
+                            <?php if($parametr_get == "formaty") { ?>
+                                <?php if($Formaty->kontrola($parametr->id)){?>
+                                    <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=vymazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
+                                <?php } ?>
+                            <?php }?>
+                            <?php if($parametr_get == "desky") { ?>
+                                <?php if($Desky->kontrola($parametr->id)){?>
+                                    <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=vymazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
+                                <?php } ?>
+                            <?php }?>
+                            <?php if($parametr_get == "fotopapiry") { ?>
+                                <?php if($Fotopapiry->kontrola($parametr->id)){?>
+                                    <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=vymazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
+                                <?php } ?>
+                            <?php }?>
+                            <?php if($parametr_get == "materialy") { ?>
+                                <?php if($Materialy->kontrola($parametr->id)){?>
+                                    <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=vymazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
+                                <?php } ?>
+                            <?php }?>
+                            <?php if($parametr_get == "typy") { ?>
+                                <?php if($Typy->kontrola($parametr->id)){?>
+                                    <a href="?page=detail-parametru&kategorie=<?php echo $parametr_get; ?>&akce=vymazat&id-parametru=<?php echo $parametr->id; ?>"><i class="fa fa-remove"></i></a>
+                                <?php } ?>
+                            <?php }?>
+                            
                         </td>
                     </tr>
                 <?php } } ?>
@@ -44,7 +72,8 @@
                     <td>Název pro systém</td>
                     <td>Cena v Kč</td>
                     <td>Popis položky - není povinný</td>
-                    <td>Upravit | vymazat</td>
+                    <td>Upravit</td>
+                    <td>Vymazat</td>
                 </tfoot>
             </table>
         </div>        

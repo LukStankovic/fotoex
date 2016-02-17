@@ -20,6 +20,16 @@ class Fotopapiry{
         $vysledek = self::vybraniDat($sql);
         return $vysledek[0]->cena;
     }
+    public static function kontrola($id){
+        $sql = "SELECT id_fotopapir
+                FROM fotky
+                WHERE id_fotopapir = '$id'";
+        $vysledek = self::vybraniDat($sql);
+        if(empty($vysledek))
+            return 1;
+        else
+            return 0;
+    }
     public function vlozeni($nazev_f,$alias_f,$cena_f,$popis_f){
         $db = new Databaze();
         

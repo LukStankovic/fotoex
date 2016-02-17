@@ -22,6 +22,17 @@ class Formaty{
         return $vysledek[0]->cena;
     }
     
+    public static function kontrola($id){
+        $sql = "SELECT id_format
+                FROM fotky
+                WHERE id_format = '$id'";
+        $vysledek = self::vybraniDat($sql);
+        if(empty($vysledek))
+            return 1;
+        else
+            return 0;
+    }
+    
     public function vlozeni($nazev_f,$alias_f,$cena_f,$popis_f){
         $db = new Databaze();
         
