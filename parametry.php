@@ -230,11 +230,11 @@ $(function(){
             var dpi = 2.54*sirka_fotky_<?php echo $id_f;?>/sirka_format_<?php echo $id_f; ?>; 
                         
             if(dpi <= 100)
-                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='spatna'><i class='fa fa-times-circle'> Špatná kvalita</div>");
+                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='spatna'><i class='fa fa-times-circle'></i> Špatná kvalita</div>");
             if(dpi > 100 && dpi < 250)
-                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='prumerna'><i class='fa fa-exclamation-circle'> Průměrná kvalita</div>");
+                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='prumerna'><i class='fa fa-exclamation-circle'></i> Průměrná kvalita</div>");
             if(dpi >= 250)
-                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='vyborna'><i class='fa fa-check-circle'> Výborná kvalita</div>");
+                $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='vyborna'><i class='fa fa-check-circle'></i> Výborná kvalita</div>");
         }
         else
             $(".fotka-<?php echo $id_f;?> .kvalita").html("<div class='vybrat'><i class='fa fa-info-circle'></i> Vyberte formát</div>");
