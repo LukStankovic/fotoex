@@ -54,6 +54,18 @@ class Uzivatele{
         $vysledek = self::vybraniDat($sql);
         return($vysledek[0]->pocet);
     }
+    
+    public static function kontrolaRegistrace($login){
+        $sql = "SELECT id_uzivatel
+                FROM uzivatele
+                WHERE login = '$login'";
+        $vysledek = self::vybraniDat($sql);
+        if(empty($vysledek))
+            return 1;
+        else
+            return 0;
+    }
+    
     public function vlozeni($data){
         $db = new Databaze();
 
