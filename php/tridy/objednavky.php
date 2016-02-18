@@ -145,6 +145,10 @@ class Objednavky{
         
         return $db->zpracovani($sql);
     }
+    
+
+    
+    
     public function dokonceno($id) {
         $db = new Databaze();    
         
@@ -182,7 +186,25 @@ class Objednavky{
     
         return $db->zpracovani($sql);
     }
-    
+    public function aktualizaceCeny($id){
+        $db = new Databaze();
+        $sql = "SELECT sum(cena) as celkem, doprava_cena
+                FROM fotky inner join objednavky using(id_objednavka)
+                where id_objednavka = $id
+                group by id_objednavka
+                ";
+        
+        $celkem_obj = self::vybraniDat($sql);
+        
+        $celkem = $celkem_obj[0]->celkem;
+        
+        $celkem += $celkem_obj[0]->doprava_cena;
+        
+        $sql = "UPDATE objednavky SET cena_celkem = '$celkem'
+                WHERE id_objednavka = $id";
+        
+        return $db->zpracovani($sql);
+    }
     public function vymazat($id){
        $db = new Databaze();
         $sql = "DELETE FROM objednavky

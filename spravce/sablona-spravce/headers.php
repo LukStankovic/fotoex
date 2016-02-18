@@ -51,8 +51,8 @@ if((isset($_GET["page"])) and ($_GET["page"] == "detail-objednavky")){
         foreach($vsechny_fotky as $fotka){
             if($_POST["fot_ulozit"] == $fotka->id_fotka){
                 $Fotky->upravit($fotka->id_fotka,$_POST);
+                $Objednavky->aktualizaceCeny($_GET["id-objednavka"]);
                 header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
-                //echo "<pre>",print_r($_POST),"</pre>";
             }
         }
     }
