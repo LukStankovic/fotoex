@@ -73,7 +73,7 @@ class Fotky{
         $fotopapir_cena = $Fotopapiry->cena($fotopapir);
         $material_cena = $Materialy->cena($material);
         $typ_cena = $Typy->cena($typ);
-    
+
         return ( ($format_cena+$material_cena+$fotopapir_cena+$deska_cena+$typ_cena)*$pocet );
     }
     
@@ -105,8 +105,10 @@ class Fotky{
         $material = $k_uprave["material"][$id];
         $fotopapir = $k_uprave["fotopapir"][$id];
         $pocet = $k_uprave["pocet"][$id];
-
-        $sql = "UPDATE fotky SET id_format = '$format', id_deska = '$deska', id_typ = '$typ', id_material = '$material', id_fotopapir = '$fotopapir', pocet = '$pocet'
+        
+        $cena = self::cena($format,$material,$fotopapir,$deska,$typ,$pocet);
+        
+        $sql = "UPDATE fotky SET id_format = '$format', id_deska = '$deska', id_typ = '$typ', id_material = '$material', id_fotopapir = '$fotopapir', pocet = '$pocet', cena = '$cena'
                 WHERE  id_fotka = $id";
     
         return $db->zpracovani($sql);

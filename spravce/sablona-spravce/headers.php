@@ -52,6 +52,7 @@ if((isset($_GET["page"])) and ($_GET["page"] == "detail-objednavky")){
             if($_POST["fot_ulozit"] == $fotka->id_fotka){
                 $Fotky->upravit($fotka->id_fotka,$_POST);
                 header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
+                //echo "<pre>",print_r($_POST),"</pre>";
             }
         }
     }
