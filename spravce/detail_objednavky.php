@@ -150,7 +150,7 @@
                     <tbody>
                     <form method="post">
                         <?php foreach($vsechny_fotky as $fotka){ ?>
-                            <tr>
+                            <tr class="fotka-<?php echo $fotka->id_fotka; ?>">
                                 <td><?php echo $fotka->id_fotka; ?></td>
                                 <td><img src="<?php echo $fotka->url; ?>" width="100"></td>
                                 <td>
@@ -268,25 +268,29 @@ $(function(){
 });
 //ÚPRAVY FOTEK
 $(function(){
+    
+    <?php foreach($vsechny_fotky as $fotka){ ?>
+    
     //VÝCHOZÍ STAV
-    $(".fot_upravit").show();
-    $(".fot_upraveno").hide();
-    $("span.fot").show();
-    $(".fot_upravit_pole").hide();
+    $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upravit").show();
+    $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upraveno").hide();
+    $(".fotka-<?php echo $fotka->id_fotka; ?> span.fot").show();
+    $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upravit_pole").hide();
     //ZOBRAZENÍ BTNŮ ULOŽIT A ZRUŠIT A SKRYTÍ UPRAVIT
-    $(".fot_upravit").click(function(){
-        $(".fot_upravit").hide();
-        $(".fot_upraveno").show();
-        $("span.fot").hide();
-        $(".fot_upravit_pole").show();
+    $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upravit").click(function(){
+        $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upravit").hide();
+        $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upraveno").show();
+        $(".fotka-<?php echo $fotka->id_fotka; ?> span.fot").hide();
+        $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upravit_pole").show();
     });
     //ZPĚT NA VÝCHOZÍ STAV
-    $(".fot_upraveno").click(function(){
-        $(".fot_upravit").show();
-        $(".fot_upraveno").hide();
-        $("span.fot").show();
-        $(".fot_upravit_pole").hide();
+    $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upraveno").click(function(){
+        $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upravit").show();
+        $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upraveno").hide();
+        $(".fotka-<?php echo $fotka->id_fotka; ?> span.fot").show();
+        $(".fotka-<?php echo $fotka->id_fotka; ?> .fot_upravit_pole").hide();
     });
 
+    <?php } ?>
 });   
 </script>
