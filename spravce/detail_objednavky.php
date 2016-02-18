@@ -238,8 +238,7 @@
         <div class="btn pull-right upraveno zrusit"><a href="#">Zrušit úpravy</a></div> 
     </form>
     </div>
-<pre><?php print_r($objednavka); ?></pre>
-<pre><?php print_r($vsechny_fotky); ?></pre>
+
 <script>
 //FILTRACE TABULKY
 $("table").filterTable();
