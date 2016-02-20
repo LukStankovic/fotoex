@@ -170,6 +170,9 @@ $(document).ready(function(){
     
 });
 </script>
+<script>
+ $('table').stacktable();
+</script>
 <?php 
 //VLOZENI PATICKY
 require_once("sablona/paticka.php");

@@ -159,7 +159,9 @@ if(isset($_POST["odeslat"])){
 
 <pre><?php print_r($_POST); ?></pre>
 <pre><?php print_r($_SESSION); ?></pre>
-
+<script>
+ $('table').stacktable();
+</script>
 <?php 
 //VLOZENI PATICKY
 

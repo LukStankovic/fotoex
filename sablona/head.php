@@ -21,9 +21,11 @@ $domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  '
         <link rel="stylesheet" href="css/bootstrap.min.css"> 
         <link rel="stylesheet" href="css/chosen.min.css">
  		<link rel="stylesheet" href="css/style.css">
+ 		<link rel="stylesheet" href="css/stacktable.css">
  		
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/stacktable.js"></script>
 		<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->

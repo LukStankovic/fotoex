@@ -73,7 +73,9 @@ if(isset($_POST)){
     <pre><?php print_r($Kosik); ?></pre>
     <pre><?php print_r($_SESSION); ?></pre>
 </main>    
-
+<script>
+ $('table').stacktable();
+</script>
 <?php 
 //VLOZENI PATICKY
 require_once("sablona/paticka.php");
