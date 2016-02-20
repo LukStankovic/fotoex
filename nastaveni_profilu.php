@@ -27,9 +27,9 @@
                     <input type="text" class="prijmeni form-control vedle" name="prijmeni" maxlength="50" value="<?php echo $prihlaseny->prijmeni; ?>" placeholder="Příjmení *">    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="email form-control vedle leva" name="email" maxlength="50" value="<?php echo $prihlaseny->email; ?>" placeholder="E-mail *">    
+                    <input type="email" class="email form-control vedle leva" name="email" maxlength="50" value="<?php echo $prihlaseny->email; ?>" placeholder="E-mail *">    
                     
-                    <input type="text" class="telefon form-control vedle" name="telefon" maxlength="13" value="<?php echo $prihlaseny->telefon; ?>" placeholder="Telefon *">    
+                    <input type="tel" class="telefon form-control vedle" name="telefon" maxlength="13" value="<?php echo $prihlaseny->telefon; ?>" placeholder="Telefon *">    
                 </div>
             <hr>
             <h2>Adresa</h2>

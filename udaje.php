@@ -55,8 +55,8 @@ $Kosik = $_SESSION["kosik"];
                     <h2>Údaje o zákazníkovi</h2>
                     
                     <div class="form-group">
-                        <input type="text" class="form-control vedle leva" name="uz_email" value="<?php if(isset($prihlaseny)) echo $prihlaseny->email; ?>" placeholder="E-mail" required>    
-                        <input type="text" class="form-control vedle" name="uz_telefon" maxlength="14" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
+                        <input type="email" class="form-control vedle leva" name="uz_email" value="<?php if(isset($prihlaseny)) echo $prihlaseny->email; ?>" placeholder="E-mail" required>    
+                        <input type="tel" class="form-control vedle" name="uz_telefon" maxlength="14" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
                     </div>
                 </div>
             </div>

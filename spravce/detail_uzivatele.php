@@ -24,11 +24,11 @@
                 </div>
                 <div class="form-group">
                     <label for="email" class="control-label">E-mail: </label>
-                    <input type="text" class="form-control" name="email" value="<?php echo $uzivatel->email; ?>" required>
+                    <input type="email" class="form-control" name="email" value="<?php echo $uzivatel->email; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="telefon" class="control-label">Telefon: </label>
-                    <input type="text" class="form-control" name="telefon" value="<?php echo $uzivatel->telefon; ?>" required>
+                    <input type="tel" class="form-control" name="telefon" value="<?php echo $uzivatel->telefon; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="prava" class="control-label">Práva: </label>

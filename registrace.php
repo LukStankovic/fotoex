@@ -24,9 +24,9 @@
                     <input type="password" class="heslo_znova form-control vedle" name="heslo_znova" maxlength="60" placeholder="Heslo znova *">    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="email form-control vedle leva" name="email" maxlength="50" placeholder="E-mail *">    
+                    <input type="email" class="email form-control vedle leva" name="email" maxlength="50" placeholder="E-mail *">    
                     
-                    <input type="text" class="telefon form-control vedle" name="telefon" maxlength="13" placeholder="Telefon *">    
+                    <input type="tel" class="telefon form-control vedle" name="telefon" maxlength="13" placeholder="Telefon *">    
                 </div>
                 <hr>
                 <div class="form-group">
