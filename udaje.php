@@ -104,7 +104,6 @@ $Kosik = $_SESSION["kosik"];
                         <label><input type="radio" name="doruceni" data-price="70.00" value="Kurýr">Kurýr (70 Kč) - do 2 dnů</label>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
     </div>
