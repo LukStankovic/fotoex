@@ -101,7 +101,6 @@
             <h2>O zákazníkovi</h2>
                 <ul>
                     <li><?php 
-
                             echo "$objednavka->jmeno $objednavka->prijmeni"; 
                         ?>
                     </li>
@@ -117,11 +116,21 @@
         <div class="row">
             <div class="col-md-4">
                 <h2>Platba</h2>
-                <?php echo $objednavka->platba; ?>
+                <span class="obj"><?php echo $objednavka->platba; ?></span>
+
+                <select name="platba" class="upravit_pole">
+                    <option <?php if($objednavka->platba == "Hotově při doručení") echo "selected"; ?> value="Hotově při doručení">Hotově při doručení</option>
+                    <option <?php if($objednavka->platba == "Převodem na účet") echo "selected"; ?> value="Převodem na účet">Převodem na účet</option>
+                </select>
             </div>
             <div class="col-md-4">
                 <h2>Doprava</h2>
-                <?php echo "$objednavka->doprava ($objednavka->doprava_cena Kč)"; ?>
+                <span class="obj"><?php echo "$objednavka->doprava ($objednavka->doprava_cena Kč)"; ?></span>
+
+                <select name="doprava" class="upravit_pole">
+                    <option <?php if($objednavka->doprava == "Česká pošta") echo "selected"; ?> value="Česká pošta">Česká pošta (30 Kč)</option>
+                    <option <?php if($objednavka->doprava == "Kurýr") echo "selected"; ?> value="Kurýr">Kurýr (70 Kč)</option>
+                </select>
             </div>
             <div class="col-md-4">
                 <h2>Infromace o objednávce</h2>

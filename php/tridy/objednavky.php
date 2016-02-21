@@ -177,15 +177,23 @@ class Objednavky{
         $f_mesto = $k_uprave["fak_mesto"];
         $f_zeme = $k_uprave["fak_zeme"];
         
+        $platba = $k_uprave["platba"];
         
+        $doprava = $k_uprave["doprava"];
         
-        $sql = "UPDATE objednavky SET stav = '$stav', d_jmeno = '$d_jmeno', d_prijmeni = '$d_prijmeni', d_ulice = '$d_ulice', d_psc = '$d_psc', d_mesto = '$d_mesto', d_zeme = '$d_zeme', f_jmeno = '$f_jmeno', f_prijmeni = '$f_prijmeni', f_ulice = '$f_ulice', f_psc = '$f_psc', f_mesto = '$f_mesto', f_zeme = '$f_zeme'
+        if($doprava == "Česká pošta")
+            $doprava_cena = 30.0;
+        if($doprava == "Kurýr")
+            $doprava_cena = 70.0;
+        
+        $sql = "UPDATE objednavky SET stav = '$stav', platba = '$platba', doprava = '$doprava', doprava_cena = '$doprava_cena', d_jmeno = '$d_jmeno', d_prijmeni = '$d_prijmeni', d_ulice = '$d_ulice', d_psc = '$d_psc', d_mesto = '$d_mesto', d_zeme = '$d_zeme', f_jmeno = '$f_jmeno', f_prijmeni = '$f_prijmeni', f_ulice = '$f_ulice', f_psc = '$f_psc', f_mesto = '$f_mesto', f_zeme = '$f_zeme'
         
         
                 WHERE  id_objednavka = $id";
     
         return $db->zpracovani($sql);
     }
+    
     public function aktualizaceCeny($id){
         $db = new Databaze();
         $sql = "SELECT sum(cena) as celkem, doprava_cena

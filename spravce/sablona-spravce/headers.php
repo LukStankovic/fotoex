@@ -44,6 +44,7 @@ if((isset($_GET["page"])) and ($_GET["page"] == "detail-objednavky")){
 
     if(isset($_POST["ulozit"])){
         $Objednavky->upravit($_GET["id-objednavka"],$_POST);
+        $Objednavky->aktualizaceCeny($_GET["id-objednavka"]);
         header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
 
     }
