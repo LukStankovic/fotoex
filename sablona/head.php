@@ -9,8 +9,12 @@ $domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  '
 	<head>
 		<meta charset="utf-8">
 		<title>FotoEx - Online fotolab pro Vaše fotografie</title>
-       <meta http-equiv="X-UA-Compatible" content="IE=9" />
+        <meta http-equiv="X-UA-Compatible" content="IE=9" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="FotoEx - online fotolab slouží k tisku Vámi nahraných fotografií k tisku. Jedná se pouze o dlouhodobou maturitní práci.">
+        <meta name="keywords" content="Fotoex, fotografie, tisk, fotolab">
+        <meta name="author" content="Lukáš Stankovič">
+        
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,400italic,300italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
         <link rel="stylesheet" href="css/multiuploader/jquery.fileupload.css">
