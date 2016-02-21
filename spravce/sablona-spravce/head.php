@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <?php  
     require_once ("autorizace.php");
     require_once ("konfigurace.php"); 
@@ -5,8 +6,6 @@
     $domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
 
 ?>
-
-<!DOCTYPE HTML>
 <html>
 <head>
     <title>Administrace webu</title>

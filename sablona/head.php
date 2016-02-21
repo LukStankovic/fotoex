@@ -1,10 +1,10 @@
+<!doctype html>
 <?php 
 //VLOŽENÍ KONFIGURACE
 require_once("php/config/konfigurace.php");
 session_start();
 $domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
 ?>
-<!doctype html>
 <html lang="cs">
 	<head>
 		<meta charset="utf-8">
