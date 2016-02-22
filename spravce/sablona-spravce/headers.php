@@ -45,8 +45,8 @@ if((isset($_GET["page"])) and ($_GET["page"] == "detail-objednavky")){
     if(isset($_POST["ulozit"])){
         $Objednavky->upravit($_GET["id-objednavka"],$_POST);
         $Objednavky->aktualizaceCeny($_GET["id-objednavka"]);
+        require_once("../emaily/zmena_stavu-uzivatel.php");
         header("Location: home.php?page=detail-objednavky&id-objednavka=".$_GET["id-objednavka"]);
-
     }
     if(isset($_POST["fot_ulozit"])){
         $Fotky->upravit($_POST["fot_ulozit"],$_POST);
