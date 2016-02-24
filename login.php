@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     require_once ("sablona/head.php"); 
 	unset($_SESSION['id_uzivatel']);
 	unset($_SESSION['login']);
@@ -34,8 +35,8 @@
     <?php 
 
     if(isset($_POST["prihlasit"]))
-            $Uzivatele->prihlaseniBeznehoUzivatele($_POST["login"],$_POST["heslo"]);
-
+        $Uzivatele->prihlaseniBeznehoUzivatele($_POST["login"],$_POST["heslo"]);
     ?>
 </body>
 </html>
+<?php ob_flush(); ?>
