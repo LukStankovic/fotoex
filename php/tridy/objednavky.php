@@ -76,8 +76,9 @@ class Objednavky{
                     INNER JOIN typy using(id_typ)
                     INNER JOIN uzivatele using(id_uzivatel)
                 WHERE id_uzivatel = $id
-                GROUP BY id_objednavka                    
+                GROUP BY id_objednavka
                 ORDER BY id_objednavka DESC
+                LIMIT 5
                 ";
         return self::vybraniDat($sql);
     }

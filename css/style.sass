@@ -63,7 +63,7 @@ h2
                 +prefixy(transition,.2s ease background)
                 &:hover
                     background: rgba(255,255,255,0.2)
-
+    
 #home header
     width: 100%
     min-height: 500px
@@ -533,8 +533,7 @@ footer
         +prefixy(transform,translate(-50%, -50%))
 
         li
-            list-style: none
-
+            list-style: none			
 
     .blok_text
         padding: 0 40px
@@ -686,7 +685,7 @@ footer
 
     .prihlasen
         margin: 30px auto
-        max-width: 500px
+        max-width: 600px
         h1
             text-align: center
 
@@ -710,6 +709,32 @@ footer
         -webkit-box-shadow: 0 0 10x 0px #856559
         box-shadow: 0 0 10px 0px #856559
         border: 1px solid $hneda
+    
+    
+    table
+        width: 100%
+        text-align: center
+        vertical-align: middle
+        margin-bottom: 30px
+        
+        thead
+            color: $hneda
+            border-bottom: 2px solid $hneda
+            th
+                text-align: center
+                padding: 10px 0
+
+        tbody
+            td
+                height: 30px
+                
+                &.cena
+                    font-weight: bold
+            tr:nth-child(even)
+                background: $hneda-radek
+            tr:nth-child(odd)
+                background: transparent
+    
     
 th.st-head-row 
     text-align: center!important

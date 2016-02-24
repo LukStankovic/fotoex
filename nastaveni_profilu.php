@@ -4,6 +4,7 @@
     require_once("sablona/hlavicka.php");
     if(isset($_SESSION["id_uzivatel"])){
         $prihlaseny = $Uzivatele->detailUzivatele($_SESSION["id_uzivatel"]);
+        $objednavky = $Objednavky->objednavkaOdUzivatele($_SESSION["id_uzivatel"]);
     }
     if(isset($_POST["ulozit_udaje"])){
         $Uzivatele->upravit($_SESSION["id_uzivatel"],$_POST);
@@ -20,6 +21,35 @@
         <div class="prihlasen">
            <form method="post">
             <h1>Dobrý den, <?php echo $_SESSION["login"];?>!</h1>
+            <hr>
+            <h2>Poslední objednávky</h2>
+                <div class="tabulka">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Datum</th>
+                                <th>Stav</th>
+                                <th>Cena celkem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php 
+                        foreach($objednavky as $i => $objednavka){ ?>
+                            <tr class="<?php 
+                            if($objednavka->stav == "Dokončeno") echo "dokonceno"; 
+                            if($objednavka->stav == "Zrušeno") echo "zruseno";?>">
+                                
+                                <td><?php echo $objednavka->id_objednavka;?></td>
+                                <td><?php echo date("j. n. Y, H:i:s",strtotime($objednavka->datum));?></td>       
+                                
+                                <td><?php echo $objednavka->stav;?></td>
+                                <td><?php echo number_format($objednavka->celkem, 2, ',', ''); ?> Kč</td>  
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
             <hr>
             <h2>Osobní údaje</h2>
                 <div class="form-group">
@@ -56,6 +86,8 @@
             <hr>
             <a href="index.php" class="btn"><i class="fa fa-home"></i> Zpět domů</a>
             </form>
+
+            
         </div>
         
         
