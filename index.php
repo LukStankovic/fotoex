@@ -29,11 +29,6 @@ $poc++;
 } 
 ?>
 </main>
-<!--
-<pre>
-    <?php print_r($_SESSION); ?>
-</pre>
--->
 <script>
     $("body").attr("id","home");
 </script>
