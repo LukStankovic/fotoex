@@ -1,5 +1,4 @@
 <?php 
-
 //VLOZENI <HEAD>
 require_once("sablona/head.php");
 //VLOZENI headeru, loga a menu
@@ -113,11 +112,9 @@ $_SESSION["fotky"] = $fotky;
 </main>    
 <script>
 $(document).ready(function(){
-//CENY
+//CENY FOTKy
 <?php foreach($fotky as $fotka){?>
-    
 
-   
     //PŘI ZMĚNĚ SELECTU
     
     $(".fotka-<?php echo $fotka["id"];?> select").change(function() {
@@ -152,7 +149,6 @@ $(document).ready(function(){
 <?php }?>
 
 //CELKOVÁ CENA
-
 
     $(".cena span").bind("DOMSubtreeModified",function(){    
         var celkem = 0.00;
@@ -241,10 +237,6 @@ $(function(){
         
         
     });
-    
-    
-    
-    //ZJIŠTĚNÍ FORMÁTU
     
 <?php } ?>
 });
