@@ -56,6 +56,8 @@ class Fotky{
         $sql = "SELECT id_format,nazev_format, count(id_format) as pocet                  
                 FROM fotky INNER JOIN formaty using(id_format)
                 GROUP BY id_format
+                HAVING count(id_format) > 1
+                LIMIT 5
                 ";
         return self::vybraniDat($sql);
     }
