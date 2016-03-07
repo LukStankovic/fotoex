@@ -57,6 +57,7 @@ class Fotky{
                 FROM fotky INNER JOIN formaty using(id_format)
                 GROUP BY id_format
                 HAVING count(id_format) > 1
+                ORDER BY count(id_format) DESC
                 LIMIT 5
                 ";
         return self::vybraniDat($sql);
