@@ -182,13 +182,16 @@ class Objednavky{
         
         $doprava = $k_uprave["doprava"];
         
+        $u_telefon = $k_uprave["u_telefon"];
+        $u_email = $k_uprave["u_email"];
+        
+        
         if($doprava == "Česká pošta")
             $doprava_cena = 30.0;
         if($doprava == "Kurýr")
             $doprava_cena = 70.0;
         
-        $sql = "UPDATE objednavky SET stav = '$stav', platba = '$platba', doprava = '$doprava', doprava_cena = '$doprava_cena', d_jmeno = '$d_jmeno', d_prijmeni = '$d_prijmeni', d_ulice = '$d_ulice', d_psc = '$d_psc', d_mesto = '$d_mesto', d_zeme = '$d_zeme', f_jmeno = '$f_jmeno', f_prijmeni = '$f_prijmeni', f_ulice = '$f_ulice', f_psc = '$f_psc', f_mesto = '$f_mesto', f_zeme = '$f_zeme'
-        
+        $sql = "UPDATE objednavky SET stav = '$stav', platba = '$platba', doprava = '$doprava', doprava_cena = '$doprava_cena', d_jmeno = '$d_jmeno', d_prijmeni = '$d_prijmeni', d_ulice = '$d_ulice', d_psc = '$d_psc', d_mesto = '$d_mesto', d_zeme = '$d_zeme', f_jmeno = '$f_jmeno', f_prijmeni = '$f_prijmeni', f_ulice = '$f_ulice', f_psc = '$f_psc', f_mesto = '$f_mesto', f_zeme = '$f_zeme', u_telefon = '$u_telefon', u_email = '$u_email'
         
                 WHERE  id_objednavka = $id";
     

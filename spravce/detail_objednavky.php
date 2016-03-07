@@ -50,17 +50,17 @@
                 <ul>
                     <li>
                         <span class="obj"><?php echo "$objednavka->d_jmeno $objednavka->d_prijmeni"; ?></span>
-                        <input name="dor_jmeno" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_jmeno; ?>">
-                        <input name="dor_prijmeni" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_prijmeni; ?>">
+                        <input name="dor_jmeno" maxlength="50" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_jmeno; ?>">
+                        <input name="dor_prijmeni" maxlength="50" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_prijmeni; ?>">
                     </li>
                     <li>
                         <span class="obj"><?php echo $objednavka->d_ulice; ?></span>
-                        <input name="dor_ulice" class="upravit_pole" type="text" value="<?php echo $objednavka->d_ulice; ?>">
+                        <input name="dor_ulice" maxlength="50" class="upravit_pole" type="text" value="<?php echo $objednavka->d_ulice; ?>">
                     </li>
                     <li>
                         <span class="obj"><?php echo $objednavka->d_psc." ".$objednavka->d_mesto; ?></span>
-                        <input name="dor_psc" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_psc; ?>">
-                        <input name="dor_mesto" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_mesto; ?>">
+                        <input name="dor_psc" maxlength="5" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_psc; ?>">
+                        <input name="dor_mesto" maxlength="30" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->d_mesto; ?>">
                     </li>
                     <li>
                         <span class="obj"><?php echo $objednavka->d_zeme; ?></span>
@@ -76,17 +76,17 @@
                 <ul>
                     <li>
                         <span class="obj"><?php echo "$objednavka->f_jmeno $objednavka->f_prijmeni"; ?></span>
-                        <input name="fak_jmeno" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_jmeno; ?>">
-                        <input name="fak_prijmeni" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_prijmeni; ?>">
+                        <input name="fak_jmeno" maxlength="50" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_jmeno; ?>">
+                        <input name="fak_prijmeni" maxlength="50" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_prijmeni; ?>">
                     </li>
                     <li>
                         <span class="obj"><?php echo $objednavka->f_ulice; ?></span>
-                        <input name="fak_ulice" class="upravit_pole" type="text" value="<?php echo $objednavka->f_ulice; ?>">
+                        <input name="fak_ulice" maxlength="50" class="upravit_pole" type="text" value="<?php echo $objednavka->f_ulice; ?>">
                     </li>
                     <li>
                         <span class="obj"><?php echo $objednavka->f_psc." ".$objednavka->f_mesto; ?></span>
-                        <input name="fak_psc" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_psc; ?>">
-                        <input name="fak_mesto" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_mesto; ?>">
+                        <input name="fak_psc" maxlength="5" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_psc; ?>">
+                        <input name="fak_mesto" maxlength="30" class="vedle upravit_pole" type="text" value="<?php echo $objednavka->f_mesto; ?>">
                     </li>
                     <li>
                         <span class="obj"><?php echo $objednavka->f_zeme; ?></span>
@@ -105,10 +105,12 @@
                         ?>
                     </li>
                     <li>
-                        <a href="tel:<?php echo $objednavka->u_telefon; ?>"><?php echo $objednavka->u_telefon; ?></a>
+                        <span class="obj"><a href="tel:<?php echo $objednavka->u_telefon; ?>"><?php echo $objednavka->u_telefon; ?></a></span>
+                        <input name="u_telefon" class="upravit_pole" type="text" maxlength="16" value="<?php echo $objednavka->u_telefon; ?>">
                     </li>
                     <li>
-                        <a href="mailto:<?php echo $objednavka->u_email; ?>"><?php echo $objednavka->u_email; ?></a>
+                        <span class="obj"><a href="mailto:<?php echo $objednavka->u_email; ?>"><?php echo $objednavka->u_email; ?></a></span>
+                        <input name="u_email" class="upravit_pole" type="text" maxlength="50"value="<?php echo $objednavka->u_email; ?>">
                     </li>
                 </ul>
             </div>
