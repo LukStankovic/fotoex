@@ -97,11 +97,11 @@
             
                 <div class="form-group">
                     <label for="nazev" class="control-label">Název: </label>
-                    <input type="text" class="form-control" name="nazev" required>
+                    <input type="text" maxlength="50" class="form-control" name="nazev" required>
                 </div>
                 <div class="form-group">
                     <label for="alias" class="control-label">Alias: </label>
-                    <input type="text" class="form-control" name="alias" required>
+                    <input type="text" maxlength="50" class="form-control" name="alias" required>
                 </div>
                 <div class="form-group">
                     <label for="nazev" class="control-label">Cena: </label>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="form-group">
                     <label for="popis" class="control-label">Krátký popis:</label>
-                    <textarea  class="form-control" name="popis"></textarea>
+                    <textarea class="form-control" name="popis"></textarea>
                 </div>
             
       </div>

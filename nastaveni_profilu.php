@@ -59,14 +59,14 @@
                 <div class="form-group">
                     <input type="email" class="email form-control vedle leva" name="email" maxlength="50" value="<?php echo $prihlaseny->email; ?>" placeholder="E-mail *">    
                     
-                    <input type="tel" class="telefon form-control vedle" name="telefon" maxlength="13" value="<?php echo $prihlaseny->telefon; ?>" placeholder="Telefon *">    
+                    <input type="tel" class="telefon form-control vedle" name="telefon" maxlength="16" value="<?php echo $prihlaseny->telefon; ?>" placeholder="Telefon *">    
                 </div>
             <hr>
             <h2>Adresa</h2>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="ulice" value="<?php echo $prihlaseny->ulice; ?>" placeholder="Ulice *" required>    
+                    <input type="text" class="form-control vedle leva" maxlength="50" name="ulice" value="<?php echo $prihlaseny->ulice; ?>" placeholder="Ulice *" required>    
 
-                    <input type="text" class="form-control vedle" name="mesto" value="<?php echo $prihlaseny->mesto; ?>" placeholder="Město *" required>    
+                    <input type="text" class="form-control vedle" maxlength="30" name="mesto" value="<?php echo $prihlaseny->mesto; ?>" placeholder="Město *" required>    
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control vedle leva" name="psc" maxlength="5" value="<?php echo $prihlaseny->psc; ?>" placeholder="PSČ *" required>    
@@ -80,7 +80,7 @@
             <hr>
             <h2>Změna hesla</h2>
             <div class="form-group">
-                <input type="password" class="form-control" name="nove_heslo" placeholder="Zadejte nové heslo">
+                <input type="password" class="form-control" name="nove_heslo" maxlength="60" placeholder="Zadejte nové heslo">
                 <button type="submit" name="zmenit_heslo" class="ulozit btn">Změnit heslo</button>
             </div>
             <hr>

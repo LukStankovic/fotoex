@@ -5,30 +5,30 @@
             <div class="col-md-5">
                 <div class="form-group">
                     <label for="jmeno" class="control-label">Uživatelské jméno: </label>
-                    <input type="text" class="form-control" name="login" value="<?php echo $uzivatel->login; ?>" required>
+                    <input type="text" class="form-control" maxlength="50" name="login" value="<?php echo $uzivatel->login; ?>" required>
                 </div>
                 <hr>
                 <div class="form-group">
                     <label for="nove_h" class="control-label">Nové heslo: </label>
-                    <input type="password" class="form-control" name="nove_h" placeholder="Zadejte nové heslo">
+                    <input type="password" class="form-control" maxlength="60" name="nove_h" placeholder="Zadejte nové heslo">
                     <button type="submit" name="zmenit_heslo" class="ulozit btn pull-right">Změnit heslo</button>
                 </div>
                 <hr style="margin-top: 65px">
                 <div class="form-group">
                     <label for="jmeno" class="control-label">Jméno: </label>
-                    <input type="text" class="form-control" name="jmeno" value="<?php echo $uzivatel->jmeno; ?>" required>
+                    <input type="text" class="form-control" maxlength="50" name="jmeno" value="<?php echo $uzivatel->jmeno; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="prijmeni" class="control-label">Příjmení: </label>
-                    <input type="text" class="form-control" name="prijmeni" value="<?php echo $uzivatel->prijmeni; ?>" required>
+                    <input type="text" class="form-control" maxlength="50" name="prijmeni" value="<?php echo $uzivatel->prijmeni; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="email" class="control-label">E-mail: </label>
-                    <input type="email" class="form-control" name="email" value="<?php echo $uzivatel->email; ?>" required>
+                    <input type="email" class="form-control" maxlength="50" name="email" value="<?php echo $uzivatel->email; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="telefon" class="control-label">Telefon: </label>
-                    <input type="tel" class="form-control" name="telefon" value="<?php echo $uzivatel->telefon; ?>" required>
+                    <input type="tel" class="form-control" maxlength="16" name="telefon" value="<?php echo $uzivatel->telefon; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="prava" class="control-label">Práva: </label>
@@ -39,15 +39,15 @@
                 </div>
                 <div class="form-group">
                     <label for="ulice" class="control-label">Ulice: </label>
-                    <input type="text" class="form-control" name="ulice" value="<?php echo $uzivatel->ulice; ?>" required>
+                    <input type="text" class="form-control" name="ulice" maxlength="50" value="<?php echo $uzivatel->ulice; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="mesto" class="control-label">Město: </label>
-                    <input type="text" class="form-control" name="mesto" value="<?php echo $uzivatel->mesto; ?>" required>
+                    <input type="text" class="form-control" name="mesto" maxlength="30" value="<?php echo $uzivatel->mesto; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="psc" class="control-label">PSČ: </label>
-                    <input type="text" class="form-control" name="psc" value="<?php echo $uzivatel->psc; ?>" required>
+                    <input type="text" class="form-control" name="psc" maxlength="5" value="<?php echo $uzivatel->psc; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="zeme" class="control-label">Země: </label>

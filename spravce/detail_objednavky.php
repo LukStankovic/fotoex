@@ -216,7 +216,7 @@
                                 <td><?php echo number_format($fotka->cena, 2, ',', ''); ?> Kč</td>
                                 <td>
                                 <span class="fot"><?php echo $fotka->pocet;?>×</span>
-                                <input name="pocet[<?php echo $fotka->id_fotka; ?>]" class="fot_upravit_pole" value="<?php echo $fotka->pocet;?>">
+                                <input type="number" name="pocet[<?php echo $fotka->id_fotka; ?>]" class="fot_upravit_pole" value="<?php echo $fotka->pocet;?>">
                                 </td>
                                 <td>
                                     <span class="fot_upraveno"><button name="fot_ulozit" value="<?php echo $fotka->id_fotka; ?>" type="submit"><i class="fa fa-save"></i></button></span>

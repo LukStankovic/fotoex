@@ -34,14 +34,14 @@ $Kosik = $_SESSION["kosik"];
                     
                 
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="fak_jmeno" value="<?php if(isset($prihlaseny)) echo $prihlaseny->jmeno; ?>" placeholder="Jméno" required>    
+                    <input type="text" class="form-control vedle leva" maxlength="50" name="fak_jmeno" value="<?php if(isset($prihlaseny)) echo $prihlaseny->jmeno; ?>" placeholder="Jméno" required>    
                     
-                    <input type="text" class="form-control vedle" name="fak_prijmeni" value="<?php if(isset($prihlaseny)) echo $prihlaseny->prijmeni; ?>" placeholder="Příjmení" required>    
+                    <input type="text" class="form-control vedle" name="fak_prijmeni" maxlength="50" value="<?php if(isset($prihlaseny)) echo $prihlaseny->prijmeni; ?>" placeholder="Příjmení" required>    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="fak_ulice" value="<?php if(isset($prihlaseny)) echo $prihlaseny->ulice; ?>" placeholder="Ulice" required>    
+                    <input type="text" class="form-control vedle leva" name="fak_ulice" maxlength="50" value="<?php if(isset($prihlaseny)) echo $prihlaseny->ulice; ?>" placeholder="Ulice" required>    
 
-                    <input type="text" class="form-control vedle" name="fak_mesto" value="<?php if(isset($prihlaseny)) echo $prihlaseny->mesto; ?>" placeholder="Město" required>    
+                    <input type="text" class="form-control vedle" name="fak_mesto" maxlength="30" value="<?php if(isset($prihlaseny)) echo $prihlaseny->mesto; ?>" placeholder="Město" required>    
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control vedle leva" name="fak_psc" maxlength="5" value="<?php if(isset($prihlaseny)) echo $prihlaseny->psc; ?>" placeholder="PSČ" required>    
@@ -55,8 +55,8 @@ $Kosik = $_SESSION["kosik"];
                     <h2>Údaje o zákazníkovi</h2>
                     
                     <div class="form-group">
-                        <input type="email" class="form-control vedle leva" name="uz_email" value="<?php if(isset($prihlaseny)) echo $prihlaseny->email; ?>" placeholder="E-mail" required>    
-                        <input type="tel" class="form-control vedle" name="uz_telefon" maxlength="14" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
+                        <input type="email" class="form-control vedle leva" name="uz_email" maxlength="50" value="<?php if(isset($prihlaseny)) echo $prihlaseny->email; ?>" placeholder="E-mail" required>    
+                        <input type="tel" class="form-control vedle" name="uz_telefon" maxlength="16" value="<?php if(isset($prihlaseny)) echo $prihlaseny->telefon; ?>" placeholder="Telefon" required>    
                     </div>
                 </div>
             </div>
@@ -64,14 +64,14 @@ $Kosik = $_SESSION["kosik"];
                 <h2>Doručovací údaje</h2>
                 
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_jmeno" placeholder="Jméno">    
+                    <input type="text" class="form-control vedle leva" name="dor_jmeno" maxlength="50" placeholder="Jméno">    
                     
-                    <input type="text" class="form-control vedle" name="dor_prijmeni" placeholder="Příjmení">    
+                    <input type="text" class="form-control vedle" name="dor_prijmeni" maxlength="50" placeholder="Příjmení">    
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control vedle leva" name="dor_ulice" placeholder="Ulice">    
+                    <input type="text" class="form-control vedle leva" name="dor_ulice" maxlength="50" placeholder="Ulice">    
 
-                    <input type="text" class="form-control vedle" name="dor_mesto" placeholder="Město">    
+                    <input type="text" class="form-control vedle" name="dor_mesto" maxlength="30" placeholder="Město">    
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control vedle leva" name="dor_psc" maxlength="5" placeholder="PSČ">    

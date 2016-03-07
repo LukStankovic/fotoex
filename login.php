@@ -21,7 +21,7 @@
 			     ?>
                     </ul>
                     <ul>
-                        <li><input type="text" name="login" id="user" placeholder="Uživatelské jméno"></li>
+                        <li><input type="text" maxlength="50" name="login" id="user" placeholder="Uživatelské jméno"></li>
                         <li><input type="password" name="heslo" id="pass" placeholder="Heslo"></li>
                     </ul>
                 

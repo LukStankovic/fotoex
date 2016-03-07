@@ -26,7 +26,7 @@
                 <div class="form-group">
                     <input type="email" class="email form-control vedle leva" name="email" maxlength="50" placeholder="E-mail *">    
                     
-                    <input type="tel" class="telefon form-control vedle" name="telefon" maxlength="13" placeholder="Telefon *">    
+                    <input type="tel" class="telefon form-control vedle" name="telefon" maxlength="16" placeholder="Telefon *">    
                 </div>
                 <hr>
                 <div class="form-group">
