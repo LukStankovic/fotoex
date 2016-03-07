@@ -27,7 +27,7 @@ class Kosik{
             $id_foto = $fotka["id"];
             $this->fotky[$id_foto]["id"] = $id_foto;
             
-            $this->fotky[$id_foto]["url"] = $_SESSION["kosik_post"]["foto_url"][$id_foto];
+            $this->fotky[$id_foto]["url"] = $_SESSION["fotky"][$id_foto]["url"];
             
             //FORMÁT
             $this->fotky[$id_foto]["format"] = $_SESSION["kosik_post"]["format"][$id_foto];
@@ -187,12 +187,12 @@ class Kosik{
     }
 
     public function vymazatFotku($id){
+        unlink($this->fotky[$id]["url"]);        
         unset($this->fotky[$id]);
         foreach($_SESSION["kosik_post"] as $i => $foto){
             unset($foto[$id]);
         }
         unset($_SESSION["fotky"][$id]);
-
     }
     
 }
