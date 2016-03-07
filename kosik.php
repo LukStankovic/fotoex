@@ -10,10 +10,24 @@ $typy = $Typy->vse();
 $materialy = $Materialy->vse();
 $fotopapiry = $Fotopapiry->vse();
 
-if(isset($_POST)){
+
+if(isset($_GET["vymazat_foto"])){
     $Kosik->vlozit();
     $_SESSION["kosik"] = $Kosik;
+    
+    $Kosik->vymazatFotku($_GET["vymazat_foto"]);
+    $_SESSION["kosik"] = $Kosik; 
 }
+else{
+    if(isset($_POST))
+       $_SESSION["kosik_post"] = $_POST;
+    
+    $Kosik->vlozit();
+    $_SESSION["kosik"] = $Kosik; 
+}
+           
+
+
 ?>  
 <main id="kosik" class="container stranka">
     <div class="kroky">
@@ -36,7 +50,9 @@ if(isset($_POST)){
                 <th>Typ</th>
                 <th>Počet</th>
                 <th>Cena</th>
+                <?php if(count($Kosik->fotky) != 1){ ?>
                 <th>Odstranit</th>
+                <?php } ?>
             </tr>
         </thead>
         <tbody>
@@ -50,7 +66,9 @@ if(isset($_POST)){
                     <td><?php echo $fotka["typ_nazev"];?></td>
                     <td><?php echo $fotka["pocet"];?>×</td>
                     <td class="cena"><strong><span><?php echo number_format($fotka["cena"], 2, ',', ''); ?></span> Kč</strong></td>
-                    <td><i class="fa fa-remove"></i></td>
+                    <?php if(count($Kosik->fotky) != 1){ ?>
+                    <td><a href="?vymazat_foto=<?php echo $fotka["id"]; ?>"><i class="fa fa-remove"></i></a></td>
+                    <?php } ?>
                 </tr>
             <?php }?>
         </tbody>
@@ -64,13 +82,16 @@ if(isset($_POST)){
                 <td></td>
                 <td class="celkem">Celková cena:</td>
                 <td class="celkem"><span><?php echo number_format($Kosik->cena_bez_dopravy, 2, ',', ''); ?></span> Kč</td>
+                <?php if(count($Kosik->fotky) != 1){ ?>
                 <td></td>
+                <?php } ?>
             </tr>
         </tfoot>
     </table>
     <a class="pokracovat btn pull-right" href="udaje.php">Pokračovat v objednávce</a>
     <img src="img/fotka-kosik.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
     <pre><?php print_r($Kosik); ?></pre>
+    <pre><?php print_r($_POST); ?></pre>
     <pre><?php print_r($_SESSION); ?></pre>
 </main>    
 <script>

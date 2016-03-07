@@ -27,65 +27,65 @@ class Kosik{
             $id_foto = $fotka["id"];
             $this->fotky[$id_foto]["id"] = $id_foto;
             
-            $this->fotky[$id_foto]["url"] = $_POST["foto_url"][$id_foto];
+            $this->fotky[$id_foto]["url"] = $_SESSION["kosik_post"]["foto_url"][$id_foto];
             
             //FORMÁT
-            $this->fotky[$id_foto]["format"] = $_POST["format"][$id_foto];
+            $this->fotky[$id_foto]["format"] = $_SESSION["kosik_post"]["format"][$id_foto];
             foreach($formaty as $format)
-                if($format->id == $_POST["format"][$id_foto])
+                if($format->id == $_SESSION["kosik_post"]["format"][$id_foto])
                     $this->fotky[$id_foto]["format_nazev"] = $format->nazev;
             
             
             //MATERIÁL
             
-            if(($_POST["material"][$id_foto] == null) || ($this->fotky[$id_foto]["material"] == "NULL")){
+            if(($_SESSION["kosik_post"]["material"][$id_foto] == null) || ($this->fotky[$id_foto]["material"] == "NULL")){
                 $this->fotky[$id_foto]["material"] = 0;
                 $this->fotky[$id_foto]["material_nazev"] = "―";
             }
             else{
                 //ID MATERIÁLU
-                $this->fotky[$id_foto]["material"] = $_POST["material"][$id_foto];
+                $this->fotky[$id_foto]["material"] = $_SESSION["kosik_post"]["material"][$id_foto];
                 //NÁZEV MATERIÁLU
                 foreach($materialy as $material)
-                    if($material->id == $_POST["material"][$id_foto])
+                    if($material->id == $_SESSION["kosik_post"]["material"][$id_foto])
                         $this->fotky[$id_foto]["material_nazev"] = $material->nazev;
             }
             
             //FOTOPAPÍR
         
-            if(($_POST["fotopapir"][$id_foto] == null) || ($this->fotky[$id_foto]["fotopapir"] == "NULL")){
+            if(($_SESSION["kosik_post"]["fotopapir"][$id_foto] == null) || ($this->fotky[$id_foto]["fotopapir"] == "NULL")){
                 $this->fotky[$id_foto]["fotopapir"] = 0;
                 $this->fotky[$id_foto]["fotopapir_nazev"] = "―";
             }
             else{
                 //ID FOTOPAPÍRU
-                $this->fotky[$id_foto]["fotopapir"] = $_POST["fotopapir"][$id_foto];
+                $this->fotky[$id_foto]["fotopapir"] = $_SESSION["kosik_post"]["fotopapir"][$id_foto];
                 //NÁZEV FOTOPAPÍRU
                 foreach($fotopapiry as $fotopapir)
-                    if($fotopapir->id == $_POST["fotopapir"][$id_foto])
+                    if($fotopapir->id == $_SESSION["kosik_post"]["fotopapir"][$id_foto])
                         $this->fotky[$id_foto]["fotopapir_nazev"] = $fotopapir->nazev;
             }
             
             //DESKA
             
             //ID DESKA
-            $this->fotky[$id_foto]["deska"] = $_POST["deska"][$id_foto];
+            $this->fotky[$id_foto]["deska"] = $_SESSION["kosik_post"]["deska"][$id_foto];
             //NÁZEV DESKA
             foreach($desky as $deska)
-                if($deska->id == $_POST["deska"][$id_foto])
+                if($deska->id == $_SESSION["kosik_post"]["deska"][$id_foto])
                     $this->fotky[$id_foto]["deska_nazev"] = $deska->nazev;
             
             //TYP
             
             //ID TYP
-            $this->fotky[$id_foto]["typ"] = $_POST["typ"][$id_foto];
+            $this->fotky[$id_foto]["typ"] = $_SESSION["kosik_post"]["typ"][$id_foto];
             //NÁZEV TYP
             foreach($typy as $typ)
-                if($typ->id == $_POST["typ"][$id_foto])
+                if($typ->id == $_SESSION["kosik_post"]["typ"][$id_foto])
                     $this->fotky[$id_foto]["typ_nazev"] = $typ->nazev;
             
             //POČET
-            $this->fotky[$id_foto]["pocet"] = $_POST["pocet"][$id_foto];
+            $this->fotky[$id_foto]["pocet"] = $_SESSION["kosik_post"]["pocet"][$id_foto];
             //CENA
             $this->fotky[$id_foto]["cena"] = $Fotky->cena(
                 $this->fotky[$id_foto]["format"],
@@ -186,6 +186,14 @@ class Kosik{
         $this->fotky[$id]["informace"]["mini_url"] = "";
     }
 
+    public function vymazatFotku($id){
+        unset($this->fotky[$id]);
+        foreach($_SESSION["kosik_post"] as $i => $foto){
+            unset($foto[$id]);
+        }
+        unset($_SESSION["fotky"][$id]);
+
+    }
     
 }
 ?>
