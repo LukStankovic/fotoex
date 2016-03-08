@@ -25,8 +25,6 @@ else{
     $Kosik->vlozit();
     $_SESSION["kosik"] = $Kosik; 
 }
-           
-
 
 ?>  
 <main id="kosik" class="container stranka">

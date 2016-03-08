@@ -33,6 +33,17 @@ class Formaty{
             return 0;
     }
     
+    public static function pocet_formatu(){
+        $sql = "SELECT id_format,nazev_format, count(id_format) as pocet                  
+                FROM fotky INNER JOIN formaty using(id_format)
+                GROUP BY id_format
+                HAVING count(id_format) > 1
+                ORDER BY count(id_format) DESC
+                LIMIT 5
+                ";
+        return self::vybraniDat($sql);
+    }
+    
     public function vlozeni($nazev_f,$alias_f,$cena_f,$popis_f){
         $db = new Databaze();
         
