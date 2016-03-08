@@ -27,7 +27,7 @@ $prvni = "<html>
     </head>
     <body style='font-family: Helvetica,sans-serif'>
     <div style='width:100%;height:80px;line-height:80px;background:#856559; text-align:center'>
-        <h1 style='color:#fff;font-weight:100'>$objednavka->stav</h1>
+        <h1 style='color:#fff;font-weight:100'>".$_POST["stav"]."</h1>
     </div>
     
     <div style='margin: 20px 0px; padding: 5px 20px'>
