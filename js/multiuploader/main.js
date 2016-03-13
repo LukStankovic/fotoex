@@ -21,7 +21,7 @@ $(function () {
         url: 'php/nahrani/',
         disableImageResize: /Android(?!.*Chrome)|Opera/
                 .test(window.navigator.userAgent),
-        acceptFileTypes: /(\.|\/)(gif|jpe?g|png|tiff)$/i
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
     });
 
     // Enable iframe cross-domain access via redirect option:

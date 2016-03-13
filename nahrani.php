@@ -31,10 +31,9 @@ require_once("sablona/hlavicka.php");
             <h3>Seznam podporovaných formátů:</h3>
             
             <div class="row">
-                <div class="col-md-3"><img src="img/jpg.png" alt="tiff-format" class="img-responsive ikona"></div>
-                <div class="col-md-3"><img src="img/png.png" alt="tiff-format" class="img-responsive ikona"></div>
-                <div class="col-md-3"><img src="img/gif.png" alt="tiff-format" class="img-responsive ikona"></div>
-                <div class="col-md-3"><img src="img/tiff.png" alt="tiff-format" class="img-responsive ikona"></div>
+                <div class="col-md-4"><img src="img/jpg.png" alt="jpg-format" class="img-responsive ikona"></div>
+                <div class="col-md-4"><img src="img/png.png" alt="png-format" class="img-responsive ikona"></div>
+                <div class="col-md-4"><img src="img/gif.png" alt="gif-format" class="img-responsive ikona"></div>
             </div>
             
             <p><em>Velikost souboru není nijak omezena.</em></p>
