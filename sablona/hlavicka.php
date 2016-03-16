@@ -23,8 +23,8 @@
                     <a class="logo pull-left" href="index.php"><img src="img/logo.png" alt="logo"></a>
                     <ul class="hlavni-navigace pull-right">
                         <li><a href="nahrani.php">Vyvolat fotografie</a></li>
-                        <li><a href="#">O nás</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="onas.php">O nás</a></li>
+                        <li><a href="kontakt.php">Kontakt</a></li>
                     </ul>
                 </nav>
                 <div class="mobilni-navigace container">
@@ -32,8 +32,8 @@
                     <div class="collapse" id="mobilni-menu">
                         <ul>
                             <li><a href="nahrani.php">Vyvolat fotografie</a></li>
-                            <li><a href="#">O nás</a></li>
-                            <li><a href="#">Kontakt</a></li>
+                            <li><a href="onas.php">O nás</a></li>
+                            <li><a href="kontakt.php">Kontakt</a></li>
                         </ul>
                     </div>
                 </div>

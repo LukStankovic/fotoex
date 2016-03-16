@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url><loc>http://fotoex.stankoviclukas.cz/</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/login.php</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/registrace.php</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/index.php</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/nahrani.php</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/onas.php</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/kontakt.php</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/detail-clanku.php?id=27</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/detail-clanku.php?id=26</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+<url><loc>http://fotoex.stankoviclukas.cz/detail-clanku.php?id=29</loc><lastmod>2016-03-16T17:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+</urlset>
