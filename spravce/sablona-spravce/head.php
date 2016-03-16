@@ -8,7 +8,7 @@
 ?>
 <html>
 <head>
-    <title>Administrace webu</title>
+    <title>Administrace webu FotoEx</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=yes">
     <script src="js/jquery-1.11.3.js"></script>
