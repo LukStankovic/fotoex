@@ -3,8 +3,13 @@
     require_once ("autorizace.php");
     require_once ("konfigurace.php"); 
     require_once ("headers.php");
-    $domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
-
+    
+    $local = array('127.0.0.1','::1');
+    if(!in_array($_SERVER['REMOTE_ADDR'], $local)){
+        $domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+    }else{
+        $domena = "http://localhost".strrchr(getcwd(),'/');
+    }
 ?>
 <html>
 <head>

@@ -3,7 +3,12 @@
 //VLOŽENÍ KONFIGURACE
 require_once("php/config/konfigurace.php");
 session_start();
-$domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+$local = array('127.0.0.1','::1');
+if(!in_array($_SERVER['REMOTE_ADDR'], $local)){
+    $domena = ( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+}else{
+    $domena = "http://localhost".strrchr(getcwd(),'/');
+}
 ?>
 <html lang="cs">
 	<head>
