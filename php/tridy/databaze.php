@@ -62,13 +62,13 @@ class Databaze{
     public function pripravaProInput($hodnota){
 		if (function_exists('mysql_real_escape_string')) {
 			if (get_magic_quotes_gpc())	
-				$hodnota = stripslashes($hodnota); //lomítka
+				$hodnota = stripslashes($hodnota); 
 			$this->pripojeniKDatabazi();
 			$hodnota = $this->pripojeni->real_escape_string($hodnota);
 		} 
 		else {
 			if (!$this->get_magic_quotes_gpc())	
-				$hodnota = addslashes($hodnota); //přidání lomítek
+				$hodnota = addslashes($hodnota); 
 		}
 		return $hodnota;
 	}
