@@ -27,11 +27,6 @@ class Uzivatele{
         return $objekt[0];
     }
     
-    public static function pocetUzivatelu(){
-        $sql = "SELECT count(id_uzivatel) AS 'pocet_uzivatelu'
-                FROM uzivatele";
-        return self::vybraniDat($sql);
-    }
     public static function dataPrihlaseni($jmeno,$heslo){
         $db = new Databaze();
         $sql = "SELECT id_uzivatel, login, heslo, salt
