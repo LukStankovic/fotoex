@@ -25,7 +25,7 @@
     <script src="js/plugins/stacktable/stacktable.js"></script>
     
 
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
     <link href="css/plugins/timeline/timeline.css" rel="stylesheet">
