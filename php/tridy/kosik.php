@@ -174,6 +174,7 @@ class Kosik{
     }
     
     public function cenaZaFotky(){
+        $celkem = 0;
         foreach($this->fotky as $id => $fotka){
             $celkem += $this->fotky[$id]["cena"];
         }

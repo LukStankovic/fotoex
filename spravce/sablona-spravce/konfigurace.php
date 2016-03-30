@@ -26,4 +26,5 @@ $Fotopapiry = new Fotopapiry();
 $Materialy = new Materialy();
 $Typy = new Typy();
 
+error_reporting(E_ERROR | E_PARSE); //Z DŮVODU UKAZOVÁNÍ WARNING NA NĚKTERÝCH SERVERECH PŘI NEVYPLNĚNÍ MATERIÁLU/FOTOPAPÍRU
 ?>

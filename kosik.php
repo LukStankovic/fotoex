@@ -88,9 +88,6 @@ else{
     </table>
     <a class="pokracovat btn pull-right" href="udaje.php">Pokračovat v objednávce</a>
     <img src="img/fotka-kosik.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
-    <pre><?php print_r($Kosik); ?></pre>
-    <pre><?php print_r($_POST); ?></pre>
-    <pre><?php print_r($_SESSION); ?></pre>
 </main>    
 <script>
  $('table').stacktable();

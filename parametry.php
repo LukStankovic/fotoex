@@ -105,10 +105,6 @@ $_SESSION["fotky"] = $fotky;
         </form>
     </div>
     <img src="img/fotka-parametry.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
-    <pre><?php print_r($Kosik); ?></pre>
-    <pre><?php print_r($_SESSION);?></pre>
-    <pre><?php print_r($_POST);?></pre>
-
 </main>    
 <script>
 $(document).ready(function(){

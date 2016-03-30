@@ -155,10 +155,7 @@ if(isset($_POST["odeslat"])){
     </form>
     <img src="img/fotka-udaje.jpg" alt="upload" class="img-responsive" style="margin-top:100px">
 </main>    
-<pre><?php print_r($Kosik); ?></pre>
 
-<pre><?php print_r($_POST); ?></pre>
-<pre><?php print_r($_SESSION); ?></pre>
 <script>
  $('table').stacktable();
 </script>
