@@ -19,7 +19,11 @@ V každém databázovém importu se zároveň nachází DML dotaz pro vytvořen
         $this->nazev_databaze = "název databáze";
     }
 ```
+-	Pro správnou funkcionalitu Google reCAPTCHA změnit v souboru reg_ok.php secret na řádku 4. Je nutno předem vytvořit API klíč na oficiální stránce Google reCAPTCHA (https://www.google.com/recaptcha/admin)
 
+```php 
+    $secret = "ZDE VLOŽIT VÁŠ VYGENEROVANÝ API KLÍČ";
+```
 
 ##Uživatelský manuál
 
