@@ -26,7 +26,7 @@ if(!in_array($_SERVER['REMOTE_ADDR'], $local)){
         <link rel="stylesheet" href="css/multiuploader/jquery.fileupload-ui.css">
         <noscript><link rel="stylesheet" href="css/multiuploader/jquery.fileupload-noscript.css"></noscript>
         <noscript><link rel="stylesheet" href="css/multiuploader/jquery.fileupload-ui-noscript.css"></noscript>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css"> 
         <link rel="stylesheet" href="css/chosen.min.css">
  		<link rel="stylesheet" href="css/style.css">

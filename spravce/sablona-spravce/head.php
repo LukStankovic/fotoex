@@ -26,13 +26,14 @@
     
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
     <link href="css/plugins/timeline/timeline.css" rel="stylesheet">
     <link href="css/plugins/stacktable/stacktable.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/admin.css" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    
     <link href="favicon.png" rel="icon" type="image/png">
     <style>
 .filter-table .quick { margin-left: 0.5em; font-size: 0.8em; text-decoration: none; }

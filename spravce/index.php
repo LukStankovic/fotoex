@@ -31,7 +31,7 @@
         </div>
     </div>
 
- <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+ <script class="cssdeck" src="js/jquery-1.11.3.js"></script>
     <?php 
 
     if(isset($_POST["prihlasit"]))
